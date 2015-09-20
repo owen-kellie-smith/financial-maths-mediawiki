@@ -1,0 +1,23 @@
+p.label{
+	display: inline;
+}
+
+table.schedule th{
+	padding: 8px;
+}
+
+table.schedule th,td{
+	text-align: right;
+}
+
+tr.sum td{
+	font-weight: bold;
+}
+
+.ct1_form label, .ct1_form input{
+	display:inline-block;
+}
+
+.ct1_form label {
+	width:90%; 
+}

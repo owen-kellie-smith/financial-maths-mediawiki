@@ -1,0 +1,8 @@
+	/**
+	 * Get validation result (list of parameter keys with boolean values)
+	 *
+	 * @param object $candidate  Object to test
+	 * @return array
+	 *
+	 * @access public
+	 */
