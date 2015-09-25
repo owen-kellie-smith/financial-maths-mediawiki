@@ -1,7 +1,7 @@
 <?php   
 
-CT1_autoloader('HTML_QuickForm2','HTML/QuickForm2.php');
-CT1_autoloader('HTML_Table','HTML/Table.php');
+//CT1_autoloader('HTML_QuickForm2','HTML/QuickForm2.php');
+//CT1_autoloader('HTML_Table','HTML/Table.php');
 
 define("CT1_maximum_levels_detail", 10);
 

@@ -1,5 +1,8 @@
 <?php
 
+$path = __DIR__ . "/pear/HTML/QuickForm2" ;
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+
 if ( function_exists( 'wfLoadExtension' ) ) {
 	wfLoadExtension( 'FinancialMathematics' );
 	// Keep i18n globals so mergeMessageFileList.php doesn't break
