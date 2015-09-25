@@ -1,6 +1,5 @@
 <?php   
 
-
 $path_to_pear = plugin_dir_path(__FILE__) . 'pear/' . PATH_SEPARATOR;
 set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
 

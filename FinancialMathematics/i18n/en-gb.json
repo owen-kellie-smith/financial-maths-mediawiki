@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"financialmathematics-desc": "This extension explains some compound interest calculations",
+	"financialmathematics-i18n-welcome": "Welcome to the localization file of the FinancialMathematics extension.",
+	"financialmathematics-helloworld": "Hello world!",
+	"financialmathematics-helloworld-intro": "Welcome to the \"Hello world\" special page of the FinancialMathematics extension.",
+	"helloworld": "Hello world"
+}
