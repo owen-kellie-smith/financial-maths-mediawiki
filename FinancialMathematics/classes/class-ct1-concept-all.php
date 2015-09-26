@@ -34,18 +34,18 @@ class CT1_Concept_All {
 
 	private function get_concept_labels(){
 		return array( 
-				'concept_interest'=>'Interest rate format',
-				'concept_annuity'=>'Annuity (escalating or level)', 
-				'concept_mortgage'=>'Mortgage (level)', 
-				'concept_annuity_increasing'=> 'Annuity (increasing or decreasing)', 
-				'concept_cashflows'=> 'Multiple cashflows', 
-				'concept_spot_rates'=> 'Spot rates to forward rates and par yields', 
+				'concept_interest'=>wfMessage( 'fm-interest-rate-format')->text(),
+				'concept_annuity'=>wfMessage( 'fm-annuity')->text(), 
+				'concept_mortgage'=>wfMessage( 'fm-mortgage')->text(), 
+				'concept_annuity_increasing'=> wfMessage( 'fm-annuity-increasing')->text(), 
+				'concept_cashflows'=> wfMessage( 'fm-multiple-cashflows')->text(), 
+				'concept_spot_rates'=> wfMessage( 'fm-spot-rates')->text(), 
 				 );
 	}
 
 
 	public function get_calculator( $unused ){
-		$p = array('method'=> 'GET', 'submit'=>'Get calculator', 'introduction' => 'Select a calculator.');
+		$p = array('method'=> 'GET', 'submit'=>wfMessage( 'fm-get-calculator')->text(), 'introduction' => wfMessage( 'fm-select-calculator')->text());
 		$p['select-options'] = $this->get_concept_labels() ;
 		$p['select-name'] = 'concept';
 		return $p;

@@ -1,3 +1,0 @@
-
-$path = __DIR__ . "/pear/HTML" ;
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);

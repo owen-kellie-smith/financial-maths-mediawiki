@@ -2,9 +2,18 @@
 	"@metadata": {
 		"authors": []
 	},
+	"fm-interest-rate-format": "Interest rate format",
+	"fm-annuity" : "Annuity (escalating or level)", 
+	"fm-mortgage" : "Mortgage (level)",
+	"fm-annuity-increasing" :  "Annuity (increasing or decreasing)", 
+	"fm-multiple-cashflows" : "Multiple cashflows", 
+	"fm-spot-rates" : "Spot rates to forward rates and par yields", 		
+	"fm-get-calculator" : "Get calculator",
+	"fm-select-calculator" : "Select a calculator.",
+	"fm-concept" : "Type",
 	"financialmathematics-desc": "This extension explains some compound interest calculations",
-	"financialmathematics-i18n-welcome": "Welcome to the localization file of the FinancialMathematics extension.",
-	"financialmathematics-helloworld": "Hello world in the FinanacialMathematics xtn!",
-	"financialmathematics-helloworld-intro": "Welcome to the \"Hello world\" special page of the FinancialMathematics extension.",
+	"financialmathematics-i18n-welcome": "Welcome to the special page of the FinancialMathematics extension.",
+	"financialmathematics-helloworld": "Financial Mathematics Calculator",
+	"financialmathematics-helloworld-intro": "",
 	"financialmathematics": "Financial Mathematics"
 }

@@ -92,7 +92,7 @@ class CT1_Render  {
 	// would be better if this were just recursive but I don't know how
 		if (count($equation_array) > 0 ) {
 			$out  = $this->get_mathjax_header() .  "\r\n";
-			$out .= "$$ \r\n \\begin{align} " . "\r\n";
+			$out .= " \r\n \\begin{align} " . "\r\n";
 			$output = $this->get_render_latex_sentence( $equation_array );
 			$out .= $output['output'] . "\r\n";
 			$count_levels = 1;
@@ -104,7 +104,7 @@ class CT1_Render  {
 					$out .= $new_detail['out_new'];
 				}
 			}
-			$out .= "\r\n" . "\\end{align} \r\n $$" . "\r\n";
+			$out .= "\r\n" . "\\end{align} \r\n " . "\r\n";
 		}
 		return $out;
 	}
