@@ -19,7 +19,7 @@ public function get_solution(){
 }
 	
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>'Calculate', 'introduction' => 'Express an annual effective interest rate in an alternative, equivalent form.');
+	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>wfMessage( 'fm-calculate'), 'introduction' => wfMessage( 'fm-intro-interest'));
 	return parent::get_calculator($p);
 }
 
@@ -29,7 +29,7 @@ public function get_controller($_INPUT ){
 			if ($this->set_interest($_INPUT))
 				return $this->get_solution();
 			else
-				return "<p>Error setting interest from:<pre>" . print_r($_INPUT,1) .  "</pre>";
+				return "<p>" . wfMessage( 'fm-error-interest') . ":<pre>" . print_r($_INPUT,1) .  "</pre>";
 		}
 	}
 	else{

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": []
 	},
+	"fm-restart": "Restart calculator",
 	"fm-interest-rate-format": "Interest rate format",
 	"fm-annuity" : "Annuity (escalating or level)", 
 	"fm-mortgage" : "Mortgage (level)",
@@ -15,5 +16,22 @@
 	"financialmathematics-i18n-welcome": "Welcome to the special page of the FinancialMathematics extension.",
 	"financialmathematics-helloworld": "Financial Mathematics Calculator",
 	"financialmathematics-helloworld-intro": "",
-	"financialmathematics": "Financial Mathematics"
+	"financialmathematics": "Financial Mathematics",
+  "fm-calculate" : "Calculate", 
+  "fm-intro-interest" : "Express an annual effective interest rate in an alternative, equivalent form.",
+   "fm-error-interest" : "Error setting interest from",
+   "fm-error-clone" : "method not defined for ",
+   "fm-error-in" : "in",
+		"fm-exception-in" : "Exception in",
+   "fm-button-delete" : "Delete",
+		"fm-label_i" : "Interest rate per year (annual effective rate)",
+		"fm-label_delta" : "Interest rate per year (continuously compounded)",
+		"fm-label-advanced" : "Paid in advance",
+		"fm-label-frequency-instalment":"Instalment frequency per year",
+		"fm-interest-continuous": "interest rate continuously compounded",
+		"fm-discount-rate" : "discount rate",
+		"fm-interest-rate" : "interest rate",
+		"fm-convertible" : "convertible",
+		"fm-times-per-year" : "times per year",
+    "fm-select-calculator-label" : "Type of calculator"
 }

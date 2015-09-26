@@ -48,6 +48,7 @@ class CT1_Concept_All {
 		$p = array('method'=> 'GET', 'submit'=>wfMessage( 'fm-get-calculator')->text(), 'introduction' => wfMessage( 'fm-select-calculator')->text());
 		$p['select-options'] = $this->get_concept_labels() ;
 		$p['select-name'] = 'concept';
+		$p['select-label'] = wfMessage( 'fm-select-calculator-label')->text();
 		return $p;
 	}
 

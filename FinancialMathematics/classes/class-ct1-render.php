@@ -156,7 +156,7 @@ class CT1_Render  {
 		$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
 		$fieldset = $form->addElement('fieldset');
 		$calculator = $fieldset->addSelect( $return['select-name'] )
-				->setLabel( $return['select-name'] )
+				->setLabel( $return['select-label'] )
 				->loadOptions( $return['select-options']);
 		$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
 		$fieldset->addElement('submit', null, array('value' => $return['submit']));

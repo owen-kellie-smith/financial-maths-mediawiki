@@ -57,11 +57,11 @@ class CT1_Interest_Format extends CT1_Object{
 		$r = parent::get_parameters();
 		$r['m'] = array(
 				'name'=>'m',
-				'label'=>'Instalment frequency per year',
+				'label'=>wfMessage( 'fm-label-frequency-instalment')->text(),
 				);
 		$r['advance'] = array(
 				'name'=>'advance',
-				'label'=>'Paid in advance',
+				'label'=>wfMessage( 'fm-label-advanced')->text() ,
 				);
 		return $r; 
 	}
@@ -124,10 +124,10 @@ class CT1_Interest_Format extends CT1_Object{
 	}
 
 	public function get_description(){
-		if ($this->is_continuous()) return "interest rate continuously compounded";
-		if ($this->advance) $out =  "discount rate";
-		else $out = "interest rate";
-		if (1!=$this->m) $out.=" convertible " . $this->m . " times per year";
+		if ($this->is_continuous()) return wfMessage( 'fm-interest-continuous')->text();
+		if ($this->advance) $out =  wfMessage( 'fm-discount-rate')->text();
+		else $out = wfMessage( 'fm-interest-rate')->text();
+		if (1!=$this->m) $out.=" " . wfMessage( 'fm-convertible')->text(). " " . $this->m . wfMessage( 'fm-times-per-year')->text();
 		return $out;
 	}
 
@@ -165,7 +165,7 @@ class CT1_Interest_Format extends CT1_Object{
 			return true;
 		}
 		catch( Exception $e ){ 
-			throw new Exception( "Exception in " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( wfMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 
