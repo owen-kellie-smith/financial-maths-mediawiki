@@ -16,10 +16,10 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 
 	public function get_parameters(){ 
 		$r = parent::get_parameters();
-		$r['term']['label'] = '(Whole) number of years term';
+		$r['term']['label'] = wfMessage( 'fm-label-term-whole')->text() ;
 		$r['increasing'] = array(
 			'name'=>'increasing',
-			'label'=>'Annuity amount changes by 1 per year: increases?',
+			'label'=>wfMessage( 'fm-label-increasing')->text(),
 			);
 		return $r; 
 	}
@@ -180,7 +180,7 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( "Exception in " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( wfMessage( 'fm-exception-in')->text()  . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 
