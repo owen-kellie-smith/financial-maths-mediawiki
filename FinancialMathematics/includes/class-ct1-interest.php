@@ -30,11 +30,11 @@ public function get_parameters(){
 	$r = parent::get_parameters();
 	$r['delta'] = array(
 			'name'=>'delta',
-			'label'=>wfMessage( 'fm-label_delta') ,
+			'label'=>wfMessage( 'fm-label_delta')->text() ,
 			);
 	$r['i_effective'] = array(
 			'name'=>'i_effective',
-			'label'=>wfMessage( 'fm-label_i'),
+			'label'=>wfMessage( 'fm-label_i')->text(),
 			);
 	return $r; 
 }

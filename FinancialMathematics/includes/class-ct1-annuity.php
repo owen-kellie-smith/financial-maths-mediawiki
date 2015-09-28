@@ -25,11 +25,11 @@ class CT1_Annuity extends CT1_Interest{
 		$r = parent::get_parameters();
 		$r['term'] = array(
 			'name'=>'term',
-			'label'=>'Term (years)',
+			'label'=>wfMessage( 'fm-label_term')->text(),
 			);
 		$r['value'] = array(
 			'name'=>'value',
-			'label'=>'Present value',
+			'label'=>wfMessage( 'fm-label_value')->text(),
 			);
 		return $r; 
 	}
@@ -53,7 +53,7 @@ class CT1_Annuity extends CT1_Interest{
 			if ( $this->is_valid_term_vs_frequency( $n ) ){ 
 				$this->term = $n;
 			} else {
-				throw new Exception("Attempt to set term where frquency * term = number of instalments isn't an integer.  Annuity payment frequency is " . $this->get_m() . ", attempted term is " . $n . ".");
+				throw new Exception(wfMessage( 'fm-exception-term-frequency')->text()  . wfMessage( 'fm-attempted-frequency')->text() . $this->get_m() . "." . wfMessage( 'fm-attempted-term')->text() . $n . ".");
 			}
 		}
 	}
@@ -174,7 +174,7 @@ class CT1_Annuity extends CT1_Interest{
 		$return[0]['left'] = "i";
 //		$return[0]['right']['summary'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1);
 //		$return[0]['right']['detail'] = $a_calc->explain_annuity_certain();
-		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ Verification:}";
+		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ "  . wfMessage( 'fm-verification')->text() . ":}";
 		return array_merge( $return, $a_calc->explain_annuity_certain() );
 	}
 
@@ -212,7 +212,7 @@ class CT1_Annuity extends CT1_Interest{
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( "Exception in " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( wfMessage( 'fm-exception-in')->text() .  __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 

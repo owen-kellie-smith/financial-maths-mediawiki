@@ -9,6 +9,8 @@
 	  "financialmathematics-helloworld-intro": "",
 	  "fm-annuity" : "Annuity (escalating or level)", 
 	  "fm-annuity-increasing" :  "Annuity (increasing or decreasing)", 
+		"fm-attempted-frequency": "Attempted payment frequency is ",
+		"fm-attempted-term": "Attempted term is ",
     "fm-button-delete" : "Delete",
     "fm-calculate" : "Calculate", 
 	  "fm-concept" : "Type",
@@ -18,6 +20,7 @@
     "fm-error-in" : "in",
     "fm-error-interest" : "Error setting interest from",
 		"fm-exception-in" : "Exception in",
+		"fm-exception-term-frequency" : "Attempt to set term where frquency * term = number of instalments isn't an integer.",
 	  "fm-get-calculator" : "Get calculator",
 		"fm-interest-continuous": "interest rate continuously compounded",
 		"fm-interest-rate" : "interest rate",
@@ -27,6 +30,8 @@
 		"fm-label_delta" : "Interest rate per year (continuously compounded)",
 		"fm-label-frequency-instalment":"Instalment frequency per year",
 		"fm-label_i" : "Interest rate per year (annual effective rate)",
+		"fm-label_term" : "Term (years)",
+		"fm-label_value" : "Present value",
 	  "fm-mortgage" : "Mortgage (level)",
 	  "fm-multiple-cashflows" : "Multiple cashflows", 
 	  "fm-restart": "Restart calculator",
@@ -34,5 +39,6 @@
   	"fm-spot-rates" : "Spot rates to forward rates and par yields", 		
     "fm-select-calculator-label" : "Type of calculator",
 		"fm-times-per-year" : "times per year",
+		"fm-verification" : "Verification",
 	  "zzzzzzz":"If you can see me then something is wrong"
 }
