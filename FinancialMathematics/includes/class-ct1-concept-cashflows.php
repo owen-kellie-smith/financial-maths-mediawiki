@@ -99,7 +99,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 	 *
 	 * @access private
 	 */
-	private function get_render_form_cashflow( CT1_Cashflows $cf, $submit =  wfMessage( 'fm-submit')->text() , $intro = "" ){
+	private function get_render_form_cashflow( CT1_Cashflows $cf, $submit ='Submit' , $intro = "" ){
 		$render = new CT1_Render();
 		return $render->get_form_collection( $cf, $submit, $intro, 'view_cashflows');
 	}
