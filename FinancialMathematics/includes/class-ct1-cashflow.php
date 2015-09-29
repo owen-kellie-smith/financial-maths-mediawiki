@@ -1,4 +1,4 @@
-<?php   
+t <?php   
 require_once 'class-ct1-annuity-escalating.php';
 require_once 'class-ct1-annuity-increasing.php';
 
@@ -45,7 +45,7 @@ class CT1_Cashflow extends CT1_Object {
 			return false;
 		}
 	 } catch( Exception $e ){ 
-		throw new Exception( "Exception in " . __FILE__ . ": " . $e->getMessage() );
+		throw new Exception( wfMessage( 'fm-exception-in')->text() . __FILE__ . ": " . $e->getMessage() );
 	 }
 	}
 
@@ -66,11 +66,11 @@ class CT1_Cashflow extends CT1_Object {
         $r = array();
         $r['rate_per_year'] = array(
             'name'=>'rate_per_year',
-            'label'=>'Rate of payment out per year',
+            'label'=>wfMessage( 'fm-rate_per_year')->text(),
             );
         $r['effective_time'] = array(
             'name'=>'effective_time',
-            'label'=>'Effective time after t=0 (in years)',
+            'label'=>wfMessage( 'fm-effective_time')->text(),
             );
         $r = array_merge( $r, $this->annuity->get_parameters() );
         return $r; 
