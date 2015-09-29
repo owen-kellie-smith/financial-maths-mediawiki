@@ -26,7 +26,7 @@ class CT1_Cashflows extends CT1_Collection {
 // echo  "get_delta_for_value called in " . __FILE__ . " " ;
 		$this->set_value( $v );
 		if ( !isset( $this->value ) ){
-			throw new Exception( "get_delta_for_value called in " . __FILE . " with no value set" );
+			throw new Exception( wfMessage( 'fm-exception-get_delta_for_value')->text()  . __FILE . wfMessage( 'fm-exception-no-value-set')->text()  );
 		} else {
 			return $this->get_interpolated_delta_for_value();
 		}
@@ -39,7 +39,7 @@ class CT1_Cashflows extends CT1_Collection {
 		$delta = $this->get_delta_for_value( $v );
 		$a_calc->set_delta( $delta );
 		$return[0]['left'] = "i";
-		$return[0]['right'] = $i->explain_format( exp( $delta ) - 1) . "." . "\\ \\mbox{ Verification:}";
+		$return[0]['right'] = $i->explain_format( exp( $delta ) - 1) . "." . "\\ \\mbox{ ".wfMessage( 'fm-verification')->text().":}";
 		return array_merge( $return, $a_calc->explain_discounted_value( $with_detail ) );
 	}
 
@@ -76,15 +76,9 @@ class CT1_Cashflows extends CT1_Collection {
 			$g[1]['x'] = $x1;
 			$a_calc->set_delta( $x0 );
 			$a_calc->unset_value();	
-//	echo "\r\n x0: " . $x0  . "\r\n";
-//	echo "\r\n loop: " . $loop_count  . "\r\n";
-//	echo "\r\n acalc-disc: " . $a_calc->get_discounted_value()  . "\r\n";
-//	echo "\r\n this-val: " . $this->get_value() . "\r\n";
 			$g[0]['f'] = $a_calc->get_discounted_value() - $this->get_value();
-//	echo "\r\n go: " . $g[0]['f'] . "\r\n";
 			$a_calc->set_delta( $x1 );
 			$g[1]['f'] = $a_calc->get_discounted_value() - $this->get_value();
-//	echo "\r\n g1: " . $g[1]['f'] . "\r\n";
 			$x2 = $this->get_interpolated_value( $g );
 			$x0 = $x1;
 			$x1 = $x2;
@@ -92,7 +86,7 @@ class CT1_Cashflows extends CT1_Collection {
 			$loop_count++;
 		}
 		if ( $loop_count >= $max_loop ) 
-			throw new Exception ("maximum iterations exceeded to find rate of return such that total value = " . $this->get_value() . ". Is value possible for these cashflows?");
+			throw new Exception (wfMessage( 'fm-exception-max-iterations-exceeded')->text()  . $this->get_value() . ". " .  wfMessage( 'fm-exception-query-cashflows-possible')->text()  );
 		return $x1;
 	}
 		
@@ -173,7 +167,7 @@ class CT1_Cashflows extends CT1_Collection {
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( "Exception in " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( wfMessage( 'fm-exception-in')->text() . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 
@@ -209,7 +203,7 @@ class CT1_Cashflows extends CT1_Collection {
 
 	public function explain_discounted_value( $with_detail = true ){
 		$return = array();
-		$return[0]['left'] = "\\mbox{Value}";
+		$return[0]['left'] = "\\mbox{".wfMessage( 'fm-value')->text() ."}";
 		$return[0]['right'] = $this->get_label();
 		$top_line = "";
 		$sub_top = array();

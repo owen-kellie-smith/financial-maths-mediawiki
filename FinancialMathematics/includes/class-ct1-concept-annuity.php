@@ -25,7 +25,7 @@ public function get_interest_rate(){
 }
 
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>'Calculate', 'introduction' => 'Calculate an annuity certain.  Enter enter a rate of return (to get the value) or enter a value (and get the rate of return).');
+	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>wfMessage( 'fm-calculate')->text(), 'introduction' => wfMessage( 'fm-intro-annuity-certain')->text() );
 	$c = parent::get_calculator($p);
 	$c['values']['value'] = NULL;
 	return $c;
@@ -41,7 +41,7 @@ public function get_controller($_INPUT ){
 					return $this->get_interest_rate();
 				}
 			} else {
-				return "<p>Error setting annuity from:<pre>" . print_r($_INPUT,1) .  "</pre>";
+				return "<p>".wfMessage( 'fm-exception-setting-annuity')->text().":<pre>" . print_r($_INPUT,1) .  "</pre>";
 			}
 		}
 	}

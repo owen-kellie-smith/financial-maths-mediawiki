@@ -418,7 +418,6 @@ class CT1_Render  {
 public function add_hidden_fields( &$fieldset, CT1_Collection $cf ){
 	$collection_name = get_class( $cf );
 	$hidden = $cf->get_values_as_array(  $collection_name );
-//echo "<pre>" . __FILE__ . " add_hidden_fileds\r\n" . print_r($hidden, 1) . "</pre>";
 	$this->add_hidden_fields_to_fieldset( $fieldset, $hidden );
 	
 }

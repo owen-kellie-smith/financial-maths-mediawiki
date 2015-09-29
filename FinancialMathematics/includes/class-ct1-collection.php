@@ -75,8 +75,6 @@ abstract class CT1_Collection extends CT1_Object {
 	}
 
 	public function add_object( CT1_Object $c, $duplicates_allowed = false, $re_sort = false ){
-//echo "<pre>" .  __FILE__ . " add_object() . " . print_r( get_class($c), 1 ) . "</pre>";
-//echo "<pre>" .  __FILE__ . " add_object() . " . print_r( $c, 1 ) . "</pre>";
 		if( !$this->is_acceptable_class( $c ) ){
 			throw new Exception( __FILE__ . "Object of class " . get_class( $c ) . " can't be added to collection of class" .  get_class( $this ) );
 		}

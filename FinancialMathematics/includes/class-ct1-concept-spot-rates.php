@@ -41,7 +41,7 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 		try{
 			if (isset($_INPUT[get_class( $this->obj )])){
 				if (!$this->set_spotrates( $_INPUT[ get_class( $this->obj )] ) ) 
-					return "<p>Error setting spotrates from:<pre>" . print_r($_INPUT,1) .  "</pre>";
+					return "<p>" . wfMessage( 'fm-exception-setting-spot-rates')->text() . "<pre>" . print_r($_INPUT,1) .  "</pre>";
 			}
 			if (isset($_INPUT['request'])){
 				if ('add_spot_rate' == $_INPUT['request']){
@@ -57,7 +57,7 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 				return $this->get_solution_no_detail()  . $this->get_delete_add()  ;
 			return $this->get_form_add_spot_rate()  ;
 		} catch( Exception $e ){
-			return "Exception in " . __FILE__ . print_r($e->getMessage(),1) ;
+			return wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1) ;
 		}
 	}
 
@@ -79,7 +79,7 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 		$form['render'] = 'HTML';
 	//	$form['introduction'] = 'Add a spot_rate.';
 		$form['introduction'] = '';
-		$form['submit'] = 'Add';
+		$form['submit'] = wfMessage( 'fm-add')->text() ;
 		$form['exclude'] = array();
 		$form['values'] = $values;
 		$form['hidden'] = $this->obj->get_values_as_array( get_class($this->obj) );
