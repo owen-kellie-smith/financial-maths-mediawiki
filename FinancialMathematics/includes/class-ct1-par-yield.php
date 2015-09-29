@@ -24,11 +24,11 @@ class CT1_Par_Yield extends CT1_Object {
         $r = array();
         $r['coupon'] = array(
             'name'=>'coupon',
-            'label'=>'Annual coupon payable',
+            'label'=>wfMessage( 'fm-label-coupon')->text(),
             );
         $r['term'] = array(
             'name'=>'term',
-            'label'=>'Term in years',
+            'label'=>wfMessage( 'fm-label_term')->text(), 
             );
         return $r; 
     }
@@ -74,7 +74,7 @@ class CT1_Par_Yield extends CT1_Object {
     }
 
     public function get_label(){
-        return "Par-yield(" . $this->get_term() . ")";
+        return wfMessage( 'fm-par-yield')->text()  . "(" . $this->get_term() . ")";
 	}
 
             

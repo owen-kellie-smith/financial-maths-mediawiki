@@ -29,11 +29,11 @@ class CT1_Spot_Rate extends CT1_Object {
         $r = array();
         $r['i_effective'] = array(
             'name'=>'i_effective',
-            'label'=>'Effective rate per year from t=0 to effective time',
+            'label'=>wfMessage( 'fm-label-i_effective-timed')->text(),
             );
         $r['effective_time'] = array(
             'name'=>'effective_time',
-            'label'=>'Effective time after t=0 (in years)',
+            'label'=>wfMessage( 'fm-label-effective-time')->text(),
             );
         return $r; 
     }

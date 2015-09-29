@@ -38,15 +38,15 @@ class CT1_Forward_Rate extends CT1_Object {
         $r = array();
         $r['i_effective'] = array(
             'name'=>'i_effective',
-            'label'=>'Effective rate per year',
+            'label'=>wfMessage( 'fm-label_i_effective')->text(),  
             );
         $r['start_time'] = array(
             'name'=>'start_time',
-            'label'=>'Start time after t=0 (in years)',
+            'label'=>wfMessage( 'fm-label_start_time')->text() ,
             );
         $r['end_time'] = array(
             'name'=>'end_time',
-            'label'=>'End time after t=0 (in years)',
+            'label'=>wfMessage( 'fm-label_end_time')->text(),
             );
         return $r; 
     }
