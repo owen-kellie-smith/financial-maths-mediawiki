@@ -41,7 +41,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		try{
 			if (isset($_INPUT[ get_class( $this->obj ) ])){
 				if (!$this->set_cashflows( $_INPUT[ get_class( $this->obj ) ] ) ) 
-					return "<p>Error setting cashflows from:<pre>" . print_r($_INPUT,1) .  "</pre>";
+					return "<p>" . wfMessage( 'fm-error-cashflows')->text()  . ":<pre>" . print_r($_INPUT,1) .  "</pre>";
 			}
 			if (isset($_INPUT['request'])){
 				if ('add_cashflow' == $_INPUT['request']){
@@ -56,7 +56,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 				return $this->get_solution_no_detail() .  $this->get_val_delete_add()  ;
 			return $this->get_form_add_cashflow()  ;
 		} catch( Exception $e ){
-			return "Exception in " . __FILE__ . print_r($e->getMessage(),1) ;
+			return wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1) ;
 		}
 	}
 
@@ -99,7 +99,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 	 *
 	 * @access private
 	 */
-	private function get_render_form_cashflow( CT1_Cashflows $cf, $submit = 'Submit', $intro = "" ){
+	private function get_render_form_cashflow( CT1_Cashflows $cf, $submit =  wfMessage( 'fm-submit')->text() , $intro = "" ){
 		$render = new CT1_Render();
 		return $render->get_form_collection( $cf, $submit, $intro, 'view_cashflows');
 	}
@@ -214,7 +214,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$parameters = array();
 		$parameters['single_payment'] = array(
 			'name'=> 'single_payment',
-			'label' => 'Treat as single payment (ignore parameters apart from rate and effective time)?',
+			'label' => wfMessage( 'fm-single_payment')->text(),
 			);
 		$parameters_c = array_merge( $c_e->get_parameters(), $c_i->get_parameters() );
 		$parameters = array_merge( $parameters, $parameters_c );
@@ -223,7 +223,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$valid_options['consider_increasing'] = array( 'type' => boolean );
 		$parameters['consider_increasing'] = array(
 			'name'=> 'consider_increasing',
-			'label' => 'Treat as increasing / decreasing (stepped) annuity?',
+			'label' => wfMessage( 'fm-consider_increasing')->text(),
 			);
 		foreach ( array('value','delta', 'escalation_delta') as $p ){
 			unset( $parameters[ $p ] );
@@ -236,8 +236,8 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$form['valid_options'] = $valid_options;
 		$form['request'] = 'add_cashflow';
 		$form['render'] = 'HTML';
-		$form['introduction'] = 'Add a cashflow.';
-		$form['submit'] = 'Add';
+		$form['introduction'] = wfMessage( 'fm-add-a-cashflow')->text() ;
+		$form['submit'] = wfMessage( 'fm-add')->text() ;
 		$form['exclude'] = array( "i_effective" );
 		$form['values'] = $values;
 		$form['hidden'] = $this->get_hidden_cashflow_fields();
@@ -268,11 +268,11 @@ class CT1_Concept_Cashflows extends CT1_Form{
 	public function get_calculator($parameters){
 		$parameters['i_effective'] = array(
 			'name'=> 'i_effective',
-			'label' => 'Effective annual rate of return',
+			'label' => wfMessage( 'fm-label_i_effective')->text(),
 			);
 		$parameters['value'] = array(
 			'name'=> 'value',
-			'label' => 'Total present (discounted) value (leave blank if you want the value for a particular rate of return)',
+			'label' => wfMessage( 'fm-label_value_total')->text(),
 			);
 		$valid_options = array();
 		$valid_options['i_effective'] = array(
@@ -291,8 +291,8 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$form['valid_options'] = $valid_options;
 		$form['request'] = $this->get_request();
 		$form['render'] = 'HTML';
-		$form['introduction'] = 'Value cashflows.  Enter an effective annual rate of return (to get a present value) or a present value (to get an implicit rate of return, if one exists.)';
-		$form['submit'] = 'Calculate';
+		$form['introduction'] = wfMessage( 'fm-value-cashflows')->text() ;
+		$form['submit'] = wfMessage( 'fm-calculate')->text();
 		$form['exclude'] = array();
 		$form['values'] = $values;
 		$form['hidden'] = $this->get_hidden_cashflow_fields();
