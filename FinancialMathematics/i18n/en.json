@@ -2,6 +2,8 @@
 	"@metadata": {
 		"authors": []
 	},
+	"financialmathematics-helloworld":"financialmathematics-helloworld",
+	"financialmathematics-helloworld-intro":"financialmathematics-helloworld-intro",
  "fm-add":"fm-add",
  "fm-add-a-cashflow":"fm-add-a-cashflow",
  "fm-annuity":"fm-annuity",
@@ -60,6 +62,7 @@
  "fm-net-interest-rate":"fm-net-interest-rate",
  "fm-par-yield":"fm-par-yield",
  "fm-rate_per_year":"fm-rate_per_year",
+	"fm-restart":"fm-restart",
  "fm-select-calculator":"fm-select-calculator",
  "fm-select-calculator-label":"fm-select-calculator-label",
  "fm-single_payment":"fm-single_payment",
