@@ -5,7 +5,6 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 
 if ( function_exists( 'wfLoadExtension' ) ) {
 	wfLoadExtension( 'FinancialMathematics' );
-	// Keep i18n globals so mergeMessageFileList.php doesn't break
 	$wgMessagesDirs['FinancialMathematics'] = __DIR__ . '/i18n';
 	$wgExtensionMessagesFiles['FinancialMathematicsAlias'] = __DIR__ . '/FinancialMathematics.i18n.alias.php';
 	wfWarn(
