@@ -11,17 +11,17 @@ Code is at:https://github.com/owen-kellie-smith/financial-maths-mediawiki/
 
 Practice financial mathematics questions for the actuarial exams. Define and calculate interest rates, annuity certain, mortgage repayment, project valuation, spot/forward/par yields.
 
-== Description ==
+## Description 
 
 This extension provides a special page which render forms that calculate and explain annuities certain, repayment mortgages etc: maths questions which typically appear in the CT1 actuarial exam and the Interest Theory part of the Financial Mathematics exam.
 
 
-== Installation ==
+## Installation
 
 1. Download, unzip and upload to your extensions directory.  
-1. Go to the new Special page (check in the special pages for "Financial Mathematics".
+1. Go to the new Special page (check in the special pages for "Financial Mathematics").
 
-= How do I run the unit tests? =
+## How do I run the unit tests? 
 
 Install phpunit and enter
 
