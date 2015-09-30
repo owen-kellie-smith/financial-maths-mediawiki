@@ -1,8 +1,12 @@
 # financial-maths-mediawiki
 Mediawiki extension to calculate compound interest functions
-Requires at least: Mediawiki 1.26
+
+Requires at least: Mediawiki 1.25
+
 License: GPLv2 or later
+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 Code is at:https://github.com/owen-kellie-smith/financial-maths-mediawiki/
 
 Practice financial mathematics questions for the actuarial exams. Define and calculate interest rates, annuity certain, mortgage repayment, project valuation, spot/forward/par yields.
@@ -20,6 +24,7 @@ This extension provides a special page which render forms that calculate and exp
 = How do I run the unit tests? =
 
 Install phpunit and enter
-$phpunit
+
+phpunit
 
 
