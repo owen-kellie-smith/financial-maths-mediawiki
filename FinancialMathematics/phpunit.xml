@@ -11,7 +11,7 @@
         bootstrap="phpunit-load-classes.php">
         <testsuites>
                 <testsuite name="MyPlugin Test Suite">
-                        <directory>./tests/</directory>
+                        <directory>./phpunit-tests/</directory>
                 </testsuite>
         </testsuites>
 </phpunit>
