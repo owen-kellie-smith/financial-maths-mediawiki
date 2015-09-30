@@ -11,7 +11,6 @@
 //$path = dirname(dirname(__FILE__)) . "/pear/HTML/QuickForm2/";
 $path = dirname(dirname(__FILE__)) . "/pear";
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-
 class SpecialFinancialMathematics extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'FinancialMathematics' );

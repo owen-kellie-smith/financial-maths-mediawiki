@@ -1,4 +1,4 @@
-t <?php   
+<?php   
 require_once 'class-ct1-annuity-escalating.php';
 require_once 'class-ct1-annuity-increasing.php';
 
