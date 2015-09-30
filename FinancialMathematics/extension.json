@@ -10,7 +10,6 @@
 	"type": "other",
 	"AutoloadClasses": {
 		"HTML_QuickForm2": "pear/HTML/QuickForm2.php",
-		"HTML_Table": "pear/HTML/Table.php",
 		"Validate": "pear/Validate.php",
 		"FinancialMathematicsHooks": "FinancialMathematics.hooks.php",
 		"SpecialFinancialMathematics": "specials/SpecialFinancialMathematics.php",
