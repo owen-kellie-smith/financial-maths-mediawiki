@@ -47,7 +47,7 @@
 		"BoilerPlateEnableFoo": true
 	},
 	"ExtensionMessagesFiles": {
-		"BoilerPlateAlias": "BoilerPlate.i18n.alias.php"
+		"FinancialMathematicsAlias": "FinancialMathematics.i18n.alias.php"
 	},
 	"Hooks": {
 		"NameOfHook": [
@@ -55,7 +55,7 @@
 		]
 	},
 	"MessagesDirs": {
-		"BoilerPlate": [
+		"FinancialMathematics": [
 			"i18n"
 		]
 	},
