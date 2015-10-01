@@ -244,7 +244,7 @@ public function __construct(CT1_Object $obj=null){
 	private function get_render_latex_sentence_detail( $e, &$detail ){
 		$out = "";
 		if ( $this->is_sentence( $e['right']['detail'] ) ) {
-			$out .= " \\mbox{ by \\eqref{eq:" . $this->eqref . "}}";
+			$out .= " \\mbox{ ".wfMessage( 'fm-by')->text()." \\eqref{eq:" . $this->eqref . "}}";
 			$detail[] = array(
 				'equation' => $e['right']['detail'],
 				'label' => $this->eqref,
@@ -264,7 +264,7 @@ public function __construct(CT1_Object $obj=null){
 				'equation' => $e['right']['detail'][$count_refs-1],
 				'label' => $this->eqref . "." . ($count_refs-1),
 				);
-			$out .= " \\mbox{ by " . $eqlist . "}";
+			$out .= " \\mbox{ ".wfMessage( 'fm-by')->text() ." " . $eqlist . "}";
 		}
 		return $out;
 	}

@@ -16,6 +16,7 @@
 	"fm-attempted-escalation-frequency": "Attempted escalation frequency is ",
 	"fm-attempted-term": "Attempted term is ",
 	"fm-button-delete" : "Delete",
+  "fm-by":"by",
 	"fm-calculate" : "Calculate", 
 	"fm-concept" : "Type",
 	"fm-consider_increasing" : "Treat as increasing / decreasing (stepped) annuity?",
