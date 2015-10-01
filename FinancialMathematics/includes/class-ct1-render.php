@@ -88,23 +88,24 @@ class CT1_Render  {
 	 *
 	 * @access public
 	 */
-	public function get_render_latex( $equation_array ){
+	public function get_render_latex( $equation_array, $newline=false ){
 	// would be better if this were just recursive but I don't know how
+		if ($newline) $_nl="\r\n ";
 		if (count($equation_array) > 0 ) {
-			$out  = $this->get_mathjax_header() .  "\r\n";
-			$out .= " \r\n \\begin{align} " . "\r\n";
+			$out  = $this->get_mathjax_header() .  $_nl;
+			$out .= $_nl . "\\begin{align} " . $_nl;
 			$output = $this->get_render_latex_sentence( $equation_array );
-			$out .= $output['output'] . "\r\n";
+			$out .= $output['output'] . $_nl;
 			$count_levels = 1;
 			while ( $count_levels < CT1_maximum_levels_detail && isset( $output['detail'] ) ) {
 				$count_levels++;
 				if ( 0 < count( $output['detail'] ) ){
-					$new_detail = $this->get_a_layer_of_equation_detail( $output );
+					$new_detail = $this->get_a_layer_of_equation_detail( $output, $newline );
 					$output['detail'] = $new_detail['detail'];
 					$out .= $new_detail['out_new'];
 				}
 			}
-			$out .= "\r\n" . "\\end{align} \r\n " . "\r\n";
+			$out .= $_nl . "\\end{align} " . $_nl . $_nl;
 		}
 		return $out;
 	}
@@ -173,7 +174,8 @@ class CT1_Render  {
 	 *
 	 * @access private
 	 */
-	private function get_render_latex_sentence( $equation_array, &$label = '' ){
+	private function get_render_latex_sentence( $equation_array, &$label = '', $newline=false ){
+		if ($newline) $_nl="\r\n ";
 		$out = "";
 		$detail = array();
 		if ( !empty($label) ){
@@ -181,11 +183,11 @@ class CT1_Render  {
 		}
 		$d = 1;
 		foreach ($equation_array as $e) {
-			$out .= $this->get_render_latex_sentence_line( $e, $detail );
+			$out .= $this->get_render_latex_sentence_line( $e, $detail, $newline );
 			if ($d < count($equation_array)) 
-				$out.= " \\\\ " . "\r\n";
+				$out.= " \\\\ " . $_nl;
 			if ($d ==count($equation_array)) 
-				$out.= ". \\\\ \r\n \\nonumber " ;
+				$out.= ". \\\\ " . $_nl . "\\nonumber " ;
 			$d++;
 			$this->eqref++;
 		}
@@ -271,22 +273,23 @@ class CT1_Render  {
 	 *
 	 * @access private
 	 */
-	private function get_a_layer_of_equation_detail( $output ){
+	private function get_a_layer_of_equation_detail( $output, $newline=false ){
 	// $sub_count is redundant?
+	if ($newline) $_nl="\r\n ";
 		$out = '';
 		$ret_out = array();
 		$ret_out['detail'] = array();
 		foreach ($output['detail'] as $e) {
 			if ( $this->is_sentence( $e['equation'] ) ) {
-				$sub_output = $this->get_render_latex_sentence( $e['equation'], $e['label'] );
-				$out .= " \\\\" . "\r\n"; // close off the last line
-				$out .= $sub_output['output'] . "\r\n";
+				$sub_output = $this->get_render_latex_sentence( $e['equation'], $e['label'] , $newline);
+				$out .= " \\\\" . $_nl; // close off the last line
+				$out .= $sub_output['output'] . $_nl;
 				$ret_out['detail'] = array_merge( $ret_out['detail'], $sub_output['detail']);
 			} else {
 				$sub_count = 0;
 				foreach ($e['equation'] as $e_detail) {
 					$sub_count++;
-					$sub_output = $this->get_render_latex_sentence( $e_detail, $e['label'] . "." . $sub_count );
+					$sub_output = $this->get_render_latex_sentence( $e_detail, $e['label'] . "." . $sub_count, $newline );
 					$out .= " \\\\" . "\r\n"; // close off the last line
 					$out .= $sub_output['output'] . "\r\n";
 					$ret_out['detail'] = array_merge( $ret_out['detail'], $sub_output['detail']);
