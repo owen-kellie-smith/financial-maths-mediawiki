@@ -20,6 +20,10 @@ class CT1_Render  {
 	 */
 	private $eqref = 0;
 
+public function __construct(CT1_Object $obj=null){
+	$this->eqref=(int)mt_rand();
+}
+
 	/**
 	 * Get rendering of form as string that can be echoed to screen
 	 *
