@@ -50,8 +50,8 @@
 		"FinancialMathematicsAlias": "FinancialMathematics.i18n.alias.php"
 	},
 	"Hooks": {
-		"NameOfHook": [
-			"BoilerPlateHooks::onNameOfHook"
+		"ParserFirstCallInit": [
+			"FinancialMathematicsHooks::onParserFirstCallInit"
 		]
 	},
 	"MessagesDirs": {
