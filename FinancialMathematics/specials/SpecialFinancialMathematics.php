@@ -34,6 +34,8 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$_restart = '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
 		$out->addHTML( $_restart );
 		$out->addHTML( $m->get_controller($_GET) );
+		$out->addWikiMsg( 'fm-tag-description', print_r($_GET,1) ); // todo
+		$out->addHTML( print_r($_GET,1) );
 	}
 
 	protected function getGroupName() {
