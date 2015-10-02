@@ -52,27 +52,31 @@ class CT1_Concept_All {
 		return $p;
 	}
 
+	private function get_parameters($_INPUT){
+		return print_r($_INPUT,1);
+	}
+
 	
 	public function get_controller($_INPUT ){
 	try{
 		if (isset($_INPUT['request'])){
 			foreach( $this->concepts AS $c ){
 				if ($c->get_request() == $_INPUT['request'])
-					return $c->get_controller( $_INPUT );
+					return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
 			}
 			foreach( $this->concepts AS $c ){
 				if ( in_array( $_INPUT['request'], $c->get_possible_requests() ) )
-					return $c->get_controller( $_INPUT );
+					return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
 			}
 		}
 		if (isset($_INPUT['concept'])){
 			if ( isset( $this->concepts[ $_INPUT['concept'] ] ) ){
 				$c = $this->concepts[ $_INPUT['concept'] ];
-				return $c->get_controller( $_INPUT );
+				return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
 			}
 		}
 		$render = new CT1_Render();
-		return $render->get_select_form( $this->get_calculator( NULL ) );
+		return $render->get_select_form( $this->get_calculator( NULL ) ) . $this->get_parameters($_INPUT);
 	}
 	catch( Exception $e ){
 		return $e->getMessage();
