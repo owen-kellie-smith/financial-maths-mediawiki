@@ -9,9 +9,9 @@
 	"license-name": "GPL-2.0+",
 	"type": "other",
 	"AutoloadClasses": {
-		"HTML_QuickForm2": "pear/HTML/QuickForm2.php",
-  		"HTML_Table": "pear/HTML/Table.php",
-		"Validate": "pear/Validate.php",
+		"HTML_QuickForm2": "PEAR/HTML/QuickForm2.php",
+  		"HTML_Table": "PEAR/HTML/Table.php",
+		"Validate": "PEAR/Validate.php",
 		"FinancialMathematicsHooks": "FinancialMathematics.hooks.php",
 		"SpecialFinancialMathematics": "specials/SpecialFinancialMathematics.php",
 		"CT1_Concept":	"includes/interface-ct1-concept.php",

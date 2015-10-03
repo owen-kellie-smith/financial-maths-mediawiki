@@ -21,8 +21,8 @@ function wfSampleRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 }
 
 
-$path = __DIR__ . "/pear/HTML/QuickForm2" ;
-$path = __DIR__ . "/pear/HTML/Table" ;
+$path = __DIR__ . "/PEAR/HTML/QuickForm2" ;
+$path = __DIR__ . "/PEAR/HTML/Table" ;
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 
 if ( function_exists( 'wfLoadExtension' ) ) {

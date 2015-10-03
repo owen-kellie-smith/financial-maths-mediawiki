@@ -6,7 +6,7 @@
  */
 
 
-$path = dirname(dirname(__FILE__)) . "/pear";
+$path = dirname(dirname(__FILE__)) . "/PEAR";
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 class SpecialFinancialMathematics extends SpecialPage {
 	public function __construct() {
