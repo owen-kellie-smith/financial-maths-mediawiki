@@ -64,7 +64,7 @@ class CT1_Spot_Rate extends CT1_Object {
 
     public function set_delta($n){
         $candidate = array('delta'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['delta']){
             $this->delta = $n;
         }
@@ -76,7 +76,7 @@ class CT1_Spot_Rate extends CT1_Object {
 
     public function set_i_effective($n){
         $candidate = array('i_effective'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['i_effective']){
             $this->delta = log( 1 + $n);
         }
@@ -84,7 +84,7 @@ class CT1_Spot_Rate extends CT1_Object {
     
     public function set_effective_time($n){
         $candidate = array('effective_time'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['effective_time']){
             $this->effective_time = $n;
         }

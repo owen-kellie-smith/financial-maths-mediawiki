@@ -71,7 +71,7 @@ class CT1_Forward_Rate extends CT1_Object {
 
     public function set_delta($n){
         $candidate = array('delta'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['delta']){
             $this->delta = $n;
         }
@@ -83,7 +83,7 @@ class CT1_Forward_Rate extends CT1_Object {
 
     public function set_i_effective($n){
         $candidate = array('i_effective'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['i_effective']){
             $this->delta = log( 1 + $n);
         }
@@ -91,7 +91,7 @@ class CT1_Forward_Rate extends CT1_Object {
     
     public function set_start_time($n){
         $candidate = array('start_time'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['start_time']){
             $this->start_time = $n;
         }
@@ -103,7 +103,7 @@ class CT1_Forward_Rate extends CT1_Object {
             
     public function set_end_time($n){
         $candidate = array('end_time'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['end_time']){
             $this->end_time = $n;
         }

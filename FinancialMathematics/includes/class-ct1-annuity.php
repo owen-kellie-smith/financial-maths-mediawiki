@@ -48,7 +48,7 @@ class CT1_Annuity extends CT1_Interest{
 
 	public function set_term($n){
 		$candidate = array('term'=>$n);
-		$valid = $this->get_validation($candidate);
+		$valid = $this->get_valid_options($candidate);
 		if ($valid['term']){
 			if ( $this->is_valid_term_vs_frequency( $n ) ){ 
 				$this->term = $n;
@@ -64,7 +64,7 @@ class CT1_Annuity extends CT1_Interest{
 
 	public function set_value($n){
 		$candidate = array('value'=>$n);
-		$valid = $this->get_validation($candidate);
+		$valid = $this->get_valid_options($candidate);
 		if ($valid['value']){
 			$this->value = $n;
 		}
