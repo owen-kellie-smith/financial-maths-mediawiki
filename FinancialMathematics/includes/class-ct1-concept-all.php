@@ -76,6 +76,11 @@ class CT1_Concept_All {
 				return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
 			}
 		}
+		if (isset($_INPUT['hook'])){
+			if ($_INPUT['hook']=='tag'){
+				return "Incomplete input - see Special page and replace this message with a wfMessage function";
+			}
+		}
 		$render = new CT1_Render();
 		return $render->get_select_form( $this->get_calculator( NULL ) ) . $this->get_parameters($_INPUT);
 	}

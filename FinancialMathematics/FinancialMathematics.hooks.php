@@ -22,11 +22,12 @@ public static function fmRender( $input, array $args, Parser $parser, PPFrame $f
 	$xml=simplexml_load_string($input) or die("Error: Cannot create xml from " . print_r($input,1));
 	//http://stackoverflow.com/questions/834875/recursive-cast-from-simplexmlobject-to-array
 	$x = json_decode(json_encode((array) simplexml_load_string($input)), 1);
+	$x['hook']='tag';
 //	$out_in = htmlentities($xml->asXML());
 //	$out .= "INPUT as xml" . "<pre>" . $out_in . "</pre>";
 //	$out .= "INPUT as array" . "<pre>" . print_r($x,1) . "</pre>";
 	$m = new CT1_Concept_All();
-	$_out = $m->get_controller($x) ;
+	$_out = $m->get_controller($x) ;  // get_controller is the raw HTML of a solution or a form etc
 	//From https://www.mediawiki.org/wiki/QINU_fix
 	$localParser = new Parser();
 	$output = FinancialMathematicsHooks::renderRawHTML($localParser, $_out);
