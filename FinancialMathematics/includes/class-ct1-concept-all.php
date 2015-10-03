@@ -53,7 +53,8 @@ class CT1_Concept_All {
 	}
 
 	private function get_parameters($_INPUT){
-		return print_r($_INPUT,1);
+		return; 
+//		return print_r($_INPUT,1);
 	}
 
 	
