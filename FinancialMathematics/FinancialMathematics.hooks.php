@@ -5,7 +5,7 @@
  * based on the Charinsert extension
  */
 
-$path = __DIR__ . "/pear" ;
+$path = __DIR__ . "/PEAR" ;
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 
 class FinancialMathematicsHooks {
