@@ -44,7 +44,8 @@ abstract class CT1_Object {
      */
 	public function get_validation($candidate){
 		$v = new Validate();
-		return $v->multiple($candidate, $this->get_valid_options());
+		$ret = $v->multiple($candidate, $this->get_valid_options());
+		return $ret;
 	}
 
     /**
