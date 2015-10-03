@@ -17,6 +17,20 @@ public static function onParserFirstCallInit( Parser $parser ) {
 }
 
 public static function fmRender( $input, array $args, Parser $parser, PPFrame $frame ) {
+//////// TEMP ////// just return args
+	$out = "ARGS " . print_r($args,1);
+$xml=simplexml_load_string($input) or die("Error: Cannot create object");
+
+
+//http://stackoverflow.com/questions/834875/recursive-cast-from-simplexmlobject-to-array
+$x = json_decode(json_encode((array) simplexml_load_string($input)), 1);
+
+
+//$out_in = print_r($xml,1);
+$out_in = htmlentities($xml->asXML());
+//$out_in = print_r($x,1);
+	$out .= "INPUT " . "<pre>" . $out_in . "</pre>";
+	return $out;
 		$m = new CT1_Concept_All();
 		$_out = $m->get_controller($args) ;
 
