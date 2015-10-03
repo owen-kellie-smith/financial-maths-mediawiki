@@ -1,5 +1,5 @@
 <?php
 
-$class_directory = "includes/";
+$class_directory = "FinancialMathematics/includes/";
 $GLOBALS['test_directory'] = "tests/";
 
