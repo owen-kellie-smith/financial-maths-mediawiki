@@ -43,7 +43,10 @@ abstract class CT1_Object {
      * @access public
      */
 	public function get_validation($candidate){
-		return Validate::multiple($candidate, $this->get_valid_options());
+		$v = new Validate();
+		$options =  $this->get_valid_options();
+		$ret = $v->multiple($candidate, $options);
+		return $ret;
 	}
 
     /**

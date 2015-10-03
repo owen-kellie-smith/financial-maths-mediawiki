@@ -1,6 +1,10 @@
 <?php   
 
 $_dir = "/FinancialMathematics";
+$path_to_pear = dirname(__FILE__) . $_dir . PATH_SEPARATOR;
+set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
+$path_to_pear = dirname(__FILE__) . $_dir . '/PEAR/' . PATH_SEPARATOR;
+set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
 $path_to_pear = dirname(__FILE__) . $_dir . '/pear/' . PATH_SEPARATOR;
 set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
 $path_to_pear = dirname(__FILE__) . $_dir . '/pear/HTML/' . PATH_SEPARATOR;
