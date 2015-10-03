@@ -57,7 +57,7 @@ public function get_delta(){
 
 public function set_delta($d){
   $candidate = array('delta'=>$d);
-  $valid = $this->get_validation($candidate);
+  $valid = $this->get_valid_options($candidate);
 	if ($valid['delta']) $this->delta = $d;
 }
 
@@ -67,7 +67,7 @@ public function get_i_effective(){
 
 public function set_i_effective($i){
   $candidate = array('i_effective'=>$i);
-  $valid = $this->get_validation($candidate);
+  $valid = $this->get_valid_options($candidate);
 	if ($valid['i_effective']) $this->set_delta(log(1+$i));
 }
 

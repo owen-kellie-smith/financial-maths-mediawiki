@@ -109,7 +109,7 @@ class CT1_Cashflow extends CT1_Object {
 
     public function set_rate_per_year($n){
         $candidate = array('rate_per_year'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['rate_per_year']){
             $this->rate_per_year = $n;
         }
@@ -117,7 +117,7 @@ class CT1_Cashflow extends CT1_Object {
     
     public function set_effective_time($n){
         $candidate = array('effective_time'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['effective_time']){
             $this->effective_time = $n;
         }

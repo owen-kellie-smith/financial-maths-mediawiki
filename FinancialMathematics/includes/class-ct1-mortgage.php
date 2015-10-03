@@ -49,13 +49,13 @@ public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1, $p
 
 public function set_principal($p){
   $candidate = array('principal'=>$p);
-  $valid = $this->get_validation($candidate);
+  $valid = $this->get_valid_options($candidate);
 	if ($valid['principal']) $this->principal = $p;
 }
 
 public function set_instalment($i){
   $candidate = array('instalment'=>$i);
-  $valid = $this->get_validation($candidate);
+  $valid = $this->get_valid_options($candidate);
 	if ($valid['instalment']) $this->instalment = $i;
 }
 

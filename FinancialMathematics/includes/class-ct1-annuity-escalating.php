@@ -52,7 +52,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 
 	public function set_escalation_delta( $r ){
 		$candidate = array( 'escalation_delta'=>$r );
-		$valid = $this->get_validation( $candidate );
+		$valid = $this->get_valid_options( $candidate );
 		if ( $valid['escalation_delta'] ) $this->escalation_delta = $r;
 	}
 
@@ -62,7 +62,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 
 	public function set_escalation_rate_effective( $r ){
 		$candidate = array( 'escalation_rate_effective'=>$r );
-		$valid = $this->get_validation( $candidate );
+		$valid = $this->get_valid_options( $candidate );
 		if ( $valid['escalation_rate_effective'] ) 
 			$this->set_escalation_delta( log( 1 + $r) );
 	}
@@ -74,7 +74,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	public function set_escalation_frequency( $r ){
 		if ( NULL == $r ) $r=1;
 		$candidate = array( 'escalation_frequency'=>$r );
-		$valid = $this->get_validation( $candidate );
+		$valid = $this->get_valid_options( $candidate );
 		if ( $valid['escalation_frequency'] && $this->is_valid_escalation_frequency( $r ) ) { 
 			if ( $this->is_valid_escalation_frequency( $r ) ) 
 				$this->escalation_frequency = $r;

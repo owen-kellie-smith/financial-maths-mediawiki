@@ -91,7 +91,7 @@ class CT1_Interest_Format extends CT1_Object{
 
 	public function set_m($m){
 	  $candidate = array('m'=>$m);
-	  $valid = $this->get_validation($candidate);
+	  $valid = $this->get_valid_options($candidate);
 		if ($valid['m']) $this->m = $m;
 	}
 

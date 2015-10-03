@@ -55,7 +55,7 @@ class CT1_Par_Yield extends CT1_Object {
 
     public function set_coupon($n){
         $candidate = array('coupon'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['coupon']){
             $this->coupon = $n;
         }
@@ -63,7 +63,7 @@ class CT1_Par_Yield extends CT1_Object {
 
     public function set_term($n){
         $candidate = array('term'=>$n);
-        $valid = $this->get_validation($candidate);
+        $valid = $this->get_valid_options($candidate);
         if ($valid['term']){
             $this->term = $n;
         }
