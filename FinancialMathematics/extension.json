@@ -60,21 +60,11 @@
 		]
 	},
 	"ResourceModules": {
-		"ext.boilerPlate.foo": {
-			"scripts": [
-				"modules/ext.boilerPlate.js",
-				"modules/ext.boilerPlate.foo.js"
-			],
+		"ext.FinancialMathematics": {
 			"styles": [
-				"modules/ext.boilerPlate.foo.css"
-			],
-			"messages": [],
-			"dependencies": []
+				"modules/ext.FinancialMathematics.css"
+			]
 		}
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteExtPath": "examples/BoilerPlate"
 	},
 	"SpecialPages": {
 		"FinancialMathematics": "SpecialFinancialMathematics"

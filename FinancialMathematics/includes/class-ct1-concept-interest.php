@@ -24,17 +24,23 @@ public function get_calculator($parameters){
 }
 
 public function get_controller($_INPUT ){
+  $return=array();
 	if (isset($_INPUT['request'])){
 		if ($this->get_request() == $_INPUT['request']){
-			if ($this->set_interest($_INPUT))
-				return $this->get_solution();
-			else
-				return "<p>" . wfMessage( 'fm-error-interest') . ":<pre>" . print_r($_INPUT,1) .  "</pre>";
+			if ($this->set_interest($_INPUT)){
+				$return['formulae']= $this->get_solution();
+				return $return;
+			}
+			else{
+				$return['warning']=wfMessage( 'fm-error-interest')->text();
+				return $return;
+			}
 		}
 	}
 	else{
 		$render = new CT1_Render();
-		return $render->get_render_form($this->get_calculator(array("delta")));
+		$return['form']=$render->get_render_form($this->get_calculator(array("delta")));
+		return $return;
 	}
 }
 

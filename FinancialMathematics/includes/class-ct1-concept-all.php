@@ -59,28 +59,36 @@ class CT1_Concept_All {
 
 	
 	public function get_controller($_INPUT ){
+	$return['arrayInput']=$_INPUT;
 	try{
 		if (isset($_INPUT['request'])){
 			foreach( $this->concepts AS $c ){
-				if ($c->get_request() == $_INPUT['request'])
-					return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
+				if ($c->get_request() == $_INPUT['request']){
+					$return = array_merge($return, $c->get_controller( $_INPUT ));
+					return $return;
+				}
 			}
 			foreach( $this->concepts AS $c ){
-				if ( in_array( $_INPUT['request'], $c->get_possible_requests() ) )
-					return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
+				if ( in_array( $_INPUT['request'], $c->get_possible_requests() ) ){
+					$return = array_merge($return, $c->get_controller( $_INPUT ));
+					return $return;
+				}
 			}
 		}
 		if (isset($_INPUT['concept'])){
 			if ( isset( $this->concepts[ $_INPUT['concept'] ] ) ){
 				$c = $this->concepts[ $_INPUT['concept'] ];
-				return $c->get_controller( $_INPUT ) . $this->get_parameters($_INPUT);
+					$return = array_merge($return, $c->get_controller( $_INPUT ));
+					return $return;
 			}
 		}
 		$render = new CT1_Render();
-		return $render->get_select_form( $this->get_calculator( NULL ) ) . $this->get_parameters($_INPUT);
+		$return['form']= $render->get_select_form( $this->get_calculator( NULL ) ) ;
+		return $return;
 	}
 	catch( Exception $e ){
-		return $e->getMessage();
+		$return['warning']=$e->getMessage();
+		return $return;
 	}
 }
 

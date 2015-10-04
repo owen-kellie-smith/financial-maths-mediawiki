@@ -33,21 +33,27 @@ public function get_calculator($parameters){
 }
 
 public function get_controller($_INPUT ){
+  $return=array();
 	if (isset($_INPUT['request'])){
 		if ($this->get_request() == $_INPUT['request']){
-			if ($this->set_mortgage($_INPUT))
+			if ($this->set_mortgage($_INPUT)){
 				if (empty( $_INPUT['instalment'] ) ){
-					return $this->get_solution();
+					$return['formulae']= $this->get_solution();
+					return $return;
 				} else {
-					return $this->get_interest_rate();
+					$return['formulae']= $this->get_interest_rate();
+					return $return;
 				}
-			else
-				return "<p>" . wfMessage( 'fm-exception-setting-mortgage')->text() . "<pre>" . print_r($_INPUT,1) .  "</pre>";
+			} else{
+				$return['warning']=wfMessage( 'fm-exception-setting-mortgage')->text();
+				return $return;
+			}
 		}
 	}
 	else{
 		$render = new CT1_Render();
-		return $render->get_render_form($this->get_calculator(array("delta", "value")));
+		$return['form']= $render->get_render_form($this->get_calculator(array("delta", "value")));
+		return $return;
 	}
 }
 
