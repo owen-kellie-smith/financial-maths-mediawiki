@@ -32,6 +32,8 @@ class FinancialMathematicsHooks {
 
 	public static function fmRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 		global 	$wgResourceModules;
+		global 	$wgOut;
+		$wgOut->addModules( 'ext.FinancialMathematics' );
 		$parser->getOutput()->addModules( 'ext.FinancialMathematics' );
 		$xml=simplexml_load_string($input);
 		if (!$xml){
