@@ -37,26 +37,39 @@ class CT1_Concept_Cashflows extends CT1_Form{
 	 * @access public
 	 */
 	public function get_controller($_INPUT ){
-	//echo "<pre> INPUT" . __FILE__ . print_r($_INPUT,1) . "</pre>";
+  $return=array();
 		try{
 			if (isset($_INPUT[ get_class( $this->obj ) ])){
-				if (!$this->set_cashflows( $_INPUT[ get_class( $this->obj ) ] ) ) 
-					return "<p>" . wfMessage( 'fm-error-cashflows')->text()  . ":<pre>" . print_r($_INPUT,1) .  "</pre>";
+				if (!$this->set_cashflows( $_INPUT[ get_class( $this->obj ) ] ) ){ 
+					$return['warning']=wfMessage( 'fm-error-cashflows')->text();
+					return $return;
+				}
 			}
 			if (isset($_INPUT['request'])){
 				if ('add_cashflow' == $_INPUT['request']){
 					$this->add_cashflow_from_input( $_INPUT );
-					return $this->get_solution_no_detail() .  $this->get_val_delete_add()  ;
+					$return['formulae']= $this->get_solution_no_detail();
+					$return['form']= $this->get_val_delete_add()  ;
+				  	return $return;
 				}
 				if ($this->get_request() == $_INPUT['request']){
-					return $this->get_calculated_value( $_INPUT ) . $this->get_val_delete_add()  ;
+					$return['formulae']= $this->get_calculated_value( $_INPUT ) ;
+					$return['form']= $this->get_val_delete_add()  ;
+				  	return $return;
 				}
 			}
-			if (isset($_INPUT[ get_class( $this->obj ) ]))
-				return $this->get_solution_no_detail() .  $this->get_val_delete_add()  ;
-			return $this->get_form_add_cashflow()  ;
+			if (isset($_INPUT[ get_class( $this->obj ) ])){
+				$return['formulae']= $this->get_solution_no_detail();
+				$return['form']= $this->get_val_delete_add()  ;
+			  	return $return;
+			}
+			else{
+				$return['form']= $this->get_form_add_cashflow()   ;
+				  return $return;
+		  	}
 		} catch( Exception $e ){
-			return wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1) ;
+				$return['warning']=wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1);
+			return $return;
 		}
 	}
 

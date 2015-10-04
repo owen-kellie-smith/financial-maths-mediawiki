@@ -37,27 +37,42 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 	 * @access public
 	 */
 	public function get_controller($_INPUT ){
-	//echo "<pre> GET" . __FILE__ . print_r($_INPUT, 1) . "</pre>";
+  	$return=array();
 		try{
 			if (isset($_INPUT[get_class( $this->obj )])){
-				if (!$this->set_spotrates( $_INPUT[ get_class( $this->obj )] ) ) 
-					return "<p>" . wfMessage( 'fm-exception-setting-spot-rates')->text() . "<pre>" . print_r($_INPUT,1) .  "</pre>";
+				if (!$this->set_spotrates( $_INPUT[ get_class( $this->obj )] ) ){ 
+				  $return['warning']=wfMessage( 'fm-exception-setting-spot-rates')->text();
+					return $return;
+			  }
 			}
 			if (isset($_INPUT['request'])){
 				if ('add_spot_rate' == $_INPUT['request']){
 					$this->add_spot_rate_from_input( $_INPUT );
-					return $this->get_solution_no_detail()  . $this->get_delete_add()  ;
+					$return['formulae']= $this->get_solution_no_detail();
+					$return['form']= $this->get_delete_add();
+					return $return;
 				}
-				if ('explain_forward' == $_INPUT['request'] )
-					return $this->get_explanation_forward( $_INPUT ) . $this->get_delete_add()  ;
-				if ( 'explain_par' == $_INPUT['request'] )
-					return $this->get_explanation_par( $_INPUT ) . $this->get_delete_add()  ;
+				if ('explain_forward' == $_INPUT['request'] ){
+					$return['formulae']= $this->get_explanation_forward( $_INPUT );
+					$return['form']= $this->get_delete_add();
+					return $return;
+				}
+				if ( 'explain_par' == $_INPUT['request'] ){
+					$return['formulae']= $this->get_explanation_par( $_INPUT );
+					$return['form']= $this->get_delete_add();
+					return $return;
+				}
 			}
-			if (isset($_INPUT[get_class( $this->obj )]))
-				return $this->get_solution_no_detail()  . $this->get_delete_add()  ;
-			return $this->get_form_add_spot_rate()  ;
+			if (isset($_INPUT[get_class( $this->obj )])){
+					$return['formulae']= $this->get_solution_no_detail();
+					$return['form']= $this->get_delete_add();
+					return $return;
+			}
+			$return['form']= $this->get_form_add_spot_rate();
+			return $return;
 		} catch( Exception $e ){
-			return wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1) ;
+			$return['warning']= wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1);
+			return $return;
 		}
 	}
 

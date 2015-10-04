@@ -27,9 +27,21 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$_restart = '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
 		$out->addHTML( $_restart );
 		$m = new CT1_Concept_All();
-		$out->addHTML( $m->get_controller($_GET) );
+		$result = $m->get_controller($_GET) ;
+		if (isset($result['warning'])){
+			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
+		}else{
+			if (isset($result['formulae'])){
+				$out->addHTML( $result['formulae'] );
+			}
+			if (isset($result['form'])){
+				$out->addHTML( $result['form'] );
+
+			}
+		}
 		// creating object of SimpleXMLElement
 		$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
+/////////////// NEEDS FIX /////////////////////////////////
 		$this->array_to_xml($_GET,$xml_data);
 		$result = print_r("Input for fin-math tag is " . htmlentities($xml_data->asXML()),1);
 		$out->addHTML( $result );

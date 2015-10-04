@@ -16,7 +16,7 @@ public function get_solution(){
 	$render = new CT1_Render();
 	$return = $render->get_render_latex($this->obj->explain_annuity_certain());
 	return $return;
-}
+} 
 	
 public function get_interest_rate(){
 	$render = new CT1_Render();
@@ -32,23 +32,29 @@ public function get_calculator($parameters){
 }
 
 public function get_controller($_INPUT ){
+  $return=array();
 	if (isset($_INPUT['request'])){
 		if ($this->get_request() == $_INPUT['request']){
 			if ($this->set_annuity($_INPUT)){
 				if (empty( $_INPUT['value'] ) ){
-					return $this->get_solution();
+					$return['formulae']= $this->get_solution();
+					return $return;
 				} else {
-					return $this->get_interest_rate();
+					$return['formulae']= $this->get_interest_rate();
+					return $return;
 				}
 			} else {
-				return "<p>".wfMessage( 'fm-exception-setting-annuity')->text().":<pre>" . print_r($_INPUT,1) .  "</pre>";
+				$return['warning']=wfMessage( 'fm-exception-setting-annuity')->text();
+				return $return;
 			}
 		}
 	}
 	else{
 		$render = new CT1_Render();
-		return $render->get_render_form($this->get_calculator(array("delta", "escalation_delta")));
+		$return['form']= $render->get_render_form($this->get_calculator(array("delta", "escalation_delta")));
+    		return $return;
 	}
+  return $return;
 }
 
 public function set_annuity($_INPUT = array()){
