@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Code is at:https://github.com/owen-kellie-smith/financial-maths-mediawiki/
 
-Code is running on MediaWiki 1.25.2 at http://mediawiki-treaties.rhcloud.com/wiki
+A wiki using the extension, running MediaWiki 1.25.2 is at http://mediawiki-treaties.rhcloud.com/wiki .
 
 Practice financial mathematics questions for the actuarial exams. Define and calculate interest rates, annuity certain, mortgage repayment, project valuation, spot/forward/par yields.
 
