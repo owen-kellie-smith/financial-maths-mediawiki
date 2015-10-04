@@ -48,17 +48,19 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 			if (isset($_INPUT['request'])){
 				if ('add_spot_rate' == $_INPUT['request']){
 					$this->add_spot_rate_from_input( $_INPUT );
-					$return['formulae']= $this->get_solution_no_detail();
+					$return['table']= $this->get_solution_no_detail();
 					$return['form']= $this->get_delete_add();
 					return $return;
 				}
 				if ('explain_forward' == $_INPUT['request'] ){
 					$return['formulae']= $this->get_explanation_forward( $_INPUT );
+					$return['table']= $this->get_solution_no_detail();
 					$return['form']= $this->get_delete_add();
 					return $return;
 				}
 				if ( 'explain_par' == $_INPUT['request'] ){
 					$return['formulae']= $this->get_explanation_par( $_INPUT );
+					$return['table']= $this->get_solution_no_detail();
 					$return['form']= $this->get_delete_add();
 					return $return;
 				}
@@ -197,7 +199,8 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 				foreach ( $pys->get_objects() as $p ){
 					if ($p->get_term() == $_INPUT['par_term'] ){
 						$render = new CT1_Render();
-						return $render->get_render_latex( $this->obj->explain_par_yield( $p ) ) . $this->get_solution_no_detail();
+						//return $render->get_render_latex( $this->obj->explain_par_yield( $p ) ) . $this->get_solution_no_detail();
+						return $render->get_render_latex( $this->obj->explain_par_yield( $p ) ) ;
 					}
 				}
 			}
@@ -213,7 +216,8 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 				foreach ( $frs->get_objects() as $f ){
 					if ($f->get_start_time() == $_INPUT['forward_start_time'] && $f->get_end_time() ==  $_INPUT['forward_end_time']){
 						$render = new CT1_Render();
-						return $render->get_render_latex( $this->obj->explain_forward_rate( $f ) ) . $this->get_solution_no_detail();
+						//return $render->get_render_latex( $this->obj->explain_forward_rate( $f ) ) . $this->get_solution_no_detail();
+						return $render->get_render_latex( $this->obj->explain_forward_rate( $f ) ) ;
 					}
 				}
 			}

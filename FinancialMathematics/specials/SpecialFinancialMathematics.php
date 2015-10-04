@@ -34,9 +34,11 @@ class SpecialFinancialMathematics extends SpecialPage {
 			if (isset($result['formulae'])){
 				$out->addHTML( $result['formulae'] );
 			}
+			if (isset($result['table'])){
+				$out->addHTML( $result['table'] );
+			}
 			if (isset($result['form'])){
 				$out->addHTML( $result['form'] );
-
 			}
 		}
 		// creating object of SimpleXMLElement
