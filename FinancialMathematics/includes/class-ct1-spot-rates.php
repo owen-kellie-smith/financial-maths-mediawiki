@@ -80,9 +80,7 @@ protected $explanation_par_yields;
 
 	public function get_forward_rates(){
 		$spot_rates = $this->get_objects();
-//echo "<pre> get_forward_rates " . __FILE__ . print_r( $spot_rates, 1) . "</pre>";
 		$terms = $this->get_sorted_terms();
-//echo "<pre> get_forward_rates terms " . __FILE__ . print_r( $terms, 1) . "</pre>";
 		$fs = new CT1_Forward_Rates();
 		for ($i = 0, $ii = $this->get_count(); $i < $ii; $i++){
 			$end = $terms[ $i ]; 	
