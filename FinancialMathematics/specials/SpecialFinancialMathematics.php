@@ -34,9 +34,11 @@ class SpecialFinancialMathematics extends SpecialPage {
 			if (isset($result['formulae'])){
 				$out->addHTML( $result['formulae'] );
 			}
+			if (isset($result['table'])){
+				$out->addHTML( $result['table'] );
+			}
 			if (isset($result['form'])){
 				$out->addHTML( $result['form'] );
-
 			}
 		}
 		// creating object of SimpleXMLElement
@@ -45,6 +47,8 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$this->array_to_xml($_GET,$xml_data);
 		$result = print_r("Input for fin-math tag is " . htmlentities($xml_data->asXML()),1);
 		$out->addHTML( $result );
+		$input = print_r("Input from $_GET is " . htmlentities(print_r($_GET,1)),1);
+		$out->addHTML( $input );
 
 	}
 
