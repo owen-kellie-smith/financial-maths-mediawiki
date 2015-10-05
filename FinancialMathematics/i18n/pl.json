@@ -3,17 +3,6 @@
 		"authors": []
 	},
 	"fm-restart": "Ponowic kalkulacje",
-	"fm-interest-rate-format": "Interest rate format",
-	"fm-annuity" : "Annuity (escalating or level)", 
-	"fm-mortgage" : "Mortgage (level)",
-	"fm-annuity-increasing" :  "Annuity (increasing or decreasing)", 
-	"fm-multiple-cashflows" : "Multiple cashflows", 
-	"fm-spot-rates" : "Spot rates to forward rates and par yields", 		
-	"fm-get-calculator" : "Get calculator",
-	"fm-select-calculator" : "Select a calculator.",
-	"fm-concept" : "Type",
-	"financialmathematics-desc": "This extension explains some compound interest calculations",
 	"financialmathematics-helloworld": "Kalculator Matematyki finansow",
-	"financialmathematics-helloworld-intro": "",
 	"financialmathematics": "Matematyka finansow"
 }

@@ -85,12 +85,6 @@ class CT1_Cashflow extends CT1_Object {
     }
     
     public function get_value(){
-//echo "<pre>" . __FILE__ . "\r\n";
-//echo "get_rate"  . $this->get_rate_per_year();
-//echo "delta" .  $this->get_annuity()->get_delta();
-//echo "effective-time" .  $this->get_effective_time() ;
-//echo "annuity_value" .  $this->get_annuity()->get_value();
-//echo "</pre>";
         return $this->get_rate_per_year() * exp( -$this->get_annuity()->get_delta() * $this->get_effective_time() ) * $this->get_annuity()->get_value();
     }
 

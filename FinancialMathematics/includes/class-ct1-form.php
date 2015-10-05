@@ -20,7 +20,6 @@ public function get_delete_buttons( $request = ""){
 				if (!method_exists( $this->obj, 'get_clone_this' ))
 					throw new Exception('get_clone_this ' .  															wfMessage( 'fm-error-clone') . get_class( $this->obj ) . wfMessage( 'fm-error-in')  . __FILE__ );
 				$clone = $this->obj->get_clone_this();
-//				$label = $o->get_label() ;
 				$label = "";
 				$clone->remove_object($o);
 				$button = $render->get_form_collection( $clone, wfMessage( 'fm-button-delete') . " " .  $o->get_label() ,'', $request );

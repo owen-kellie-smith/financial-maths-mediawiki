@@ -3,7 +3,7 @@
 //CT1_autoloader('HTML_QuickForm2','HTML/QuickForm2.php');
 //CT1_autoloader('HTML_Table','HTML/Table.php');
 
-define("CT1_maximum_levels_detail", 10);
+define("CT1_MAXIMUM_LEVELS_DETAIL", 10);
 
 /**
  * CT1_Render class
@@ -101,7 +101,7 @@ public function __construct(CT1_Object $obj=null){
 			$output = $this->get_render_latex_sentence( $equation_array );
 			$out .= $output['output'] . $_nl;
 			$count_levels = 1;
-			while ( $count_levels < CT1_maximum_levels_detail && isset( $output['detail'] ) ) {
+			while ( $count_levels < CT1_MAXIMUM_LEVELS_DETAIL && isset( $output['detail'] ) ) {
 				$count_levels++;
 				if ( 0 < count( $output['detail'] ) ){
 					$new_detail = $this->get_a_layer_of_equation_detail( $output, $newline );

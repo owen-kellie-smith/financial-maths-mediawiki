@@ -75,9 +75,7 @@ public function get_instalment($rounding = 2){
 		$return = array();
 		$a_calc = $this->get_clone_this();
 		$val = $this->get_principal() / ( $this->get_m() * $this->get_instalment() ) ;
-// echo "<pre> val" . print_r($val,1) . "</pre>";
 		$this->set_value( $this->get_principal() / ( $this->get_m() * $this->get_instalment() ) );
-// echo "<pre>" . print_r($this->get_values(),1) . "</pre>";
 		$a_calc->set_delta( $this->get_delta_for_value() );
 		$return[0]['left'] = "i";
 		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ Verification:}";

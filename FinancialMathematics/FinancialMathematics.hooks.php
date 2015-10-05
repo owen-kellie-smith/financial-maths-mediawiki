@@ -37,7 +37,7 @@ class FinancialMathematicsHooks {
 		$parser->getOutput()->addModules( 'ext.FinancialMathematics' );
 		$xml=simplexml_load_string($input);
 		if (!$xml){
-			$_out =  "<span class='fin-math-warning'>" . "Error: Cannot create xml from " . print_r($input,1) . "</span>";
+			$_out =  "<span class='fin-math-warning'>" . wfMessage( 'fm-error-xml')->text() . print_r($input,1) . "</span>";
 		}
 		if ($xml){
 			//http://stackoverflow.com/questions/834875/recursive-cast-from-simplexmlobject-to-array
@@ -53,7 +53,7 @@ class FinancialMathematicsHooks {
 			}
 		}
 		if (!isset($_out)){
-				$_out =  "<span class='fin-math-warning'>" . "No output ??? Fix me with wfMessage" . "</span>";
+				$_out =  "<span class='fin-math-warning'>" . wfMessage( 'fm-error-no-output')->text()  . "</span>";
 		}
 		//From https://www.mediawiki.org/wiki/QINU_fix
 		$localParser = new Parser();
