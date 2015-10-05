@@ -380,6 +380,8 @@ public function __construct(CT1_Object $obj=null){
 					$valid_option = array();
 					if (array_key_exists($key,$return['valid_options'])){
 						$valid_option = $return['valid_options'][$key];
+						if ('string'==$valid_option['type']) 
+							$input_type='textarea';
 						if ('number'==$valid_option['type']) 
 							$input_type='text';
 						if ('boolean'==$valid_option['type']) 

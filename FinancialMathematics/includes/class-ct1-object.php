@@ -16,12 +16,20 @@ abstract class CT1_Object {
 
     /**
      * List validation constraints suitable for use with PEAR::Validate
+     * Also effectively used to define the elements of any input forms
      *
      * @return array
      *
      * @access public
      */
-	public function get_valid_options(){ return array(); }
+	public function get_valid_options(){ 
+
+		$r = array();
+		$r['xml'] = array(
+							'type'=>'string',
+						);
+		return $r; 
+	}
 
     /**
      * List defining parameter keys, descriptions, labels of object
@@ -30,7 +38,14 @@ abstract class CT1_Object {
      *
      * @access public
      */
-	public function get_parameters(){ return array(); }
+	public function get_parameters(){ 
+		$r = array();
+		$r['xml'] = array(
+			'name'=>'xml',
+			'label'=>wfMessage( 'fm-label-xml')->text(),
+			);
+		return $r; 
+	}
 
     /**
      * Get validation result (list of parameter keys with boolean values)
