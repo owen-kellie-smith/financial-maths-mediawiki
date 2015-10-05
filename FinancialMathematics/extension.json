@@ -59,6 +59,10 @@
 			"i18n"
 		]
 	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "FinancialMathematics"
+	},
 	"ResourceModules": {
 		"ext.FinancialMathematics": {
 			"styles": [
