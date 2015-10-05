@@ -28,6 +28,7 @@
 	"fm-effective_time":"Effective time after t=0 (in years)",
 	"fm-error-clone" : "method not defined for ",
 	"fm-error-in" : "in",
+  "fm-error-invalid-object":"Object of class $1 can't be added to collection of class $2",
 	"fm-error-interest" : "Error setting interest from",
 	"fm-error-cashflows" : "Error setting cashflows from",
   "fm-error-no-output" : "Error: No output - try changing parameters.",

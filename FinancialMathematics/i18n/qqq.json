@@ -20,6 +20,7 @@
  "fm-effective_time":"fm-effective_time",
  "fm-error-cashflows":"fm-error-cashflows",
  "fm-error-in":"fm-error-in",
+ "fm-error-invalid-object":"fm-error-invalid-object:$1,$2",
  "fm-error-interest":"fm-error-interest",
  "fm-error-no-output" : "fm-error-no-output",
  "fm-error-xml" : "fm-error-xml",
