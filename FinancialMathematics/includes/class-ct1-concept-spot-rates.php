@@ -94,7 +94,6 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 		$form['valid_options'] = $sr->get_valid_options();
 		$form['request'] = 'add_spot_rate';
 		$form['render'] = 'HTML';
-	//	$form['introduction'] = 'Add a spot_rate.';
 		$form['introduction'] = '';
 		$form['submit'] = wfMessage( 'fm-add')->text() ;
 		$form['exclude'] = array();

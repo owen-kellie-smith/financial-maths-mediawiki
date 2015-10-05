@@ -8,8 +8,7 @@ abstract class CT1_Collection extends CT1_Object {
 
 	protected function is_acceptable_class( $c ){
 		return true;
-		// this is an easy test to pass!  
-		// todo - make the test do something useful
+		// this test is over-written by the child classes
 	}
 
 	public function is_in_collection( $candidate ){
