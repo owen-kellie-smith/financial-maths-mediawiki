@@ -23,7 +23,6 @@ protected $explanation_par_yields;
 	}
 
 	private function get_sorted_terms(){
-//echo "<pre> get_sorted_terms " . print_r( $this->get_objects() , 1) . "</pre>";
 		$terms = array_keys( $this->get_objects() );
 		sort( $terms );
 		return $terms;
@@ -31,14 +30,14 @@ protected $explanation_par_yields;
 
 	public function explain_par_yield( CT1_Par_Yield $f ){
 		if ( !$this->get_par_yields()->is_in_collection( $f ) ){
-			throw new Exception( __FILE__ . " Can't explain par yield " . $f . " as it is not in collection." );
+			throw new Exception( __FILE__ . wfMessage( 'fm-error-explain-paryield', $f )->text()  );
 		}
 		return $this->explanation_par_yields[ $f->get_term() ];
 	}
 
 	public function explain_forward_rate( CT1_Forward_Rate $f ){
 		if ( !$this->get_forward_rates()->is_in_collection( $f ) ){
-			throw new Exception( __FILE__ . " Can't explain forward rate " . $f . " as it is not in collection." );
+			throw new Exception( __FILE__ .  wfMessage( 'fm-error-explain-forward', $f )->text()  );
 		}
 		return $this->explanation_forward_rates[ $f->get_end_time() ];
 	}
@@ -138,7 +137,7 @@ protected $explanation_par_yields;
 		// returns sum for discounted value of 1 payable at terms 1, 2, .. $term
 		// provided spot rates exist for terms 1, 2, ... $term
 		if ( $term > $this->maximum_contiguous_term() ){
-			throw new Exception ( __FILE__ . " explain_annuity_value sought for term " . $term . " though maximum_contiguous_term is " . $this->maximum_contiguous_term()  );
+			throw new Exception ( __FILE__ . wfMessage( 'fm-error-explain-annuity-value-term', $term,  $this->maximum_contiguous_term()  )->text()   );
 		}
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
@@ -156,7 +155,7 @@ protected $explanation_par_yields;
 		// returns discounted value of 1 payable at terms 1, 2, .. $term
 		// provided spot rates exist for terms 1, 2, ... $term
 		if ( $term > $this->maximum_contiguous_term() ){
-			throw new Exception ( __FILE__ . " annuity_value sought for term " . $term . " though maximum_contiguous_term is " . $this->maximum_contiguous_term()  );
+			throw new Exception ( __FILE__ . wfMessage( 'fm-error-annuity-value-term', $term,  $this->maximum_contiguous_term()  )->text()  );
 		}
 		$spot_rates = $this->get_objects();
 //echo "<pre>" . __FILE__ . print_r($spot_rates, 1) . "</pre>";
@@ -207,7 +206,7 @@ protected $explanation_par_yields;
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( "Exception in " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( wfMessage( 'fm-exception-in' )->text()  . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 }
