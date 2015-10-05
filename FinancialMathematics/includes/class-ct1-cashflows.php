@@ -23,7 +23,6 @@ class CT1_Cashflows extends CT1_Collection {
 	}
 
 	public function get_delta_for_value( $v = 0 ){
-// echo  "get_delta_for_value called in " . __FILE__ . " " ;
 		$this->set_value( $v );
 		if ( !isset( $this->value ) ){
 			throw new Exception( wfMessage( 'fm-exception-get_delta_for_value')->text()  . __FILE . wfMessage( 'fm-exception-no-value-set')->text()  );
@@ -116,8 +115,6 @@ class CT1_Cashflows extends CT1_Collection {
 	}
 
 	public function set_i_effective( $i ){
-// echo "<pre>" . __FILE__ . "set_i" . $i;
-//print_r($this->get_cashflows());
 		$c_new = array();
 		$c_old = $this->get_cashflows();
 		if (count( $c_old ) > 0 ){
@@ -130,7 +127,6 @@ class CT1_Cashflows extends CT1_Collection {
 			}
 			$this->set_cashflows( $c_new );
 		}
-//print_r($this->get_cashflows());
 	}
 
 		
@@ -246,7 +242,6 @@ class CT1_Cashflows extends CT1_Collection {
 	}
 
 	public function get_cashflows(){
-// echo "\r\n get_cashflows \r\n " . __FILE__ . "\r\n";
 		return $this->get_objects();
 	}
 

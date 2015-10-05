@@ -143,9 +143,6 @@ class CT1_Annuity extends CT1_Interest{
 			$x1 = $x2;
 			$loop_count++;
 			$diff_x = abs( $x0 - $x1 );
-//		echo "\r\n" . $loop_count . "\r\n";
-//		print_r( $g );
-//		echo "\r\n" ;
 		}
 		return $x1;
 	}

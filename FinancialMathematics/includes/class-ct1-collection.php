@@ -8,6 +8,8 @@ abstract class CT1_Collection extends CT1_Object {
 
 	protected function is_acceptable_class( $c ){
 		return true;
+		// this is an easy test to pass!  
+		// todo - make the test do something useful
 	}
 
 	public function is_in_collection( $candidate ){
@@ -62,7 +64,6 @@ abstract class CT1_Collection extends CT1_Object {
 	}
 	
 	public function get_count(){
-//echo "<pre>" .  __FILE__ . " get_count() . " . print_r( $this, 1 ) . "</pre>";
 		return count( $this->get_objects() );
 	}
 
@@ -76,27 +77,24 @@ abstract class CT1_Collection extends CT1_Object {
 
 	public function add_object( CT1_Object $c, $duplicates_allowed = false, $re_sort = false ){
 		if( !$this->is_acceptable_class( $c ) ){
-			throw new Exception( __FILE__ . "Object of class " . get_class( $c ) . " can't be added to collection of class" .  get_class( $this ) );
+			throw new Exception( __FILE__ . wfMessage( 'fm-error-invalid-object', get_class( $c ), get_class( $this ))->text());
 		}
 		if( 0 == $this->get_count() ){
 			$this->class = get_class( $c );
 		}
 		if( get_class( $c ) != $this->class ){
-			throw new Exception( __FILE__ . "Object of class " . get_class( $c ) . " can't be added to collection of objects of class" .  $this->class );
+			throw new Exception( __FILE__ . wfMessage( 'fm-error-invalid-object', get_class( $c ), $this->class )->text()  );
 		}
 		if ( !$duplicates_allowed ) {
 			$this->remove_object( $c );
 		}
 		if ( method_exists( $c, 'get_index' ) ){
-//echo "<pre>" .  __FILE__ . " get_index() . " . print_r( $c->get_index(), 1 ) . "</pre>";
 			$this->objects[ $c->get_index() ] = $c;
-//echo "<pre>" .  __FILE__ . " POST get_index() print objects . " . print_r( $this->objects, 1 ) . "</pre>";
 		} else {
 			$this->objects[] = $c;
 		}
 		if ( $re_sort )
 			$this->sort_objects();
-//echo "<pre>" .  __FILE__ . " add_object objects just before end . " . print_r( $this->objects, 1 ) . "</pre>";
 	}
 
 	public function sort_objects(){
