@@ -21,6 +21,8 @@
  "fm-error-cashflows":"fm-error-cashflows",
  "fm-error-in":"fm-error-in",
  "fm-error-interest":"fm-error-interest",
+ "fm-error-no-output" : "fm-error-no-output",
+ "fm-error-xml" : "fm-error-xml",
  "fm-esc":"fm-esc",
  "fm-escalation-frequency":"fm-escalation-frequency",
  "fm-escalation-rate-effective":"fm-escalation-rate-effective",

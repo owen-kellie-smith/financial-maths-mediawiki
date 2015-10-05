@@ -30,6 +30,8 @@
 	"fm-error-in" : "in",
 	"fm-error-interest" : "Error setting interest from",
 	"fm-error-cashflows" : "Error setting cashflows from",
+  "fm-error-no-output" : "Error: No output - try changing parameters.",
+  "fm-error-xml" : "Error: Try changing XML.  Cannot create xml from ",
 	"fm-escalation-rate-effective" : "Effective annual escalation rate",
 	"fm-escalation-frequency" : "Escalation frequency (number of times per year that escalations are made)",
 	"fm-exception-continous-mortgage-instalments" : "Can't get instalments for continuously paid mortgage",
