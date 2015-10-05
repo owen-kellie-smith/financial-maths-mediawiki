@@ -25,9 +25,6 @@ abstract class CT1_Object {
 	public function get_valid_options(){ 
 
 		$r = array();
-		$r['xml'] = array(
-							'type'=>'string',
-						);
 		return $r; 
 	}
 
@@ -40,10 +37,6 @@ abstract class CT1_Object {
      */
 	public function get_parameters(){ 
 		$r = array();
-		$r['xml'] = array(
-			'name'=>'xml',
-			'label'=>wfMessage( 'fm-label-xml')->text(),
-			);
 		return $r; 
 	}
 

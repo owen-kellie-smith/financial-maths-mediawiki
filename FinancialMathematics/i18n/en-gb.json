@@ -59,6 +59,7 @@
 	"fm-intro-annuity-certain" : "Calculate an annuity certain.  Enter enter a rate of return (to get the value) or enter a value (and get the rate of return).", 
 	"fm-intro-interest" : "Express an annual effective interest rate in an alternative, equivalent form.",
 	"fm-intro-mortgage" : "Calculate  a level mortgage.  Either enter the interest rate (to calculate the amount of each instalment) or enter the instalment amount (to get the effective interest rate).",
+  "fm-intro-xml": "Enter the XML that will go into a tag",
 	"fm-label-advanced" : "Paid in advance",
 	"fm-label-coupon" : "Annual coupon payable",
 	"fm-label_delta" : "Interest rate per year (continuously compounded)",

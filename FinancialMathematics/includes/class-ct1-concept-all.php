@@ -6,6 +6,7 @@ require_once 'class-ct1-concept-annuity-increasing.php';
 require_once 'class-ct1-concept-interest.php';
 require_once 'class-ct1-concept-cashflows.php';
 require_once 'class-ct1-concept-spot-rates.php';
+require_once 'class-ct1-form-xml.php';
 
 /**
  * CT1_Concept_All class
@@ -57,8 +58,14 @@ class CT1_Concept_All {
 //		return print_r($_INPUT,1);
 	}
 
-	
 	public function get_controller($_INPUT ){
+    		$return = $this->get_controller_no_xml($_INPUT );
+		$c = new CT1_Form_XML();
+		$return['xml-form'] = $c->get_controller( $INPUT );
+		return $return;
+	}
+	
+	public function get_controller_no_xml($_INPUT ){
 	$return['arrayInput']=$_INPUT;
 	try{
 		if (isset($_INPUT['request'])){

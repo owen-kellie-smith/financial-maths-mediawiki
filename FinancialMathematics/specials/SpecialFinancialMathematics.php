@@ -40,10 +40,13 @@ class SpecialFinancialMathematics extends SpecialPage {
 			if (isset($result['form'])){
 				$out->addHTML( $result['form'] );
 			}
+			if (isset($result['xml-form']['form'])){
+				$out->addHTML( $result['xml-form']['form'] );
+			}
 		}
 		// creating object of SimpleXMLElement
 		$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
-/////////////// NEEDS FIX /////////////////////////////////
+/////////////// NEEDS FIX Internationalise /////////////////////////////////
 		$this->array_to_xml($_GET,$xml_data);
 		$result = print_r("Input for fin-math tag is " . htmlentities($xml_data->asXML()),1);
 		$out->addHTML( $result );

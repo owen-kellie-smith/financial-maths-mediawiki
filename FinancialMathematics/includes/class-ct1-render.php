@@ -375,7 +375,8 @@ public function __construct(CT1_Object $obj=null){
 		if (count($return['parameters']) > 0){
 			$fieldset = $form->addElement('fieldset');
 			foreach(array_keys($return['parameters']) as $key){
-				if (!in_array($key, $return['exclude'])){
+				if (isset($return['exclude'])){
+				  if (!in_array($key, $return['exclude'])){
 					$parameter = $return['parameters'][$key];
 					$valid_option = array();
 					if (array_key_exists($key,$return['valid_options'])){
@@ -389,19 +390,24 @@ public function __construct(CT1_Object $obj=null){
 					}
 					$value = '';
 					$fieldset->addElement($input_type, $key)->setLabel($parameter['label']);
+				  }
 				}
 			}
 		}
-		if (count($return['hidden']) > 0){
+		if (isset($return['hidden'])){
+		  if (count($return['hidden']) > 0){
 			$fieldset_hidden = $form->addElement('fieldset');
 			foreach(array_keys( $return['hidden']) as $key ){
 				$value = $return['hidden'][$key];
 				$fieldset_hidden->addElement('hidden', $key)->setValue( $value );
 			}
+		  }
 		}
 		// add page_id
 		$fieldset->addElement('hidden', 'request')->setValue($return['request']);
-		$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+		if (isset($_GET['page_id'])){
+			$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+		}
 		$fieldset->addElement('submit', null, array('value' => $return['submit']));
 		$out.= $form;
 		return $out;

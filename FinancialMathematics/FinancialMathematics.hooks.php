@@ -63,7 +63,7 @@ class FinancialMathematicsHooks {
 
 	// http://webcache.googleusercontent.com/search?q=cache:5lwjHlnXAmkJ:jimbojw.com/wiki/index.php%3Ftitle%3DRaw_HTML_Output_from_a_MediaWiki_Parser_Function
 	public static function renderRawHTML( &$parser, $input='' ) {
-    		return array( $input, noparse => true, isHTML => true );
+    		return array( $input, 'noparse' => true, 'isHTML' => true );
 	}
 
 }
