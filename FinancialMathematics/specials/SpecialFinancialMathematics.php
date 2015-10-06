@@ -45,13 +45,20 @@ class SpecialFinancialMathematics extends SpecialPage {
 			}
 		}
 		// creating object of SimpleXMLElement
-		$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
 /////////////// NEEDS FIX Internationalise /////////////////////////////////
+    if (isset($_GET['xml'])){
+    	if (!empty($_GET['xml'])){
+
+			$input = print_r("Input from get-xml is " . htmlentities(print_r($_GET['xml'],1)),1);
+			$out->addHTML( $input );
+		  }
+		}
+		$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
 		$this->array_to_xml($_GET,$xml_data);
 		$result = print_r("Input for fin-math tag is " . htmlentities($xml_data->asXML()),1);
 		$out->addHTML( $result );
-		$input = print_r("Input from $_GET is " . htmlentities(print_r($_GET,1)),1);
-		$out->addHTML( $input );
+//		$input = print_r("Input from $_GET is " . htmlentities(print_r($_GET,1)),1);
+//		$out->addHTML( $input );
 
 	}
 

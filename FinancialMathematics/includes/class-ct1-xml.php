@@ -65,6 +65,7 @@ class CT1_XML extends CT1_Object{
 	}
 
 	public function set_xml($m){
+	$m = urldecode($m);
 		try{ 
 			$xml=simplexml_load_string($m); 
 			if ($xml){
@@ -85,7 +86,7 @@ class CT1_XML extends CT1_Object{
 	}
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
-		try{
+	try{
 			$this->set_xml(	$_INPUT[$pre. 'xml'] );
 			return true;
 		}
