@@ -25,7 +25,7 @@ public function get_interest_rate(){
 }
 
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>wfMessage( 'fm-calculate')->text(), 'introduction' => wfMessage( 'fm-intro-annuity-certain')->text() );
+	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-annuity-certain') );
 	$c = parent::get_calculator($p);
 	$c['values']['value'] = NULL;
 	return $c;
@@ -44,7 +44,7 @@ public function get_controller($_INPUT ){
 					return $return;
 				}
 			} else {
-				$return['warning']=wfMessage( 'fm-exception-setting-annuity')->text();
+				$return['warning']=self::myMessage( 'fm-exception-setting-annuity');
 				return $return;
 			}
 		}

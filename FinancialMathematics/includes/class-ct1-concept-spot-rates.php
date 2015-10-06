@@ -41,7 +41,7 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 		try{
 			if (isset($_INPUT[get_class( $this->obj )])){
 				if (!$this->set_spotrates( $_INPUT[ get_class( $this->obj )] ) ){ 
-				  $return['warning']=wfMessage( 'fm-exception-setting-spot-rates')->text();
+				  $return['warning']=self::myMessage( 'fm-exception-setting-spot-rates');
 					return $return;
 			  }
 			}
@@ -73,7 +73,7 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 			$return['form']= $this->get_form_add_spot_rate();
 			return $return;
 		} catch( Exception $e ){
-			$return['warning']= wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1);
+			$return['warning']= self::myMessage( 'fm-exception-in') . __FILE__ . print_r($e->getMessage(),1);
 			return $return;
 		}
 	}
@@ -95,7 +95,7 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 		$form['request'] = 'add_spot_rate';
 		$form['render'] = 'HTML';
 		$form['introduction'] = '';
-		$form['submit'] = wfMessage( 'fm-add')->text() ;
+		$form['submit'] = self::myMessage( 'fm-add') ;
 		$form['exclude'] = array();
 		$form['values'] = $values;
 		$form['hidden'] = $this->obj->get_values_as_array( get_class($this->obj) );

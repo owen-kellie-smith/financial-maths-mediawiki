@@ -19,7 +19,7 @@ public function get_solution(){
 }
 	
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>wfMessage( 'fm-calculate'), 'introduction' => wfMessage( 'fm-intro-interest'));
+	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-interest'));
 	return parent::get_calculator($p);
 }
 
@@ -32,7 +32,7 @@ public function get_controller($_INPUT ){
 				return $return;
 			}
 			else{
-				$return['warning']=wfMessage( 'fm-error-interest')->text();
+				$return['warning']=self::myMessage( 'fm-error-interest');
 				return $return;
 			}
 		}

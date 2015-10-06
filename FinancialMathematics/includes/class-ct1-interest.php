@@ -30,11 +30,11 @@ public function get_parameters(){
 	$r = parent::get_parameters();
 	$r['delta'] = array(
 			'name'=>'delta',
-			'label'=>wfMessage( 'fm-label_delta')->text() ,
+			'label'=>self::myMessage( 'fm-label_delta') ,
 			);
 	$r['i_effective'] = array(
 			'name'=>'i_effective',
-			'label'=>wfMessage( 'fm-label_i')->text(),
+			'label'=>self::myMessage( 'fm-label_i'),
 			);
 	return $r; 
 }
@@ -124,7 +124,7 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 		}
 	}
 	catch( Exception $e ){ 
-		throw new Exception( wfMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
+		throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
 	}
 }
 

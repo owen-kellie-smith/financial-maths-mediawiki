@@ -13,7 +13,7 @@ public function __construct(CT1_Object $obj=null){
 }
 
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>wfMessage( 'fm-calculate'), 'introduction' => wfMessage( 'fm-intro-xml'));
+	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-xml'));
 	return parent::get_calculator($p);
 }
 

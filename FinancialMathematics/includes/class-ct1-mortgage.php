@@ -21,11 +21,11 @@ public function get_parameters(){
 	$r = parent::get_parameters();
 	$r['principal'] = array(
 			'name'=>'principal',
-			'label'=>wfMessage( 'fm-label_principal')->text(),
+			'label'=>self::myMessage( 'fm-label_principal'),
 			);
 	$r['instalment'] = array(
 			'name'=>'instalment',
-			'label'=>wfMessage( 'fm-label_instalment')->text(),
+			'label'=>self::myMessage( 'fm-label_instalment'),
 			);
 	return $r; 
 }
@@ -85,8 +85,8 @@ public function get_instalment($rounding = 2){
 
 	public function explain_instalment($rounding = 2){
 		$return = array();
-		$return[0]['left'] = "\\mbox{" . wfMessage( 'fm-label_instalment-short')->text()  . " }";
-		$return[0]['right'] = "\\frac{ \\mbox{" . wfMessage( 'fm-label_principal')->text() . "}}{ " . $this->get_m() . "  " . $this->label_annuity() . "} ";
+		$return[0]['left'] = "\\mbox{" . self::myMessage( 'fm-label_instalment-short')  . " }";
+		$return[0]['right'] = "\\frac{ \\mbox{" . self::myMessage( 'fm-label_principal') . "}}{ " . $this->get_m() . "  " . $this->label_annuity() . "} ";
 		$return[1]['right']['summary'] = "\\frac{ " . number_format( $this->get_principal(), $rounding )  . "}{" . $this->get_m() . " \\times " . $this->explain_format( $this->get_annuity_certain()) . "} ";
 		$return[1]['right']['detail'] = $this->explain_annuity_certain();
 		$return[2]['right'] = number_format( $this->get_instalment($rounding), $rounding);
@@ -107,7 +107,7 @@ private function instalment_per_year(){
 }
 
 private function instalment($rounding = 2){
-	if ($this->is_continuous()) throw new Exception(wfMessage( 'fm-exception-continous-mortgage-instalments')->text());
+	if ($this->is_continuous()) throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-instalments'));
 	return round($this->instalment_per_year() / $this->get_m(), $rounding);
 }
 
@@ -116,7 +116,7 @@ private function interest_per_period(){
 }
 
 public function get_mortgage_schedule(){
-	if ($this->is_continuous()) throw new Exception(wfMessage( 'fm-exception-continous-mortgage-schedule')->text());
+	if ($this->is_continuous()) throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-schedule'));
 	$rounding = 2;
  	$_principal = $this->get_principal();
 	$_inst = $this->instalment($rounding);
@@ -148,7 +148,7 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 		else return false;
 	}
 	catch( Exception $e ){ 
-		throw new Exception( wfMessage( 'fm-exception-in')->text() . " " . __FILE__ . ": " . $e->getMessage() );
+		throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
 	}
 }
 

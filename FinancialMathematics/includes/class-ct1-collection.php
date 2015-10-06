@@ -76,13 +76,13 @@ abstract class CT1_Collection extends CT1_Object {
 
 	public function add_object( CT1_Object $c, $duplicates_allowed = false, $re_sort = false ){
 		if( !$this->is_acceptable_class( $c ) ){
-			throw new Exception( __FILE__ . wfMessage( 'fm-error-invalid-object', get_class( $c ), get_class( $this ))->text());
+			throw new Exception( __FILE__ . self::myMessage( 'fm-error-invalid-object', get_class( $c ), get_class( $this )));
 		}
 		if( 0 == $this->get_count() ){
 			$this->class = get_class( $c );
 		}
 		if( get_class( $c ) != $this->class ){
-			throw new Exception( __FILE__ . wfMessage( 'fm-error-invalid-object', get_class( $c ), $this->class )->text()  );
+			throw new Exception( __FILE__ . self::myMessage( 'fm-error-invalid-object', get_class( $c ), $this->class )  );
 		}
 		if ( !$duplicates_allowed ) {
 			$this->remove_object( $c );

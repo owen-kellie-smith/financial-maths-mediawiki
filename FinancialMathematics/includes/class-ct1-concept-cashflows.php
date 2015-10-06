@@ -41,7 +41,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		try{
 			if (isset($_INPUT[ get_class( $this->obj ) ])){
 				if (!$this->set_cashflows( $_INPUT[ get_class( $this->obj ) ] ) ){ 
-					$return['warning']=wfMessage( 'fm-error-cashflows')->text();
+					$return['warning']=self::myMessage( 'fm-error-cashflows');
 					return $return;
 				}
 			}
@@ -68,7 +68,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 				  return $return;
 		  	}
 		} catch( Exception $e ){
-				$return['warning']=wfMessage( 'fm-exception-in')->text() . __FILE__ . print_r($e->getMessage(),1);
+				$return['warning']=self::myMessage( 'fm-exception-in') . __FILE__ . print_r($e->getMessage(),1);
 			return $return;
 		}
 	}
@@ -227,7 +227,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$parameters = array();
 		$parameters['single_payment'] = array(
 			'name'=> 'single_payment',
-			'label' => wfMessage( 'fm-single_payment')->text(),
+			'label' => self::myMessage( 'fm-single_payment'),
 			);
 		$parameters_c = array_merge( $c_e->get_parameters(), $c_i->get_parameters() );
 		$parameters = array_merge( $parameters, $parameters_c );
@@ -236,7 +236,7 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$valid_options['consider_increasing'] = array( 'type' => boolean );
 		$parameters['consider_increasing'] = array(
 			'name'=> 'consider_increasing',
-			'label' => wfMessage( 'fm-consider_increasing')->text(),
+			'label' => self::myMessage( 'fm-consider_increasing'),
 			);
 		foreach ( array('value','delta', 'escalation_delta') as $p ){
 			unset( $parameters[ $p ] );
@@ -249,8 +249,8 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$form['valid_options'] = $valid_options;
 		$form['request'] = 'add_cashflow';
 		$form['render'] = 'HTML';
-		$form['introduction'] = wfMessage( 'fm-add-a-cashflow')->text() ;
-		$form['submit'] = wfMessage( 'fm-add')->text() ;
+		$form['introduction'] = self::myMessage( 'fm-add-a-cashflow') ;
+		$form['submit'] = self::myMessage( 'fm-add') ;
 		$form['exclude'] = array( "i_effective" );
 		$form['values'] = $values;
 		$form['hidden'] = $this->get_hidden_cashflow_fields();
@@ -281,11 +281,11 @@ class CT1_Concept_Cashflows extends CT1_Form{
 	public function get_calculator($parameters){
 		$parameters['i_effective'] = array(
 			'name'=> 'i_effective',
-			'label' => wfMessage( 'fm-label_i_effective')->text(),
+			'label' => self::myMessage( 'fm-label_i_effective'),
 			);
 		$parameters['value'] = array(
 			'name'=> 'value',
-			'label' => wfMessage( 'fm-label_value_total')->text(),
+			'label' => self::myMessage( 'fm-label_value_total'),
 			);
 		$valid_options = array();
 		$valid_options['i_effective'] = array(
@@ -304,8 +304,8 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$form['valid_options'] = $valid_options;
 		$form['request'] = $this->get_request();
 		$form['render'] = 'HTML';
-		$form['introduction'] = wfMessage( 'fm-value-cashflows')->text() ;
-		$form['submit'] = wfMessage( 'fm-calculate')->text();
+		$form['introduction'] = self::myMessage( 'fm-value-cashflows') ;
+		$form['submit'] = self::myMessage( 'fm-calculate');
 		$form['exclude'] = array();
 		$form['values'] = $values;
 		$form['hidden'] = $this->get_hidden_cashflow_fields();

@@ -244,7 +244,7 @@ public function __construct(CT1_Object $obj=null){
 	private function get_render_latex_sentence_detail( $e, &$detail ){
 		$out = "";
 		if ( $this->is_sentence( $e['right']['detail'] ) ) {
-			$out .= " \\mbox{ ".wfMessage( 'fm-by')->text()." \\eqref{eq:" . $this->eqref . "}}";
+			$out .= " \\mbox{ ".self::myMessage( 'fm-by')." \\eqref{eq:" . $this->eqref . "}}";
 			$detail[] = array(
 				'equation' => $e['right']['detail'],
 				'label' => $this->eqref,
@@ -264,7 +264,7 @@ public function __construct(CT1_Object $obj=null){
 				'equation' => $e['right']['detail'][$count_refs-1],
 				'label' => $this->eqref . "." . ($count_refs-1),
 				);
-			$out .= " \\mbox{ ".wfMessage( 'fm-by')->text() ." " . $eqlist . "}";
+			$out .= " \\mbox{ ".self::myMessage( 'fm-by') ." " . $eqlist . "}";
 		}
 		return $out;
 	}
@@ -370,6 +370,7 @@ public function __construct(CT1_Object $obj=null){
 	private function get_form_html( $return ){
 		// returns html based on form parameters in $return
 		$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
+		if (!isset($return['name'])) $return['name']='';
 		$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
 		$form->addDataSource(new HTML_QuickForm2_DataSource_Array( $return['values'] ) );
 		if (count($return['parameters']) > 0){

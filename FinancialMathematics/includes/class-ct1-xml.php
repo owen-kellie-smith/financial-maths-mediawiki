@@ -38,7 +38,7 @@ class CT1_XML extends CT1_Object{
 		$r = parent::get_parameters();
 		$r['xml'] = array(
 			'name'=>'xml',
-			'label'=>wfMessage( 'fm-label-xml')->text(),
+			'label'=>self::myMessage( 'fm-label-xml'),
 			);
 		return $r; 
 	}
@@ -90,7 +90,7 @@ class CT1_XML extends CT1_Object{
 			return true;
 		}
 		catch( Exception $e ){ 
-			throw new Exception( wfMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 

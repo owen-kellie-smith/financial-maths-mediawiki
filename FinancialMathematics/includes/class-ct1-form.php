@@ -9,6 +9,13 @@ abstract class CT1_Form implements CT1_Concept {
 protected $obj;
 protected $request;
 
+protected static function myMessage( $messageKey){
+			$m = $messageKey;
+			if ( function_exists('wfMessage') ){
+				$m=wfMessage( $messageKey)->text();
+			}
+			return $m;
+}
 
 public function get_delete_buttons( $request = ""){
 	$out = "";
@@ -18,19 +25,17 @@ public function get_delete_buttons( $request = ""){
 			$cfs = $this->obj->get_objects();
 			foreach ( $this->obj->get_objects() as $o ) {
 				if (!method_exists( $this->obj, 'get_clone_this' ))
-					throw new Exception('get_clone_this ' .  															wfMessage( 'fm-error-clone') . get_class( $this->obj ) . wfMessage( 'fm-error-in')  . __FILE__ );
+					throw new Exception('get_clone_this ' .  															self::myMessage( 'fm-error-clone') . get_class( $this->obj ) . self::myMessage( 'fm-error-in')  . __FILE__ );
 				$clone = $this->obj->get_clone_this();
 				$label = "";
 				$clone->remove_object($o);
-				$button = $render->get_form_collection( $clone, wfMessage( 'fm-button-delete') . " " .  $o->get_label() ,'', $request );
+				$button = $render->get_form_collection( $clone, self::myMessage( 'fm-button-delete') . " " .  $o->get_label() ,'', $request );
 				$out .= $label . $button;
 			}
 		}
 	}
 	return $out;
 }
-
-
 
 
 public function __construct(CT1_Object $obj){

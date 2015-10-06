@@ -18,15 +18,15 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 		$r = parent::get_parameters();
 		$r['escalation_delta'] = array(
 			'name'=>'escalation_delta',
-			'label'=>wfMessage( 'fm-label-escalation-delta')->text() ,
+			'label'=>self::myMessage( 'fm-label-escalation-delta') ,
 			);
 		$r['escalation_rate_effective'] = array(
 			'name'=>'escalation_rate_effective',
-			'label'=>wfMessage( 'fm-escalation-rate-effective')->text() ,
+			'label'=>self::myMessage( 'fm-escalation-rate-effective') ,
 			);
 		$r['escalation_frequency'] = array(
 			'name'=>'escalation_frequency',
-			'label'=>wfMessage( 'fm-escalation-frequency')->text() ,
+			'label'=>self::myMessage( 'fm-escalation-frequency') ,
 			);
 		return $r; 
 	}
@@ -79,7 +79,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 			if ( $this->is_valid_escalation_frequency( $r ) ) 
 				$this->escalation_frequency = $r;
 		} else {
-			throw new Exception(wfMessage('fm-exception-escalation-frequency')->text()  . "  " . wfMessage( 'fm-attempted-frequency')->text()  . $this->get_m() . "." . wfMessage( 'fm-attempted-escalation-frequency')->text()  . $r . ".");
+			throw new Exception(self::myMessage('fm-exception-escalation-frequency')  . "  " . self::myMessage( 'fm-attempted-frequency')  . $this->get_m() . "." . self::myMessage( 'fm-attempted-escalation-frequency')  . $r . ".");
 		}
 	}
 
@@ -112,8 +112,8 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	}
 
 	private function explain_net_interest_rate(){
-		$return[0]['left'] = "\\mbox{" . wfMessage( 'fm-net-interest-rate')->text()  . " } \\delta";
-		$return[0]['right'] = "\\log \\left( \\frac{1 + \\mbox{ " . wfMessage( 'fm-effective-interest-rate')->text()  .  "}}{ 1 + \\mbox{ " . wfMessage( 'fm-effective-escalation-rate')->text()   . "} } \\right) ";
+		$return[0]['left'] = "\\mbox{" . self::myMessage( 'fm-net-interest-rate')  . " } \\delta";
+		$return[0]['right'] = "\\log \\left( \\frac{1 + \\mbox{ " . self::myMessage( 'fm-effective-interest-rate')  .  "}}{ 1 + \\mbox{ " . self::myMessage( 'fm-effective-escalation-rate')   . "} } \\right) ";
 		$return[1]['right'] = "\\log \\left( \\frac{ " . (1 + $this->get_i_effective()) . "}{ " . (1 + $this->get_escalation_rate_effective()) . " } \\right) ";
 		$return[2]['right'] = $this->explain_format( $this->get_delta_net()  ) ;
 		return $return;
@@ -122,8 +122,8 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	private function explain_annuity_certain_escalation_stepped(){
 		$a_flat = $this->a_flat();
 		$a_inc = $this->a_inc();
-		$sub[0]['left'] = "\\mbox{" . wfMessage( 'fm-annuity-value')->text()  . "}";
-		$sub[0]['right'] = $a_flat->label_annuity() . " (i_{" . wfMessage( 'fm-gross')->text()   . "})" . " \\times  m_{" . wfMessage( 'fm-esc')->text()   . "} \\times " . $a_inc->label_annuity() . "(\\delta_{" . wfMessage( 'fm-net')->text()  . "})";
+		$sub[0]['left'] = "\\mbox{" . self::myMessage( 'fm-annuity-value')  . "}";
+		$sub[0]['right'] = $a_flat->label_annuity() . " (i_{" . self::myMessage( 'fm-gross')   . "})" . " \\times  m_{" . self::myMessage( 'fm-esc')   . "} \\times " . $a_inc->label_annuity() . "(\\delta_{" . self::myMessage( 'fm-net')  . "})";
 		$sub[1]['right']['summary'] = $this->explain_format( $a_flat->get_annuity_certain() ) . " \\times " . $this->get_escalation_frequency() . " \\times " . $this->explain_format( $a_inc->get_annuity_certain() );
 		$sub[2]['right'] = $this->explain_format( $this->get_annuity_certain() );
 		$sub[1]['right']['detail'][] = $a_flat->explain_annuity_certain();
@@ -137,12 +137,12 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 			return array_merge( $this->explain_net_interest_rate(), $a->explain_annuity_certain() );
 		} else {
 			// deflate by implied escalation to first payment
-			$del_esc[0]['left'] = "\\delta_{\mbox{" . wfMessage( 'fm-esc')->text()  . "}}";
-			$del_esc[0]['right'] = "\\log \\left( 1 + \\mbox{ " . wfMessage( 'fm-effective-escalation-rate')->text()  . "} \\right)";
+			$del_esc[0]['left'] = "\\delta_{\mbox{" . self::myMessage( 'fm-esc')  . "}}";
+			$del_esc[0]['right'] = "\\log \\left( 1 + \\mbox{ " . self::myMessage( 'fm-effective-escalation-rate')  . "} \\right)";
 			$del_esc[1]['right'] = "\\log \\left( " . (1 + $this->get_escalation_rate_effective() ) . " \\right)";
 			$del_esc[2]['right'] = $this->explain_format( $this->get_escalation_delta() );
-			$sub[0]['left'] = "\\mbox{" . wfMessage( 'fm-annuity-value')->text()   . "}";
-			$sub[0]['right']['summary'] = "\\exp \\left( - \\delta_{\mbox{" . wfMessage( 'fm-esc')->text()   . "}} / m \\right) \\times " . $this->label_annuity();
+			$sub[0]['left'] = "\\mbox{" . self::myMessage( 'fm-annuity-value')   . "}";
+			$sub[0]['right']['summary'] = "\\exp \\left( - \\delta_{\mbox{" . self::myMessage( 'fm-esc')   . "}} / m \\right) \\times " . $this->label_annuity();
 			$sub[1]['right']['summary'] = "\\exp \\left( - " . $this->explain_format( $this->get_escalation_delta() ) . " / " . $this->get_m() . " \\right) \\times " . $this->explain_format( $a->get_annuity_certain() );
 			$sub[0]['right']['detail'][] = $del_esc;
 			$sub[1]['right']['detail'][] = $a->explain_annuity_certain();
@@ -215,7 +215,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( wfMessage( 'fm-exception-in')->text()  . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in')  . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 

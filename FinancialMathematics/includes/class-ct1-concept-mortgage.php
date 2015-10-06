@@ -26,7 +26,7 @@ public function get_interest_rate(){
 
 	
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>wfMessage( 'fm-calculate')->text(), 'introduction' => wfMessage( 'fm-intro-mortgage')->text() );
+	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-mortgage') );
 	$c = parent::get_calculator($p);
 	$c['values']['instalment'] = NULL;
 	return $c;
@@ -45,7 +45,7 @@ public function get_controller($_INPUT ){
 					return $return;
 				}
 			} else{
-				$return['warning']=wfMessage( 'fm-exception-setting-mortgage')->text();
+				$return['warning']=self::myMessage( 'fm-exception-setting-mortgage');
 				return $return;
 			}
 		}

@@ -25,11 +25,11 @@ class CT1_Annuity extends CT1_Interest{
 		$r = parent::get_parameters();
 		$r['term'] = array(
 			'name'=>'term',
-			'label'=>wfMessage( 'fm-label_term')->text(),
+			'label'=>self::myMessage( 'fm-label_term'),
 			);
 		$r['value'] = array(
 			'name'=>'value',
-			'label'=>wfMessage( 'fm-label_value')->text(),
+			'label'=>self::myMessage( 'fm-label_value'),
 			);
 		return $r; 
 	}
@@ -53,7 +53,7 @@ class CT1_Annuity extends CT1_Interest{
 			if ( $this->is_valid_term_vs_frequency( $n ) ){ 
 				$this->term = $n;
 			} else {
-				throw new Exception(wfMessage( 'fm-exception-term-frequency')->text()  . wfMessage( 'fm-attempted-frequency')->text() . $this->get_m() . "." . wfMessage( 'fm-attempted-term')->text() . $n . ".");
+				throw new Exception(self::myMessage( 'fm-exception-term-frequency')  . self::myMessage( 'fm-attempted-frequency') . $this->get_m() . "." . self::myMessage( 'fm-attempted-term') . $n . ".");
 			}
 		}
 	}
@@ -171,7 +171,7 @@ class CT1_Annuity extends CT1_Interest{
 		$return[0]['left'] = "i";
 //		$return[0]['right']['summary'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1);
 //		$return[0]['right']['detail'] = $a_calc->explain_annuity_certain();
-		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ "  . wfMessage( 'fm-verification')->text() . ":}";
+		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ "  . self::myMessage( 'fm-verification') . ":}";
 		return array_merge( $return, $a_calc->explain_annuity_certain() );
 	}
 
@@ -209,7 +209,7 @@ class CT1_Annuity extends CT1_Interest{
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( wfMessage( 'fm-exception-in')->text() .  __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in') .  __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 

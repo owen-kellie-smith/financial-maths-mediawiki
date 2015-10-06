@@ -45,7 +45,7 @@ class CT1_Cashflow extends CT1_Object {
 			return false;
 		}
 	 } catch( Exception $e ){ 
-		throw new Exception( wfMessage( 'fm-exception-in')->text() . __FILE__ . ": " . $e->getMessage() );
+		throw new Exception( self::myMessage( 'fm-exception-in') . __FILE__ . ": " . $e->getMessage() );
 	 }
 	}
 
@@ -66,11 +66,11 @@ class CT1_Cashflow extends CT1_Object {
         $r = array();
         $r['rate_per_year'] = array(
             'name'=>'rate_per_year',
-            'label'=>wfMessage( 'fm-rate_per_year')->text(),
+            'label'=>self::myMessage( 'fm-rate_per_year'),
             );
         $r['effective_time'] = array(
             'name'=>'effective_time',
-            'label'=>wfMessage( 'fm-effective_time')->text(),
+            'label'=>self::myMessage( 'fm-effective_time'),
             );
         $r = array_merge( $r, $this->annuity->get_parameters() );
         return $r; 

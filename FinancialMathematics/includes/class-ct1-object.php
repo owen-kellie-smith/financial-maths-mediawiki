@@ -72,6 +72,14 @@ abstract class CT1_Object {
      * @access public
      */
 	public function get_labels(){ return array(); }
+
+	protected static function myMessage( $messageKey){
+			$m = $messageKey;
+			if ( function_exists('wfMessage') ){
+				$m=wfMessage( $messageKey)->text();
+			}
+			return $m;
+}
 					
 } // end of class
 

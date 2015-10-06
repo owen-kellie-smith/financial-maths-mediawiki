@@ -30,14 +30,14 @@ protected $explanation_par_yields;
 
 	public function explain_par_yield( CT1_Par_Yield $f ){
 		if ( !$this->get_par_yields()->is_in_collection( $f ) ){
-			throw new Exception( __FILE__ . wfMessage( 'fm-error-explain-paryield', $f )->text()  );
+			throw new Exception( __FILE__ . self::myMessage( 'fm-error-explain-paryield', $f )  );
 		}
 		return $this->explanation_par_yields[ $f->get_term() ];
 	}
 
 	public function explain_forward_rate( CT1_Forward_Rate $f ){
 		if ( !$this->get_forward_rates()->is_in_collection( $f ) ){
-			throw new Exception( __FILE__ .  wfMessage( 'fm-error-explain-forward', $f )->text()  );
+			throw new Exception( __FILE__ .  self::myMessage( 'fm-error-explain-forward', $f )  );
 		}
 		return $this->explanation_forward_rates[ $f->get_end_time() ];
 	}
@@ -137,7 +137,7 @@ protected $explanation_par_yields;
 		// returns sum for discounted value of 1 payable at terms 1, 2, .. $term
 		// provided spot rates exist for terms 1, 2, ... $term
 		if ( $term > $this->maximum_contiguous_term() ){
-			throw new Exception ( __FILE__ . wfMessage( 'fm-error-explain-annuity-value-term', $term,  $this->maximum_contiguous_term()  )->text()   );
+			throw new Exception ( __FILE__ . self::myMessage( 'fm-error-explain-annuity-value-term', $term,  $this->maximum_contiguous_term()  )   );
 		}
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
@@ -155,7 +155,7 @@ protected $explanation_par_yields;
 		// returns discounted value of 1 payable at terms 1, 2, .. $term
 		// provided spot rates exist for terms 1, 2, ... $term
 		if ( $term > $this->maximum_contiguous_term() ){
-			throw new Exception ( __FILE__ . wfMessage( 'fm-error-annuity-value-term', $term,  $this->maximum_contiguous_term()  )->text()  );
+			throw new Exception ( __FILE__ . self::myMessage( 'fm-error-annuity-value-term', $term,  $this->maximum_contiguous_term()  )  );
 		}
 		$spot_rates = $this->get_objects();
 //echo "<pre>" . __FILE__ . print_r($spot_rates, 1) . "</pre>";
@@ -206,7 +206,7 @@ protected $explanation_par_yields;
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( wfMessage( 'fm-exception-in' )->text()  . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in' )  . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 }

@@ -25,7 +25,7 @@ class CT1_Cashflows extends CT1_Collection {
 	public function get_delta_for_value( $v = 0 ){
 		$this->set_value( $v );
 		if ( !isset( $this->value ) ){
-			throw new Exception( wfMessage( 'fm-exception-get_delta_for_value')->text()  . __FILE . wfMessage( 'fm-exception-no-value-set')->text()  );
+			throw new Exception( self::myMessage( 'fm-exception-get_delta_for_value')  . __FILE . self::myMessage( 'fm-exception-no-value-set')  );
 		} else {
 			return $this->get_interpolated_delta_for_value();
 		}
@@ -38,7 +38,7 @@ class CT1_Cashflows extends CT1_Collection {
 		$delta = $this->get_delta_for_value( $v );
 		$a_calc->set_delta( $delta );
 		$return[0]['left'] = "i";
-		$return[0]['right'] = $i->explain_format( exp( $delta ) - 1) . "." . "\\ \\mbox{ ".wfMessage( 'fm-verification')->text().":}";
+		$return[0]['right'] = $i->explain_format( exp( $delta ) - 1) . "." . "\\ \\mbox{ ".self::myMessage( 'fm-verification').":}";
 		return array_merge( $return, $a_calc->explain_discounted_value( $with_detail ) );
 	}
 
@@ -85,7 +85,7 @@ class CT1_Cashflows extends CT1_Collection {
 			$loop_count++;
 		}
 		if ( $loop_count >= $max_loop ) 
-			throw new Exception (wfMessage( 'fm-exception-max-iterations-exceeded')->text()  . $this->get_value() . ". " .  wfMessage( 'fm-exception-query-cashflows-possible')->text()  );
+			throw new Exception (self::myMessage( 'fm-exception-max-iterations-exceeded')  . $this->get_value() . ". " .  self::myMessage( 'fm-exception-query-cashflows-possible')  );
 		return $x1;
 	}
 		
@@ -163,7 +163,7 @@ class CT1_Cashflows extends CT1_Collection {
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( wfMessage( 'fm-exception-in')->text() . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in') . __FILE__ . ": " . $e->getMessage() );
 		}
 	}
 
@@ -199,7 +199,7 @@ class CT1_Cashflows extends CT1_Collection {
 
 	public function explain_discounted_value( $with_detail = true ){
 		$return = array();
-		$return[0]['left'] = "\\mbox{".wfMessage( 'fm-value')->text() ."}";
+		$return[0]['left'] = "\\mbox{".self::myMessage( 'fm-value') ."}";
 		$return[0]['right'] = $this->get_label();
 		$top_line = "";
 		$sub_top = array();

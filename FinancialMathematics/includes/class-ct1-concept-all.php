@@ -18,6 +18,16 @@ class CT1_Concept_All {
 
 	private $concepts;
 
+  private $messages;
+
+  private static function myMessage( $messageKey){
+			$m = $messageKey;
+			if ( function_exists('wfMessage') ){
+				$m=wfMessage( $messageKey)->text();
+			}
+			return $m;
+	}
+
 	public function __construct(CT1_Object $obj=null){
 		$this->set_concepts();
 	}
@@ -35,21 +45,21 @@ class CT1_Concept_All {
 
 	private function get_concept_labels(){
 		return array( 
-				'concept_interest'=>wfMessage( 'fm-interest-rate-format')->text(),
-				'concept_annuity'=>wfMessage( 'fm-annuity')->text(), 
-				'concept_mortgage'=>wfMessage( 'fm-mortgage')->text(), 
-				'concept_annuity_increasing'=> wfMessage( 'fm-annuity-increasing')->text(), 
-				'concept_cashflows'=> wfMessage( 'fm-multiple-cashflows')->text(), 
-				'concept_spot_rates'=> wfMessage( 'fm-spot-rates')->text(), 
+				'concept_interest'=>self::myMessage( 'fm-interest-rate-format'),
+				'concept_annuity'=>self::myMessage(  'fm-annuity'), 
+				'concept_mortgage'=>self::myMessage( 'fm-mortgage'), 
+				'concept_annuity_increasing'=> self::myMessage(  'fm-annuity-increasing'), 
+				'concept_cashflows'=> self::myMessage(  'fm-multiple-cashflows'), 
+				'concept_spot_rates'=> self::myMessage(  'fm-spot-rates'), 
 				 );
 	}
 
 
 	public function get_calculator( $unused ){
-		$p = array('method'=> 'GET', 'submit'=>wfMessage( 'fm-get-calculator')->text(), 'introduction' => wfMessage( 'fm-select-calculator')->text());
+		$p = array('method'=> 'GET', 'submit'=>self::myMessage(  'fm-get-calculator') , self::myMessage(  'fm-select-calculator'));
 		$p['select-options'] = $this->get_concept_labels() ;
 		$p['select-name'] = 'concept';
-		$p['select-label'] = wfMessage( 'fm-select-calculator-label')->text();
+		$p['select-label'] = self::myMessage(  'fm-select-calculator');
 		return $p;
 	}
 
@@ -61,7 +71,7 @@ class CT1_Concept_All {
 	public function get_controller($_INPUT ){
     		$return = $this->get_controller_no_xml($_INPUT );
 		$c = new CT1_Form_XML();
-		$return['xml-form'] = $c->get_controller( $INPUT );
+		$return['xml-form'] = $c->get_controller( $_INPUT );
 		return $return;
 	}
 	
