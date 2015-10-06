@@ -168,6 +168,14 @@ public function __construct(CT1_Object $obj=null){
 		$out.= $form;
 		return $out;
 	}
+
+	protected static function myMessage( $messageKey){
+			$m = $messageKey;
+			if ( function_exists('wfMessage') ){
+				$m=wfMessage( $messageKey)->text();
+			}
+			return $m;
+  }
 			
 	/**
 	 * Get rendering of one latex sentence and return an array of its details
