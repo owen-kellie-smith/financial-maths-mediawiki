@@ -16,8 +16,6 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 		$a = array();
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller($a);
-	  $this->assertArrayHasKey( 'xml-form', $c) ;
-	  $this->assertArrayHasKey( 'form', $c['xml-form']) ;
 	  $this->assertFalse( isset($c['form']) ) ;
   }  
 
@@ -34,5 +32,12 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['form']) ) ;
   }  
 
+  public function test_full_input()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
+	  $this->assertTrue( isset($c['formulae']) ) ;
+	  $this->assertTrue( isset($c['xml-form']) ) ;
+  }  
 
 }
