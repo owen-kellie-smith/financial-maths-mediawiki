@@ -69,9 +69,11 @@ class CT1_Concept_All {
 	}
 
 	public function get_controller($_INPUT ){
-    		$return = $this->get_controller_no_xml($_INPUT );
-		$c = new CT1_Form_XML();
-		$return['xml-form'] = $c->get_controller( $_INPUT );
+    $return = $this->get_controller_no_xml($_INPUT );
+		if (isset($return['formulae'])){
+			$c = new CT1_Form_XML();
+			$return['xml-form'] = $c->get_controller( $_INPUT );
+		}
 		return $return;
 	}
 	

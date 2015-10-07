@@ -16,8 +16,6 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 		$a = array();
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller($a);
-	  $this->assertArrayHasKey( 'xml-form', $c) ;
-	  $this->assertArrayHasKey( 'form', $c['xml-form']) ;
 	  $this->assertFalse( isset($c['form']) ) ;
   }  
 
@@ -34,5 +32,22 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['form']) ) ;
   }  
 
+  public function test_full_input()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
+	  $this->assertTrue( isset($c['formulae']) ) ;
+	  $this->assertTrue( isset($c['xml-form']) ) ;
+	  $this->assertTrue( isset($c['xml-form']['form']) ) ;
+  }  
+
+  public function test_full_input_XML()
+  {
+	  $x = new CT1_Form_XML();
+		$x->set_text( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
+		$c = $x->get_calculator( array());
+		$expected="\n<parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters>\n";
+		$this->assertEquals( $expected, $c['values']['xml'] ) ;
+  }  
 
 }

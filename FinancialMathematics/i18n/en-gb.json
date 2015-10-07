@@ -81,7 +81,7 @@
 	"fm-label-term-whole":"(Whole) number of years term",
 	"fm-label_value" : "Present value",
 	"fm-label_value_total" : "Total present (discounted) value (leave blank if you want the value for a particular rate of return)",
-  "fm-label-xml":"(Overriding) XML (parameters for tag)",
+  "fm-label-xml":"Parameters for tag",
 	"fm-mortgage" : "Mortgage (level)",
 	"fm-multiple-cashflows" : "Multiple cashflows", 
 	"fm-net": "net", 

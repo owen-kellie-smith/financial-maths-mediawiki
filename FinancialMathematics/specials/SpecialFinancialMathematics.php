@@ -44,31 +44,6 @@ class SpecialFinancialMathematics extends SpecialPage {
 				$out->addHTML( $result['xml-form']['form'] );
 			}
 		}
-		// creating object of SimpleXMLElement
-		$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
-/////////////// NEEDS FIX Internationalise /////////////////////////////////
-		$this->array_to_xml($_GET,$xml_data);
-		$result = print_r("Input for fin-math tag is " . htmlentities($xml_data->asXML()),1);
-		$out->addHTML( $result );
-		$input = print_r("Input from $_GET is " . htmlentities(print_r($_GET,1)),1);
-		$out->addHTML( $input );
-
-	}
-
-	// http://stackoverflow.com/questions/1397036/how-to-convert-array-to-simplexml
-	// function defination to convert array to xml
-	private function array_to_xml( $data, &$xml_data ) {
-    foreach( $data as $key => $value ) {
-        if( is_array($value) ) {
-            if( is_numeric($key) ){
-                $key = 'item'.$key; //dealing with <0/>..<n/> issues
-            }
-            $subnode = $xml_data->addChild($key);
-            $this->array_to_xml($value, $subnode);
-        } else {
-            $xml_data->addChild("$key",htmlspecialchars("$value"));
-        }
-     }
 	}
 
 	protected function getGroupName() {

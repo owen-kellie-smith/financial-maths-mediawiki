@@ -94,6 +94,7 @@ public function __construct(CT1_Object $obj=null){
 	 */
 	public function get_render_latex( $equation_array, $newline=false ){
 	// would be better if this were just recursive but I don't know how
+		$_nl="";
 		if ($newline) $_nl="\r\n ";
 		if (count($equation_array) > 0 ) {
 			$out  = $this->get_mathjax_header() .  $_nl;
@@ -187,6 +188,7 @@ public function __construct(CT1_Object $obj=null){
 	 * @access private
 	 */
 	private function get_render_latex_sentence( $equation_array, &$label = '', $newline=false ){
+		$_nl="";
 		if ($newline) $_nl="\r\n ";
 		$out = "";
 		$detail = array();
@@ -287,6 +289,7 @@ public function __construct(CT1_Object $obj=null){
 	 */
 	private function get_a_layer_of_equation_detail( $output, $newline=false ){
 	// $sub_count is redundant?
+	$_nl="";
 	if ($newline) $_nl="\r\n ";
 		$out = '';
 		$ret_out = array();
