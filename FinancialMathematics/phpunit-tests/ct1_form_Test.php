@@ -46,8 +46,8 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Form_XML();
 		$x->set_text( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="<parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters>";
-		$this->assertEquals( $c['values']['xml'],$expected ) ;
+		$expected="\n<parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters>\n";
+		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
 }

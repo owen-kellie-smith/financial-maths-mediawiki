@@ -13,7 +13,8 @@ public function __construct(CT1_Object $obj=null){
 }
 
 public function get_calculator($parameters){
-	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-xml'));
+//	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-xml'));
+	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), ); // intro is  superfluous
 	return parent::get_calculator($p);
 }
 
@@ -37,13 +38,18 @@ public function set_text($_INPUT = array()){
 		if (empty($xml)){
 			$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
 			$this->array_to_xml($_INPUT,$xml_data);
-			$xml=  $xml_data->asXML();
-		}
-	$a = array();
-	$a['xml'] = $xml;
-	$this->set_received_input($a);
-	$this->obj->set_from_input($a);
-	return ($this->obj->set_from_input($a));
+			$xml=  (string)$xml_data->asXML();
+			// http://php.net/manual/en/function.preg-replace.php
+			$string = $xml;
+			$pattern = '/(.?)<\?xml version="1.0"\?>(.*)/i';
+			$replacement = '${1}$2';
+			$xml = preg_replace($pattern, $replacement, $string);
+	  }
+		$a = array();
+		$a['xml'] = $xml;
+		$this->set_received_input($a);
+		$this->obj->set_from_input($a);
+		return ($this->obj->set_from_input($a));
 }
 
 // http://stackoverflow.com/questions/1397036/how-to-convert-array-to-simplexml
