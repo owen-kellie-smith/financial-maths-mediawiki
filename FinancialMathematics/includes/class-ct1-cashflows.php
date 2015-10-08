@@ -7,6 +7,12 @@ class CT1_Cashflows extends CT1_Collection {
 	private $value;
 	protected $max_dp = 2;
 
+	public function get_valid_options(){ 
+		$r = parent::get_valid_options();
+		$r['CT1_Cashflows'] = array();
+		return $r; 
+	}
+
 	public function unset_value(){
 		unset( $this->value );
 	}
