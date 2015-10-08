@@ -35,8 +35,18 @@ public function get_calculator($parameters){
 }
 
 public function get_controller( $_INPUT ){
+//echo __FILE__ . "\r\n";
   $return=array();
 	$unused=array();
+	if (isset($_INPUT['request'])){
+		if ($this->get_request() == $_INPUT['request']){
+			$x = json_decode(json_encode((array) simplexml_load_string(urldecode($_INPUT['xml']))), 1);
+//echo "x " . print_r($x,1) . "\r\n";
+			$m = new CT1_Concept_All();
+			$return = $m->get_controller($x['parameters']) ;
+//			$return['formulae']='Something from the XML';
+		}
+	}
 	if ($this->set_text($_INPUT)){
 		$render = new CT1_Render();
 		$return['form']= $render->get_render_form( $this->get_calculator( $unused ) );
