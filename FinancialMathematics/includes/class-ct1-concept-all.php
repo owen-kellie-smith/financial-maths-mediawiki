@@ -14,33 +14,14 @@ require_once 'class-ct1-form-xml.php';
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class CT1_Concept_All {
+class CT1_Concept_All extends CT1_Form{
 
 	private $concepts;
 
   private $messages;
 
-  private static function myMessage( $messageKey){
-			$m = $messageKey;
-			if ( function_exists('wfMessage') ){
-				$m=wfMessage( $messageKey)->text();
-			}
-			return $m;
-	}
-
 	public function __construct(CT1_Object $obj=null){
 //		$this->set_concepts();
-	}
-
-	private function candidate_concepts(){
-		return array( 
-				new CT1_Concept_Interest(),
-				new CT1_Concept_Annuity(), 
-				new CT1_Concept_Mortgage(), 
-				new CT1_Concept_Annuity_Increasing(), 
-				new CT1_Concept_Cashflows(),
-				new CT1_Concept_Spot_Rates(),
-				 );
 	}
 
 	private function get_concept_labels(){
@@ -50,7 +31,6 @@ class CT1_Concept_All {
 		}
 		return $return;
 	}
-
 
 	public function get_calculator( $unused ){
 		$p = array('method'=> 'GET', 'submit'=>self::myMessage(  'fm-get-calculator') , self::myMessage(  'fm-select-calculator'));

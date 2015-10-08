@@ -17,6 +17,18 @@ protected static function myMessage( $messageKey){
 			return $m;
 }
 
+	protected function candidate_concepts(){
+		return array( 
+				new CT1_Concept_Interest(),
+				new CT1_Concept_Annuity(), 
+				new CT1_Concept_Mortgage(), 
+				new CT1_Concept_Annuity_Increasing(), 
+				new CT1_Concept_Cashflows(),
+				new CT1_Concept_Spot_Rates(),
+				 );
+	}
+
+
 public function get_delete_buttons( $request = ""){
 	$out = "";
 	if ( $this->obj instanceof CT1_Collection ){
@@ -44,6 +56,10 @@ public function __construct(CT1_Object $obj){
 
 public function set_obj(CT1_Object $obj){
 	$this->obj = $obj;
+}
+
+public function get_obj(){
+	return $this->obj;
 }
 
 public function get_solution(){
