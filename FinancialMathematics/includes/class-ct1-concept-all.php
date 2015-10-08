@@ -1,9 +1,9 @@
 <?php
 
-require_once 'class-ct1-concept-mortgage.php';
-require_once 'class-ct1-concept-annuity.php';
-require_once 'class-ct1-concept-annuity-increasing.php';
 require_once 'class-ct1-concept-interest.php';
+require_once 'class-ct1-concept-annuity.php';
+require_once 'class-ct1-concept-mortgage.php';
+require_once 'class-ct1-concept-annuity-increasing.php';
 require_once 'class-ct1-concept-cashflows.php';
 require_once 'class-ct1-concept-spot-rates.php';
 require_once 'class-ct1-form-xml.php';
@@ -79,7 +79,7 @@ class CT1_Concept_All {
 	try{
 		foreach( $this->candidate_concepts() AS $c ){
 				if (isset($_INPUT['request'])){
-					if ($c->get_request() == $_INPUT['request']){
+					if ($c->get_request() == $_INPUT['request'] ){
 						$return = array_merge($return, $c->get_controller( $_INPUT ));
 						return $return;
 					}
