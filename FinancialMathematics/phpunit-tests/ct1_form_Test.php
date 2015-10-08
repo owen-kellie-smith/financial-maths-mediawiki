@@ -58,7 +58,7 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Form_XML();
 		$x->set_text( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="\n<dummy_tag><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag>\n";
+		$expected="\n<dummy_tag_set_in_CT1_Form_XML><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag_set_in_CT1_Form_XML>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
@@ -67,7 +67,7 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Form_XML();
 		$x->set_text( array( 'title'=>'a page title', 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="\n<dummy_tag><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag>\n";
+		$expected="\n<dummy_tag_set_in_CT1_Form_XML><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag_set_in_CT1_Form_XML>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
@@ -76,8 +76,16 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Form_XML();
 		$x->set_text( array( 'request'=>'value_cashflows',  'CT1_Cashflows'=>array('item0'=>array('m'=>1, 'advance'=>1, 'delta'=>0, 'i_effective'=>0, 'term'=>1,'value'=>1, 'rate_per_year'=>999,'effective_time'=>1) ) ) );
 		$c = $x->get_calculator( array());
-		$expected="\n<dummy_tag><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>999</rate_per_year><effective_time>1</effective_time></item0></CT1_Cashflows></parameters></dummy_tag>\n";
+		$expected="\n<dummy_tag_set_in_CT1_Form_XML><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>999</rate_per_year><effective_time>1</effective_time></item0></CT1_Cashflows></parameters></dummy_tag_set_in_CT1_Form_XML>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
+  public function test_full_xmlinput_formuae()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>'<fin-math><parameters><request>get_interest<%2Frequest><m>1<%2Fm><i_effective>0<%2Fi_effective><%2Fparameters><%2Ffin-math>%0D%0A' ));
+	  $this->assertTrue( isset($c['formulae']) ) ;
+  }  
+
 }
+

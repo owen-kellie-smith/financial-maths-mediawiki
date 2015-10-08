@@ -25,6 +25,7 @@ protected static function myMessage( $messageKey){
 				new CT1_Concept_Annuity_Increasing(), 
 				new CT1_Concept_Cashflows(),
 				new CT1_Concept_Spot_Rates(),
+				new CT1_Form_XML(),
 				 );
 	}
 

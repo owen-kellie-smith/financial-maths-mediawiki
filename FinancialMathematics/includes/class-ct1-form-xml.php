@@ -7,11 +7,17 @@ require_once 'class-ct1-render.php';
 class CT1_Form_XML extends CT1_Form{
 
 private $referred_obj;
-private $tag_name="dummy_tag";
+private $tag_name="dummy_tag_set_in_CT1_Form_XML";
 
 public function getTagName(){
 		return $this->tag_name;
 }
+
+public function get_concept_label(){
+	return array(
+				'concept_annuity'=>self::myMessage(  'fm-label-xml'), 
+ );
+} 
 
 public function setTagName( $s ){
 		$this->tag_name = $s;
@@ -46,6 +52,8 @@ public function set_text($_INPUT = array()){
 			}
 		}
 		if (empty($xml)){
+//echo __FILE__ . "\r\n";
+//echo "getTagName" . print_r($this->getTagName(),1) . "\r\n";
 			$xml_data = new SimpleXMLElement('<?xml version="1.0"?><' . $this->getTagName() . '></'. $this->getTagName() . '>');
 // fin-math hard coded.  Should be from hooks.
 			$this->array_to_xml( array('parameters'=>$this->get_filtered_input($_INPUT)),$xml_data);
@@ -57,7 +65,11 @@ public function set_text($_INPUT = array()){
 			$xml = preg_replace($pattern, $replacement, $string);
 	  }
 		$a = array();
-		$a['xml'] = $xml;
+//echo __FILE__ . "\r\n";
+//echo "xml" . print_r($xml,1) . "\r\n";
+
+		$a['xml'] = html_entity_decode(urldecode($xml));
+//echo "html_decod" . print_r($a,1) . "\r\n";
 		$this->set_received_input($a);
 		$this->obj->set_from_input($a);
 		return ($this->obj->set_from_input($a));
