@@ -5,6 +5,10 @@
  *
  */
 
+$path = dirname(dirname(__FILE__)) ;
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+require_once "FinancialMathematics.hooks.php";
+
 
 $path = dirname(dirname(__FILE__)) . "/PEAR";
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
@@ -27,6 +31,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$_restart = '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
 		$out->addHTML( $_restart );
 		$m = new CT1_Concept_All();
+		$m->setTagName( FinancialMathematicsHooks::getTagName() );
 		$result = $m->get_controller($_GET) ;
 		if (isset($result['warning'])){
 			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");

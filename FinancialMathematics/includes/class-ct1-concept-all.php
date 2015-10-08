@@ -20,6 +20,17 @@ class CT1_Concept_All extends CT1_Form{
 
   private $messages;
 
+  private $tag_name="dummy_tag_set_in_ct1_concept_all";
+
+  public function getTagName(){
+		return $this->tag_name;
+  }
+
+  public function setTagName( $s ){
+		$this->tag_name = $s;
+  }
+
+
 	public function __construct(CT1_Object $obj=null){
 //		$this->set_concepts();
 	}
@@ -49,6 +60,7 @@ class CT1_Concept_All extends CT1_Form{
     $return = $this->get_controller_no_xml($_INPUT );
 		if (isset($return['formulae'])){
 			$c = new CT1_Form_XML();
+			$c->setTagName( $this->getTagName() );
 			$return['xml-form'] = $c->get_controller( $_INPUT );
 		}
 		return $return;

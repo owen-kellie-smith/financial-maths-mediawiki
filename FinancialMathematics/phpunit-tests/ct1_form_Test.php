@@ -71,4 +71,13 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
+  public function test_input_XML_cashflows()
+  {
+	  $x = new CT1_Form_XML();
+		$x->set_text( array( 'request'=>'value_cashflows',  'CT1_Cashflows'=>array('m'=>1, 'advance'=>1, 'delta'=>0, 'i_effective'=>0, 'term'=>1,'value'=>1, 'rate_per_year'=>999,'effective_time'=>1,'cashflow_value'=>99) ) );
+		$c = $x->get_calculator( array());
+		$expected="\n<dummy_tag><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>999</rate_per_year><effective_time>1</effective_time></item0></CT1_Cashflows></parameters></dummy_tag>\n";
+		$this->assertEquals( $expected, $c['values']['xml'] ) ;
+  }  
+
 }
