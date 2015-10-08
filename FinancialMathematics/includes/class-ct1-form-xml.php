@@ -7,6 +7,15 @@ require_once 'class-ct1-render.php';
 class CT1_Form_XML extends CT1_Form{
 
 private $referred_obj;
+private $tag_name="dummy_tag";
+
+public function getTagName(){
+		return $this->tag_name;
+}
+
+public function setTagName( $s ){
+		$this->tag_name = $s;
+}
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj) $obj = new CT1_XML();
@@ -37,8 +46,9 @@ public function set_text($_INPUT = array()){
 			}
 		}
 		if (empty($xml)){
-			$xml_data = new SimpleXMLElement('<?xml version="1.0"?><parameters></parameters>');
-			$this->array_to_xml($this->get_filtered_input($_INPUT),$xml_data);
+			$xml_data = new SimpleXMLElement('<?xml version="1.0"?><' . $this->getTagName() . '></'. $this->getTagName() . '>');
+// fin-math hard coded.  Should be from hooks.
+			$this->array_to_xml( array('parameters'=>$this->get_filtered_input($_INPUT)),$xml_data);
 			$xml=  (string)$xml_data->asXML();
 			// http://php.net/manual/en/function.preg-replace.php
 			$string = $xml;

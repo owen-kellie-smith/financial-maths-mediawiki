@@ -58,7 +58,7 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Form_XML();
 		$x->set_text( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="\n<parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters>\n";
+		$expected="\n<dummy_tag><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
@@ -67,7 +67,7 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Form_XML();
 		$x->set_text( array( 'title'=>'a page title', 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="\n<parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters>\n";
+		$expected="\n<dummy_tag><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
