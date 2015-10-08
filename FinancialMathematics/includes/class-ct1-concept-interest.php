@@ -12,6 +12,12 @@ public function __construct(CT1_Object $obj=null){
 	$this->set_request( 'get_interest' );
 }
 
+public function get_concept_label(){
+	return array(	
+				'concept_interest'=>self::myMessage( 'fm-interest-rate-format'),
+ );
+} 
+
 public function get_solution(){
 	$render = new CT1_Render();
 	$return = $render->get_render_latex( $this->obj->explain_rate_in_form( $this->obj ) );

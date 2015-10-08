@@ -28,6 +28,12 @@ class CT1_Concept_Cashflows extends CT1_Form{
 		$this->set_request( 'get_cashflows' );
 	}
 
+public function get_concept_label(){
+	return array(	
+				'concept_cashflows'=> self::myMessage(  'fm-multiple-cashflows'), 
+ );
+} 
+
 	/**
 	 * Get string to render as HTML after new page GET request
 	 *
