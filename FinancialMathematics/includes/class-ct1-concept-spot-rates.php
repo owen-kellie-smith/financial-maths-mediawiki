@@ -28,6 +28,13 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 		$this->set_request( 'get_spotrates' );
 	}
 
+public function get_concept_label(){
+	return array(	
+				'concept_spot_rates'=> self::myMessage(  'fm-spot-rates'), 
+ );
+} 
+
+
 	/**
 	 * Get string to render as HTML after new page GET request
 	 *

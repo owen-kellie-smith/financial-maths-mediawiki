@@ -12,6 +12,12 @@ public function __construct(CT1_Object $obj=null){
 	$this->set_request( 'get_annuity_increasing' );
 }
 
+public function get_concept_label(){
+	return array(	
+				'concept_annuity_increasing'=> self::myMessage(  'fm-annuity-increasing'), 
+ );
+} 
+
 } // end of class
 
 
