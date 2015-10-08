@@ -29,17 +29,17 @@ class CT1_Concept_All {
 	}
 
 	public function __construct(CT1_Object $obj=null){
-		$this->set_concepts();
+//		$this->set_concepts();
 	}
 
-	private function set_concepts(){
-		$this->concepts = array( 
-				'concept_annuity'=>new CT1_Concept_Annuity(), 
-				'concept_mortgage'=>new CT1_Concept_Mortgage(), 
-				'concept_annuity_increasing'=>new CT1_Concept_Annuity_Increasing(), 
-				'concept_interest'=>new CT1_Concept_Interest(),
-				'concept_cashflows'=>new CT1_Concept_Cashflows(),
-				'concept_spot_rates'=>new CT1_Concept_Spot_Rates(),
+	private function candidate_concepts(){
+		return array( 
+				new CT1_Concept_Annuity(), 
+				new CT1_Concept_Annuity_Increasing(), 
+				new CT1_Concept_Cashflows(),
+				new CT1_Concept_Interest(),
+				new CT1_Concept_Mortgage(), 
+				new CT1_Concept_Spot_Rates(),
 				 );
 	}
 
@@ -80,27 +80,24 @@ class CT1_Concept_All {
 	public function get_controller_no_xml($_INPUT ){
 	$return['arrayInput']=$_INPUT;
 	try{
-		if (isset($_INPUT['request'])){
-			foreach( $this->concepts AS $c ){
-				if ($c->get_request() == $_INPUT['request']){
-					$return = array_merge($return, $c->get_controller( $_INPUT ));
-					return $return;
+		foreach( $this->candidate_concepts() AS $c ){
+				if (isset($_INPUT['request'])){
+					if ($c->get_request() == $_INPUT['request']){
+						$return = array_merge($return, $c->get_controller( $_INPUT ));
+						return $return;
+					}
+					if ( in_array( $_INPUT['request'], $c->get_possible_requests() ) ){
+						$return = array_merge($return, $c->get_controller( $_INPUT ));
+						return $return;
+					}
+				} // if (isset($_INPUT['request']))
+				if (isset($_INPUT['concept'])){
+					if ( isset( $c->get_concept_label()[ $_INPUT['concept'] ] ) ){
+						$return = array_merge($return, $c->get_controller( $_INPUT ));
+						return $return;
+					}
 				}
-			}
-			foreach( $this->concepts AS $c ){
-				if ( in_array( $_INPUT['request'], $c->get_possible_requests() ) ){
-					$return = array_merge($return, $c->get_controller( $_INPUT ));
-					return $return;
-				}
-			}
-		}
-		if (isset($_INPUT['concept'])){
-			if ( isset( $this->concepts[ $_INPUT['concept'] ] ) ){
-				$c = $this->concepts[ $_INPUT['concept'] ];
-					$return = array_merge($return, $c->get_controller( $_INPUT ));
-					return $return;
-			}
-		}
+			} //foreach( $this->candidate_concepts() AS $c )
 		$render = new CT1_Render();
 		$return['form']= $render->get_select_form( $this->get_calculator( NULL ) ) ;
 		return $return;

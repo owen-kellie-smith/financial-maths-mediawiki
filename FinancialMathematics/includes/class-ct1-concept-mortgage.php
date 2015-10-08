@@ -14,7 +14,7 @@ public function __construct(CT1_Object $obj=null){
 
 public function get_concept_label(){
 	return array(	
-				'concept_annuity'=>self::myMessage(  'fm-annuity'), 
+		'concept_mortgage'=>self::myMessage( 'fm-mortgage'),
  );
 } 
 
