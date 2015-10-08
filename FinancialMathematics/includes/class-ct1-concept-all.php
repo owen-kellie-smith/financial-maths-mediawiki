@@ -81,7 +81,8 @@ class CT1_Concept_All extends CT1_Form{
 					}
 				} // if (isset($_INPUT['request']))
 				if (isset($_INPUT['concept'])){
-					if ( isset( $c->get_concept_label()[ $_INPUT['concept'] ] ) ){
+					$temp = $c->get_concept_label();
+					if ( isset( $temp[ $_INPUT['concept'] ] ) ){
 						$return = array_merge($return, $c->get_controller( $_INPUT ));
 						return $return;
 					}
