@@ -34,24 +34,21 @@ class CT1_Concept_All {
 
 	private function candidate_concepts(){
 		return array( 
+				new CT1_Concept_Interest(),
 				new CT1_Concept_Annuity(), 
+				new CT1_Concept_Mortgage(), 
 				new CT1_Concept_Annuity_Increasing(), 
 				new CT1_Concept_Cashflows(),
-				new CT1_Concept_Interest(),
-				new CT1_Concept_Mortgage(), 
 				new CT1_Concept_Spot_Rates(),
 				 );
 	}
 
 	private function get_concept_labels(){
-		return array( 
-				'concept_interest'=>self::myMessage( 'fm-interest-rate-format'),
-				'concept_annuity'=>self::myMessage(  'fm-annuity'), 
-				'concept_mortgage'=>self::myMessage( 'fm-mortgage'), 
-				'concept_annuity_increasing'=> self::myMessage(  'fm-annuity-increasing'), 
-				'concept_cashflows'=> self::myMessage(  'fm-multiple-cashflows'), 
-				'concept_spot_rates'=> self::myMessage(  'fm-spot-rates'), 
-				 );
+		$return = array();
+		foreach( $this->candidate_concepts() AS $c ){
+				$return = array_merge($return, $c->get_concept_label());
+		}
+		return $return;
 	}
 
 
