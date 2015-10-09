@@ -45,8 +45,9 @@ public function get_concept_label(){
 	public function get_controller($_INPUT ){
   $return=array();
 		try{
-			if (isset($_INPUT[ get_class( $this->obj ) ])){
-				if (!$this->set_cashflows( $_INPUT[ get_class( $this->obj ) ] ) ){ 
+			$tempClass = get_class( $this->obj ) ;
+			if (isset($_INPUT[ $tempClass ])){
+				if (!$this->set_cashflows( $_INPUT[ $tempClass ] ) ){ 
 					$return['warning']=self::myMessage( 'fm-error-cashflows');
 					return $return;
 				}
@@ -64,7 +65,7 @@ public function get_concept_label(){
 				  	return $return;
 				}
 			}
-			if (isset($_INPUT[ get_class( $this->obj ) ])){
+			if (isset($_INPUT[ $tempClass ])){
 				$return['formulae']= $this->get_solution_no_detail();
 				$return['form']= $this->get_val_delete_add()  ;
 			  	return $return;
