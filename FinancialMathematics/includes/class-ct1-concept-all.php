@@ -58,11 +58,13 @@ class CT1_Concept_All extends CT1_Form{
 
 	public function get_controller($_INPUT ){
     $return = $this->get_controller_no_xml($_INPUT );
+echo __FILE__ . " get_controller return " . print_r($return,1);
 		if (isset($return['formulae'])){
 			$c = new CT1_Form_XML();
 			$c->setTagName( $this->getTagName() );
 			$return['xml-form'] = $c->get_controller( $_INPUT );
 		}
+echo __FILE__ . " get_controller return " . print_r($return,1);
 		return $return;
 	}
 	

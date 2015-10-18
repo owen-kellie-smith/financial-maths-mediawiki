@@ -17,6 +17,7 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller($a);
 	  $this->assertFalse( isset($c['form']) ) ;
+die();
   }  
 
   public function test_concepts()
