@@ -157,6 +157,7 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_select_form( $return ){
+echo __FILE__ . " get_select_form " . print_r($return,1) ;
 		if ( !isset($return['method'])){
 			throw new Exception( __FILE__ . ' get_select_form with method not set ');
 		}
