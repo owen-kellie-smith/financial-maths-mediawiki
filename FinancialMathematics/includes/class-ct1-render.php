@@ -157,9 +157,12 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_select_form( $return ){
+//echo __FILE__ . " get_select_form return " . print_r($return,1);
+/*
 		if ( !isset($return['page_id'])){
 			throw new Exception( __FILE__ . ' get_select_form with page_id not set ');
 		}
+*/
 		if ( !empty( $return['introduction'] ) )
 			$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
 		foreach (array('name','method','action','select-name','select-label','select-options','submit') as $key){
