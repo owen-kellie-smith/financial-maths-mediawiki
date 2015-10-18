@@ -14,14 +14,16 @@ class CT1_XML_Test extends PHPUnit_Framework_TestCase
   public function test_valid_input()
   {
 	  $x = new CT1_XML("<parameters><something>A thing</something></parameters>");
-		$this->assertEquals( $x->get_values()['xml'],"<parameters><something>A thing</something></parameters>" );
+		$temp = $x->get_values();
+		$this->assertEquals( $temp['xml'],"<parameters><something>A thing</something></parameters>" );
   }  
 
   public function test_invalid_overwrite()
   {
 	  $x = new CT1_XML("<parameters><something>A thing</something></parameters>");
 	  $x->set_xml("some junk");
-		$this->assertEquals( $x->get_values()['xml'],"<parameters><something>A thing</something></parameters>" );
+		$temp = $x->get_values();
+		$this->assertEquals( $temp['xml'],"<parameters><something>A thing</something></parameters>" );
   }
 
   public function test_valid_overwrite()
@@ -29,7 +31,8 @@ class CT1_XML_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_XML("<parameters><something>A thing</something></parameters>");
 	  $x->set_xml("some junk");
 	  $x->set_xml("<parameters><something>Something else</something></parameters>");
-		$this->assertEquals( $x->get_values()['xml'],"<parameters><something>Something else</something></parameters>" );
+		$temp = $x->get_values();
+		$this->assertEquals( $temp['xml'],"<parameters><something>Something else</something></parameters>" );
 
   }  
 
