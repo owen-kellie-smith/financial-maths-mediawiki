@@ -157,6 +157,9 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_select_form( $return ){
+		if ( !isset($return['method'])){
+			throw new Exception( __FILE__ . ' get_select_form with method not set ');
+		}
 		if ( !empty( $return['introduction'] ) )
 			$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
 		foreach (array('name','method','action','select-name','select-label','select-options','submit') as $key){
