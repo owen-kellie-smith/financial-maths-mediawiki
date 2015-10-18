@@ -159,14 +159,21 @@ public function __construct(CT1_Object $obj=null){
 	public function get_select_form( $return ){
 		if ( !empty( $return['introduction'] ) )
 			$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
-		$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
-		$fieldset = $form->addElement('fieldset');
-		$calculator = $fieldset->addSelect( $return['select-name'] )
+		foreach (array('name','method','action','select-name','select-label','select-options','submit') as $key){
+			$temp[$key]='';
+			if ( isset( $return[$key] ) ){
+				$temp[$key] = $return[$key];
+			}
+		}
+		$return = $temp;
+			$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
+			$fieldset = $form->addElement('fieldset');
+			$calculator = $fieldset->addSelect( $return['select-name'] )
 				->setLabel( $return['select-label'] )
 				->loadOptions( $return['select-options']);
-		$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
-		$fieldset->addElement('submit', null, array('value' => $return['submit']));
-		$out.= $form;
+			$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+			$fieldset->addElement('submit', null, array('value' => $return['submit']));
+			$out.= $form;
 		return $out;
 	}
 
