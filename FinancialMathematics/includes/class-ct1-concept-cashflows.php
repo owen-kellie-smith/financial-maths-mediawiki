@@ -56,17 +56,24 @@ public function get_concept_label(){
 				if ('add_cashflow' == $_INPUT['request']){
 					$this->add_cashflow_from_input( $_INPUT );
 					$return['formulae']= $this->get_solution_no_detail();
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
 					$return['form']= $this->get_val_delete_add()  ;
-				  	return $return;
+					$return['output']['unrendered']['forms'][] = array(
+						'content'=> $this->get_calculator(array("delta", "escalation_delta")),
+						'type' =>  '',
+					);
+				  return $return;
 				}
 				if ($this->get_request() == $_INPUT['request']){
 					$return['formulae']= $this->get_calculated_value( $_INPUT ) ;
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_calculated_value( $_INPUT );
 					$return['form']= $this->get_val_delete_add()  ;
 				  	return $return;
 				}
 			}
 			if (isset($_INPUT[ $tempClass ])){
 				$return['formulae']= $this->get_solution_no_detail();
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
 				$return['form']= $this->get_val_delete_add()  ;
 			  	return $return;
 			}
@@ -97,6 +104,14 @@ public function get_concept_label(){
 		}
 	}
 
+	private function get_unrendered_calculated_value( $_INPUT ){
+		if ( $this->ignore_value( $_INPUT ) ){
+			if (isset( $_INPUT['i_effective'] ) )
+				return $this->get_unrendered_solution( (float)$_INPUT['i_effective'] ); 
+		} else {
+			return $this->get_unrendered_interest_rate_for_value( (float)$_INPUT['value'] );
+		}
+	}
 
 	/**
 	 * Get string to render all the inputs forms (new valuation, add / delete cashflows)
@@ -107,6 +122,14 @@ public function get_concept_label(){
 	 */
 	private function get_val_delete_add(){
 		return  $this->get_form_valuation() . $this->get_delete_buttons() .  $this->get_form_add_cashflow()  ;
+	}
+
+	private function get_unrendered_val_delete_add(){
+		return array( 
+			$this->get_unrendered_form_valuation(),
+			$this->get_unrendered_delete_buttons(),
+			$this->get_unrendered_form_add_cashflow(),
+		);			 
 	}
 
 	/**
@@ -150,12 +173,16 @@ public function get_concept_label(){
 	 * @access public
 	 */
 	public function get_solution( $new_i_effective = 0 ){
-		$this->obj->set_i_effective( $new_i_effective );	
 		$render = new CT1_Render();
-		$return = $render->get_render_latex($this->obj->explain_discounted_value());
+		$return = $render->get_render_latex($this->get_unrendered_solution($new_i_effective));
 		return $return;
 	}
 
+
+	private function get_unrendered_solution( $new_i_effective = 0 ){
+		$this->obj->set_i_effective( $new_i_effective );	
+		return $this->obj->explain_discounted_value();
+	}
 
 	/**
 	 * Get delete buttons (forms which contain as hidden fields the undeleted cashflows)
@@ -168,6 +195,9 @@ public function get_concept_label(){
 		return parent::get_delete_buttons('view_cashflows');
 	}
 	
+	public function get_unrendered_delete_buttons(){
+		return parent::get_unrendered_delete_buttons('view_cashflows');
+	}
 
 	/**
 	 * Get explanation of interest rate that satisfies sought net present value
@@ -179,8 +209,12 @@ public function get_concept_label(){
 	 */
 	private function get_interest_rate_for_value( $v = 0 ){
 		$render = new CT1_Render();
-		$return = $render->get_render_latex($this->obj->explain_interest_rate_for_value( $v ));
+		$return = $render->get_render_latex($this->get_unrendered_interest_rate_for_value( $v ));
 		return $return;
+	}
+
+	private function get_unrendered_interest_rate_for_value( $v = 0 ){
+		return $this->obj->explain_interest_rate_for_value( $v );
 	}
 
 	/**
@@ -211,6 +245,13 @@ public function get_concept_label(){
 		return $render->get_render_form( $this->get_add_cashflow() );
 	}
 	
+	private function get_unrendered_form_add_cashflow(){
+		return array(
+			'content'=>$this->get_add_cashflow(),
+			'type'=>'',
+		);
+	}
+
 
 	/**
 	 * Get array of parameters for existing cashflows
@@ -281,6 +322,13 @@ public function get_concept_label(){
 		return $render->get_render_form( $calc );
 	}
 
+
+	private function get_unrendered_form_valuation(){
+		 return array(
+			'content'=> $this->get_calculator( $unused ),
+			'type'=>  ''
+		);
+	}
 
 	/**
 	 * Get array of parameters for form to value cashflows (get value or ineterst rate satisfying value)

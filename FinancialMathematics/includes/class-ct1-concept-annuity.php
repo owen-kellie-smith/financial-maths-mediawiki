@@ -68,8 +68,10 @@ public function get_controller($_INPUT ){
 	else{
 		$render = new CT1_Render();
 		$return['form']= $render->get_render_form($this->get_calculator(array("delta", "escalation_delta")));
-		$return['output']['unrendered']['form']['content']=  $this->get_calculator(array("delta", "escalation_delta"))  ;
-		$return['output']['unrendered']['form']['type']=  '';
+		$return['output']['unrendered']['forms'][] = array(
+			'content'=>  $this->get_calculator(array("delta", "escalation_delta")),
+			'type'=>  ''
+		);
     return $return;
 	}
   return $return;

@@ -68,7 +68,7 @@ class CT1_Concept_All extends CT1_Form{
 				$return['output']['unrendered']['xml-form'] = $temp['output']['unrendered'];
 			}
 		}
-echo __FILE__ . " get_controller return " . print_r($return,1);
+//echo __FILE__ . " get_controller return " . print_r($return,1);
 		return $return;
 	}
 	
@@ -96,8 +96,10 @@ echo __FILE__ . " get_controller return " . print_r($return,1);
 			} //foreach( $this->candidate_concepts() AS $c )
 		$render = new CT1_Render();
 		$return['form']= $render->get_select_form( $this->get_calculator( NULL ) ) ;
-		$return['output']['unrendered']['form']['content']=  $this->get_calculator( NULL )  ;
-		$return['output']['unrendered']['form']['type']=  'select';
+		$return['output']['unrendered']['forms'][] = array(
+			'content'=> $this->get_calculator( NULL ),
+			'type'=>  'select'
+		);
 		return $return;
 	}
 	catch( Exception $e ){
@@ -107,4 +109,3 @@ echo __FILE__ . " get_controller return " . print_r($return,1);
 }
 
 } // end of class
-
