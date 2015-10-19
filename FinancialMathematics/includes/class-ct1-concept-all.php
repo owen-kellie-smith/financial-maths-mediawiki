@@ -62,9 +62,13 @@ class CT1_Concept_All extends CT1_Form{
 		if (isset($return['formulae'])){
 			$c = new CT1_Form_XML();
 			$c->setTagName( $this->getTagName() );
+			$temp = $c->get_controller( $_INPUT );
 			$return['xml-form'] = $c->get_controller( $_INPUT );
+		  if (isset($temp['output']['unrendered'])){
+				$return['output']['unrendered']['xml-form'] = $temp['output']['unrendered'];
+			}
 		}
-//echo __FILE__ . " get_controller return " . print_r($return,1);
+echo __FILE__ . " get_controller return " . print_r($return,1);
 		return $return;
 	}
 	
@@ -92,6 +96,8 @@ class CT1_Concept_All extends CT1_Form{
 			} //foreach( $this->candidate_concepts() AS $c )
 		$render = new CT1_Render();
 		$return['form']= $render->get_select_form( $this->get_calculator( NULL ) ) ;
+		$return['output']['unrendered']['form']['content']=  $this->get_calculator( NULL )  ;
+		$return['output']['unrendered']['form']['type']=  'select';
 		return $return;
 	}
 	catch( Exception $e ){

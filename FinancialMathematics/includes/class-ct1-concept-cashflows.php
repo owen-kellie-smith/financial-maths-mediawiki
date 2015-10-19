@@ -133,8 +133,12 @@ public function get_concept_label(){
 	 */
 	private function get_solution_no_detail(){
 		$render = new CT1_Render();
-		$return = $render->get_render_latex($this->obj->explain_discounted_value(false));
+		$return = $render->get_render_latex($this->get_unrendered_solution_no_detail());
 		return $return;
+	}
+
+	private function get_unrendered_solution_no_detail(){
+		return $this->obj->explain_discounted_value(false);
 	}
 
 	/**
