@@ -58,16 +58,14 @@ public function get_concept_label(){
 					$return['formulae']= $this->get_solution_no_detail();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
 					$return['form']= $this->get_val_delete_add()  ;
-					$return['output']['unrendered']['forms'][] = array(
-						'content'=> $this->get_calculator(array("delta", "escalation_delta")),
-						'type' =>  '',
-					);
+					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  return $return;
 				}
 				if ($this->get_request() == $_INPUT['request']){
 					$return['formulae']= $this->get_calculated_value( $_INPUT ) ;
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_calculated_value( $_INPUT );
 					$return['form']= $this->get_val_delete_add()  ;
+					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  	return $return;
 				}
 			}
@@ -75,10 +73,12 @@ public function get_concept_label(){
 				$return['formulae']= $this->get_solution_no_detail();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
 				$return['form']= $this->get_val_delete_add()  ;
+				$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 			  	return $return;
 			}
 			else{
 				$return['form']= $this->get_form_add_cashflow()   ;
+				$return['output']['unrendered']['forms'][] = $this->get_unrendered_form_add_cashflow();
 				  return $return;
 		  	}
 		} catch( Exception $e ){
