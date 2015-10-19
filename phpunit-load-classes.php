@@ -1,14 +1,13 @@
 <?php   
 
-$_dir = "/FinancialMathematics";
-$path_to_pear = dirname(__FILE__) . $_dir . PATH_SEPARATOR;
-set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
-$path_to_pear = dirname(__FILE__) . $_dir . '/PEAR/' . PATH_SEPARATOR;
-set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
-$path_to_pear = dirname(__FILE__) . $_dir . '/PEAR/HTML/' . PATH_SEPARATOR;
-set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
-$path_to_pear = dirname(__FILE__) . $_dir . '/PEAR/HTML/QuickForm2' . PATH_SEPARATOR;
-set_include_path(get_include_path() . PATH_SEPARATOR . $path_to_pear);
+$_dir = "FinancialMathematics";
+foreach ( array( '',
+	'/PEAR/',
+	'/PEAR/HTML/',
+	'/PEAR/HTML/QuickForm2',
+	) AS $path ){
+	set_include_path(get_include_path(). PATH_SEPARATOR. dirname(__FILE__). "/". $_dir. $path );
+}
 
 function CT1_autoloader($class, $file){
 	if (!class_exists($class)){
@@ -24,7 +23,6 @@ function CT1_autoloader($class, $file){
 	}
 }
 
-$_dir = "FinancialMathematics/";
-		CT1_autoloader("HTML_QuickForm2",$_dir . "PEAR/HTML/QuickForm2.php");
-		CT1_autoloader("Validate", $_dir  . "PEAR/Validate.php");
+CT1_autoloader("HTML_QuickForm2",$_dir . "/PEAR/HTML/QuickForm2.php");
+CT1_autoloader("Validate", $_dir  . "/PEAR/Validate.php");
 

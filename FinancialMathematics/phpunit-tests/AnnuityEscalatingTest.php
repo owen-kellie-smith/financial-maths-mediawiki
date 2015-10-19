@@ -1,6 +1,6 @@
 <?php
 
-require 'test-constants.php';
+require 'TestConstants.php';
 require_once $class_directory . 'class-ct1-annuity-escalating.php';
 class CT1_Annuity_Escalating_Test extends PHPUnit_Framework_TestCase
 {

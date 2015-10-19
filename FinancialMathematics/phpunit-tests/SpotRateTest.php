@@ -1,6 +1,6 @@
 <?php
 
-require 'test-constants.php';
+require 'TestConstants.php';
 require_once $class_directory . 'class-ct1-spot-rates.php';
 require_once $class_directory . 'class-ct1-forward-rate.php';
 class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase

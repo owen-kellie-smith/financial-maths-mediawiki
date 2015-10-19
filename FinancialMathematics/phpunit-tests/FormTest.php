@@ -1,6 +1,6 @@
 <?php
 
-require 'test-constants.php';
+require 'TestConstants.php';
 require_once $class_directory . 'class-ct1-concept-all.php';
 class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 {
