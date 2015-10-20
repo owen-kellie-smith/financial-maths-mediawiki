@@ -158,8 +158,9 @@ public function get_concept_label(){
 	 */
 	public function get_solution_no_detail(){
 		$render = new CT1_Render();
-		$rates = $this->obj->get_all_rates();
-		$hidden = $this->obj->get_values_as_array( get_class($this->obj) );
+		$temp = $this->get_unrendered_solution_no_detail();
+		$rates = $temp['rates'];
+		$hidden = $temp['hidden'];
 		$link = "?page_id=" . $_GET['page_id'] . $render->get_link($hidden);
 		for ( $i = 0, $ii = count( $rates['data'] ); $i < $ii; $i++ ){
 			$f = $rates['objects'][$i]['CT1_Forward_Rate'];
@@ -170,6 +171,12 @@ public function get_concept_label(){
 				$rates['data'][$i][5]  = $this->get_anchor_par( $p, $link );
 		}
 		return $render->get_table( $rates['data'], $rates['header'] );
+	}
+
+	private function get_unrendered_solution_no_detail(){
+		$rates = $this->obj->get_all_rates();
+		$hidden = $this->obj->get_values_as_array( get_class($this->obj) );
+		return array ('rates'=> $rates, 'hidden'=> $hidden);
 	}
 
 	/**
