@@ -53,7 +53,7 @@ public function get_controller($_INPUT ){
 		$render = new CT1_Render();
 		$return['form']=$render->get_render_form($this->get_calculator(array("delta")));
 		$return['output']['unrendered']['forms'][] = 	array(
-			'content'=>$this->$this->get_calculator(array("delta")),
+			'content'=>$this->get_calculator(array("delta")),
 			'type'=>'',
 		);
 		return $return;
