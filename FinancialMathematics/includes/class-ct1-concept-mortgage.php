@@ -20,14 +20,23 @@ public function get_concept_label(){
 
 public function get_solution(){
 		$render = new CT1_Render();
-	$return = $render->get_render_latex($this->obj->explain_instalment());
+	$return = $render->get_render_latex($this->get_unrendered_solution);
 	return $return;
+}
+
+private function get_unrendered_solution(){
+	return $this->obj->explain_instalment();
 }
 
 public function get_interest_rate(){
 	$render = new CT1_Render();
-	$return = $render->get_render_latex($this->obj->explain_interest_rate_for_instalment());
+	$return = $render->get_render_latex($this->get_unrendered_interest_rate());
 	return $return;
+}
+
+
+private function get_unrendered_interest_rate(){
+	return $this->obj->explain_interest_rate_for_instalment();
 }
 
 	
@@ -45,9 +54,11 @@ public function get_controller($_INPUT ){
 			if ($this->set_mortgage($_INPUT)){
 				if (empty( $_INPUT['instalment'] ) ){
 					$return['formulae']= $this->get_solution();
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
 					return $return;
 				} else {
 					$return['formulae']= $this->get_interest_rate();
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_interest_rate();
 					return $return;
 				}
 			} else{
@@ -59,6 +70,11 @@ public function get_controller($_INPUT ){
 	else{
 		$render = new CT1_Render();
 		$return['form']= $render->get_render_form($this->get_calculator(array("delta", "value")));
+		$return['output']['unrendered']['forms'][] = 	array(
+			'content'=>$this->get_calculator(array("delta",  "value")),
+			'type'=>'',
+		);
+
 		return $return;
 	}
 }
