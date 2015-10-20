@@ -20,8 +20,12 @@ public function get_concept_label(){
 
 public function get_solution(){
 	$render = new CT1_Render();
-	$return = $render->get_render_latex( $this->obj->explain_rate_in_form( $this->obj ) );
+	$return = $render->get_render_latex( $this->get_unrendered_solution() );
 	return $return;
+}
+
+public function get_unrendered_solution(){
+	return  $this->obj->explain_rate_in_form( $this->obj ) ;
 }
 	
 public function get_calculator($parameters){
@@ -35,6 +39,8 @@ public function get_controller($_INPUT ){
 		if ($this->get_request() == $_INPUT['request']){
 			if ($this->set_interest($_INPUT)){
 				$return['formulae']= $this->get_solution();
+				$return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
+
 				return $return;
 			}
 			else{
@@ -46,6 +52,10 @@ public function get_controller($_INPUT ){
 	else{
 		$render = new CT1_Render();
 		$return['form']=$render->get_render_form($this->get_calculator(array("delta")));
+		$return['output']['unrendered']['forms'][] = 	array(
+			'content'=>$this->$this->get_calculator(array("delta")),
+			'type'=>'',
+		);
 		return $return;
 	}
 }
