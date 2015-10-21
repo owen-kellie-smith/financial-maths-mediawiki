@@ -32,10 +32,22 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['form']) ) ;
   }  
 
-  public function test_full_input_formulae()
+  public function test_input_returns_expected_get_interest()
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
+	  $this->assertTrue( isset($c['formulae']) ) ;
+	  $this->assertTrue( isset($c['xml-form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+  }  
+
+  public function test_input_returns_expected_add_cashflow()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request' => 'add_cashflow','rate_per_year' => 0,'effective_time' => 0, 'm' => 1, 'term' => 1,'escalation_rate_effective' => 0,'escalation_frequency' => 1));
+//	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
+	  $this->assertTrue( isset($c['form']) ) ;
 	  $this->assertTrue( isset($c['formulae']) ) ;
   }  
 

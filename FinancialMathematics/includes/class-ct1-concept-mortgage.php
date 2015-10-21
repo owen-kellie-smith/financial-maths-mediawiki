@@ -20,7 +20,7 @@ public function get_concept_label(){
 
 public function get_solution(){
 		$render = new CT1_Render();
-	$return = $render->get_render_latex($this->get_unrendered_solution);
+	$return = $render->get_render_latex($this->get_unrendered_solution() );
 	return $return;
 }
 

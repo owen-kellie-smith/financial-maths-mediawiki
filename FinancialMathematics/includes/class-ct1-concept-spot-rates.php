@@ -57,25 +57,35 @@ public function get_concept_label(){
 				if ('add_spot_rate' == $_INPUT['request']){
 					$this->add_spot_rate_from_input( $_INPUT );
 					$return['table']= $this->get_solution_no_detail();
+				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['form']= $this->get_delete_add();
+					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
 					return $return;
 				}
 				if ('explain_forward' == $_INPUT['request'] ){
 					$return['formulae']= $this->get_explanation_forward( $_INPUT );
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_explanation_forward( $_INPUT );
 					$return['table']= $this->get_solution_no_detail();
+				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['form']= $this->get_delete_add();
+					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
 					return $return;
 				}
 				if ( 'explain_par' == $_INPUT['request'] ){
 					$return['formulae']= $this->get_explanation_par( $_INPUT );
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_explanation_par( $_INPUT );
 					$return['table']= $this->get_solution_no_detail();
+				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['form']= $this->get_delete_add();
+					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
 					return $return;
 				}
 			}
 			if (isset($_INPUT[ $this_obj_class ])){
 					$return['formulae']= $this->get_solution_no_detail();
+				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
 					$return['form']= $this->get_delete_add();
+					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
 					return $return;
 			}
 			$return['form']= $this->get_form_add_spot_rate();
@@ -137,6 +147,13 @@ public function get_concept_label(){
 		return  $this->get_delete_buttons() . $this->get_form_add_spot_rate()  ;
 	}
 
+	public function get_unrendered_delete_add(){
+		return  array(
+			$this->get_unrendered_delete_buttons(),
+			$this->get_unrendered_form_add_spot_rate(), 
+		) ;
+	}
+
 	/**
 	 * Get string to render delete buttons
 	 *
@@ -147,6 +164,11 @@ public function get_concept_label(){
 	public function get_delete_buttons(){
 		return parent::get_delete_buttons('view_spotrates');
 	}
+
+	public function get_unrendered_delete_buttons(){
+		return parent::get_unrendered_delete_buttons('view_spotrates');
+	}
+
 
 
 	/**
@@ -206,38 +228,45 @@ public function get_concept_label(){
 	}
 
 	private function get_explanation_par( $_INPUT ){
+			$render = new CT1_Render();
+			return $render->get_render_latex( $this->get_unrendered_explanation_par( $_INPUT ) ) ;
+	}
+
+	private function get_unrendered_explanation_par( $_INPUT ){
 		if ( isset($_INPUT['par_term'])  ){
 			$pys = $this->obj->get_par_yields();
 			// find par yield
 			if ( $pys->get_count()  > 0 ) {
 				foreach ( $pys->get_objects() as $p ){
 					if ($p->get_term() == $_INPUT['par_term'] ){
-						$render = new CT1_Render();
-						//return $render->get_render_latex( $this->obj->explain_par_yield( $p ) ) . $this->get_solution_no_detail();
-						return $render->get_render_latex( $this->obj->explain_par_yield( $p ) ) ;
+						return  $this->obj->explain_par_yield( $p ) ;
 					}
 				}
 			}
 		}
-		return $this->get_solution_no_detail(); // default result if no matching par yield found
+		return $this->get_unrendered_solution_no_detail(); // default result if no matching par yield found
 	}
 
 	private function get_explanation_forward( $_INPUT ){
+	 	$render = new CT1_Render();
+		return $render->get_render_latex( $this->get_unrendered_explanation_forward( $_INPUT ) ) ;
+	}
+
+	private function get_unrendered_explanation_forward( $_INPUT ){
 		if ( isset($_INPUT['forward_start_time']) && isset( $_INPUT['forward_end_time'])  ){
 			$frs = $this->obj->get_forward_rates();
 			// find forward rate
 			if ( $frs->get_count()  > 0 ) {
 				foreach ( $frs->get_objects() as $f ){
 					if ($f->get_start_time() == $_INPUT['forward_start_time'] && $f->get_end_time() ==  $_INPUT['forward_end_time']){
-						$render = new CT1_Render();
-						//return $render->get_render_latex( $this->obj->explain_forward_rate( $f ) ) . $this->get_solution_no_detail();
-						return $render->get_render_latex( $this->obj->explain_forward_rate( $f ) ) ;
+						return  $this->obj->explain_forward_rate( $f ) ;
 					}
 				}
 			}
 		}
-		return $this->get_solution_no_detail(); // default result if no matching forward rate found
+		return $this->get_unrendered_solution_no_detail(); // default result if no matching forward rate found
 	}
+
 
 	private function add_spot_rate_from_input( $IN ){
 		$i_effective = 0; $effective_time = 0;
@@ -252,7 +281,11 @@ public function get_concept_label(){
 
 	private function get_form_add_spot_rate(){
 		$render = new CT1_Render();
-		return $render->get_render_form( $this->get_add_spot_rate() );
+		return $render->get_render_form( $this->get_unrendered_form_add_spot_rate() );
+	}
+
+	private function get_unrendered_form_add_spot_rate(){
+		return  $this->get_add_spot_rate() ;
 	}
 	
 	private function set_spotrates( $_INPUT = array() ){

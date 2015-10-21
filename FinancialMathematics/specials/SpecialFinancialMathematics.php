@@ -29,6 +29,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$out->addWikiMsg( 'financialmathematics-helloworld-intro' );
 		$_restart_label = wfMessage( 'fm-restart')->text();
 		$_restart = '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
+		$out->addHTML( "GET array is <pre> " . print_r($_GET, 1) . "</pre>" );
 		$out->addHTML( $_restart );
 		$m = new CT1_Concept_All();
 		$m->setTagName( FinancialMathematicsHooks::getTagName() );

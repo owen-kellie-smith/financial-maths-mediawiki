@@ -94,6 +94,7 @@ public function __construct(CT1_Object $obj=null){
 	 */
 	public function get_render_latex( $equation_array, $newline=false ){
 	// would be better if this were just recursive but I don't know how
+		$out = "";
 		$_nl="";
 		if ($newline) $_nl="\r\n ";
 		if (count($equation_array) > 0 ) {
@@ -157,6 +158,7 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_select_form( $return ){
+		$out="";
 		if ( !empty( $return['introduction'] ) )
 			$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
 		foreach (array('name','method','action','select-name','select-label','select-options','submit') as $key){
@@ -171,7 +173,11 @@ public function __construct(CT1_Object $obj=null){
 			$calculator = $fieldset->addSelect( $return['select-name'] )
 				->setLabel( $return['select-label'] )
 				->loadOptions( $return['select-options']);
-			$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+			$temp_page_id='';
+			if( isset($_GET['page_id'])){
+				$temp_page_id = $_GET['page_id'];
+			}
+			$fieldset->addElement('hidden', 'page_id')->setValue($temp_page_id);
 			$fieldset->addElement('submit', null, array('value' => $return['submit']));
 			$out.= $form;
 		return $out;
@@ -389,6 +395,7 @@ public function __construct(CT1_Object $obj=null){
 		// returns html based on form parameters in $return
 		$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
 		if (!isset($return['name'])) $return['name']='';
+		if (!isset($return['action'])) $return['action']='';
 		$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
 		$form->addDataSource(new HTML_QuickForm2_DataSource_Array( $return['values'] ) );
 		if (count($return['parameters']) > 0){
