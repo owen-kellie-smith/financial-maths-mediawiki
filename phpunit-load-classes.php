@@ -2,6 +2,7 @@
 
 $_dir = "FinancialMathematics";
 foreach ( array( '',
+	'/includes/',
 	'/PEAR/',
 	'/PEAR/HTML/',
 	'/PEAR/HTML/QuickForm2',
@@ -25,4 +26,5 @@ function CT1_autoloader($class, $file){
 
 CT1_autoloader("HTML_QuickForm2",$_dir . "/PEAR/HTML/QuickForm2.php");
 CT1_autoloader("Validate", $_dir  . "/PEAR/Validate.php");
+CT1_autoloader("CT1_Concept_All", "class-ct1-concept-all.php");
 

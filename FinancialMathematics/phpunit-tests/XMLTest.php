@@ -1,7 +1,7 @@
 <?php
 
-require 'TestConstants.php';
-require_once $class_directory . 'class-ct1-xml.php';
+//require 'TestConstants.php';
+//require_once $class_directory . 'class-ct1-xml.php';
 class CT1_XML_Test extends PHPUnit_Framework_TestCase
 {
   

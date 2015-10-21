@@ -1,7 +1,7 @@
 <?php
 
-require 'TestConstants.php';
-require_once $class_directory . 'class-ct1-concept-all.php';
+//require 'TestConstants.php';
+//require_once $class_directory . 'class-ct1-concept-all.php';
 class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 {
   
@@ -29,6 +29,12 @@ class CT1_Concept_Test extends PHPUnit_Framework_TestCase
 		$c = $x->get_controller( array( 'concept'=>'concept_mortgage' ) );
 	  $this->assertTrue( isset($c['form']) ) ;
 		$c = $x->get_controller( array( 'concept'=>'concept_annuity_increasing' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+		$c = $x->get_controller( array( 'concept'=>'concept_cashflows' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+		$c = $x->get_controller( array( 'concept'=>'concept_cashflows' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+		$c = $x->get_controller( array( 'concept'=>'concept_spot_rates' ) );
 	  $this->assertTrue( isset($c['form']) ) ;
   }  
 
