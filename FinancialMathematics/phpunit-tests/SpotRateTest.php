@@ -1,8 +1,5 @@
 <?php
 
-//require 'TestConstants.php';
-//require_once $class_directory . 'class-ct1-spot-rates.php';
-//require_once $class_directory . 'class-ct1-forward-rate.php';
 class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 {
   private $sr;
@@ -28,6 +25,12 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
     $this->assertTrue( abs($f12['delta'] - (2*0.02-0.01)) < 0.000001);
   }  
 
+  public function test_concepts()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'concept'=>'concept_spot_rates' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+  }  
 
 
 

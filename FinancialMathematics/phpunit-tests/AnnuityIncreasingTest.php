@@ -1,7 +1,5 @@
 <?php
 
-//require 'TestConstants.php';
-//require_once $class_directory . 'class-ct1-annuity-increasing.php';
 class CT1_Annuity_Increasing_Test extends PHPUnit_Framework_TestCase
 {
   private $debug = false;
@@ -70,4 +68,13 @@ class CT1_Annuity_Increasing_Test extends PHPUnit_Framework_TestCase
     $this->assertTrue( abs($this->aval() - $val ) < $this->neg );
     // source of numbers -- yellow book
   }  
+
+  public function test_concepts()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'concept'=>'concept_annuity_increasing' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+  }  
+
+
 }

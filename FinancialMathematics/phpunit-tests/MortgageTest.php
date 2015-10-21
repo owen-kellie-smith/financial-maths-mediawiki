@@ -1,7 +1,5 @@
 <?php
 
-//require 'TestConstants.php';
-//require_once $class_directory . 'class-ct1-mortgage.php';
 class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
 {
   private $debug = false;
@@ -84,4 +82,12 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
     $this->assertTrue( abs($this->schedule[61]['newPrincipal'] - ($remain - $inst + $int) ) < 10);
   }  
   
+  public function test_concepts()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'concept'=>'concept_mortgage' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+  }  
+
+
 }
