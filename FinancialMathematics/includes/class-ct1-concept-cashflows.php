@@ -284,8 +284,8 @@ public function get_concept_label(){
 		$parameters_c = array_merge( $c_e->get_parameters(), $c_i->get_parameters() );
 		$parameters = array_merge( $parameters, $parameters_c );
 		$valid_options = array_merge( $c_e->get_valid_options(), $c_i->get_valid_options() );
-		$valid_options['single_payment'] = array( 'type' => boolean );
-		$valid_options['consider_increasing'] = array( 'type' => boolean );
+		$valid_options['single_payment'] = array( 'type' => 'boolean' );
+		$valid_options['consider_increasing'] = array( 'type' => 'boolean' );
 		$parameters['consider_increasing'] = array(
 			'name'=> 'consider_increasing',
 			'label' => self::myMessage( 'fm-consider_increasing'),
@@ -317,7 +317,7 @@ public function get_concept_label(){
 	 * @access private
 	 */
 	private function get_form_valuation(){
-		$calc = $this->get_calculator( $unused );
+		$calc = $this->get_calculator( '' );
 		$render = new CT1_Render();
 		return $render->get_render_form( $calc );
 	}
@@ -325,7 +325,7 @@ public function get_concept_label(){
 
 	private function get_unrendered_form_valuation(){
 		 return array(
-			'content'=> $this->get_calculator( $unused ),
+			'content'=> $this->get_calculator( '' ),
 			'type'=>  ''
 		);
 	}

@@ -160,8 +160,12 @@ class CT1_Interest_Format extends CT1_Object{
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
-			$this->set_m(	$_INPUT[$pre. 'm'] );
-			$this->set_advance($_INPUT[$pre . 'advance']);
+			if (isset($_INPUT[$pre . 'm'])){
+				$this->set_m(	$_INPUT[$pre. 'm'] );
+			}
+			if (isset($_INPUT[$pre . 'advance'])){
+				$this->set_advance($_INPUT[$pre . 'advance']);
+			}
 			return true;
 		}
 		catch( Exception $e ){ 

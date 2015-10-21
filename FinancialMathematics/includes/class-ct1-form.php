@@ -50,13 +50,40 @@ public function get_delete_buttons( $request = ""){
 	return $out;
 }
 
+public function get_unrendered_delete_buttons( $request = ""){
+	$out = array();
+	if ( $this->obj instanceof CT1_Collection ){
+		if ( $this->obj->get_count() > 0 ){
+//			$render = new CT1_Render();
+			$cfs = $this->obj->get_objects();
+			foreach ( $this->obj->get_objects() as $o ) {
+				if (!method_exists( $this->obj, 'get_clone_this' )){
+					throw new Exception('get_clone_this ' . self::myMessage( 'fm-error-clone') . get_class( $this->obj ) . self::myMessage( 'fm-error-in')  . __FILE__ );
+				}
+				$clone = $this->obj->get_clone_this();
+				$label = "";
+				$clone->remove_object($o);
+				$button = array( 
+					'type'=>'get_form_collection',
+					'content'=> $clone,
+					'submit'=> self::myMessage( 'fm-button-delete') . " " .  $o->get_label(),
+					'intro' =>'',
+					'request' => $request,
+				);
+				$out[] = $button;
+			}
+		}
+	}
+	return $out;
+}
+
+
 
 public function __construct(CT1_Object $obj){
 	$this->set_obj($obj);
 }
 
-public function set_obj(CT1_Object $obj){
-	$this->obj = $obj;
+public function set_obj(CT1_Object $obj){	$this->obj = $obj;
 }
 
 public function get_obj(){

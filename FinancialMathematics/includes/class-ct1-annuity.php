@@ -200,8 +200,12 @@ class CT1_Annuity extends CT1_Interest{
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
 			if (parent::set_from_input($_INPUT, $pre)){
-				$this->set_term(	$_INPUT[$pre. 'term'] );
-				$this->set_value(	$_INPUT[$pre. 'value'] );
+				if (isset($_INPUT[$pre. 'term'])){
+					$this->set_term(	$_INPUT[$pre. 'term'] );
+				}
+				if (isset($_INPUT[$pre. 'value'])){
+					$this->set_value(	$_INPUT[$pre. 'value'] );
+				}
 				return true;
 			}
 			else{

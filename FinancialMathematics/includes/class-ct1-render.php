@@ -72,13 +72,15 @@ public function __construct(CT1_Object $obj=null){
 		$out = "";
 		if ( !empty( $intro ) )
 			$out.= "<p>" . $intro . "</p>" . "\r\n";
-		$form = new HTML_QuickForm2($return['name'],'GET', '');
+		$form = new HTML_QuickForm2( 'name-for-collection','GET', '');
 		$form->addDataSource(new HTML_QuickForm2_DataSource_Array() );
 		$fieldset = $form->addElement('fieldset');
 		$hidden = $cf->get_values_as_array(  get_class( $cf ) );
 		$this->add_hidden_fields_to_fieldset( $fieldset, $hidden );
 		$fieldset->addElement('hidden', 'request')->setValue( $request );
-		$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+		if (isset($_GET['page_id'])){
+			$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+		}
 		$fieldset->addElement('submit', null, array('value' => $submit));
 		$out.= $form;
 		return $out;

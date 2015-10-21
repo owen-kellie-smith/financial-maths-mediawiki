@@ -19,11 +19,21 @@ class CT1_Cashflow extends CT1_Object {
 	 */
 	public function set_from_input( $IN = array(), $pre = '' ){
 	try{
-		$rate_per_year = 0; $effective_time = 0;
-		if ( isset( $IN[$pre . 'rate_per_year'] ) )
-			$rate_per_year = $IN[$pre . 'rate_per_year'];
-		if ( isset( $IN[$pre . 'effective_time'] ) )
-			$effective_time = $IN[$pre . 'effective_time'];
+		$advance=0; $rate_per_year = 0; $effective_time = 0;
+		$increasing = 0; $escalation_rate_effective=0;
+		$escalation_frequency=0;
+		foreach ( array(
+			'advance',
+			'rate_per_year',
+			'effective_time',
+			'increasing',
+			'escalation_rate_effective',
+			'escalation_frequency',
+			) AS $_in){
+			if ( isset( $IN[$pre . $_in] ) ){
+				$$_in = $IN[$pre . $_in];
+			}
+		}
 		if ( isset( $IN[$pre . 'single_payment'] ) ){
 			$a = new CT1_Annuity(1, true, 0, 1);
 		} else {
@@ -183,12 +193,4 @@ class CT1_Cashflow extends CT1_Object {
     }
 
 }
-
-// example 
-//$a = new CT1_Annuity(12, true, 0.1, 12);
-//$a->set_value(11.234567890123456789);
-//print_r($a->get_values());
-//print_r($a->get_delta_for_value());
-//$a->set_delta( $a->get_delta_for_value() );
-//print_r($a->explain_interest_rate_for_value());
 
