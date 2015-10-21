@@ -11,27 +11,49 @@ class CT1_Annuity_Test extends PHPUnit_Framework_TestCase
   private $freq = 12;
   private $adv = true;
   private $neg = 0.00001;
+  private $acalce;
+  private $term_e = 19;
+  private $i_eff = 0.19;
+  private $e_eff = 0.19;
+  private $freq_escalating = 12;
+
   
   public function setup(){
     $this->acalc = new CT1_Annuity(10, true, log(1.06), 12);
     $this->i = 0.06;
+    $this->acalce = new CT1_Annuity_Escalating();
+    $this->reseta();
+    $this->resete();
   }
   public function tearDown(){}
-  
-  private function reset(){
+
+  private function reseta(){
   	$this->acalc->set_m($this->freq);
   	$this->acalc->set_advance($this->adv);
   	$this->acalc->set_delta(log(1+$this->i));
   	$this->acalc->set_term($this->term);
   }
+  
+  private function resete(){
+  	$this->acalce->set_m($this->freq);
+  	$this->acalce->set_advance($this->adv);
+  	$this->acalce->set_delta(log(1+$this->i_eff));
+  	$this->acalce->set_term($this->term_e);
+  	$this->acalce->set_escalation_rate_effective($this->e_eff);
+  	$this->acalce->set_escalation_frequency($this->freq_escalating);
+  }
   	
   private function aval(){
-  	$this->reset();
+  	$this->reseta();
     return $this->acalc->get_annuity_certain();
   }
 
+  private function avale(){
+    return $this->acalce->get_annuity_certain();
+  }
+
   private function ival(){
-  	$this->reset();
+  	$this->reseta();
     return $this->acalc->get_rate_in_form($this->acalc);
   }
 
@@ -127,5 +149,75 @@ class CT1_Annuity_Test extends PHPUnit_Framework_TestCase
     // source of numbers: Formulae and tables 4% p.56 a10 and i/d(12)  
   }  
 
+  public function test_concepts()
+  {
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'concept'=>'concept_annuity' ) );
+	  $this->assertTrue( isset($c['form']) ) ;
+  }  
+
+  public function test_simple_annuity()
+  {
+//	print_r( $this->acalce->get_values() );
+    $this->assertTrue( $this->acalce->get_advance() );
+    if ($this->debug) $this->assertEquals( $this->avale() , 19);
+    $this->assertTrue( abs($this->avale() - 19 ) < $this->neg );
+    // source of numbers -- common sense. net interest rate 0
+  }  
+ 
+  public function test_simple_annuity_arrears()
+  {
+  	$this->acalce->set_advance( false );
+//	print_r( $this->acalce->get_values() );
+    $this->assertTrue( !$this->acalce->get_advance() );
+    if ($this->debug) $this->assertEquals( $this->avale() , 19 * exp(-log(1.19)/12));
+    $this->assertTrue( abs($this->avale() - 19*exp(-log(1.19)/12) ) < $this->neg );
+    // source of numbers -- common sense. net interest rate 0.  1st payment 1 not with implied inc.
+  }  
+
+  public function test_complex_annuity_arrears()
+  {
+  	$this->acalce->set_advance( false );
+  	$this->acalce->set_m(12);
+  	$this->acalce->set_delta(log(1.1));
+  	$this->acalce->set_term(20);
+  	$this->acalce->set_escalation_rate_effective(0.05);
+  	$this->acalce->set_escalation_frequency(4);
+//	print_r( $this->acalce->get_values() );
+    $this->assertTrue( !$this->acalce->get_advance() );
+    if ($this->debug) $this->assertEquals( $this->avale() , 12.887905873);
+    $this->assertTrue( abs($this->avale() - 12.887905873 ) < $this->neg );
+	// source numbers: spreadsheet (cashflow discounted)
+	}
+  
+public function test_adjusted_int_arrears()
+  {
+  	$this->acalce->set_advance( false );
+  	$this->acalce->set_m(12);
+  	$this->acalce->set_delta(log(1.1));
+  	$this->acalce->set_term(20);
+  	$this->acalce->set_escalation_rate_effective(0.05);
+  	$this->acalce->set_escalation_frequency(999);
+//	print_r( $this->acalce->get_values() );
+    $this->assertTrue( !$this->acalce->get_advance() );
+    if ($this->debug) $this->assertEquals( $this->avale() , 12.940205516);
+    $this->assertTrue( abs($this->avale() - 12.940205516 ) < $this->neg );
+	// source numbers: spreadsheet (cashflow discounted)
+	}
+
+public function test_adjusted_int_advance()
+  {
+  	$this->acalce->set_advance( true );
+  	$this->acalce->set_m(12);
+  	$this->acalce->set_delta(log(1.1));
+  	$this->acalce->set_term(20);
+  	$this->acalce->set_escalation_rate_effective(0.05);
+  	$this->acalce->set_escalation_frequency(999);
+//	print_r( $this->acalce->get_values() );
+    $this->assertTrue( $this->acalce->get_advance() );
+    if ($this->debug) $this->assertEquals( $this->avale() , 13.04339);
+    $this->assertTrue( abs($this->avale() - 13.04339 ) < $this->neg );
+	// source numbers: spreadsheet (cashflow discounted)
+	}
 
 }
