@@ -1,9 +1,5 @@
 <?php   
 
-require_once 'interface-ct1-concept.php';
-//require_once 'functions.php';
-//CT1_autoloader('HTML_QuickForm2','HTML/QuickForm2.php');
-
 abstract class CT1_Form implements CT1_Concept {
 
 protected $obj;

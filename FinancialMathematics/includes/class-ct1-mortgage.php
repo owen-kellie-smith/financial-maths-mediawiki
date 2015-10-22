@@ -1,6 +1,5 @@
 <?php   
 
-require_once 'class-ct1-annuity.php';
 
 class CT1_Mortgage extends CT1_Annuity{
 

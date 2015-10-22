@@ -1,8 +1,4 @@
 <?php   
-require_once 'class-ct1-spot-rate.php';
-require_once 'class-ct1-forward-rates.php';
-require_once 'class-ct1-par-yields.php';
-require_once 'class-ct1-collection.php';
 
 class CT1_Spot_Rates extends CT1_Collection {
 

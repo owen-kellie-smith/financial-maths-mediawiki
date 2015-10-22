@@ -1,8 +1,5 @@
 <?php
 
-require_once 'class-ct1-mortgage.php';
-require_once 'class-ct1-form.php';
-require_once 'class-ct1-render.php';
 
 class CT1_Concept_Mortgage extends CT1_Form{
 

@@ -1,5 +1,4 @@
 <?php   
-require_once 'class-ct1-object.php';
 
 abstract class CT1_Collection extends CT1_Object {
 

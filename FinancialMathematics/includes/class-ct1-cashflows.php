@@ -1,6 +1,4 @@
 <?php   
-require_once 'class-ct1-cashflow.php';
-require_once 'class-ct1-collection.php';
 
 class CT1_Cashflows extends CT1_Collection {
 

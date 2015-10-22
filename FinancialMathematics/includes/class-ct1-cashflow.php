@@ -1,6 +1,4 @@
 <?php   
-require_once 'class-ct1-annuity-escalating.php';
-require_once 'class-ct1-annuity-increasing.php';
 
 class CT1_Cashflow extends CT1_Object {
 

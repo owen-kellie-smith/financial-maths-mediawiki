@@ -1,6 +1,4 @@
 <?php   
-require_once 'class-ct1-par-yield.php';
-require_once 'class-ct1-collection.php';
 
 class CT1_Par_Yields extends CT1_Collection {
 

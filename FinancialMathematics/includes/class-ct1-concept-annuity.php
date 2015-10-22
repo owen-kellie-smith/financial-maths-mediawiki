@@ -1,9 +1,5 @@
 <?php
 
-require_once 'class-ct1-annuity-escalating.php';
-require_once 'class-ct1-form.php';
-require_once 'class-ct1-render.php';
-
 class CT1_Concept_Annuity extends CT1_Form{
 
 public function __construct(CT1_Object $obj=null){

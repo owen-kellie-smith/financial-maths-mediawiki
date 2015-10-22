@@ -1,13 +1,5 @@
 <?php
 
-require_once 'class-ct1-concept-interest.php';
-require_once 'class-ct1-concept-annuity.php';
-require_once 'class-ct1-concept-mortgage.php';
-require_once 'class-ct1-concept-annuity-increasing.php';
-require_once 'class-ct1-concept-cashflows.php';
-require_once 'class-ct1-concept-spot-rates.php';
-require_once 'class-ct1-form-xml.php';
-
 /**
  * CT1_Concept_All class
  *

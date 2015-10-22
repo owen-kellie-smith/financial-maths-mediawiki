@@ -1,9 +1,5 @@
 <?php
 
-require_once 'class-ct1-interest.php';
-require_once 'class-ct1-form.php';
-require_once 'class-ct1-render.php';
-
 class CT1_Concept_Interest extends CT1_Form{
 
 public function __construct(CT1_Object $obj=null){

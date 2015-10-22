@@ -1,7 +1,5 @@
 <?php
 
-//require 'TestConstants.php';
-//require_once $class_directory . 'class-ct1-annuity.php';
 class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 {
   private $debug = false;

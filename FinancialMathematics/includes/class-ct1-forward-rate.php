@@ -1,7 +1,5 @@
 <?php   
 
-require_once 'class-ct1-object.php';
-
 class CT1_Forward_Rate extends CT1_Object {
 
     private $delta;

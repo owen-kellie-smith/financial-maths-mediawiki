@@ -1,8 +1,5 @@
 <?php   
 
-//require_once 'class-ct1-marker.php';
-require_once 'class-ct1-interest-format.php';
-//require_once 'interface-ct1-concept.php';
 
 class CT1_Interest extends CT1_Interest_Format  {
 

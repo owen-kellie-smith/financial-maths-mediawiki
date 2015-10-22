@@ -1,5 +1,4 @@
 <?php   
-require_once 'class-ct1-interest.php';
 
 class CT1_Annuity extends CT1_Interest{
 

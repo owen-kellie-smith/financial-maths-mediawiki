@@ -1,8 +1,5 @@
 <?php
 
-require_once 'class-ct1-xml.php';
-require_once 'class-ct1-form.php';
-require_once 'class-ct1-render.php';
 
 class CT1_Form_XML extends CT1_Form{
 

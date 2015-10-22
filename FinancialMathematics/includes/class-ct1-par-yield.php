@@ -1,6 +1,5 @@
 <?php   
 
-require_once 'class-ct1-object.php';
 
 class CT1_Par_Yield extends CT1_Object {
 
@@ -79,7 +78,6 @@ class CT1_Par_Yield extends CT1_Object {
 
             
     public function get_annuity_label(){
-	require_once 'class-ct1-annuity.php';
 	$a = new CT1_Annuity();
 	$a->set_term( $this->get_term() );
         return $this->get_coupon() . $a->get_label() . " + v^{ " . $this->get_term() . "}";

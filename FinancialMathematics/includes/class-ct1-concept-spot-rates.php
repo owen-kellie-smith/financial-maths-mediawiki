@@ -1,8 +1,5 @@
 <?php
 
-require_once 'class-ct1-spot-rates.php';
-require_once 'class-ct1-form.php';
-require_once 'class-ct1-render.php';
 
 /**
  * CT1_Concept_Spot_Rates class

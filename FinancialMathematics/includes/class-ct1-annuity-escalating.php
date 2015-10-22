@@ -1,5 +1,4 @@
 <?php   
-require_once 'class-ct1-annuity.php';
 
 class CT1_Annuity_Escalating extends CT1_Annuity{
 

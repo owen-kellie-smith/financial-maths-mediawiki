@@ -6,7 +6,6 @@
  * @author     Owen Kellie-Smith
  */
 
-require_once 'class-ct1-object.php';
 
 class CT1_XML extends CT1_Object{
 

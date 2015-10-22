@@ -1,8 +1,5 @@
 <?php
 
-require_once 'class-ct1-cashflows.php';
-require_once 'class-ct1-form.php';
-require_once 'class-ct1-render.php';
 
 /**
  * CT1_Concept_Cashflows class

@@ -1,8 +1,5 @@
 <?php
 
-require_once 'class-ct1-annuity-increasing.php';
-require_once 'class-ct1-concept-annuity.php';
-require_once 'class-ct1-render.php';
 
 class CT1_Concept_Annuity_Increasing extends CT1_Concept_Annuity{
 
