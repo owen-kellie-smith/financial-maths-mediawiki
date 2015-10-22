@@ -118,7 +118,7 @@ public function get_concept_label(){
 	 * @access private
 	 */
 	private function get_val_delete_add(){
-		return  $this->get_form_valuation() . $this->get_delete_buttons() .  $this->get_form_add_cashflow()  ;
+		return  $this->get_form_valuation() . $this->get_delete_buttons('') .  $this->get_form_add_cashflow()  ;
 	}
 
 	private function get_unrendered_val_delete_add(){
@@ -188,11 +188,11 @@ public function get_concept_label(){
 	 *
 	 * @access public
 	 */
-	public function get_delete_buttons(){
+	public function get_delete_buttons($unused=''){
 		return parent::get_delete_buttons('view_cashflows');
 	}
 	
-	public function get_unrendered_delete_buttons(){
+	public function get_unrendered_delete_buttons($unused=''){
 		return parent::get_unrendered_delete_buttons('view_cashflows');
 	}
 
