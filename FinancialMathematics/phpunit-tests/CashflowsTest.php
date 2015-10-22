@@ -30,7 +30,33 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 //	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
 	  $this->assertTrue( isset($c['form']) ) ;
 	  $this->assertTrue( isset($c['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']) ) ;
   }  
+
+
+  public function test_input_returns_expected_VIEW_cashflowS()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+    'CT1_Cashflows' => Array
+        (
+            0 => Array
+                (
+                    'm' => 1,
+                    'term' => 10,
+                    'rate_per_year' => 123,
+                    'effective_time' => 0,
+                ),
+        ),
+    'request' => 'view_cashflows',
+		));
+//    $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+	  $this->assertTrue( isset($c['form']) ) ;
+	  $this->assertTrue( isset($c['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']) ) ;
+  }  
+
 
   public function test_input_XML_cashflows()
   {
