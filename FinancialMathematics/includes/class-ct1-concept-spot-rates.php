@@ -42,7 +42,7 @@ public function get_concept_label(){
 	 */
 	public function get_controller($_INPUT ){
   	$return=array();
-		try{
+//		try{
 			$this_obj_class = get_class( $this->obj );
 			if (isset($_INPUT[ $this_obj_class ])){
 				if (!$this->set_spotrates( $_INPUT[ $this_obj_class ] ) ){ 
@@ -87,10 +87,12 @@ public function get_concept_label(){
 			}
 			$return['form']= $this->get_form_add_spot_rate();
 			return $return;
+/*
 		} catch( Exception $e ){
 			$return['warning']= self::myMessage( 'fm-exception-in') . __FILE__ . print_r($e->getMessage(),1);
 			return $return;
 		}
+*/
 	}
 
 	/**
