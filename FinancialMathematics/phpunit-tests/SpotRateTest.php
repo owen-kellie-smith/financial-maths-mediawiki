@@ -60,6 +60,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
                 )
 
         )));
+	  $this->assertEquals( '', $c['warning']);
 	  $this->assertTrue( isset($c['form']) ) ;
 	  $this->assertTrue( isset($c['table']) ) ;
 	  $this->assertTrue( isset($c['output']) ) ;
@@ -85,6 +86,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
                 )
 
         )));
+	  $this->assertEquals( '', $c['warning']);
 	  $this->assertTrue( isset($c['formulae']) ) ;
 	  $this->assertTrue( isset($c['form']) ) ;
 	  $this->assertTrue( isset($c['output']) ) ;
