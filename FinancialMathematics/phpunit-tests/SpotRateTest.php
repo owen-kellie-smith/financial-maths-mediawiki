@@ -39,7 +39,6 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 			'request' => 'add_spot_rate',
 			'i_effective' => .1,
     	'effective_time' => 1));
-	  $this->assertEquals( '', $c['warning']);
 	  $this->assertTrue( isset($c['form']) ) ;
 	  $this->assertTrue( isset($c['table']) ) ;
 	  $this->assertTrue( isset($c['output']) ) ;
