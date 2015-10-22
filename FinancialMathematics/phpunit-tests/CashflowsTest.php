@@ -20,7 +20,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'concept'=>'concept_cashflows' ) );
-	  $this->assertTrue( isset($c['form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
   public function test_input_returns_expected_add_cashflow()
@@ -28,9 +28,9 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Concept_All();
 	$c = $x->get_controller( array( 'request' => 'add_cashflow','rate_per_year' => 0,'effective_time' => 0, 'm' => 1, 'term' => 1,'escalation_rate_effective' => 0,'escalation_frequency' => 1));
 //	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
-	  $this->assertTrue( isset($c['form']) ) ;
-	  $this->assertTrue( isset($c['formulae']) ) ;
-	  $this->assertTrue( isset($c['output']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
 
@@ -50,11 +50,11 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
         ),
     'request' => 'view_cashflows',
 		));
-//    $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
+//    $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c['output']['unrendered']) ;  
 //    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
-	  $this->assertTrue( isset($c['form']) ) ;
-	  $this->assertTrue( isset($c['formulae']) ) ;
-	  $this->assertTrue( isset($c['output']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
 
