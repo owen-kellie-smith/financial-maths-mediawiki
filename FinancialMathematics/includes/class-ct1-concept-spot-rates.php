@@ -160,11 +160,11 @@ public function get_concept_label(){
 	 *
 	 * @access public
 	 */
-	public function get_delete_buttons( $unused =''){
+	public function get_delete_buttons(){
 		return parent::get_delete_buttons('view_spotrates');
 	}
 
-	public function get_unrendered_delete_buttons( $unused =''){
+	public function get_unrendered_delete_buttons(){
 		return parent::get_unrendered_delete_buttons('view_spotrates');
 	}
 
