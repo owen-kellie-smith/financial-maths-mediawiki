@@ -26,9 +26,11 @@ protected $explanation_par_yields;
 	}
 
 	private function get_sorted_terms(){
-		$terms = array_keys( $this->get_objects() );
-		sort( $terms );
-		return $terms;
+		if ( $this->get_objects() ){
+			$terms = array_keys( $this->get_objects() );
+			sort( $terms );
+			return $terms;
+		}
 	}
 
 	public function explain_par_yield( CT1_Par_Yield $f ){
@@ -54,7 +56,10 @@ protected $explanation_par_yields;
 		$pars = $this->get_par_yields()->get_objects();
 		$key_spot = array_keys( $spots );
 		$key_forward = array_keys( $forwards );
-		$key_par = array_keys( $pars );
+		$key_par = null;
+		if ( $pars ){
+			$key_par = array_keys( $pars );
+		}
 		for ($i = 0, $ii = $this->get_count(); $i < $ii; $i++) {
 			$row = array(); $objects = array();
 			$s = $spots[ $key_spot[ $i ] ];

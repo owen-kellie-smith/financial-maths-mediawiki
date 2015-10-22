@@ -180,10 +180,17 @@ public function get_concept_label(){
 		$temp = $this->get_unrendered_solution_no_detail();
 		$rates = $temp['rates'];
 		$hidden = $temp['hidden'];
-		$link = "?page_id=" . $_GET['page_id'] . $render->get_link($hidden);
+		$link = "";
+		if (isset($_GET['page_id'])){
+			$link = "?page_id=" . $_GET['page_id'];
+		} 
+		$link .=  $render->get_link($hidden);
 		for ( $i = 0, $ii = count( $rates['data'] ); $i < $ii; $i++ ){
 			$f = $rates['objects'][$i]['CT1_Forward_Rate'];
-			$p = $rates['objects'][$i]['CT1_Par_Yield'];
+			$p = null;
+			if (isset($rates['objects'][$i]['CT1_Par_Yield'])){
+				$p = $rates['objects'][$i]['CT1_Par_Yield'];
+			}
 			if ( is_object( $f ) )
 				$rates['data'][$i][3]  = $this->get_anchor_forward( $f, $link );
 			if ( is_object( $p ) )
@@ -288,7 +295,7 @@ public function get_concept_label(){
 	private function set_spotrates( $_INPUT = array() ){
 		try{
 			$this->obj->set_from_input($_INPUT);
-			sort( $this->obj );
+			$this->obj->sort_objects();
 			return true;
 		} catch( Exception $e ){
 			return false;

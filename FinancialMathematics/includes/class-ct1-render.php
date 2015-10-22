@@ -127,14 +127,22 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_table( $row_data, $column_headers ){
+echo __FILE__ . " get_table \r\n";
+echo "row_data " . print_r($row_data,1) . "\r\n";
+echo "column_headers " . print_r($column_headers,1) . "\r\n";
+
 		// see http://pear.php.net/manual/en/package.html.html-table.intro.php
 		$table = new HTML_Table();
 		$table->setAutoGrow(true);
 		$table->setAutoFill('n/a');
 		for ( $nr = 0, $maxr = count( $row_data ); $nr < $maxr; $nr++ ){
 			for ($i =0, $ii = count( $column_headers ); $i < $ii; $i++ ){
-				if ('' != $row_data[$nr][$i] ){
-					$table->setCellContents( $nr+1, $i, $row_data[$nr][$i] );
+				if (isset($row_data[$nr][$i] )){
+					if ('' != $row_data[$nr][$i] ){
+						$table->setCellContents( $nr+1, $i, $row_data[$nr][$i] );
+					}
+				} else {
+					$table->setCellContents( $nr+1, $i, 'n/a' );
 				}
 			}
 		}
