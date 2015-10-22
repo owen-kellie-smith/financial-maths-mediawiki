@@ -127,9 +127,6 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_table( $row_data, $column_headers ){
-echo __FILE__ . " get_table \r\n";
-echo "row_data " . print_r($row_data,1) . "\r\n";
-echo "column_headers " . print_r($column_headers,1) . "\r\n";
 
 		// see http://pear.php.net/manual/en/package.html.html-table.intro.php
 		$table = new HTML_Table();

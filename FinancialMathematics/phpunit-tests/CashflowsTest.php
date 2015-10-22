@@ -29,6 +29,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 	$c = $x->get_controller( array( 'request' => 'add_cashflow','rate_per_year' => 0,'effective_time' => 0, 'm' => 1, 'term' => 1,'escalation_rate_effective' => 0,'escalation_frequency' => 1));
 //	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
 	  $this->assertTrue( isset($c['form']) ) ;
+	  $this->assertTrue( isset($c['formulae']) ) ;
   }  
 
   public function test_input_XML_cashflows()
