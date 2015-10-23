@@ -89,7 +89,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'concept'=>'concept_interest' ) );
-	  $this->assertTrue( isset($c['form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
   public function test_input_returns_expected_get_interest()

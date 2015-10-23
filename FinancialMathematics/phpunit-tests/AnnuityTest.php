@@ -151,7 +151,7 @@ class CT1_Annuity_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'concept'=>'concept_annuity' ) );
-	  $this->assertTrue( isset($c['form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
   public function test_simple_annuity()

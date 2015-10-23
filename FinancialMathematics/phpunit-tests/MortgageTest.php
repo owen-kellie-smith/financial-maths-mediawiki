@@ -86,7 +86,7 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'concept'=>'concept_mortgage' ) );
-	  $this->assertTrue( isset($c['form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
 
