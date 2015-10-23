@@ -30,13 +30,35 @@ public function __construct(CT1_Object $obj=null){
 	 *
 	 * @access public
 	 */
-	public function get_render_form( $form ){
+	public function get_render_form( $form, $type='' ){
 		if ('HTML'==$form['render'] ){
-			return $this->get_form_html( $form );
+			if ( 'select'==$type ){
+				return $this->get_select_form( $form );
+			} else {
+				return $this->get_form_html( $form );
+		  }
 		} else {
 			return $this->get_form_plain( $form );
 		}
 	}
+
+
+	public function get_render_rate_table( $rates, $hidden, $link='' ){
+		$link .=  $this->get_link($hidden);
+		for ( $i = 0, $ii = count( $rates['data'] ); $i < $ii; $i++ ){
+			$f = $rates['objects'][$i]['CT1_Forward_Rate'];
+			$p = null;
+			if (isset($rates['objects'][$i]['CT1_Par_Yield'])){
+				$p = $rates['objects'][$i]['CT1_Par_Yield'];
+			}
+			if ( is_object( $f ) )
+				$rates['data'][$i][3]  = $this->get_anchor_forward( $f, $link );
+			if ( is_object( $p ) )
+				$rates['data'][$i][5]  = $this->get_anchor_par( $p, $link );
+		}
+		return $this->get_table( $rates['data'], $rates['header'] );
+	}
+
 
 	/**
 	 * Get string of &,= pairs suitable for writing a URL that can ge read via $_GET
@@ -196,6 +218,34 @@ public function __construct(CT1_Object $obj=null){
 			return $m;
   }
 			
+
+	/**
+	 * Get anchor to detailed forward rate calculation
+	 *
+	 * @param CT1_Forward_Rate $f
+	 * @param string $page_link
+	 * @return string
+	 *
+	 * @access public
+	 */
+	private function get_anchor_forward( CT1_Forward_Rate $f, $page_link ){
+		return "<a href='" . $page_link . "&request=explain_forward&forward_start_time=" . $f->get_start_time() . "&forward_end_time=" . $f->get_end_time() . "'>" . $f->get_i_effective() . "</a>";
+	}
+
+	/**
+	 * Get anchor to detailed par yield calculation
+	 *
+	 * @param CT1_Par_Yield $p
+	 * @param string $page_link
+	 * @return string
+	 *
+	 * @access public
+	 */
+	private function get_anchor_par( CT1_Par_Yield $p, $page_link ){
+		return "<a href='" . $page_link . "&request=explain_par&par_term=" . $p->get_term() . "'>" . $p->get_coupon() . "</a>";
+	}
+
+
 	/**
 	 * Get rendering of one latex sentence and return an array of its details
 	 *
