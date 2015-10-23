@@ -32,6 +32,7 @@ class CT1_Concept_All extends CT1_Form{
 		foreach( $this->candidate_concepts() AS $c ){
 				$return = array_merge($return, $c->get_concept_label());
 		}
+//echo __FILE__ . " get_concept_labels " . print_r($return,1);
 		return $return;
 	}
 

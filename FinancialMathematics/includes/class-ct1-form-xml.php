@@ -12,7 +12,7 @@ public function getTagName(){
 
 public function get_concept_label(){
 	return array(
-				'concept_annuity'=>self::myMessage(  'fm-label-xml'), 
+				'concept_xml'=>self::myMessage(  'fm-label-xml'), 
  );
 } 
 
