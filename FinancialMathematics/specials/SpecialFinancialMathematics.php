@@ -34,7 +34,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$m = new CT1_Concept_All();
 		$m->setTagName( FinancialMathematicsHooks::getTagName() );
 		$result = $m->get_controller($_GET) ; 
-		$out->addHTML( "result array is <pre> " . print_r($result, 1) . "</pre>" );
+//		$out->addHTML( "result array is <pre> " . print_r($result, 1) . "</pre>" );
 		$render = new CT1_Render();
 		if (isset($result['warning'])){
 			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
@@ -55,18 +55,19 @@ class SpecialFinancialMathematics extends SpecialPage {
 					$result['output']['unrendered']['table']['hidden'],
 					"http://localhost/wiki/index.php/Special:FinancialMathematics?" ));    // ??? hard-coded page name ???
 			}
-			if (isset($result['form'])){
-				$out->addHTML( $result['form'] );
-			}
+//			if (isset($result['form'])){
+//				$out->addHTML( $result['form'] );
+//			}
 			if (isset($result['output']['unrendered']['forms'])){
 				foreach ($result['output']['unrendered']['forms'] AS $_f){
 //					$_f['content']['render']='HTML';
-					$out->addHTML( "FORM FROM unrendered <pre>" . print_r($_f,1) . "</pre>");
-//					try{	$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] )); 
-//					} catch( Exception $e ){
-//								$out->addHTML( $e->getMessage() );
-//					}
-//					$out->addHTML( $render->get_select_form($_f['content'] ));
+//					$out->addHTML( "FORM FROM unrendered <pre>" . print_r($_f,1) . "</pre>");
+
+					try{	$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] )); 
+					} catch( Exception $e ){
+								$out->addHTML( $e->getMessage() );
+					}
+
 				}
 			}
 //			if (isset($result['xml-form']['form'])){

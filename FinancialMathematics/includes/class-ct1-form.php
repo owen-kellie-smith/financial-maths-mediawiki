@@ -61,10 +61,12 @@ public function get_unrendered_delete_buttons( $request = ""){
 				$clone->remove_object($o);
 				$button = array( 
 					'type'=>'get_form_collection',
-					'content'=> $clone,
-					'submit'=> self::myMessage( 'fm-button-delete') . " " .  $o->get_label(),
-					'intro' =>'',
-					'request' => $request,
+					'content'=> array(
+						'collection' =>$clone,
+						'submit'=> self::myMessage( 'fm-button-delete') . " " .  $o->get_label(),
+						'intro' =>'',
+						'request' => $request,
+					),
 				);
 				$out[] = $button;
 			}

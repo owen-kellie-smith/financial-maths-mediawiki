@@ -31,15 +31,18 @@ public function __construct(CT1_Object $obj=null){
 	 * @access public
 	 */
 	public function get_render_form( $form, $type='' ){
-		if ('HTML'==$form['render'] ){
-			if ( 'select'==$type ){
+		if (isset($form['render'])){
+			if ('plain'==$form['render'] ){
+			  return $this->get_form_plain( $form );
+			}
+		} // else  default is html
+			if ( 'get_form_collection'==$type ){
+				return $this->get_form_collection( $form['collection'], $form['submit'], $form['intro'], $form['request']);
+			} elseif ( 'select'==$type ){
 				return $this->get_select_form( $form );
 			} else {
 				return $this->get_form_html( $form );
 		  }
-		} else {
-			return $this->get_form_plain( $form );
-		}
 	}
 
 
@@ -448,10 +451,12 @@ public function __construct(CT1_Object $obj=null){
 	 */
 	private function get_form_html( $return ){
 		// returns html based on form parameters in $return
+		$fieldset=null;;
 		$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
 		if (!isset($return['name'])) $return['name']='';
 		if (!isset($return['action'])) $return['action']='';
 		$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
+		if (!isset($return['values'])) $return['values']=array();
 		$form->addDataSource(new HTML_QuickForm2_DataSource_Array( $return['values'] ) );
 		if (count($return['parameters']) > 0){
 			$fieldset = $form->addElement('fieldset');
@@ -485,11 +490,13 @@ public function __construct(CT1_Object $obj=null){
 		  }
 		}
 		// add page_id
-		$fieldset->addElement('hidden', 'request')->setValue($return['request']);
-		if (isset($_GET['page_id'])){
-			$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+		if ($fieldset){
+			$fieldset->addElement('hidden', 'request')->setValue($return['request']);
+			if (isset($_GET['page_id'])){
+				$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+			}
+			$fieldset->addElement('submit', null, array('value' => $return['submit']));
 		}
-		$fieldset->addElement('submit', null, array('value' => $return['submit']));
 		$out.= $form;
 		return $out;
 	}
