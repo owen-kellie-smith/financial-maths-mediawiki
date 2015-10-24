@@ -88,8 +88,6 @@ class CT1_Concept_All extends CT1_Form{
 					}
 				}
 			} //foreach( $this->candidate_concepts() AS $c )
-		$render = new CT1_Render();
-		$return['form']= $render->get_select_form( $this->get_calculator( NULL ) ) ;
 		$return['output']['unrendered']['forms'][] = array(
 			'content'=> $this->get_calculator( NULL ),
 			'type'=>  'select'
