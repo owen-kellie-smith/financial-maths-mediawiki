@@ -34,7 +34,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$m = new CT1_Concept_All();
 		$m->setTagName( FinancialMathematicsHooks::getTagName() );
 		$result = $m->get_controller($_GET) ; 
-//		$out->addHTML( "result output unredndered forms array is <pre> " . print_r($result['output']['unrendered']['forms'], 1) . "</pre>" );
+		$out->addHTML( "result output unredndered forms array is <pre> " . print_r($result['output']['unrendered']['forms'], 1) . "</pre>" );
 		$render = new CT1_Render();
 		if (isset($result['warning'])){
 			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
@@ -53,7 +53,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 				$out->addHTML( $render->get_render_rate_table(
 					$result['output']['unrendered']['table']['rates'],
 					$result['output']['unrendered']['table']['hidden'],
-					$this->getSkin()->getTitle() . "?" ));    
+					$this->getSkin()->getTitle()->getLinkUrl() . "?" ));    
 			}
 //			if (isset($result['form'])){
 //				$out->addHTML( $result['form'] );

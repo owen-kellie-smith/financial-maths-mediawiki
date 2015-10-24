@@ -105,11 +105,12 @@ public function get_concept_label(){
 
 
 	private function get_unrendered_val_delete_add(){
-		return array( 
+		$return =  array( 
 			$this->get_unrendered_form_valuation(),
-			$this->get_unrendered_delete_buttons(),
 			$this->get_unrendered_form_add_cashflow(),
 		);			 
+		$return = array_merge( $return, 			$this->get_unrendered_delete_buttons() );
+		return $return;
 	}
 
 
