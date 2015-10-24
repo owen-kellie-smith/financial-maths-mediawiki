@@ -47,8 +47,9 @@ class FinancialMathematicsHooks {
 			if (isset($result['warning'])){
 				$_out =  "<span class='fin-math-warning'>" . $result['warning'] . "</span>";
 			}else{
-				if (isset($result['formulae'])){
-					$_out = $result['formulae'] ;
+				if (isset($result['output']['unrendered']['formulae'])){
+					$render = new CT1_Render();
+					$_out =  $render->get_render_latex($result['output']['unrendered']['formulae']) ;
 				}
 			}
 		}
