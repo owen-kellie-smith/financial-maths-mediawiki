@@ -30,7 +30,6 @@ public function get_unrendered_delete_buttons( $request = ""){
 	$out = array();
 	if ( $this->obj instanceof CT1_Collection ){
 		if ( $this->obj->get_count() > 0 ){
-//			$render = new CT1_Render();
 			$cfs = $this->obj->get_objects();
 			foreach ( $this->obj->get_objects() as $o ) {
 				if (!method_exists( $this->obj, 'get_clone_this' )){

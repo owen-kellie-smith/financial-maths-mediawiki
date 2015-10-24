@@ -45,8 +45,6 @@ public function get_controller( $_INPUT ){
 		}
 	}
 	if ($this->set_text($_INPUT)){
-		$render = new CT1_Render();
-		$return['form']= $render->get_render_form( $this->get_calculator( $unused ) );
 		$return['output']['unrendered']['forms'][] = array( 
 			'content'=>$this->get_calculator( $unused ),
 			'type'=>'',
