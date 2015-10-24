@@ -54,14 +54,12 @@ public function get_concept_label(){
 					$this->add_cashflow_from_input( $_INPUT );
 					$return['formulae']= $this->get_solution_no_detail();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
-					$return['form']= $this->get_val_delete_add()  ;
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  return $return;
 				}
 				if ($this->get_request() == $_INPUT['request']){
 					$return['formulae']= $this->get_calculated_value( $_INPUT ) ;
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_calculated_value( $_INPUT );
-					$return['form']= $this->get_val_delete_add()  ;
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  	return $return;
 				}
@@ -69,7 +67,6 @@ public function get_concept_label(){
 			if (isset($_INPUT[ $tempClass ])){
 				$return['formulae']= $this->get_solution_no_detail();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
-				$return['form']= $this->get_val_delete_add()  ;
 				$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 			  	return $return;
 			}
@@ -110,16 +107,6 @@ public function get_concept_label(){
 		}
 	}
 
-	/**
-	 * Get string to render all the inputs forms (new valuation, add / delete cashflows)
-	 *
-	 * @return string
-	 *
-	 * @access private
-	 */
-	private function get_val_delete_add(){
-		return  $this->get_form_valuation() . $this->get_delete_buttons('') .  $this->get_form_add_cashflow()  ;
-	}
 
 	private function get_unrendered_val_delete_add(){
 		return array( 
@@ -181,16 +168,6 @@ public function get_concept_label(){
 		return $this->obj->explain_discounted_value();
 	}
 
-	/**
-	 * Get delete buttons (forms which contain as hidden fields the undeleted cashflows)
-	 *
-	 * @return string
-	 *
-	 * @access public
-	 */
-	public function get_delete_buttons($unused=''){
-		return parent::get_delete_buttons('view_cashflows');
-	}
 	
 	public function get_unrendered_delete_buttons($unused=''){
 		return parent::get_unrendered_delete_buttons('view_cashflows');
