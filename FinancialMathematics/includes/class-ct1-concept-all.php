@@ -55,7 +55,7 @@ class CT1_Concept_All extends CT1_Form{
 		if (isset($return['output']['unrendered']['formulae'])){
 			$c = new CT1_Form_XML();
 			$c->setTagName( $this->getTagName() );
-			$temp = $c->get_controller( $_INPUT );
+			$temp = $c->get_controller( $_INPUT ); // recursive but only once - it stops being in a loop by dumping everything one layer down i.e. in ..unrenderd.xml-form,... so it doesn't set an output.unrendered.formulae
 //			$return['xml-form'] = $c->get_controller( $_INPUT );
 //echo __FILE__ . " get_controller return temp " . print_r($temp,1);
 		  if (isset($temp['output']['unrendered'])){
@@ -63,6 +63,26 @@ class CT1_Concept_All extends CT1_Form{
 			}
 		}
 //echo __FILE__ . " get_controller return " . print_r($return,1);
+		//exclude any duplicate forms;
+		if (isset($return['output']['unrendered']['forms'])){
+//http://stackoverflow.com/questions/307674/how-to-remove-duplicate-values-from-a-multi-dimensional-array-in-php
+			$return['output']['unrendered']['forms'] = array_map("unserialize", array_unique(array_map("serialize", $return['output']['unrendered']['forms'])));
+			if (isset($return['output']['unrendered']['xml-form']['forms'])){
+				$return['output']['unrendered']['xml-form']['forms'] = array_map("unserialize", array_unique(array_map("serialize", $return['output']['unrendered']['xml-form']['forms'])));
+				// check one by one against the regular forms
+				for ($i=0; $i<count($return['output']['unrendered']['xml-form']['forms']); $i++){
+					$unset_i = false;
+					foreach( $return['output']['unrendered']['forms'] AS $uf ){
+						if ($uf=== $return['output']['unrendered']['xml-form']['forms'][$i] ){
+							$unset_i = true;
+						}
+					}
+					if ($unset_i){
+						unset($return['output']['unrendered']['xml-form']['forms'][$i]);
+					}
+				}
+			}
+		}
 		return $return;
 	}
 	

@@ -34,7 +34,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 		$m = new CT1_Concept_All();
 		$m->setTagName( FinancialMathematicsHooks::getTagName() );
 		$result = $m->get_controller($_GET) ; 
-		$out->addHTML( "result array is <pre> " . print_r($result, 1) . "</pre>" );
+//		$out->addHTML( "result output unredndered forms array is <pre> " . print_r($result['output']['unrendered']['forms'], 1) . "</pre>" );
 		$render = new CT1_Render();
 		if (isset($result['warning'])){
 			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
@@ -53,7 +53,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 				$out->addHTML( $render->get_render_rate_table(
 					$result['output']['unrendered']['table']['rates'],
 					$result['output']['unrendered']['table']['hidden'],
-					"http://localhost/wiki/index.php/Special:FinancialMathematics?" ));    // ??? hard-coded page name ???
+					$this->getSkin()->getTitle() . "?" ));    
 			}
 //			if (isset($result['form'])){
 //				$out->addHTML( $result['form'] );
@@ -74,11 +74,12 @@ class SpecialFinancialMathematics extends SpecialPage {
 //				$out->addHTML( $result['xml-form']['form'] );
 //			}
 
-			if (isset($result['output']['unrendered']['xml-form']['forms'][0])){
-				$_content = $result['output']['unrendered']['xml-form']['forms'][0]['content'];
-				$_content['render']='HTML';
-				$_type = $result['output']['unrendered']['xml-form']['forms'][0]['type'];
-				$out->addHTML( $render->get_render_form($_content, $_type ));
+			if (isset($result['output']['unrendered']['xml-form']['forms'])){
+//		$out->addHTML( "result output unredndered xml-form forms 0 array is <pre> " . print_r($result['output']['unrendered']['xml-form']['forms'], 1) . "</pre>" );
+				foreach ($result['output']['unrendered']['xml-form']['forms'] AS $_f){
+					$_f['content']['render']='HTML';
+					$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] ));
+				}
 			}
 		}
 	}
