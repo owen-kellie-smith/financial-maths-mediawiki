@@ -71,7 +71,7 @@ public function get_concept_label(){
 				}
 			} 
 			if (isset($_INPUT[ $this_obj_class ])){
-				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
+				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
 					return $return;
 			} 

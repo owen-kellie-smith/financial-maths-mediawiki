@@ -60,6 +60,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
         )));
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['table']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	}
 
   public function test_view_spotrates()
@@ -82,7 +83,6 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
                 )
 
         )));
-	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['table']) ) ;
 	}
