@@ -52,26 +52,22 @@ public function get_concept_label(){
 			if (isset($_INPUT['request'])){
 				if ('add_cashflow' == $_INPUT['request']){
 					$this->add_cashflow_from_input( $_INPUT );
-					$return['formulae']= $this->get_solution_no_detail();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
-					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
+				  $return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  return $return;
 				}
 				if ($this->get_request() == $_INPUT['request']){
-					$return['formulae']= $this->get_calculated_value( $_INPUT ) ;
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_calculated_value( $_INPUT );
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  	return $return;
 				}
 			}
 			if (isset($_INPUT[ $tempClass ])){
-				$return['formulae']= $this->get_solution_no_detail();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution_no_detail();
 				$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 			  	return $return;
 			}
 			else{
-				$return['form']= $this->get_form_add_cashflow()   ;
 				$return['output']['unrendered']['forms'][] = $this->get_unrendered_form_add_cashflow();
 				  return $return;
 		  	}
@@ -116,50 +112,9 @@ public function get_concept_label(){
 		);			 
 	}
 
-	/**
-	 * Get string to render form requesting explanation of value or interest rate
-	 *
-	 * @param CT1_Cashflows $cf
-	 * @param string $submit caption for sumbit button
-	 * @param string $intro text to place above form (if any)
-	 * @return string
-	 *
-	 * @access private
-	 */
-	private function get_render_form_cashflow( CT1_Cashflows $cf, $submit ='Submit' , $intro = "" ){
-		$render = new CT1_Render();
-		return $render->get_form_collection( $cf, $submit, $intro, 'view_cashflows');
-	}
-
-	/**
-	 * Get list of cashflows (with no value)
-	 *
-	 * @return string
-	 *
-	 * @access private
-	 */
-	private function get_solution_no_detail(){
-		$render = new CT1_Render();
-		$return = $render->get_render_latex($this->get_unrendered_solution_no_detail());
-		return $return;
-	}
 
 	private function get_unrendered_solution_no_detail(){
 		return $this->obj->explain_discounted_value(false);
-	}
-
-	/**
-	 * Get explanation of valuation of cashflows
-	 *
-	 * @param float $new_i_effective
-	 * @return string
-	 *
-	 * @access public
-	 */
-	public function get_solution( $new_i_effective = 0 ){
-		$render = new CT1_Render();
-		$return = $render->get_render_latex($this->get_unrendered_solution($new_i_effective));
-		return $return;
 	}
 
 
@@ -171,20 +126,6 @@ public function get_concept_label(){
 	
 	public function get_unrendered_delete_buttons($unused=''){
 		return parent::get_unrendered_delete_buttons('view_cashflows');
-	}
-
-	/**
-	 * Get explanation of interest rate that satisfies sought net present value
-	 *
-	 * @param float $v sought net present value
-	 * @return string
-	 *
-	 * @access private
-	 */
-	private function get_interest_rate_for_value( $v = 0 ){
-		$render = new CT1_Render();
-		$return = $render->get_render_latex($this->get_unrendered_interest_rate_for_value( $v ));
-		return $return;
 	}
 
 	private function get_unrendered_interest_rate_for_value( $v = 0 ){
@@ -207,18 +148,6 @@ public function get_concept_label(){
 	}
 
 
-	/**
-	 * Get HTML for form to add a cashflow (including as hidden fields all the existing cashflows)
-	 *
-	 * @return string
-	 *
-	 * @access private
-	 */
-	private function get_form_add_cashflow(){
-		$render = new CT1_Render();
-		return $render->get_render_form( $this->get_add_cashflow() );
-	}
-	
 	private function get_unrendered_form_add_cashflow(){
 		return array(
 			'content'=>$this->get_add_cashflow(),
@@ -283,18 +212,6 @@ public function get_concept_label(){
 		return $form;
 	}
 
-	/**
-	 * Get rendered form to request a valuation of cashflows (or interest rate that satisfies a value)
-	 *
-	 * @return string
-	 *
-	 * @access private
-	 */
-	private function get_form_valuation(){
-		$calc = $this->get_calculator( '' );
-		$render = new CT1_Render();
-		return $render->get_render_form( $calc );
-	}
 
 
 	private function get_unrendered_form_valuation(){
