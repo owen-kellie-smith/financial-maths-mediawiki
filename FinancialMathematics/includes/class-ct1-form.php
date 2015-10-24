@@ -104,14 +104,6 @@ public function get_calculator( $parameters) {
 	return $return;			
 }
 
-private function current_page(){
-	if (isset($_GET['page_id'])) return $_GET['page_id'];
-}
-
-private function hidden_page(){
-	return "<input type='hidden' name='page_id' value='" .$this->current_page() . "' />" . "\r\n";
-}
-
 protected function set_received_input(&$_INPUT = array()){
 $c = 0;
 $c++;

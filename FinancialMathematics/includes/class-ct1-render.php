@@ -64,7 +64,7 @@ public function __construct(CT1_Object $obj=null){
 
 
 	/**
-	 * Get string of &,= pairs suitable for writing a URL that can ge read via $_GET
+	 * Get string of &,= pairs suitable for writing a URL that can ge read via request
 	 *
 	 * @param array $hidden list of hidden fields
 	 * @return string
@@ -91,7 +91,7 @@ public function __construct(CT1_Object $obj=null){
 	 *
 	 * @access public
 	 */
-	public function get_form_collection( CT1_Collection $cf, $submit = 'Submit', $intro = "" , $request = ""){
+	public function get_form_collection( CT1_Collection $cf, $submit = 'Submit', $intro = "" , $request = "", $pageid=""){
 		$out = "";
 		if ( !empty( $intro ) )
 			$out.= "<p>" . $intro . "</p>" . "\r\n";
@@ -101,8 +101,8 @@ public function __construct(CT1_Object $obj=null){
 		$hidden = $cf->get_values_as_array(  get_class( $cf ) );
 		$this->add_hidden_fields_to_fieldset( $fieldset, $hidden );
 		$fieldset->addElement('hidden', 'request')->setValue( $request );
-		if (isset($_GET['page_id'])){
-			$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+		if (!empty($pageid)){
+			$fieldset->addElement('hidden', 'page_id')->setValue($pageid);
 		}
 		$fieldset->addElement('submit', null, array('value' => $submit));
 		$out.= $form;
@@ -204,8 +204,8 @@ public function __construct(CT1_Object $obj=null){
 				->setLabel( $return['select-label'] )
 				->loadOptions( $return['select-options']);
 			$temp_page_id='';
-			if( isset($_GET['page_id'])){
-				$temp_page_id = $_GET['page_id'];
+			if( isset($return['page_id'])){
+				$temp_page_id = $return['page_id'];
 			}
 			$fieldset->addElement('hidden', 'page_id')->setValue($temp_page_id);
 			$fieldset->addElement('submit', null, array('value' => $return['submit']));
@@ -492,8 +492,8 @@ public function __construct(CT1_Object $obj=null){
 		// add page_id
 		if ($fieldset){
 			$fieldset->addElement('hidden', 'request')->setValue($return['request']);
-			if (isset($_GET['page_id'])){
-				$fieldset->addElement('hidden', 'page_id')->setValue($_GET['page_id']);
+			if (isset($return['page_id'])){
+				$fieldset->addElement('hidden', 'page_id')->setValue($return['page_id']);
 			}
 			$fieldset->addElement('submit', null, array('value' => $return['submit']));
 		}
