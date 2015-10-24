@@ -18,22 +18,10 @@ private function get_unrendered_solution(){
 	return $this->obj->explain_annuity_certain();
 } 
 
-public function get_solution(){
-	$render = new CT1_Render();
-	$return = $render->get_render_latex($this->get_unrendered_solution());
-	return $return;
-} 
-
 private function get_unrendered_interest_rate(){
 	return $this->obj->explain_interest_rate_for_value();
 }
 	
-public function get_interest_rate(){
-	$render = new CT1_Render();
-	$return = $render->get_render_latex($this->get_unrendered_interest_rate());
-	return $return;
-}
-
 public function get_calculator($parameters){
 	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-annuity-certain') );
 	$c = parent::get_calculator($p);
@@ -62,8 +50,6 @@ public function get_controller($_INPUT ){
 		}
 	}
 	else{
-		$render = new CT1_Render();
-		$return['form']= $render->get_render_form($this->get_calculator(array("delta", "escalation_delta")));
 		$return['output']['unrendered']['forms'][] = array(
 			'content'=>  $this->get_calculator(array("delta", "escalation_delta")),
 			'type'=>  ''
