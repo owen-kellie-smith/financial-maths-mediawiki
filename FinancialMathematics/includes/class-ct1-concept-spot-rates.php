@@ -136,10 +136,10 @@ public function get_concept_label(){
 	}
 
 	public function get_unrendered_delete_add(){
-		return  array(
-			$this->get_unrendered_delete_buttons(),
-			$this->get_unrendered_form_add_spot_rate(), 
-		) ;
+		$ret=array();
+		$ret[] = $this->get_unrendered_form_add_spot_rate();
+		$ret= array_merge($ret, $this->get_unrendered_delete_buttons());
+		return $ret;
 	}
 
 	/**
