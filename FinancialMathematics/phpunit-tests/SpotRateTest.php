@@ -32,8 +32,6 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
-/* no good for travis untul PEAR::isError() bug is fixed
-
   public function test_add_spot_rate()
   {
 	  $x = new CT1_Concept_All();
@@ -41,9 +39,8 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 			'request' => 'add_spot_rate',
 			'i_effective' => .1,
     	'effective_time' => 1));
-	  $this->assertTrue( isset($c['form']) ) ;
-	  $this->assertTrue( isset($c['table']) ) ;
-	  $this->assertTrue( isset($c['output']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['table']) ) ;
 	}
 
   public function test_explain_par()
@@ -61,9 +58,8 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
                 )
 
         )));
-	  $this->assertTrue( isset($c['form']) ) ;
-	  $this->assertTrue( isset($c['table']) ) ;
-	  $this->assertTrue( isset($c['output']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['table']) ) ;
 	}
 
   public function test_view_spotrates()
@@ -86,10 +82,9 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
                 )
 
         )));
-	  $this->assertTrue( isset($c['formulae']) ) ;
-	  $this->assertTrue( isset($c['form']) ) ;
-	  $this->assertTrue( isset($c['output']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['table']) ) ;
 	}
-*/
 
 }
