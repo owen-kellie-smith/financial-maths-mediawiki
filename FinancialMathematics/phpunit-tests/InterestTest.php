@@ -96,8 +96,6 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
-	  $this->assertTrue( isset($c['formulae']) ) ;
-	  $this->assertTrue( isset($c['xml-form']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
@@ -106,14 +104,14 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
-	  $this->assertTrue( isset($c['xml-form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
   public function test_full_input_form_xml()
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
-	  $this->assertTrue( isset($c['xml-form']['form']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
   public function test_full_input_XML()
@@ -138,7 +136,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>'<fin-math><parameters><request>get_interest<%2Frequest><m>1<%2Fm><i_effective>0<%2Fi_effective><%2Fparameters><%2Ffin-math>%0D%0A' ));
-	  $this->assertTrue( isset($c['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
   }  
 
 }
