@@ -89,5 +89,51 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
+  public function test_xml_GIVES_SAME_XML()
+  {
+		$XML = '<fin-math><parameters><request>get_mortgage_instalment</request><m>12</m><advance>1</advance><i_effective>0.1</i_effective><term>25</term><principal>1000000</principal><instalment/></parameters></fin-math>';
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
+		$c_forms = $c['output']['unrendered']['forms'];
+		$candidate_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$candidate_xml = $f['content']['values']['xml'];
+			}
+		}
+	  $this->assertEquals( urldecode($XML), $candidate_xml) ;
+  }  
+
+
+
+  public function test_xml_GIVES_SAME_result()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+   	'request'=>'get_mortgage_instalment',
+		'm'=>12,
+		'i_effective'=>0.1,
+		'term'=>25,
+		'principal'=>10000,
+		));
+	  $original_formulae = $c['output']['unrendered']['formulae'];
+		$c_forms = $c['output']['unrendered']['xml-form']['forms'];
+		$produced_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$produced_xml = $f['content']['values']['xml'];
+			}
+		}
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$produced_xml) ;  
+		$XML = $produced_xml;
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
+	  $processed_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( $original_formulae, $processed_formulae) ;
+
+  }  
+
+
+
 
 }

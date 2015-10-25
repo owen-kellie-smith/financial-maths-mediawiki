@@ -51,13 +51,10 @@ class CT1_Concept_All extends CT1_Form{
 
 	public function get_controller($_INPUT ){
     $return = $this->get_controller_no_xml($_INPUT );
-//echo __FILE__ . " get_controller return return1 " . print_r($return,1);
 		if (isset($return['output']['unrendered']['summary'])){
 			$c = new CT1_Form_XML();
 			$c->setTagName( $this->getTagName() );
 			$temp = $c->get_controller( $_INPUT ); // recursive but only once - it stops being in a loop by dumping everything one layer down i.e. in ..unrenderd.xml-form,... so it doesn't set an output.unrendered.summary
-//			$return['xml-form'] = $c->get_controller( $_INPUT );
-//echo __FILE__ . " get_controller return temp " . print_r($temp,1);
 		  if (isset($temp['output']['unrendered'])){
 				$return['output']['unrendered']['xml-form'] = $temp['output']['unrendered'];
 			}

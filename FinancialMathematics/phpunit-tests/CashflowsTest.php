@@ -54,7 +54,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 //    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
-	  $this->assertFalse( isset($c['output']['unrendered']['xml-form']) ) ; //don't want XML until explain par or expplain formward
+	  $this->assertFalse( isset($c['output']['unrendered']['xml-form']) ) ; //don't want XML until getting value or i_effective
   }  
 
 
@@ -67,6 +67,89 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
+  public function test_xml_GIVES_SAME_XML()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+    'CT1_Cashflows' => Array
+        (
+            0 => Array
+                (
+                    'm' => 1,
+                    'term' => 10,
+                    'rate_per_year' => 123,
+                    'effective_time' => 0,
+                ),
+        ),
+		'i_effective' => 0,
+    'request' => 'value_cashflows',
+		));
+//    $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c['output']['unrendered']['xml-form']['forms'][0]['content']['values']['xml']) ;  
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['output']['unrendered']['xml-form']['forms'][0]['content']['values']['xml']) ;  
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ; 
+	  $this->assertTrue( isset($c['output']['unrendered']['summary']) ) ; 
+		$c_forms = $c['output']['unrendered']['xml-form']['forms'];
+		$produced_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$produced_xml = $f['content']['values']['xml'];
+			}
+		}
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$produced_xml) ;  
+		$XML = $produced_xml;
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
+		$c_forms = $c['output']['unrendered']['forms'];
+		$candidate_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$candidate_xml = $f['content']['values']['xml'];
+			}
+		}
+	  $this->assertEquals( urldecode($XML), $candidate_xml) ;
+
+  }  
+
+
+  public function test_xml_GIVES_SAME_result()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+    'CT1_Cashflows' => Array
+        (
+            0 => Array
+                (
+                    'm' => 1,
+                    'term' => 10,
+                    'rate_per_year' => 123,
+                    'effective_time' => 0,
+                ),
+        ),
+		'i_effective' => 0,
+    'request' => 'value_cashflows',
+		));
+//    $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c['output']['unrendered']['xml-form']['forms'][0]['content']['values']['xml']) ;  
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['output']['unrendered']['xml-form']['forms'][0]['content']['values']['xml']) ;  
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+	  $original_formulae = $c['output']['unrendered']['formulae'];
+		$c_forms = $c['output']['unrendered']['xml-form']['forms'];
+		$produced_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$produced_xml = $f['content']['values']['xml'];
+			}
+		}
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$produced_xml) ;  
+		$XML = $produced_xml;
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
+	  $processed_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( $original_formulae, $processed_formulae) ;
+
+  }  
 
 
 }

@@ -87,4 +87,34 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['table']) ) ;
 	}
 
+  public function test_xml_GIVES_SAME_result()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+			'CT1_Spot_Rates'=>array(array('delta'=>0.095310179804325,'effective_time'=>1)),
+			'request'=>'explain_forward',
+			'forward_start_time'=>0,
+			'forward_end_time'=>1,
+		));
+	  $original_formulae = $c['output']['unrendered']['formulae'];
+		$c_forms = $c['output']['unrendered']['xml-form']['forms'];
+		$produced_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$produced_xml = $f['content']['values']['xml'];
+			}
+		}
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$produced_xml) ;  
+		$XML = $produced_xml;
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
+	  $processed_formulae = null;
+		if (isset($c['output']['unrendered']['formulae'])){
+		  $processed_formulae = $c['output']['unrendered']['formulae'];
+		}
+	  $this->assertEquals( $original_formulae, $processed_formulae) ;
+
+  }  
+
+
 }

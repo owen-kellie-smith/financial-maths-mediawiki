@@ -76,5 +76,21 @@ class CT1_Annuity_Increasing_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
+  public function test_xml_GIVES_SAME_XML()
+  {
+		$XML = '<fin-math><parameters><request>get_annuity_increasing</request><m>12</m><advance>1</advance><i_effective>0.1</i_effective><term>25</term><value/><increasing>1</increasing></parameters></fin-math>';
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
+		$c_forms = $c['output']['unrendered']['forms'];
+		$candidate_xml ='';
+		foreach ($c_forms as $f){
+			if ('process_xml'==$f['content']['request']){
+				$candidate_xml = $f['content']['values']['xml'];
+			}
+		}
+	  $this->assertEquals( urldecode($XML), $candidate_xml) ;
+  }  
+
+
 
 }
