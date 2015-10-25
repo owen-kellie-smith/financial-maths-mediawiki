@@ -5,6 +5,7 @@ class CT1_Mortgage extends CT1_Annuity{
 
 protected $principal;
 protected $instalment;
+protected $schedule;
 
 public function get_valid_options(){ 
 	$r = parent::get_valid_options();
@@ -13,6 +14,9 @@ public function get_valid_options(){
 					'decimal'=>'.',
 					);
 	$r['instalment'] = $r['principal'];
+	$r['schedule'] = array(
+							'type'=>'boolean',
+						);
 	return $r; 
 }
 
@@ -26,6 +30,10 @@ public function get_parameters(){
 			'name'=>'instalment',
 			'label'=>self::myMessage( 'fm-label_instalment'),
 			);
+	$r['schedule'] = array(
+			'name'=>'schedule',
+			'label'=>self::myMessage( 'fm-label_schedule'),
+						);
 	return $r; 
 }
 
@@ -33,6 +41,7 @@ public function get_values(){
 	$r = parent::get_values();
 	$r['principal'] = $this->get_principal();
 	$r['instalment'] = $this->get_instalment();
+	$r['schedule'] = $this->get_schedule();
 	return $r; 
 }
 
@@ -56,6 +65,16 @@ public function set_instalment($i){
   $candidate = array('instalment'=>$i);
   $valid = $this->get_validation($candidate);
 	if ($valid['instalment']) $this->instalment = $i;
+}
+
+public function set_schedule($i){
+  $candidate = array('schedule'=>$i);
+  $valid = $this->get_validation($candidate);
+	if ($valid['schedule']) $this->schedule = $i;
+}
+
+public function get_schedule(){
+	return $this->schedule;
 }
 
 public function get_principal(){

@@ -76,6 +76,7 @@
 	"fm-label_instalment" : "Amount per (initial) instalment",
 	"fm-label_instalment-short" : "Instalment amount",
 	"fm-label_principal" : "Principal",
+	"fm-label_schedule" : "Show mortgage schedule",
 	"fm-label_start_time" : "Start time after t=0 (in years)",
 	"fm-label_term" : "Term (years)",
 	"fm-label-term-whole":"(Whole) number of years term",

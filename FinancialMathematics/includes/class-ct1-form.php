@@ -8,7 +8,11 @@ protected $request;
 protected static function myMessage( $messageKey){
 			$m = $messageKey;
 			if ( function_exists('wfMessage') ){
-				$m=wfMessage( $messageKey)->text();
+				if (null == wfMessage( $messageKey)->text()){
+					return $messageKey;
+				} else {
+					$m=wfMessage( $messageKey)->text();
+				}
 			}
 			return $m;
 }
