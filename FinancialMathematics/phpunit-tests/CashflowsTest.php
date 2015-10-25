@@ -30,7 +30,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 //	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
-	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
+	  $this->assertFalse( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
 
@@ -54,7 +54,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 //    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
-	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
+	  $this->assertFalse( isset($c['output']['unrendered']['xml-form']) ) ; //don't want XML until explain par or expplain formward
   }  
 
 

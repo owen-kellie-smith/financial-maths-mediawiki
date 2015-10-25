@@ -21,6 +21,18 @@ private function get_unrendered_solution(){
 private function get_unrendered_interest_rate(){
 	return $this->obj->explain_interest_rate_for_value();
 }
+
+	private function get_unrendered_summary( $_INPUT ){
+		$ret=array();
+			if (empty( $_INPUT['value'] )  ){
+				$ret['sought']='value';
+		} else {
+				$ret['sought']='i_effective';
+		}
+		return $ret;
+	}
+
+
 	
 public function get_calculator($parameters){
 	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-annuity-certain') );
@@ -37,10 +49,12 @@ public function get_controller($_INPUT ){
 				if (empty( $_INPUT['value'] ) ){
 					$return['formulae']= $this->get_solution();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
+				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
 					return $return;
 				} else {
 					$return['formulae']= $this->get_interest_rate();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_interest_rate();
+				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
 					return $return;
 				}
 			} else {

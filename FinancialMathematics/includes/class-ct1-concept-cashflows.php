@@ -58,6 +58,7 @@ public function get_concept_label(){
 				}
 				if ($this->get_request() == $_INPUT['request']){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_calculated_value( $_INPUT );
+				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary( $_INPUT );
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
 				  	return $return;
 				}
@@ -103,6 +104,17 @@ public function get_concept_label(){
 		}
 	}
 
+
+	private function get_unrendered_summary( $_INPUT ){
+		$ret=array();
+		if ( $this->ignore_value( $_INPUT ) ){
+			if (isset( $_INPUT['i_effective'] ) )
+				$ret['sought']='value';
+		} else {
+				$ret['sought']='i_effective';
+		}
+		return $ret;
+	}
 
 	private function get_unrendered_val_delete_add(){
 		$return =  array( 

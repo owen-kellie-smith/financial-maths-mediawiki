@@ -30,7 +30,7 @@ public function get_controller($_INPUT ){
 		if ($this->get_request() == $_INPUT['request']){
 			if ($this->set_interest($_INPUT)){
 				$return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
-
+				$return['output']['unrendered']['summary'] = array('sought'=>'rate');
 				return $return;
 			}
 			else{

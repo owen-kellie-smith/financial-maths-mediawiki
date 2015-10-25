@@ -25,6 +25,17 @@ private function get_unrendered_interest_rate(){
 	return $this->obj->explain_interest_rate_for_instalment();
 }
 
+
+	private function get_unrendered_summary( $_INPUT ){
+		$ret=array();
+			if (empty( $_INPUT['instalment']  )  ){
+				$ret['sought']='instalment';
+		} else {
+				$ret['sought']='i_effective';
+		}
+		return $ret;
+	}
+
 	
 public function get_calculator($parameters){
 	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-mortgage') );
@@ -40,9 +51,11 @@ public function get_controller($_INPUT ){
 			if ($this->set_mortgage($_INPUT)){
 				if (empty( $_INPUT['instalment'] ) ){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
+				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
 					return $return;
 				} else {
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_interest_rate();
+				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
 					return $return;
 				}
 			} else{

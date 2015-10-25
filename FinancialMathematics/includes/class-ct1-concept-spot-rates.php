@@ -61,12 +61,14 @@ public function get_concept_label(){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_explanation_forward( $_INPUT );
 				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
+				  $return['output']['unrendered']['summary'] = array('sought'=>'forward');
 					return $return;
 				}
 				if ( 'explain_par' == $_INPUT['request'] ){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_explanation_par( $_INPUT );
 				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
+				  $return['output']['unrendered']['summary'] = array('sought'=>'par');
 					return $return;
 				}
 			} 
