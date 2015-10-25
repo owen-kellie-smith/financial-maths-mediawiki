@@ -7,7 +7,10 @@ protected $explanation_par_yields;
 
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
-		$r['CT1_Spotrates'] = array();
+		$r['CT1_Spot_Rates'] = array();
+		$r['forward_start_time'] = array();
+		$r['forward_end_time'] = array();
+		$r['par_term'] = array();
 		return $r; 
 	}
 

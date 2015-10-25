@@ -8,6 +8,8 @@ class CT1_Cashflows extends CT1_Collection {
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
 		$r['CT1_Cashflows'] = array();
+		$r['i_effective'] = array();
+		$r['value'] = array();
 		return $r; 
 	}
 
