@@ -137,16 +137,16 @@ private function interest_per_period(){
 public function get_mortgage_table(){
        return array( 
                'schedule'=>array(
-               'header'=>array(        'Instalment count', 
-                                       'Principal at start', 
-                                       'Interest', 
-                                       'Capital Repaid', 
-                                       'Principal at end', 
-                                       'Instalment',
+               'header'=>array(        self::myMessage( 'fm-label-schedule-instalment-count'),
+                                       self::myMessage( 'fm-label-schedule-principal-at-start'), 
+                                       self::myMessage( 'fm-label-schedule-interest'),
+                                       self::myMessage( 'fm-label-schedule-capital-repaid'),
+                                       self::myMessage( 'fm-label-schedule-principal-end'),
+                                       self::myMessage( 'fm-label-schedule-instalment'),
                                        ),
                'data'=>$this->get_mortgage_schedule_unlabelled(),
                ));
-} // ???? replace labels with wfMessages ????
+} 
 
 
 public function get_mortgage_schedule_unlabelled(){
