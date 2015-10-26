@@ -49,13 +49,24 @@ class SpecialFinancialMathematics extends SpecialPage {
 //			if (isset($result['table'])){
 //				$out->addHTML( $result['table'] );
 //			}
+
 			if (isset($result['output']['unrendered']['table'])){
-//					$out->addHTML( "table  FROM unrendered <pre>" . print_r($result['output']['unrendered']['table'],1) . "</pre>");
+//					$out->addHTML( "table  FROM unrendered ytable schedule <pre>" . print_r($result['output']['unrendered']['table']['schedule'],1) . "</pre>");
+                               if (isset($result['output']['unrendered']['table']['schedule'])){
+                                       $out->addHTML( $render->get_table(
+                                       $result['output']['unrendered']['table']['schedule']['data'],
+                                       $result['output']['unrendered']['table']['schedule']['header']
+                                       ));
+                               }
+
 				$out->addHTML( $render->get_render_rate_table(
 					$result['output']['unrendered']['table']['rates'],
 					$result['output']['unrendered']['table']['hidden'],
 					$this->getSkin()->getTitle()->getLinkUrl() . "?" ));    
 			}
+
+
+
 //			if (isset($result['form'])){
 //				$out->addHTML( $result['form'] );
 //			}

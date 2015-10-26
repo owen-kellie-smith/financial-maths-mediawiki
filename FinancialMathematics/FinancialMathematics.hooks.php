@@ -51,6 +51,13 @@ class FinancialMathematicsHooks {
 					$render = new CT1_Render();
 					$_out =  $render->get_render_latex($result['output']['unrendered']['formulae']) ;
 				}
+                               if (isset($result['output']['unrendered']['table']['schedule'])){
+                                       $_out .= $render->get_table(
+                                       $result['output']['unrendered']['table']['schedule']['data'],
+                                       $result['output']['unrendered']['table']['schedule']['header']
+                                       );
+                               }
+
 			}
 		}
 		if (!isset($_out)){
