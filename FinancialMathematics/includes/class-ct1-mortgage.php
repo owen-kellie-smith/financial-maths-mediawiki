@@ -133,6 +133,49 @@ private function interest_per_period(){
  	return exp($this->get_delta() / $this->get_m()) - 1;
 }
 
+
+public function get_mortgage_table(){
+       return array( 
+               'schedule'=>array(
+               'header'=>array(        'Instalment count', 
+                                       'Principal at start', 
+                                       'Interest', 
+                                       'Capital Repaid', 
+                                       'Principal at end', 
+                                       'Instalment',
+                                       ),
+               'data'=>$this->get_mortgage_schedule_unlabelled(),
+               ));
+} // ???? replace labels with wfMessages ????
+
+
+public function get_mortgage_schedule_unlabelled(){
+	$s = $this->get_mortgage_schedule();
+	$u = array();
+	$rounding = 2;
+	$format=true;
+	for ($i=0, $ii=count($s); $i<$ii; $i++){
+		$u[$i] = array(
+			$this->format_number($s[$i+1]['count'],$rounding,$format),
+			$this->format_number($s[$i+1]['oldPrincipal'],$rounding,$format),
+			$this->format_number($s[$i+1]['interest'],$rounding,$format),
+			$this->format_number($s[$i+1]['capRepay'],$rounding,$format),
+			$this->format_number($s[$i+1]['newPrincipal'],$rounding,$format),
+			$this->format_number($s[$i+1]['instalment'],$rounding,$format),
+		);
+	}
+	return $u;
+}
+
+private function format_number( $n, $rounding=2, $format=true){
+	if ($format){
+		return number_format( $n, $rounding);
+	} else {
+		return $n;
+	}
+}
+
+
 public function get_mortgage_schedule(){
 	if ($this->is_continuous()) throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-schedule'));
 	$rounding = 2;

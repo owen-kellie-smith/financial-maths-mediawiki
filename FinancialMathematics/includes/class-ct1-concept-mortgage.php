@@ -52,10 +52,13 @@ public function get_controller($_INPUT ){
 				if (empty( $_INPUT['instalment'] ) ){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
 				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
+                                  $return['output']['unrendered']['table'] = $this->obj->get_mortgage_table();
+
 					return $return;
 				} else {
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_interest_rate();
 				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
+                                  $return['output']['unrendered']['table'] = $this->obj->get_mortgage_table();
 					return $return;
 				}
 			} else{
