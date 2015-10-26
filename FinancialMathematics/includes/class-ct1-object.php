@@ -93,10 +93,10 @@ abstract class CT1_Object {
 	protected static function myMessage( $messageKey){
 			$m = $messageKey;
 			if ( function_exists('wfMessage') ){
-				$m=wfMessage( $messageKey)->text();
+				$m = htmlentities(wfMessage( $messageKey)->plain());
 			}
 			return $m;
-}
+	}
 					
 } // end of class
 

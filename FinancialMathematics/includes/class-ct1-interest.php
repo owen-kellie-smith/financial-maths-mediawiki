@@ -15,6 +15,20 @@ public function get_valid_options(){
 						'type'=>'number',
 						'decimal'=>'.',
 					);
+		$r['source_m'] = array(
+							'type'=>'number',
+							'decimal'=>'.',
+							'min'=>0.00001,
+						);
+		$r['source_advance'] = array(
+							'type'=>'boolean',
+						);
+
+	$r['source_rate'] = array(
+						'type'=>'number',
+						'decimal'=>'.',
+						'min'=>'-0.99',
+					);
 	$r['i_effective'] = array(
 						'type'=>'number',
 						'decimal'=>'.',
@@ -25,6 +39,18 @@ public function get_valid_options(){
 
 public function get_parameters(){ 
 	$r = parent::get_parameters();
+	$r['source_m'] = array(
+			'name'=>'source_m',
+			'label'=>self::myMessage( 'fm-label_source_m') ,
+			);
+	$r['source_advance'] = array(
+			'name'=>'source_advance',
+			'label'=>self::myMessage( 'fm-label_source_advance') ,
+			);
+	$r['source_rate'] = array(
+			'name'=>'source_rate',
+			'label'=>self::myMessage( 'fm-label_source_rate') ,
+			);
 	$r['delta'] = array(
 			'name'=>'delta',
 			'label'=>self::myMessage( 'fm-label_delta') ,
