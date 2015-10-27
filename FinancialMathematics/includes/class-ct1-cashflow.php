@@ -16,8 +16,6 @@ class CT1_Cashflow extends CT1_Object {
 	 * @access public
 	 */
 	public function set_from_input( $IN = array(), $pre = '' ){
-echo __FILE__ . " set_from_input \r\n";
-echo " IN " . print_r($IN,1) . "\r\n";
 	try{
 		$advance=0; $rate_per_year = 0; $effective_time = 0;
 		$increasing = 0; $escalation_rate_effective=0;
