@@ -41,7 +41,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	$c = $x->get_controller( array( 'request'=>'add_cashflow', 'm'=>100, 'term'=>0.75));
 //	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
-	  $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+//	  $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
 	  $this->assertFalse( isset($c['warning']));
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
@@ -54,7 +54,7 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
 	$c = $x->get_controller( array( 'request'=>'add_cashflow', 'm'=>100, 'term'=>0.75, 'escalation_frequency'=>1));
 //	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
-	  $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+//	  $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
 	  $this->assertFalse( isset($c['warning']));
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
