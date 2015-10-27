@@ -40,7 +40,13 @@ class CT1_Annuity extends CT1_Interest{
 		return $r; 
 	}
 
-	public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1 ){
+	public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1, $debug=false ){
+		if ($debug){
+			echo __FILE__ . " construct \r\n";
+			foreach (array ('m', 'advance','delta','term') as $i){
+				echo $i . "  " . print_r($$i, 1) . "\r\n";
+			}
+		}
 		parent::__construct( $m, $advance, $delta);
 		$this->set_term($term);
 	}

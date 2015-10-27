@@ -33,6 +33,31 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 	  $this->assertFalse( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
+  public function test_input_cashflow_frequency()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array( 'request'=>'add_cashflow', 'm'=>200, 'term'=>0.75));
+	  $this->assertFalse( isset($c['warning']));
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	$c = $x->get_controller( array( 'request'=>'add_cashflow', 'm'=>100, 'term'=>0.75));
+//	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
+//	  $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+	  $this->assertFalse( isset($c['warning']));
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+  }  
+
+  public function test_input_cashflow_escalation_frequency()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array( 'request'=>'add_cashflow', 'm'=>4, 'term'=>0.75 ));
+	  $this->assertFalse( isset($c['warning']));
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+	$c = $x->get_controller( array( 'request'=>'add_cashflow', 'm'=>100, 'term'=>0.75, 'escalation_frequency'=>1));
+//	  $this->assertEquals( array('some-stuff-just-to-show-whats-there'),$c) ;  
+//	  $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+	  $this->assertFalse( isset($c['warning']));
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+  }  
 
   public function test_input_returns_expected_VIEW_cashflowS()
   {

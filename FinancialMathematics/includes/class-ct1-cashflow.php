@@ -39,9 +39,13 @@ class CT1_Cashflow extends CT1_Object {
 				$a = new CT1_Annuity_Increasing();
 				$a->set_increasing( $increasing );
 			} else {
-				$a = new CT1_Annuity_Escalating();
-				$a->set_escalation_rate_effective( $escalation_rate_effective );
-				$a->set_escalation_frequency( $escalation_frequency );
+				if (0==$escalation_rate_effective){
+					$a = new CT1_Annuity();
+				} else {
+					$a = new CT1_Annuity_Escalating();
+					$a->set_escalation_rate_effective( $escalation_rate_effective );
+					$a->set_escalation_frequency( $escalation_frequency );
+				}
 			}
 		}
 		if ($a->set_from_input( $IN ) ){
