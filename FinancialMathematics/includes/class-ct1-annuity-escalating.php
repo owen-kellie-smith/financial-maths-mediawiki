@@ -206,7 +206,8 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 					$this->set_escalation_delta(	$_INPUT[$pre. 'escalation_delta'] );
 				if ( isset( $_INPUT[$pre. 'escalation_rate_effective'] ) )
 					$this->set_escalation_rate_effective(	$_INPUT[$pre. 'escalation_rate_effective'] );
-				$this->set_escalation_frequency(	$_INPUT[$pre. 'escalation_frequency'] );
+				if ( isset( $_INPUT[$pre. 'escalation_frequency']))
+					$this->set_escalation_frequency(	$_INPUT[$pre. 'escalation_frequency'] );
 				return true;
 			}
 			else{

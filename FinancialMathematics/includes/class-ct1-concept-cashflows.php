@@ -41,6 +41,8 @@ public function get_concept_label(){
 	 */
 	public function get_controller($_INPUT ){
   $return=array();
+//echo __FILE__ . "get_controller \r\n";
+//echo " INPUT " . print_r($_INPUT,1) . "\r\n";
 		try{
 			$tempClass = get_class( $this->obj ) ;
 			if (isset($_INPUT[ $tempClass ])){
@@ -154,6 +156,8 @@ public function get_concept_label(){
 	 * @access private
 	 */
 	private function add_cashflow_from_input( $IN ){
+//echo __FILE__ . " add_cashflow_from_input \r\n ";
+//echo " IN " . print_r($IN,1) . "\r\n";
 		$cf = new CT1_Cashflow();
 		if ($cf->set_from_input( $IN ) )
 			$this->obj->add_cashflow( $cf );
