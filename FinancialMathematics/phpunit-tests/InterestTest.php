@@ -98,6 +98,51 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	$x = new CT1_Concept_Interest();
+	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>6,'advance'=>1, 'i_effective'=>0.1) );
+    $this->assertEquals( $x->get_obj()->get_values()['delta'], log(1.1));
+  }  
+
+  public function test_input_not_annual_effective()
+  {
+	$x = new CT1_Concept_Interest();
+	$c = $x->get_controller( array( 'request'=>'get_interest','source_m'=>12, 'source_advance'=>1, 'source_rate'=>0.1) );
+	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
+	  $this->assertFalse( isset($c['warning']) ) ;
+	$delta=-12*log(1/(1+0.1/12));
+    $this->assertEquals( $delta, $x->get_obj()->get_values()['delta']);
+  }  
+
+  public function test_input_not_annual_effective_delta()
+  {
+	$x = new CT1_Concept_Interest();
+	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>0,'source_m'=>2, 'source_rate'=>0.1) );
+	$delta=2*log(1.05);
+    $o = $x->get_obj();
+    $this->assertEquals( $delta, $o->get_values()['delta']);
+  }  
+
+  public function test_input_not_annual_effective_i()
+  {
+	$x = new CT1_Concept_Interest();
+	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>0,'source_m'=>2, 'source_rate'=>0.1) );
+	$delta=2*log(1.05);
+    $o = $x->get_obj();
+	$r = $o->get_rate_in_form($o);
+    $this->assertEquals(  exp($delta)-1, $r);
+  }  
+
+  public function test_input_not_annual_effective_d12_i6()
+  {
+	$x = new CT1_Concept_Interest();
+	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>6,'advance'=>0,'source_m'=>12, 'source_advance'=>1, 'source_rate'=>0.1) );
+	$delta=12*-log(1-0.1/12);
+    $o = $x->get_obj();
+	$r = $o->get_rate_in_form($o);
+    $this->assertEquals( 6*( exp($delta/6)-1), $r);
   }  
 
   public function test_full_input_form()
