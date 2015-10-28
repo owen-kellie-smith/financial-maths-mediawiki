@@ -103,7 +103,8 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	$x = new CT1_Concept_Interest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>6,'advance'=>1, 'i_effective'=>0.1) );
-    $this->assertEquals( $x->get_obj()->get_values()['delta'], log(1.1));
+    $temp =  $x->get_obj()->get_values();
+    $this->assertEquals( $temp['delta'], log(1.1));
   }  
 
   public function test_input_not_annual_effective_i12_delta()
@@ -113,7 +114,8 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	  $this->assertFalse( isset($c['warning']) ) ;
 	$delta=12*log(1/(1-0.1/12));
-    $this->assertEquals( $delta, $x->get_obj()->get_values()['delta']);
+    $temp =  $x->get_obj()->get_values();
+    $this->assertEquals( $delta, $temp['delta']);
   }  
 
   public function test_input_not_annual_effective_delta()
@@ -122,7 +124,8 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>false,'source_m'=>2, 'source_rate'=>0.1) );
 	$delta=2*log(1.05);
     $o = $x->get_obj();
-    $this->assertEquals( $delta, $o->get_values()['delta']);
+    $temp =  $o->get_values();
+    $this->assertEquals( $delta, $temp['delta']);
   }  
 
   public function test_input_not_annual_effective_i2_i()
