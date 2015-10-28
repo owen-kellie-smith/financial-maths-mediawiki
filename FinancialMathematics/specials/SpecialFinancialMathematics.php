@@ -22,7 +22,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 		parent::__construct( 'FinancialMathematics' );
 	}
 
-	private $showUglyDebugMessagesOnRenderedPage=true;
+	private $showUglyDebugMessagesOnRenderedPage=false;
 
 	/**
 	 * Show the page to the user
