@@ -1,21 +1,28 @@
 <?php
 /**
- * HelloWorld SpecialPage for FinancialMathematics extension
+ * SpecialPage for FinancialMathematics extension
  * Hack of BoilerPlate
  *
  */
 
+/**
+ * ??? redundant paths?
+ *
 $path = dirname(dirname(__FILE__)) ;
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once "FinancialMathematics.hooks.php";
-
-
 $path = dirname(dirname(__FILE__)) . "/PEAR";
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+ *
+ *
+**/
+
 class SpecialFinancialMathematics extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'FinancialMathematics' );
 	}
+
+	private $showUglyDebugMessagesOnRenderedPage=true;
 
 	/**
 	 * Show the page to the user
@@ -24,79 +31,84 @@ class SpecialFinancialMathematics extends SpecialPage {
 	 *  [[Special:HelloWorld/subpage]].
 	 */
 	public function execute( $sub ) {
+		$result = $this->getResult();
 		$out = $this->getOutput();
-		$out->setPageTitle( $this->msg( 'financialmathematics-helloworld' ) );
-		$out->addWikiMsg( 'financialmathematics-helloworld-intro' );
-		$_restart_label = wfMessage( 'fm-restart')->text();
-		$_restart = '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
-//		$out->addHTML( "getQueryVaues is <pre> " . print_r($this->getRequest()->getQueryValues(), 1) . "</pre>" );
-		$out->addHTML( $_restart );
-		$m = new CT1_Concept_All();
-		$m->setTagName( FinancialMathematicsHooks::getTagName() );
-		$result = $m->get_controller($this->getRequest()->getQueryValues()) ; 
-//		$out->addHTML( "result output unredndered is <pre> " . print_r($result['output']['unrendered'], 1) . "</pre>" );
-//		$out->addHTML( "result output unredndered table is <pre> " . print_r($result['output']['unrendered']['table'], 1) . "</pre>" );
-		$render = new CT1_Render();
-		if (isset($result['warning'])){
-			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
-		}else{
-			if (isset($result['output']['unrendered']['formulae'])){
-				$out->addHTML( $render->get_render_latex($result['output']['unrendered']['formulae']) );
-			}
-//			if (isset($result['formulae'])){
-//				$out->addHTML( $result['formulae'] );
-//			}
-//			if (isset($result['table'])){
-//				$out->addHTML( $result['table'] );
-//			}
-
-			if (isset($result['output']['unrendered']['table'])){
-//					$out->addHTML( "table  FROM unrendered ytable schedule <pre>" . print_r($result['output']['unrendered']['table']['schedule'],1) . "</pre>");
-                               if (isset($result['output']['unrendered']['table']['schedule'])){
-                                       $out->addHTML( $render->get_table(
-                                       $result['output']['unrendered']['table']['schedule']['data'],
-                                       $result['output']['unrendered']['table']['schedule']['header']
-                                       ));
-                               }
-
-				$out->addHTML( $render->get_render_rate_table(
-					$result['output']['unrendered']['table']['rates'],
-					$result['output']['unrendered']['table']['hidden'],
-					$this->getSkin()->getTitle()->getLinkUrl() . "?" ));    
-			}
-
-
-
-//			if (isset($result['form'])){
-//				$out->addHTML( $result['form'] );
-//			}
-			if (isset($result['output']['unrendered']['forms'])){
-				foreach ($result['output']['unrendered']['forms'] AS $_f){
-//					$_f['content']['render']='HTML';
-//					$out->addHTML( "FORM FROM unrendered <pre>" . print_r($_f,1) . "</pre>");
-
-					try{	$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] )); 
-					} catch( Exception $e ){
-								$out->addHTML( $e->getMessage() );
-					}
-
-				}
-			}
-//			if (isset($result['xml-form']['form'])){
-//				$out->addHTML( $result['xml-form']['form'] );
-//			}
-
-			if (isset($result['output']['unrendered']['xml-form']['forms'])){
-//		$out->addHTML( "result output unredndered xml-form forms 0 array is <pre> " . print_r($result['output']['unrendered']['xml-form']['forms'], 1) . "</pre>" );
-				foreach ($result['output']['unrendered']['xml-form']['forms'] AS $_f){
-					$_f['content']['render']='HTML';
-					$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] ));
-				}
-			}
-		}
+		$this->outputGreetings( $out );
+		$this->outputDebugMessagesIfRequired( $out, $result );
+		$this->outputResult( $out, $result );
 	}
 
 	protected function getGroupName() {
 		return 'other';
 	}
+
+	private function getResult(){
+		$m = new CT1_Concept_All();
+		$m->setTagName( FinancialMathematicsHooks::getTagName() );
+		return $m->get_controller($this->getRequest()->getQueryValues()) ; 
+	}
+
+	private function outputGreetings( &$out ){
+		$out->setPageTitle( $this->msg( 'financialmathematics-helloworld' ) );
+		$out->addWikiMsg( 'financialmathematics-helloworld-intro' );
+		$out->addHTML( $this->restartForm() );
+	}
+
+	private function outputDebugMessagesIfRequired( &$out, $result ){
+		if ($this->showUglyDebugMessagesOnRenderedPage){
+			$out->addHTML( "getQueryVaues is <pre> " . print_r($this->getRequest()->getQueryValues(), 1) . "</pre>" );
+			if (isset($result['output']['unrendered']['table'])){
+				$out->addHTML( "result output unrendered table is <pre> " . print_r($result['output']['unrendered']['table'], 1) . "</pre>" );
+			}
+		}
+	}
+
+	private function outputResult( &$out, $result ){
+		$render = new CT1_Render();
+		if (isset($result['warning'])){
+			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
+		} else {
+			$u = array();
+			if (isset($result['output']['unrendered'])){
+				$u = $result['output']['unrendered'];
+			}
+			if (isset($u['formulae'])){
+				$out->addHTML( $render->get_render_latex($u['formulae']) );
+			}
+			if (isset($u['table'])){
+                               if (isset($u['table']['schedule'])){
+                                       $out->addHTML( $render->get_table(
+                                       $u['table']['schedule']['data'],
+                                       $u['table']['schedule']['header']
+                                       ));
+                               }
+				$out->addHTML( $render->get_render_rate_table(
+					$u['table']['rates'],
+					$u['table']['hidden'],
+					$this->getSkin()->getTitle()->getLinkUrl() . "?" ));    
+			}
+			if (isset($u['forms'])){
+				foreach ($u['forms'] AS $_f){
+					try{	
+						$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] )); 
+					} catch( Exception $e ){
+						$out->addHTML( $e->getMessage() );
+					}
+				}
+			}
+			if (isset($u['xml-form']['forms'])){
+				foreach ($u['xml-form']['forms'] AS $_f){
+					$_f['content']['render']='HTML';
+					$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] ));
+				}
+			}
+		}
+		return;
+	}
+
+	private function restartForm(){
+		$_restart_label = wfMessage( 'fm-restart')->text();
+		return '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
+	}
+
 }
