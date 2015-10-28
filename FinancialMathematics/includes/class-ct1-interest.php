@@ -3,6 +3,8 @@
 
 class CT1_Interest extends CT1_Interest_Format  {
 
+protected $source_format;
+protected $source_rate;
 protected $delta = 0;
 protected $max_dp = 8;
 public function explain_format($d){
@@ -64,6 +66,8 @@ public function get_parameters(){
 
 public function get_values(){ 
 	$r = parent::get_values();
+	$r['source_rate'] = $this->get_source_rate();
+	$r['source_format'] = $this->get_source_format();
 	$r['delta'] = $this->get_delta();
 	$r['i_effective'] = $this->get_i_effective();
 	return $r; 
@@ -72,6 +76,49 @@ public function get_values(){
 public function __construct( $m = 1, $advance = false, $delta = 0){
 	parent::__construct( $m, $advance);
 	$this->set_delta($delta);
+}
+
+public function get_source_format(){
+	return $this->source_format;
+}
+
+public function set_source_format($m, $advance){
+  $this->source_format = new CT1_Interest_Format( $m, $advance );	
+	$i = $this->get_source_rate();
+			if ($this->get_source_format()->is_continuous()){
+				$delta = $i;
+			} else {
+				if ($this->get_source_format()->get_advance()){
+					$delta = $this->get_source_format()->get_m() * -log( 1 - $i / $this->get_source_format()->get_m() );
+				} else {
+					$delta = $this->get_source_format()->get_m() * log( 1 + $i / $this->get_source_format()->get_m() );
+				}
+			}
+			$this->set_delta($delta);
+}
+
+public function get_source_rate(){
+	return $this->source_rate;
+}
+
+public function set_source_rate($i){
+  $candidate = array('source_rate'=>$i);
+  $valid = $this->get_validation($candidate);
+	if ($valid['source_rate']) $this->source_rate=$i;
+	if (is_object($this->get_source_format())){
+		if ($this->get_source_format() instanceof CT1_Interest_Format){
+			if ($this->get_source_format()->is_continuous()){
+				$delta = $i;
+			} else {
+				if ($this->get_source_format()->get_advance()){
+					$delta = $this->get_source_format()->get_m() * -log( 1 - $i / $this->get_source_format()->get_m() );
+				} else {
+					$delta = $this->get_source_format()->get_m() * log( 1 + $i / $this->get_source_format()->get_m() );
+				}
+			}
+			$this->set_delta($delta);
+		}
+	}
 }
 
 public function get_delta(){
@@ -133,12 +180,20 @@ public function explain_rate_in_form($f){
 
 public function set_from_input($_INPUT = array(), $pre = ''){
 	try{
-		if (parent::set_from_input($_INPUT, $pre)){
-			if (isset($_INPUT[$pre . 'delta'])){
-				$this->set_delta(	$_INPUT[$pre. 'delta'] );
+		if (parent::set_from_input($_INPUT, $pre)){ // the last set rate trumps all the others
+			if (isset($_INPUT[$pre . 'source_m']) && isset($_INPUT[$pre . 'source_rate'])){
+					$this->set_source_rate($_INPUT[$pre . 'source_rate']);
+					if (isset($_INPUT[$pre . 'source_advance'])){
+						 $this->set_source_format($_INPUT[$pre . 'source_m'], $_INPUT[$pre . 'source_advance']);
+					} else {
+						 $this->set_source_format($_INPUT[$pre . 'source_m'], false);
+					}
 			} 
 			if (isset($_INPUT[$pre . 'i_effective'])){
 				$this->set_i_effective($_INPUT[$pre . 'i_effective']);
+			} 
+			if (isset($_INPUT[$pre . 'delta'])){
+				$this->set_delta(	$_INPUT[$pre. 'delta'] );
 			} 
 			return true;
 		}
@@ -149,6 +204,7 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 	catch( Exception $e ){ 
 		throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
 	}
+
 }
 
 
