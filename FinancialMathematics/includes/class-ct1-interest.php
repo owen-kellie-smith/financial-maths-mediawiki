@@ -3,6 +3,7 @@
 
 class CT1_Interest extends CT1_Interest_Format  {
 
+protected $delta_source;
 protected $source_format;
 protected $source_rate;
 protected $delta = 0;
@@ -76,6 +77,10 @@ public function get_values(){
 public function __construct( $m = 1, $advance = false, $delta = 0){
 	parent::__construct( $m, $advance);
 	$this->set_delta($delta);
+}
+
+private function get_delta_source(){
+	return $this->delta_source;
 }
 
 public function get_source_format(){
@@ -153,10 +158,27 @@ public function get_rate_in_form($f){
 
 public function explain_rate_in_form($f){
 	$return = array();
-	$explain_delta[0]['left'] = "\\delta";
-	$explain_delta[0]['right'] = "\\log \\left( 1 + i \\right)";
-	$explain_delta[1]['right'] = "\\log \\left( " . $this->explain_format( 1 + $this->get_i_effective() ) . " \\right)";
-	$explain_delta[2]['right'] = $this->explain_format($this->delta); 
+	if ('source_rate'==$this->get_delta_source() && !$this->get_source_format()->is_continuous()){
+		if (!$this->get_source_format()->get_advance()){
+			$explain_delta[0]['left'] = "\\delta";
+			$explain_delta[0]['right'] = $this->get_source_format()->get_m() . "\ \\log \\left( 1 + \\frac{" . $this->get_source_format()->label_interest_format(). "}{" . $this->get_source_format()->get_m() . "}\\right)";
+			$explain_delta[1]['right'] = $this->get_source_format()->get_m() . "\ \\log \\left( " . $this->explain_format( 1 + $this->get_source_rate() / $this->get_source_format()->get_m()) . " \\right)";
+			$explain_delta[2]['right'] = $this->explain_format($this->delta) ;
+		} else {
+			$explain_delta[0]['left'] = "\\delta";
+			$explain_delta[0]['right'] = "- " . $this->get_source_format()->get_m() . "\ \\log \\left( 1 - \\frac{" . $this->get_source_format()->label_interest_format(). "}{" . $this->get_source_format()->get_m() . "}\\right)";
+			$explain_delta[1]['right'] = "- " . $this->get_source_format()->get_m() . "\ \\log \\left( " . $this->explain_format( 1 - $this->get_source_rate() /  $this->get_source_format()->get_m()) . " \\right)";
+			$explain_delta[2]['right'] = $this->explain_format($this->delta);
+		}
+	} elseif ('i_effective'==$this->get_delta_source()){
+		$explain_delta[0]['left'] = "\\delta";
+		$explain_delta[0]['right'] = "\\log \\left( 1 + i \\right)";
+		$explain_delta[1]['right'] = "\\log \\left( " . $this->explain_format( 1 + $this->get_i_effective() ) . " \\right)";
+		$explain_delta[2]['right'] = $this->explain_format($this->delta);
+	} else {
+			$explain_delta[0]['left'] = "\\delta";
+			$explain_delta[0]['right'] = $this->explain_format($this->delta);
+	}
 	if (!$f->is_continuous()){ 
 		if ($f->get_advance()){
 			$return[0]['left'] = $f->label_interest_format();
@@ -179,6 +201,8 @@ public function explain_rate_in_form($f){
 }
 
 public function set_from_input($_INPUT = array(), $pre = ''){
+//echo __FILE__ ." set_from_Input \r\n";
+//echo "<pre> " . print_r($_INPUT,1) . "</pre>";
 	try{
 		if (parent::set_from_input($_INPUT, $pre)){ // the last set rate trumps all the others
 			if (isset($_INPUT[$pre . 'source_m']) && isset($_INPUT[$pre . 'source_rate'])){
@@ -188,12 +212,17 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 					} else {
 						 $this->set_source_format($_INPUT[$pre . 'source_m'], false);
 					}
+				$this->delta_source = "source_rate";
 			} 
-			if (isset($_INPUT[$pre . 'i_effective'])){
-				$this->set_i_effective($_INPUT[$pre . 'i_effective']);
+			if (isset($_INPUT[$pre . 'i_effective']) ){
+				if (!array()==$_INPUT[$pre . 'i_effective']){
+					$this->set_i_effective($_INPUT[$pre . 'i_effective']);
+					$this->delta_source = "i_effective";
+				}
 			} 
 			if (isset($_INPUT[$pre . 'delta'])){
 				$this->set_delta(	$_INPUT[$pre. 'delta'] );
+				$this->delta_source = "delta";
 			} 
 			return true;
 		}
