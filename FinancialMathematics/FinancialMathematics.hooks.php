@@ -22,7 +22,11 @@ class FinancialMathematicsHooks {
 	}
 
 	public static function fmRender( $input, array $args, Parser $parser, PPFrame $frame ) {
+		global $wgOut;
+		$title = $wgOut->getPageTitle();
 		$parser->getOutput()->addModules( 'ext.FinancialMathematics' );
+		// from http://webmasters.stackexchange.com/questions/86365/how-to-add-a-page-to-a-category-in-mediawiki-from-a-tag-extension
+		$parser->getOutput()->addCategory( 'Pages_with_the_'. self::getTagName() . '_tag', $title /* sort key */ );
 		$xml=simplexml_load_string($input);
 		if (!$xml){
 			$_out =  self::warning( wfMessage( 'fm-error-xml')->text() . print_r($input,1) );
