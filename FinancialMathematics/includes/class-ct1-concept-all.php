@@ -24,7 +24,7 @@ class CT1_Concept_All extends CT1_Form{
 
 
 	public function __construct(CT1_Object $obj=null){
-//		$this->set_concepts();
+		return;
 	}
 
 	private function get_concept_labels(){
@@ -32,7 +32,6 @@ class CT1_Concept_All extends CT1_Form{
 		foreach( $this->candidate_concepts() AS $c ){
 				$return = array_merge($return, $c->get_concept_label());
 		}
-//echo __FILE__ . " get_concept_labels " . print_r($return,1);
 		return $return;
 	}
 
@@ -46,7 +45,6 @@ class CT1_Concept_All extends CT1_Form{
 
 	private function get_parameters($_INPUT){
 		return; 
-//		return print_r($_INPUT,1);
 	}
 
 	public function get_controller($_INPUT ){
@@ -54,12 +52,11 @@ class CT1_Concept_All extends CT1_Form{
 		if (isset($return['output']['unrendered']['summary'])){
 			$c = new CT1_Form_XML();
 			$c->setTagName( $this->getTagName() );
-			$temp = $c->get_controller( $_INPUT ); // recursive but only once - it stops being in a loop by dumping everything one layer down i.e. in ..unrenderd.xml-form,... so it doesn't set an output.unrendered.summary
+			$temp = $c->get_controller( $_INPUT ); // recursive but only once 
 		  if (isset($temp['output']['unrendered'])){
 				$return['output']['unrendered']['xml-form'] = $temp['output']['unrendered'];
 			}
 		}
-//echo __FILE__ . " get_controller return " . print_r($return,1);
 		//exclude any duplicate forms;
 		if (isset($return['output']['unrendered']['forms'])){
 //http://stackoverflow.com/questions/307674/how-to-remove-duplicate-values-from-a-multi-dimensional-array-in-php
