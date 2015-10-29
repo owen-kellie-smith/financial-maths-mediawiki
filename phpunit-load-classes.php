@@ -20,7 +20,7 @@ function CT1_autoloader($class, $file){
 	}
 }
 
-// if class A requires class B then put the CT1_autoloader call to class A below class B
+// if class A requires class B then put the CT1_autoloader call to class A below the call to class B
 CT1_autoloader("HTML_QuickForm2",$_dir . "/PEAR/HTML/QuickForm2.php");
 CT1_autoloader("Validate", $_dir  . "/PEAR/Validate.php");
 CT1_autoloader(  		"HTML_Table", "PEAR/HTML/Table.php");
