@@ -23,11 +23,20 @@ class FinancialMathematicsHooks {
 	}
 
 	public static function fmRender( $input, array $args, Parser $parser, PPFrame $frame ) {
-		$_out = "";
 //		global 	$wgResourceModules;
 //		global 	$wgOut;
 //		$wgOut->addModules( 'ext.FinancialMathematics' );
 		$parser->getOutput()->addModules( 'ext.FinancialMathematics' );
+		$_out = self::getResult( $input );
+		//From https://www.mediawiki.org/wiki/QINU_fix
+		$localParser = new Parser();
+		$output = self::renderRawHTML($localParser, $_out);
+		return $output;
+	}
+
+
+	private static function getResult( $input ){
+		$_out = "";
 		$xml=simplexml_load_string($input);
 		if (!$xml){
 				$_out .=  self::warning( wfMessage( 'fm-error-xml')->text() . print_r($input,1) );
@@ -57,10 +66,7 @@ class FinancialMathematicsHooks {
 		if (!isset($_out)){
 				$_out .=  self::warning( wfMessage( 'fm-error-no-output')->text());
 		}
-		//From https://www.mediawiki.org/wiki/QINU_fix
-		$localParser = new Parser();
-		$output = self::renderRawHTML($localParser, $_out);
-		return $output;
+		return $_out;
 	}
 
 	// http://webcache.googleusercontent.com/search?q=cache:5lwjHlnXAmkJ:jimbojw.com/wiki/index.php%3Ftitle%3DRaw_HTML_Output_from_a_MediaWiki_Parser_Function
