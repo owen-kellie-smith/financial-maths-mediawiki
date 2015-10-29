@@ -60,9 +60,9 @@ class CT1_Concept_All extends CT1_Form{
 		//exclude any duplicate forms;
 		if (isset($return['output']['unrendered']['forms'])){
 //http://stackoverflow.com/questions/307674/how-to-remove-duplicate-values-from-a-multi-dimensional-array-in-php
-			$return['output']['unrendered']['forms'] = array_map("unserialize", array_unique(array_map("serialize", $return['output']['unrendered']['forms'])));
+			$this->make_array_unique($return['output']['unrendered']['forms']);
 			if (isset($return['output']['unrendered']['xml-form']['forms'])){
-				$return['output']['unrendered']['xml-form']['forms'] = array_map("unserialize", array_unique(array_map("serialize", $return['output']['unrendered']['xml-form']['forms'])));
+				$this->make_array_unique($return['output']['unrendered']['xml-form']['forms']);
 				// check one by one against the regular forms
 				for ($i=0; $i<count($return['output']['unrendered']['xml-form']['forms']); $i++){
 					$unset_i = false;
@@ -112,6 +112,10 @@ class CT1_Concept_All extends CT1_Form{
 		$return['warning']=$e->getMessage();
 		return $return;
 	}
+}
+
+private function make_array_unique( &$array ){
+			$array = array_map("unserialize", array_unique(array_map("serialize", $array)));
 }
 
 } // end of class
