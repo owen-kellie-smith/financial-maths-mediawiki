@@ -5,31 +5,14 @@
  *
  */
 
-/**
- * ??? redundant paths?
- *
-$path = dirname(dirname(__FILE__)) ;
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once "FinancialMathematics.hooks.php";
-$path = dirname(dirname(__FILE__)) . "/PEAR";
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
- *
- *
-**/
-
 class SpecialFinancialMathematics extends SpecialPage {
+
+	private $showUglyDebugMessagesOnRenderedPage=false;
+
 	public function __construct() {
 		parent::__construct( 'FinancialMathematics' );
 	}
 
-	private $showUglyDebugMessagesOnRenderedPage=false;
-
-	/**
-	 * Show the page to the user
-	 *
-	 * @param string $sub The subpage string argument (if any).
-	 *  [[Special:HelloWorld/subpage]].
-	 */
 	public function execute( $sub ) {
 		$result = $this->getResult();
 		$out = $this->getOutput();

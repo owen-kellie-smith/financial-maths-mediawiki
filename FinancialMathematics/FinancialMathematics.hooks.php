@@ -16,54 +16,51 @@ class FinancialMathematicsHooks {
 		return self::$tag_name;
 	}
 
-	// Hook our callback function into the parser
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setHook( self::$tag_name, 'FinancialMathematicsHooks::fmRender' );
 		return true;
 	}
 
 	public static function fmRender( $input, array $args, Parser $parser, PPFrame $frame ) {
-//		global 	$wgResourceModules;
-//		global 	$wgOut;
-//		$wgOut->addModules( 'ext.FinancialMathematics' );
 		$parser->getOutput()->addModules( 'ext.FinancialMathematics' );
-		$_out = self::getResult( $input );
+		$xml=simplexml_load_string($input);
+		if (!$xml){
+			$_out =  self::warning( wfMessage( 'fm-error-xml')->text() . print_r($input,1) );
+		} else {
+			$_out = self::outputResult( self::getResult( $xml ) );
+		}
 		//From https://www.mediawiki.org/wiki/QINU_fix
-		$localParser = new Parser();
-		$output = self::renderRawHTML($localParser, $_out);
+		$output = self::renderRawHTML($parser, $_out);
 		return $output;
 	}
 
-
-	private static function getResult( $input ){
+	private static function getResult( $xml ){
+		//http://stackoverflow.com/questions/834875/recursive-cast-from-simplexmlobject-to-array
 		$_out = "";
-		$xml=simplexml_load_string($input);
-		if (!$xml){
-				$_out .=  self::warning( wfMessage( 'fm-error-xml')->text() . print_r($input,1) );
+		$xarray = json_decode(json_encode((array) $xml), 1);
+		$m = new CT1_Concept_All();
+		return $m->get_controller($xarray) ;
+	}
+
+	private static function outputResult( $result ){
+		$_out = "";
+		$render = new CT1_Render();
+		if (isset($result['warning'])){
+			$_out .=  self::warning( $result['warning'] );
 		} else {
-				//http://stackoverflow.com/questions/834875/recursive-cast-from-simplexmlobject-to-array
-				$x = json_decode(json_encode((array) simplexml_load_string($input)), 1);
-				$m = new CT1_Concept_All();
-				$result = $m->get_controller($x) ;
-				if (isset($result['warning'])){
-					$_out .=  self::warning( $result['warning'] );
-				} else {
-					$u = array();
-					if (isset($result['output']['unrendered'])){
-						$u = $result['output']['unrendered'];
-					}
-					if (isset($u['formulae'])){
-						$render = new CT1_Render();
-						$_out .=  $render->get_render_latex($u['formulae']) ;
-					}
-      		if (isset($u['table']['schedule'])){
-      			$_out .= $render->get_table(
-      			$u['table']['schedule']['data'],
-      			$u['table']['schedule']['header']);
-      		}
-				} // if (isset($result['warning']))
-		} // if (!$xml)
-		if (!isset($_out)){
+			if (isset($result['output']['unrendered'])){
+				$u = $result['output']['unrendered'];
+				if (isset($u['formulae'])){
+					$_out .=  $render->get_render_latex($u['formulae']) ;
+				}
+   			if (isset($u['table']['schedule'])){
+   				$_out .= $render->get_table(
+    				$u['table']['schedule']['data'],
+   					$u['table']['schedule']['header']);
+   			}
+			}
+		} // if (isset($result['warning']))
+		if (empty($_out)){
 				$_out .=  self::warning( wfMessage( 'fm-error-no-output')->text());
 		}
 		return $_out;
