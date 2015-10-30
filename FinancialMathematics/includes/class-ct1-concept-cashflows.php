@@ -210,7 +210,7 @@ public function get_concept_label(){
 			'name'=> 'consider_increasing',
 			'label' => self::myMessage( 'fm-consider_increasing'),
 			);
-		foreach ( array('value','delta', 'escalation_delta') as $p ){
+		foreach ( array('value','delta', 'escalation_delta', "source_m","source_advance","source_rate") as $p ){
 			unset( $parameters[ $p ] );
 			unset( $valid_options[ $p ] );
 		}

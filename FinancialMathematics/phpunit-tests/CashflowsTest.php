@@ -59,6 +59,44 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
+  public function test_input_add_cashflow()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+		    'request' => 'add_cashflow',
+				'rate_per_year'=>21,
+				'effective_time'=>0,
+				'm'=>1000,
+				'source_m'=>1,
+				'source_rate'=>0.09,
+				'term'=>0.75,
+				'escalation_rate_effective'=>0.035,
+				'escalation_frequency'=>1000,
+		));
+//	  $this->assertTrue( false ) ; // this crashes in local version
+	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+}
+
+  public function test_input_add_cashflow2()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+		    'request' => 'add_cashflow',
+				'rate_per_year'=>21,
+				'effective_time'=>0,
+				'm'=>1,
+				'source_m'=>1,
+				'source_rate'=>0.09,
+				'term'=>0.75,
+				'escalation_rate_effective'=>0.035,
+				'escalation_frequency'=>1000,
+		));
+//    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$c['warning']) ;  
+    $this->assertTrue( isset($c['warning'])) ;  
+//	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
+}
+
+
   public function test_input_returns_expected_VIEW_cashflowS()
   {
 	  $x = new CT1_Concept_All();

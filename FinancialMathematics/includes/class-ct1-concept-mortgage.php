@@ -69,7 +69,7 @@ public function get_controller($_INPUT ){
 	}
 	else{
 		$return['output']['unrendered']['forms'][] = 	array(
-			'content'=>$this->get_calculator(array("delta",  "value")),
+			'content'=>$this->get_calculator(array("delta",  "source_m","source_advance","source_rate","value")),
 			'type'=>'',
 		);
 
