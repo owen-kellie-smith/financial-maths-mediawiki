@@ -87,10 +87,12 @@ class CT1_Concept_All extends CT1_Form{
 				if (isset($_INPUT['request'])){
 					if ($c->get_request() == $_INPUT['request'] ){
 						$return = array_merge($return, $c->get_controller( $_INPUT ));
+						$return['concept']=$c->get_concept_label();
 						return $return;
 					}
 					if ( in_array( $_INPUT['request'], $c->get_possible_requests() ) ){
 						$return = array_merge($return, $c->get_controller( $_INPUT ));
+						$return['concept']=$c->get_concept_label();
 						return $return;
 					}
 				} // if (isset($_INPUT['request']))
@@ -98,6 +100,7 @@ class CT1_Concept_All extends CT1_Form{
 					$temp = $c->get_concept_label();
 					if ( isset( $temp[ $_INPUT['concept'] ] ) ){
 						$return = array_merge($return, $c->get_controller( $_INPUT ));
+						$return['concept']=$c->get_concept_label();
 						return $return;
 					}
 				}

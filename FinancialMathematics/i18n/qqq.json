@@ -14,6 +14,8 @@
  "fm-by":"fm-by",
  "fm-button-delete":"fm-button-delete",
  "fm-calculate":"fm-calculate",
+ "fm-category-general":"fm-category-general $1",
+ "fm-category-specific":"fm-category-specific $1",
  "fm-consider_increasing":"fm-consider_increasing",
  "fm-discount-rate":"fm-discount-rate",
  "fm-effective-escalation-rate":"fm-effective-escalation-rate",

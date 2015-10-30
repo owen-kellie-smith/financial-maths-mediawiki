@@ -18,6 +18,8 @@
 	"fm-button-delete" : "Delete",
   "fm-by":"by",
 	"fm-calculate" : "Calculate", 
+  "fm-category-general":"Pages containing a $1 tag",
+  "fm-category-specific":"Pages containing $1 calculation",
 	"fm-concept" : "Type",
 	"fm-consider_increasing" : "Treat as increasing / decreasing (stepped) annuity?",
 	"fm-convertible" : "convertible",
