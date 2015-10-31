@@ -72,9 +72,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param array $form form parameters
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
-	public function get_render_form( $form, $type='' ){
+	private function get_render_form( $form, $type='' ){
 		if (isset($form['render'])){
 			if ('plain'==$form['render'] ){
 			  return $this->get_form_plain( $form );
@@ -90,7 +90,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	}
 
 
-	public function get_render_rate_table( $rates, $hidden, $link='' ){
+	private function get_render_rate_table( $rates, $hidden, $link='' ){
 		$link .=  $this->get_link($hidden);
 		for ( $i = 0, $ii = count( $rates['data'] ); $i < $ii; $i++ ){
 			$f = $rates['objects'][$i]['CT1_Forward_Rate'];
@@ -113,9 +113,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param array $hidden list of hidden fields
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
-	public function get_link( $hidden ){
+	private function get_link( $hidden ){
 		$out = "";
 		foreach(array_keys( $hidden) as $key ){
 			$value = $hidden[$key];
@@ -133,9 +133,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param string $request value to include as hidden field of form (which passes form's main commend)
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
-	public function get_form_collection( CT1_Collection $cf, $submit = 'Submit', $intro = "" , $request = "", $pageid=""){
+	private function get_form_collection( CT1_Collection $cf, $submit = 'Submit', $intro = "" , $request = "", $pageid=""){
 		$out = "";
 		if ( !empty( $intro ) )
 			$out.= "<p>" . $intro . "</p>" . "\r\n";
@@ -159,9 +159,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param array $equation_array
 	 * @return array
 	 *
-	 * @access public
+	 * @access private
 	 */
-	public function get_render_latex( $equation_array, $newline=false ){
+	private function get_render_latex( $equation_array, $newline=false ){
 	// would be better if this were just recursive but I don't know how
 		$out = "";
 		$_nl="";
@@ -193,9 +193,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param array $column_headers (to appear in head of table
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
-	public function get_table( $row_data, $column_headers ){
+	private function get_table( $row_data, $column_headers ){
 
 		// see http://pear.php.net/manual/en/package.html.html-table.intro.php
 		$table = new HTML_Table();
@@ -229,9 +229,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param array $return form features
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
-	public function get_select_form( $return ){
+	private function get_select_form( $return ){
 		$out="";
 		if ( !empty( $return['introduction'] ) )
 			$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
@@ -273,7 +273,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param string $page_link
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
 	private function get_anchor_forward( CT1_Forward_Rate $f, $page_link ){
 		return "<a href='" . $page_link . "&request=explain_forward&forward_start_time=" . $f->get_start_time() . "&forward_end_time=" . $f->get_end_time() . "'>" . $f->get_i_effective() . "</a>";
@@ -286,7 +286,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 * @param string $page_link
 	 * @return string
 	 *
-	 * @access public
+	 * @access private
 	 */
 	private function get_anchor_par( CT1_Par_Yield $p, $page_link ){
 		return "<a href='" . $page_link . "&request=explain_par&par_term=" . $p->get_term() . "'>" . $p->get_coupon() . "</a>";
@@ -562,7 +562,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	}
 
 /*
-public function add_hidden_fields( &$fieldset, CT1_Collection $cf ){
+private function add_hidden_fields( &$fieldset, CT1_Collection $cf ){
 	$collection_name = get_class( $cf );
 	$hidden = $cf->get_values_as_array(  $collection_name );
 	$this->add_hidden_fields_to_fieldset( $fieldset, $hidden );
@@ -571,14 +571,14 @@ public function add_hidden_fields( &$fieldset, CT1_Collection $cf ){
 */
 
 /*
-public function get_form_cashflow( CT1_Cashflows $cf, $submit = 'Submit', $intro = "" ){
+private function get_form_cashflow( CT1_Cashflows $cf, $submit = 'Submit', $intro = "" ){
 	$render = new CT1_Render();
 	return $render->get_form_collection( $cf, $submit, $intro, 'view_cashflows');
 }
 */
 
 /*
-public function test_popup(){
+private function test_popup(){
     return $this->get_popup_head() . '<A HREF="' . $this->get_popup_latex("a fraction $$ <a href=''>\\frac{1}{2}</a>$$ and Some text linking to <a href='http://www.bbc.co.uk'>bbc</a> and a fraction <a href='http://cnn.com'>$$ \\frac{1}{2}$$</a> that links to cnn") . '" onClick="return popup(this, ' . "'stevie'" .')">my popup</A>';
 }
 
