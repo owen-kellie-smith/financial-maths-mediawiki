@@ -3,9 +3,9 @@ Mediawiki extension to calculate compound interest functions
 
 Requires at least: Mediawiki 1.25
 
-License: GPLv2 or later
+License: MIT
 
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://opensource.org/licenses/MIT 
 
 Code is at:https://github.com/owen-kellie-smith/financial-maths-mediawiki/
 

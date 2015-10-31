@@ -6,7 +6,7 @@
 	],
 	"url": "https://github.com/owen-kellie-smith/financial-maths-mediawiki/",
 	"descriptionmsg": "financialmathematics-desc",
-	"license-name": "GPL-2.0+",
+	"license-name": "MIT",
 	"type": "other",
 	"AutoloadClasses": {
 		"HTML_QuickForm2": "PEAR/HTML/QuickForm2.php",
