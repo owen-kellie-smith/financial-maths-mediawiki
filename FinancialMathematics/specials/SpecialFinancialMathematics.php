@@ -55,34 +55,19 @@ class SpecialFinancialMathematics extends SpecialPage {
 			if (isset($result['output']['unrendered'])){
 				$u = $result['output']['unrendered'];
 			}
-			if (isset($u['formulae'])){
-				$out->addHTML( $render->get_render_latex($u['formulae']) );
+			$res = $render->get_rendered_result( $u, $this->getSkin()->getTitle()->getLinkUrl() );
+			if (isset($res['formulae'])){
+				$out->addHTML( $res['formulae'] );
 			}
-			if (isset($u['table'])){
-                               if (isset($u['table']['schedule'])){
-                                       $out->addHTML( $render->get_table(
-                                       $u['table']['schedule']['data'],
-                                       $u['table']['schedule']['header']
-                                       ));
-                               }
-				$out->addHTML( $render->get_render_rate_table(
-					$u['table']['rates'],
-					$u['table']['hidden'],
-					$this->getSkin()->getTitle()->getLinkUrl() . "?" ));    
+			if (isset($res['schedule'])){
+            $out->addHTML( $res['schedule'] );
 			}
-			if (isset($u['forms'])){
-				foreach ($u['forms'] AS $_f){
-					try{	
-						$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] )); 
-					} catch( Exception $e ){
-						$out->addHTML( $e->getMessage() );
-					}
-				}
+			if (isset($res['table'])){
+            $out->addHTML( $res['table'] );
 			}
-			if (isset($u['xml-form']['forms'])){
-				foreach ($u['xml-form']['forms'] AS $_f){
-					$_f['content']['render']='HTML';
-					$out->addHTML( $render->get_render_form($_f['content'], $_f['type'] ));
+			if (isset($res['forms'])){
+				foreach ($res['forms'] AS $_f){
+						$out->addHTML( $_f ); 
 				}
 			}
 		}

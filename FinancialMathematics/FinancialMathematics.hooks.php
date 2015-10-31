@@ -65,17 +65,26 @@ class FinancialMathematicsHooks {
 		if (isset($result['warning'])){
 			$_out .=  self::warning( $result['warning'] );
 		} else {
+			$u = array();
 			if (isset($result['output']['unrendered'])){
 				$u = $result['output']['unrendered'];
-				if (isset($u['formulae'])){
-					$_out .=  $render->get_render_latex($u['formulae']) ;
-				}
-   			if (isset($u['table']['schedule'])){
-   				$_out .= $render->get_table(
-    				$u['table']['schedule']['data'],
-   					$u['table']['schedule']['header']);
-   			}
 			}
+			$res = $render->get_rendered_result( $u, 'unusedPageTitle' );
+			if (isset($res['formulae'])){
+				$_out .=  $res['formulae'] ;
+			}
+			if (isset($res['schedule'])){
+            $_out .=  $res['schedule'] ;
+			}
+			if (isset($res['table'])){
+//            $out->addHTML( $res['table'] );
+			}
+			if (isset($res['forms'])){
+				foreach ($res['forms'] AS $_f){
+//						$out->addHTML( $_f ); 
+				}
+			}
+
 		} // if (isset($result['warning']))
 		if (empty($_out)){
 				$_out .=  self::warning( wfMessage( 'fm-error-no-output')->text());

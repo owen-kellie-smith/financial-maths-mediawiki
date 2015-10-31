@@ -23,6 +23,50 @@ public function __construct(CT1_Object $obj=null){
 }
 
 	/**
+	 * Get rendering of whole unrenderde result as array of strings that can be echoed to screen
+	 *
+	 * @param array $u result parameters
+	 * @return array
+	 *
+	 * @access public
+	 */
+public function get_rendered_result( $u=array(), $pageTitle='' ){
+		$r = array();
+			if (isset($u['formulae'])){
+				$r['formulae'] =  $this->get_render_latex($u['formulae']) ;
+			}
+			if (isset($u['table'])){
+                               if (isset($u['table']['schedule'])){
+                                       $r['schedule'] = $this->get_table(
+                                       $u['table']['schedule']['data'],
+                                       $u['table']['schedule']['header']
+                                       );
+                               }
+				 $r['table'] = $this->get_render_rate_table(
+					$u['table']['rates'],
+					$u['table']['hidden'], $pageTitle . "?" );    
+			}
+			if (isset($u['forms'])){
+				foreach ($u['forms'] AS $_f){
+					try{	
+						$r['forms'][] = $this->get_render_form($_f['content'], $_f['type'] ); 
+					} catch( Exception $e ){
+						$r['forms'][] = $e->getMessage() ;
+					}
+				}
+			}
+			if (isset($u['xml-form']['forms'])){
+				foreach ($u['xml-form']['forms'] AS $_f){
+					$_f['content']['render']='HTML';
+					$r['forms'][] = $this->get_render_form($_f['content'], $_f['type'] );
+				}
+			}
+
+	return $r;
+}
+
+
+	/**
 	 * Get rendering of form as string that can be echoed to screen
 	 *
 	 * @param array $form form parameters
