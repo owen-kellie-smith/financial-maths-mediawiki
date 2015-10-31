@@ -1,13 +1,13 @@
 <?php   
 
-$_dir = "";
+$_dir = "FinancialMathematics";
 foreach ( array( '',
 	'/includes/',
 	'/PEAR/',
 	'/PEAR/HTML/',
 	'/PEAR/HTML/QuickForm2',
 	) AS $path ){
-	set_include_path(get_include_path(). PATH_SEPARATOR. dirname(__FILE__).  $path );
+	set_include_path(get_include_path(). PATH_SEPARATOR. dirname(__FILE__). "/". $_dir. $path );
 }
 
 function CT1_autoloader($class, $file){
@@ -21,8 +21,8 @@ function CT1_autoloader($class, $file){
 }
 
 // if class A requires class B then put the CT1_autoloader call to class A below the call to class B
-CT1_autoloader("HTML_QuickForm2",$_dir . "PEAR/HTML/QuickForm2.php");
-CT1_autoloader("Validate", $_dir  . "PEAR/Validate.php");
+CT1_autoloader("HTML_QuickForm2",$_dir . "/PEAR/HTML/QuickForm2.php");
+CT1_autoloader("Validate", $_dir  . "/PEAR/Validate.php");
 CT1_autoloader(  		"HTML_Table", "PEAR/HTML/Table.php");
 CT1_autoloader(		"Validate", "PEAR/Validate.php");
 CT1_autoloader(		"CT1_Object", "includes/class-ct1-object.php");
