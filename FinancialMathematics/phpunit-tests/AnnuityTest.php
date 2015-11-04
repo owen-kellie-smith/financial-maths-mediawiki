@@ -259,5 +259,17 @@ public function test_adjusted_int_advance()
 
   }  
 
+  public function test_get_interest_rate()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+				'request'=>'get_annuity_escalating',
+				'm'=>12,
+				'term'=>25,
+				'value'=>20,
+		));
+
+    $this->assertFalse( isset($c['warning']));
+  }
 
 }

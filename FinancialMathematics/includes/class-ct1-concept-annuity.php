@@ -47,12 +47,10 @@ public function get_controller($_INPUT ){
 		if ($this->get_request() == $_INPUT['request']){
 			if ($this->set_annuity($_INPUT)){
 				if (empty( $_INPUT['value'] ) ){
-					$return['formulae']= $this->get_solution();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
 				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
 					return $return;
 				} else {
-					$return['formulae']= $this->get_interest_rate();
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_interest_rate();
 				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary($_INPUT);
 					return $return;
