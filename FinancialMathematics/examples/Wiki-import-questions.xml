@@ -35,6 +35,116 @@
     </namespaces>
   </siteinfo>
   <page>
+    <title>CT1 S2015</title>
+    <ns>0</ns>
+    <id>10</id>
+    <revision>
+      <id>147</id>
+      <parentid>145</parentid>
+      <timestamp>2015-11-01T21:14:31Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="107">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=30-September-2015
+}}</text>
+      <sha1>hd0m8xdii1j6jd2p14yl92pppn8mflr</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2015</title>
+    <ns>0</ns>
+    <id>22</id>
+    <revision>
+      <id>149</id>
+      <timestamp>2015-11-01T21:16:36Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=20-April-2015 }}&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="103">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=20-April-2015
+}}</text>
+      <sha1>7un1qibmqymnklw5z4rz50yp7z8ck7b</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2014</title>
+    <ns>0</ns>
+    <id>42</id>
+    <revision>
+      <id>257</id>
+      <timestamp>2015-11-04T07:37:50Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=22-September-2014 }}&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="107">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=22-September-2014
+}}</text>
+      <sha1>3p4ywug3vgyp8pxdeudblnes5kqvuh2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2014</title>
+    <ns>0</ns>
+    <id>44</id>
+    <revision>
+      <id>263</id>
+      <timestamp>2015-11-05T06:30:52Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=22-April-2014 }}&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="103">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=22-April-2014
+}}</text>
+      <sha1>s8tsvh71951lfhsceujvyvs89a71tvc</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2013</title>
+    <ns>0</ns>
+    <id>73</id>
+    <revision>
+      <id>370</id>
+      <timestamp>2015-11-06T05:39:56Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=23-September-2013 }}&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="107">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=23-September-2013
+}}</text>
+      <sha1>f6z9aphsye6ur6pnlm1qf1pt74y5oka</sha1>
+    </revision>
+  </page>
+  <page>
     <title>CT1 S2015 Q2</title>
     <ns>0</ns>
     <id>19</id>
@@ -729,174 +839,107 @@ Capital outstanding = (X + 3 * 50) * a22 + 50 * (Ia)22 = (1462.31-50+150)* 10.20
     </revision>
   </page>
   <page>
-    <title>CT1 S2015</title>
+    <title>CT1 S2013 Q1</title>
     <ns>0</ns>
-    <id>10</id>
+    <id>74</id>
     <revision>
-      <id>147</id>
-      <parentid>145</parentid>
-      <timestamp>2015-11-01T21:14:31Z</timestamp>
+      <id>373</id>
+      <parentid>372</parentid>
+      <timestamp>2015-11-06T05:49:28Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="107">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=30-September-2015
-}}</text>
-      <sha1>hd0m8xdii1j6jd2p14yl92pppn8mflr</sha1>
+      <text xml:space="preserve" bytes="871">{{Exam-question|Exam Code=CT1 S2013|Number=1|Part=i|Marks=4|Oracle=4.3062%, 4.3936%, 4.4260%, 24.618%|Oracle-source=CT1 S2013 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_m/&gt;&lt;source_rate/&gt;&lt;i_effective&gt;0.045&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;12&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_m/&gt;&lt;source_rate/&gt;&lt;i_effective&gt;0.045&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;4&lt;/m&gt;&lt;advance&gt;0&lt;/advance&gt;&lt;source_m/&gt;&lt;source_rate/&gt;&lt;i_effective&gt;0.045&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+Effective rate over 5 years = 0.24618 = 1.045^5 - 1 = 5 * i(0.2) 
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;0.2&lt;/m&gt;&lt;advance&gt;0&lt;/advance&gt;&lt;source_m/&gt;&lt;source_rate/&gt;&lt;i_effective&gt;0.045&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>q7smk4rmawhcs983n37ot28bpgiq5cs</sha1>
     </revision>
   </page>
   <page>
-    <title>CT1 A2015</title>
+    <title>CT1 S2013 Q2</title>
     <ns>0</ns>
-    <id>22</id>
+    <id>75</id>
     <revision>
-      <id>149</id>
-      <timestamp>2015-11-01T21:16:36Z</timestamp>
+      <id>374</id>
+      <timestamp>2015-11-06T05:56:17Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=20-April-2015 }}&quot;</comment>
+      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 S2013|Number=2|Marks=3|Oracle=175.275p|Oracle-source=CT1 S2013 Examiner's report}}  1.04^(9/12) * Present value @ 4% = 1.04^(9/12)*170.19 = 175.2...&quot;</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="103">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=20-April-2015
-}}</text>
-      <sha1>7un1qibmqymnklw5z4rz50yp7z8ck7b</sha1>
+      <text xml:space="preserve" bytes="833">{{Exam-question|Exam Code=CT1 S2013|Number=2|Marks=3|Oracle=175.275p|Oracle-source=CT1 S2013 Examiner's report}}
+
+1.04^(9/12) * Present value @ 4% = 1.04^(9/12)*170.19 = 175.27.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;180&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;180&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-10&lt;/rate_per_year&gt;&lt;effective_time&gt;0.5&lt;/effective_time&gt;&lt;cashflow_value&gt;-10&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>ogojabr90isa2hkn1xq03j506c84egq</sha1>
     </revision>
   </page>
   <page>
-    <title>CT1 S2014</title>
+    <title>CT1 S2013 Q3</title>
     <ns>0</ns>
-    <id>42</id>
+    <id>76</id>
     <revision>
-      <id>257</id>
-      <timestamp>2015-11-04T07:37:50Z</timestamp>
+      <id>375</id>
+      <timestamp>2015-11-06T06:05:03Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=22-September-2014 }}&quot;</comment>
+      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 S2013|Number=3|Past=i|Marks=2|Oracle=£108.584|Oracle-source=CT1 S2013 Examiner's report}}  Working in half-years  &lt;fin-math&gt;&lt;parameters&gt;&lt;request...&quot;</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="107">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=22-September-2014
-}}</text>
-      <sha1>3p4ywug3vgyp8pxdeudblnes5kqvuh2</sha1>
+      <text xml:space="preserve" bytes="1569">{{Exam-question|Exam Code=CT1 S2013|Number=3|Past=i|Marks=2|Oracle=£108.584|Oracle-source=CT1 S2013 Examiner's report}}
+
+Working in half-years
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;20&lt;/term&gt;&lt;value&gt;20&lt;/value&gt;&lt;rate_per_year&gt;2&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;40&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;2000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.015&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+Working in full-years
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.03&lt;/source_rate&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;20&lt;/value&gt;&lt;rate_per_year&gt;4&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;40&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;2000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.030225&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>s8k1lz1vrgv9d3fw99ien8pqs5wwoaf</sha1>
     </revision>
   </page>
   <page>
-    <title>CT1 A2014</title>
+    <title>CT1 S2013 Q6</title>
     <ns>0</ns>
-    <id>44</id>
+    <id>77</id>
     <revision>
-      <id>263</id>
-      <timestamp>2015-11-05T06:30:52Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=22-April-2014 }}&quot;</comment>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="103">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=22-April-2014
-}}</text>
-      <sha1>s8tsvh71951lfhsceujvyvs89a71tvc</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>Template:Exam-question</title>
-    <ns>10</ns>
-    <id>17</id>
-    <revision>
-      <id>269</id>
-      <parentid>242</parentid>
-      <timestamp>2015-11-05T07:52:21Z</timestamp>
+      <id>377</id>
+      <parentid>376</parentid>
+      <timestamp>2015-11-06T07:59:31Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="679">&lt;noinclude&gt;
-This is the &quot;Exam-question&quot; template.
-It should be called in the following format:
-&lt;pre&gt;
-{{Exam-question
-|Exam Code=
-|Number=
-|Part=
-|Marks=
-|Oracle=
-|Oracle-source=
-}}
-&lt;/pre&gt;
-Edit the page to see the template text.
-&lt;/noinclude&gt;&lt;includeonly&gt;=={{{Number|}}}.{{{Part|}}} ({{{Marks|}}} mark{{plural|{{{Marks|}}}}})==
-{{#set_internal:is_part_of_question
-|In exam={{{Exam Code|}}}
-|Has number={{{Number|}}}
-|Has part={{{Part|}}}
-|Has marks={{{Marks|}}}
-}}  [[Category:Exam-question]] {{#set:In exam={{{Exam Code|}}}}} [[In exam::{{{Exam Code|}}}]]  {{#if:{{{Oracle-source|}}}|{{#if:{{{Oracle|}}}|{{display-solution|{{{Oracle|}}}|{{{Oracle-source|}}}}}|}}|}}
-&lt;/includeonly&gt;</text>
-      <sha1>d17i3fa1bev00s9umqtkyo9vth2fron</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>Template:Plural</title>
-    <ns>10</ns>
-    <id>30</id>
-    <revision>
-      <id>187</id>
-      <parentid>186</parentid>
-      <timestamp>2015-11-03T08:08:09Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="217">&lt;noinclude&gt;
-This is the &quot;Plural&quot; template.
-It should be called in the following format:
-&lt;pre&gt;
-{{Plural
-}}
-&lt;/pre&gt;
-Edit the page to see the template text.
-&lt;/noinclude&gt;&lt;includeonly&gt;{{#ifexpr:{{{1|}}}&gt;1|s|}}&lt;/includeonly&gt;</text>
-      <sha1>0821xs5r8ufllz906uzsa0tjfsjmwns</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>Template:Display-solution</title>
-    <ns>10</ns>
-    <id>35</id>
-    <revision>
-      <id>245</id>
-      <parentid>244</parentid>
-      <timestamp>2015-11-03T22:38:06Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="71">&lt;span class=&quot;solution&quot;&gt;Solution: {{{1|}}}&lt;/span&gt;{{#tag:ref| {{{2|}}} }}</text>
-      <sha1>3sj6t7af9vk4reame2u15ddjuwxva2n</sha1>
+      <text xml:space="preserve" bytes="1543">{{Exam-question|Exam Code=CT1 S2013|Number=6|Marks=10|Oracle=£275,324|Oracle-source=CT1 S2013 Examiner's report}}
+
+Receipts in year 1 = 1% * 40000 cars/day * £1/car  * 365 days/year = £146,000/year.
+
+Receipts in year 2 = 1% * 50000 cars/day * £1.1/car  * 365 days/year = £200,750/year.
+
+Annual escalation of receipts = 1.01 (tolls) * 1.01 (cars) -1 = 0.0201.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1000&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.076961041136128&lt;/delta&gt;&lt;i_effective&gt;0.08&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;0.96248794169835&lt;/value&gt;&lt;rate_per_year&gt;146000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;140523.23948796&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1000&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.076961041136128&lt;/delta&gt;&lt;i_effective&gt;0.08&lt;/i_effective&gt;&lt;term&gt;19&lt;/term&gt;&lt;value&gt;10.692854773277&lt;/value&gt;&lt;escalation_delta&gt;0.0099503308531681&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.0201&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;200750&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;1987583.8849401&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.076961041136128&lt;/delta&gt;&lt;i_effective&gt;0.08&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-2000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-2000000&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.08&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>cmx3pqa7xp841cjcj7lauokcnhrhpdy</sha1>
     </revision>
   </page>
   <page>
@@ -1017,6 +1060,89 @@ Edit the page to see the template text.
 }}
 &lt;/includeonly&gt;</text>
       <sha1>nq5jb17q3uqxkhphnuruh24gghvkmpj</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Exam-question</title>
+    <ns>10</ns>
+    <id>17</id>
+    <revision>
+      <id>269</id>
+      <parentid>242</parentid>
+      <timestamp>2015-11-05T07:52:21Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="679">&lt;noinclude&gt;
+This is the &quot;Exam-question&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Exam-question
+|Exam Code=
+|Number=
+|Part=
+|Marks=
+|Oracle=
+|Oracle-source=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;=={{{Number|}}}.{{{Part|}}} ({{{Marks|}}} mark{{plural|{{{Marks|}}}}})==
+{{#set_internal:is_part_of_question
+|In exam={{{Exam Code|}}}
+|Has number={{{Number|}}}
+|Has part={{{Part|}}}
+|Has marks={{{Marks|}}}
+}}  [[Category:Exam-question]] {{#set:In exam={{{Exam Code|}}}}} [[In exam::{{{Exam Code|}}}]]  {{#if:{{{Oracle-source|}}}|{{#if:{{{Oracle|}}}|{{display-solution|{{{Oracle|}}}|{{{Oracle-source|}}}}}|}}|}}
+&lt;/includeonly&gt;</text>
+      <sha1>d17i3fa1bev00s9umqtkyo9vth2fron</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Plural</title>
+    <ns>10</ns>
+    <id>30</id>
+    <revision>
+      <id>187</id>
+      <parentid>186</parentid>
+      <timestamp>2015-11-03T08:08:09Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="217">&lt;noinclude&gt;
+This is the &quot;Plural&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Plural
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{{#ifexpr:{{{1|}}}&gt;1|s|}}&lt;/includeonly&gt;</text>
+      <sha1>0821xs5r8ufllz906uzsa0tjfsjmwns</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Display-solution</title>
+    <ns>10</ns>
+    <id>35</id>
+    <revision>
+      <id>245</id>
+      <parentid>244</parentid>
+      <timestamp>2015-11-03T22:38:06Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="71">&lt;span class=&quot;solution&quot;&gt;Solution: {{{1|}}}&lt;/span&gt;{{#tag:ref| {{{2|}}} }}</text>
+      <sha1>3sj6t7af9vk4reame2u15ddjuwxva2n</sha1>
     </revision>
   </page>
 </mediawiki>
