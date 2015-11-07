@@ -1,8 +1,8 @@
 <mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en-gb">
   <siteinfo>
-    <sitename>Wiki on Intel Atom laptop</sitename>
-    <dbname>my_wiki</dbname>
-    <base>http://localhost/wiki/index.php/Main_Page</base>
+    <sitename>Mediawiki demo</sitename>
+    <dbname>mediawiki</dbname>
+    <base>http://mediawiki-treaties.rhcloud.com/wiki/index.php/Actuarial_exam_practice</base>
     <generator>MediaWiki 1.26alpha</generator>
     <case>first-letter</case>
     <namespaces>
@@ -12,8 +12,8 @@
       <namespace key="1" case="first-letter">Talk</namespace>
       <namespace key="2" case="first-letter">User</namespace>
       <namespace key="3" case="first-letter">User talk</namespace>
-      <namespace key="4" case="first-letter">Wiki on Intel Atom laptop</namespace>
-      <namespace key="5" case="first-letter">Wiki on Intel Atom laptop talk</namespace>
+      <namespace key="4" case="first-letter">Mediawiki demo</namespace>
+      <namespace key="5" case="first-letter">Mediawiki demo talk</namespace>
       <namespace key="6" case="first-letter">File</namespace>
       <namespace key="7" case="first-letter">File talk</namespace>
       <namespace key="8" case="first-letter">MediaWiki</namespace>
@@ -28,20 +28,90 @@
       <namespace key="103" case="first-letter">Property talk</namespace>
       <namespace key="104" case="first-letter">Type</namespace>
       <namespace key="105" case="first-letter">Type talk</namespace>
-      <namespace key="106" case="first-letter">Form</namespace>
-      <namespace key="107" case="first-letter">Form talk</namespace>
       <namespace key="108" case="first-letter">Concept</namespace>
       <namespace key="109" case="first-letter">Concept talk</namespace>
     </namespaces>
   </siteinfo>
   <page>
+    <title>CT1 A2015</title>
+    <ns>0</ns>
+    <id>13</id>
+    <revision>
+      <id>25</id>
+      <parentid>24</parentid>
+      <timestamp>2015-11-05T07:20:53Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="103">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=20-April-2015
+}}</text>
+      <sha1>7un1qibmqymnklw5z4rz50yp7z8ck7b</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2014</title>
+    <ns>0</ns>
+    <id>38</id>
+    <revision>
+      <id>75</id>
+      <parentid>74</parentid>
+      <timestamp>2015-11-05T07:21:38Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="107">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=22-September-2014
+}}</text>
+      <sha1>3p4ywug3vgyp8pxdeudblnes5kqvuh2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2014</title>
+    <ns>0</ns>
+    <id>39</id>
+    <revision>
+      <id>77</id>
+      <parentid>76</parentid>
+      <timestamp>2015-11-05T07:21:39Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="103">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=22-April-2014
+}}</text>
+      <sha1>s8tsvh71951lfhsceujvyvs89a71tvc</sha1>
+    </revision>
+  </page>
+  <page>
     <title>CT1 S2015</title>
     <ns>0</ns>
-    <id>10</id>
+    <id>12</id>
     <revision>
-      <id>147</id>
-      <parentid>145</parentid>
-      <timestamp>2015-11-01T21:14:31Z</timestamp>
+      <id>216</id>
+      <parentid>175</parentid>
+      <timestamp>2015-11-07T17:53:52Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
@@ -57,83 +127,18 @@
     </revision>
   </page>
   <page>
-    <title>CT1 A2015</title>
-    <ns>0</ns>
-    <id>22</id>
-    <revision>
-      <id>149</id>
-      <timestamp>2015-11-01T21:16:36Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=20-April-2015 }}&quot;</comment>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="103">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=20-April-2015
-}}</text>
-      <sha1>7un1qibmqymnklw5z4rz50yp7z8ck7b</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2014</title>
-    <ns>0</ns>
-    <id>42</id>
-    <revision>
-      <id>257</id>
-      <timestamp>2015-11-04T07:37:50Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=22-September-2014 }}&quot;</comment>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="107">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=22-September-2014
-}}</text>
-      <sha1>3p4ywug3vgyp8pxdeudblnes5kqvuh2</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 A2014</title>
-    <ns>0</ns>
-    <id>44</id>
-    <revision>
-      <id>263</id>
-      <timestamp>2015-11-05T06:30:52Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=22-April-2014 }}&quot;</comment>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="103">{{Exam
-|Title=Financial Mathematics
-|Examiner=Institute and Faculty of Actuaries
-|Date=22-April-2014
-}}</text>
-      <sha1>s8tsvh71951lfhsceujvyvs89a71tvc</sha1>
-    </revision>
-  </page>
-  <page>
     <title>CT1 S2013</title>
     <ns>0</ns>
-    <id>73</id>
+    <id>71</id>
     <revision>
-      <id>370</id>
-      <timestamp>2015-11-06T05:39:56Z</timestamp>
+      <id>239</id>
+      <parentid>237</parentid>
+      <timestamp>2015-11-07T22:33:16Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=23-September-2013 }}&quot;</comment>
+      <comment>Undo revision 237 by [[Special:Contributions/Owen|Owen]] ([[User talk:Owen|talk]])</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="107">{{Exam
@@ -145,339 +150,41 @@
     </revision>
   </page>
   <page>
-    <title>CT1 S2015 Q2</title>
+    <title>CT1 A2013</title>
     <ns>0</ns>
-    <id>19</id>
-    <revision>
-      <id>140</id>
-      <parentid>139</parentid>
-      <timestamp>2015-11-01T20:57:25Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="889">{{Exam-question|Exam Code=CT1 S2015|Number=2|Part=i|Marks=3}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1000&lt;/m&gt;&lt;source_m&gt;12&lt;/source_m&gt;&lt;source_advance&gt;1&lt;/source_advance&gt;&lt;source_rate&gt;0.055&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;12&lt;/source_m&gt;&lt;source_advance&gt;1&lt;/source_advance&gt;&lt;source_rate&gt;0.055&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;12&lt;/m&gt;&lt;source_m&gt;12&lt;/source_m&gt;&lt;source_advance&gt;1&lt;/source_advance&gt;&lt;source_rate&gt;0.055&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=2|Part=iv|Marks=1}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;0.5&lt;/source_m&gt;&lt;source_advance&gt;0&lt;/source_advance&gt;&lt;source_rate&gt;0.06&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>jl4snpsz32olvh0i58d9q75xu5vhwvq</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2015 Q4</title>
-    <ns>0</ns>
-    <id>20</id>
-    <revision>
-      <id>144</id>
-      <parentid>143</parentid>
-      <timestamp>2015-11-01T21:12:24Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1086">{{Exam-question|Exam Code=CT1 S2015|Number=4|Part=i|Marks=4}}
-
-Forward value is present value accumulated = $$9.0161 * 1.05^{(9/12)} = 9.352.$$
-
-Present value is 9.0161.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;10&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-50&lt;/rate_per_year&gt;&lt;effective_time&gt;0.08333&lt;/effective_time&gt;&lt;cashflow_value&gt;-50&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-50&lt;/rate_per_year&gt;&lt;effective_time&gt;0.58333&lt;/effective_time&gt;&lt;cashflow_value&gt;-50&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.05&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>21pn11f7veml3nmiyvpopotq6qdahgh</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2015 Q6</title>
-    <ns>0</ns>
-    <id>23</id>
-    <revision>
-      <id>156</id>
-      <parentid>155</parentid>
-      <timestamp>2015-11-01T21:40:36Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1862">{{Exam-question|Exam Code=CT1 S2015|Number=6|Part=i|Marks=3}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;3&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;3&lt;/term&gt;&lt;value&gt;3&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;101&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=6|Part=ii|Marks=5}}
-
-{| class=wikitable 
-! Term
-! Spot rate
-|-
-| 1
-| 104/101-1 = 2.9703%
-|-
-|2 
-| 2.48131% (below)
-|-
-|3
-| 2.64885% (above in part i)
-|}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;2&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;2&lt;/term&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;101&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=6|Part=iii|Marks=2}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;CT1_Spot_Rates&gt;&lt;item0&gt;&lt;delta&gt;0.024510293532238&lt;/delta&gt;&lt;effective_time&gt;2&lt;/effective_time&gt;&lt;/item0&gt;&lt;item1&gt;&lt;delta&gt;0.026143793264507&lt;/delta&gt;&lt;effective_time&gt;3&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Spot_Rates&gt;&lt;request&gt;explain_forward&lt;/request&gt;&lt;forward_start_time&gt;2&lt;/forward_start_time&gt;&lt;forward_end_time&gt;3&lt;/forward_end_time&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>0cer0mwfqw4v7r9f9db4eypzfjogpz6</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2015 Q3</title>
-    <ns>0</ns>
-    <id>25</id>
-    <revision>
-      <id>162</id>
-      <parentid>161</parentid>
-      <timestamp>2015-11-02T08:15:18Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1248">{{Exam-question|Exam Code=CT1 S2015|Number=3|Part=i|Marks=2}}
-
-Annuity duration = (Ia)/a = 56.63280290 / (9.76047671 / 1.04) = 6.0 years.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;12&lt;/term&gt;&lt;value/&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=3|Part=ii|Marks=3}}
-
-For bond, effective interest rate  = i(2)/2 = 0.03960781 / 2 = 0.0198039 per half year.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;2&lt;/m&gt;&lt;source_m/&gt;&lt;source_rate/&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-Bond duration in half years 
-\begin{align}
-&amp; = \frac{5/2\ (Ia)_\require{enclose}{\enclose{actuarial}{2 \times 8}} + 100 \times 2 \times 8  v^{(2 * 8)}}{5/2 \ a_\require{enclose}{\enclose{actuarial}{2 \times 8}} + 100  v^{(2 \times 8)}} \\
-&amp; = \frac{2.50 \times 109.93242001 + 100 \times 16 \times 1.04^8 }{2.50 \times 13.86813443 / 1.0198039 + 100 \times 1.04^8} \\
-&amp; = 14.42 \mbox{ half-years}.
-\end{align}
-
-Bond duration in years = 14.42/2 = 7.2 years.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.0198039&lt;/i_effective&gt;&lt;term&gt;16&lt;/term&gt;&lt;value/&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>dgm2q3vowxgyvg8h3f8zy8z6ymct2lv</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2015 Q7</title>
-    <ns>0</ns>
-    <id>26</id>
-    <revision>
-      <id>166</id>
-      <parentid>165</parentid>
-      <timestamp>2015-11-02T08:42:51Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="3622">{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=i|Marks=5}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.029777224987501&lt;/delta&gt;&lt;i_effective&gt;0.030225&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;8.5843193925409&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;25.752958177623&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;5.25&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;52.5&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;130&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;130&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;100&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-
-{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=ii|Marks=2}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.03&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-cf
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.030227275620096&lt;/delta&gt;&lt;i_effective&gt;0.030688757762374&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;73.91364333471&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;30&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;100&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-
-{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=iii|Marks=2}}
-$$50\% \times 0.04833771 +  50\% \times 0.03022500 = 0.039.$$
-
-{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=iv|Marks=5}}
-
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.047205778541372&lt;/delta&gt;&lt;i_effective&gt;0.048337712290649&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;7.8774110412512&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;23.632233123754&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.047205778541372&lt;/delta&gt;&lt;i_effective&gt;0.048337712290649&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;7.8774110412512&lt;/value&gt;&lt;rate_per_year&gt;5.25&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;25.794714149511&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.047205778541372&lt;/delta&gt;&lt;i_effective&gt;0.048337712290649&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;130&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;50.573052726735&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;item3&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;30&lt;/cashflow_value&gt;&lt;/item3&gt;&lt;item4&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item4&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;200&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>3yidfsj7gbqc1yv3lnmsps85fc03vx2</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2015 Q8</title>
-    <ns>0</ns>
-    <id>27</id>
-    <revision>
-      <id>172</id>
-      <parentid>171</parentid>
-      <timestamp>2015-11-02T16:56:18Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1830">{{Exam-question|Exam Code=CT1 S2015|Number=8|Part=iii|Marks=5}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1000&lt;/term&gt;&lt;value&gt;2095815.5637814&lt;/value&gt;&lt;escalation_delta&gt;0.0099503308531681&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.01&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;4.80&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;10059914.706151&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.06&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=8|Part=v|Marks=3}}
-
-Capital gains tax =  0.25*(120-96*126/123) = 5.4146.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;4.80&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;3.8597684473981&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;96.494211184953&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-5.4146&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;-4.3539796323504&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;item3&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-96&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-96&lt;/cashflow_value&gt;&lt;/item3&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>fbw9e4pbcy47c0xl0a96v5tmd9h1fhz</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 S2015 Q9</title>
-    <ns>0</ns>
-    <id>28</id>
-    <revision>
-      <id>176</id>
-      <parentid>175</parentid>
-      <timestamp>2015-11-02T17:30:25Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="4319">{{Exam-question|Exam Code=CT1 S2015|Number=9|Part=ii|Marks=5}}
-
-19 payments are required = 18 years??.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;19&lt;/term&gt;&lt;value&gt;17.398268580892&lt;/value&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1043896.1148535&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;18&lt;/term&gt;&lt;value&gt;17.398268580892&lt;/value&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1043896.1148535&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=9|Part=iii|Marks=3}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;20&lt;/term&gt;&lt;value&gt;17.398268580892&lt;/value&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1043896.1148535&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;1000000&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2015|Number=9|Part=iv|Marks=10}}
-
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.038854591226657&lt;/delta&gt;&lt;i_effective&gt;0.039619302891343&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;2000000&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;919482.15356511&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.038854591226657&lt;/delta&gt;&lt;i_effective&gt;0.039619302891343&lt;/i_effective&gt;&lt;term&gt;20&lt;/term&gt;&lt;value&gt;14.775807819006&lt;/value&gt;&lt;escalation_delta&gt;0.004987541511039&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.0049999999999999&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;-10000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-147758.07819006&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.038854591226657&lt;/delta&gt;&lt;i_effective&gt;0.039619302891343&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;item3&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;19&lt;/term&gt;&lt;value&gt;19.879716853081&lt;/value&gt;&lt;escalation_delta&gt;0.004987541511039&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.0049999999999999&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;1192783.0111849&lt;/cashflow_value&gt;&lt;/item3&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>o17cptjh3fld02vi7zklxr68oqtu35f</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 A2015 Q5</title>
-    <ns>0</ns>
-    <id>33</id>
-    <revision>
-      <id>230</id>
-      <parentid>229</parentid>
-      <timestamp>2015-11-03T18:38:47Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1279">{{Exam-question|Exam Code=CT1 A2015|Number=5|Marks=7|Oracle=2128.77|Oracle-source=CT1 A2015 Examiner's report}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.06&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-Present value = 1047.22.  Accumulated value = present value * 1.0609^12 = 1047.22 * 1.0609^12 = 2128.78.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;4&lt;/term&gt;&lt;value&gt;4&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;480&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;4&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;4&lt;/term&gt;&lt;value&gt;4&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;4&lt;/effective_time&gt;&lt;cashflow_value&gt;480&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;12&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;4&lt;/term&gt;&lt;value&gt;4&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;8&lt;/effective_time&gt;&lt;cashflow_value&gt;480&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.0609&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>6st493z8qqpm5zx018myhuj9hqbpm9v</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 A2015 Q6</title>
-    <ns>0</ns>
-    <id>36</id>
+    <id>96</id>
     <revision>
       <id>238</id>
-      <timestamp>2015-11-03T19:02:10Z</timestamp>
+      <timestamp>2015-11-07T22:32:35Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 A2015|Number=6|Marks=6|Oracle=5.4%|Oracle-source=CT1 A2015 Examiner's report}}  Nominal return = 0.09589.  Inflation = 0.04, so real return = 1.0...&quot;</comment>
+      <comment>Created page with &quot;{{Exam |Title=Financial Mathematics |Examiner=Institute and Faculty of Actuaries |Date=15-April-2013 }}&quot;</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="796">{{Exam-question|Exam Code=CT1 A2015|Number=6|Marks=6|Oracle=5.4%|Oracle-source=CT1 A2015 Examiner's report}}
-
-Nominal return = 0.09589.  Inflation = 0.04, so real return = 1.09589/1.04-1 = 5.4% per year.
- 
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1000&lt;/term&gt;&lt;value&gt;3.3706527598447E 26&lt;/value&gt;&lt;escalation_delta&gt;0.058268908123976&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.06&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;6&lt;/rate_per_year&gt;&lt;effective_time&gt;0.5&lt;/effective_time&gt;&lt;cashflow_value&gt;2.0223916559068E 27&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;175&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>bueskenah6endrtwd79okjty9ii5q02</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 A2015 Q7</title>
-    <ns>0</ns>
-    <id>37</id>
-    <revision>
-      <id>239</id>
-      <timestamp>2015-11-03T19:07:16Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 A2015|Number=7|Part=iii|Marks=2|Oracle=16.3%|Oracle-source=CT1 A2015 Examiner's report}}  &lt;fin-math&gt;&lt;parameters&gt;&lt;CT1_Spot_Rates&gt;&lt;item0&gt;&lt;delta&gt;0.0...&quot;</comment>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="483">{{Exam-question|Exam Code=CT1 A2015|Number=7|Part=iii|Marks=2|Oracle=16.3%|Oracle-source=CT1 A2015 Examiner's report}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;CT1_Spot_Rates&gt;&lt;item0&gt;&lt;delta&gt;0.067658648473815&lt;/delta&gt;&lt;effective_time&gt;3.5&lt;/effective_time&gt;&lt;/item0&gt;&lt;item1&gt;&lt;delta&gt;0.086177696241052&lt;/delta&gt;&lt;effective_time&gt;4.5&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Spot_Rates&gt;&lt;request&gt;explain_forward&lt;/request&gt;&lt;forward_start_time&gt;3.5&lt;/forward_start_time&gt;&lt;forward_end_time&gt;4.5&lt;/forward_end_time&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>pio0mrgtcpslrhf7nlrzcf3j31tqbmg</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>CT1 A2015 Q8</title>
-    <ns>0</ns>
-    <id>38</id>
-    <revision>
-      <id>241</id>
-      <parentid>240</parentid>
-      <timestamp>2015-11-03T19:18:12Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1606">{{Exam-question|Exam Code=CT1 A2015|Number=8|Part=i|Marks=2|Oracle=114.047|Oracle-source=CT1 A2015 Examiner's report}}
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;9&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;90&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.07&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 A2015|Number=8|Part=i|Marks=2|Oracle=7.199|Oracle-source=CT1 A2015 Examiner's report}}
-
-Discounted mean term = 821 / 114.047 = 7.199 years.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;1000&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;55&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;9&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;495&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.07&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>3ygoisk3la7lm7k1xxvs1jgbjadjfb9</sha1>
+      <text xml:space="preserve" bytes="103">{{Exam
+|Title=Financial Mathematics
+|Examiner=Institute and Faculty of Actuaries
+|Date=15-April-2013
+}}</text>
+      <sha1>esq1ouqlhvgg4r6ze4qosh8kef26ihm</sha1>
     </revision>
   </page>
   <page>
     <title>CT1 A2015 Q9</title>
     <ns>0</ns>
-    <id>39</id>
+    <id>31</id>
     <revision>
-      <id>250</id>
-      <parentid>249</parentid>
-      <timestamp>2015-11-04T06:53:49Z</timestamp>
+      <id>61</id>
+      <parentid>60</parentid>
+      <timestamp>2015-11-05T07:21:31Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="3471">{{Exam-question|Exam Code=CT1 A2015|Number=9|Marks=9|Oracle=6.84% escalation per year|Oracle-source=CT1 A2015 Examiner's report}}
@@ -511,15 +218,17 @@ So escalation rate is 1.12 / 1.04834128 -1 = 6.83544% per year.</text>
   <page>
     <title>CT1 A2015 Q11</title>
     <ns>0</ns>
-    <id>40</id>
+    <id>32</id>
     <revision>
-      <id>254</id>
-      <parentid>253</parentid>
-      <timestamp>2015-11-04T07:27:44Z</timestamp>
+      <id>63</id>
+      <parentid>62</parentid>
+      <timestamp>2015-11-05T07:21:31Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1322">{{Exam-question|Exam Code=CT1 A2015|Number=11|Part=ii|Marks=4|Oracle=26.62|Oracle-source=CT1 A2015 Exam question}}
@@ -539,36 +248,25 @@ APR is 12.76% rounded up to 1dp = 12.8%.  Amount repaid per year = 958.32 * 12 =
     </revision>
   </page>
   <page>
-    <title>CT1 S2014 Q6</title>
+    <title>CT1 S2014 Q4</title>
     <ns>0</ns>
-    <id>41</id>
+    <id>33</id>
     <revision>
-      <id>270</id>
-      <parentid>260</parentid>
-      <timestamp>2015-11-05T08:04:28Z</timestamp>
+      <id>93</id>
+      <parentid>92</parentid>
+      <timestamp>2015-11-05T09:53:16Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
       <minor/>
-      <comment>Owen moved page [[CT1 S2014 Q4]] to [[CT1 S2014 Q6]]</comment>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="2418">{{Exam-question|Exam Code=CT1 S2014|Number=6|Part=i|Marks=2|Oracle=100|Oracle-source=CT1 S2014 Exam question}}
+      <text xml:space="preserve" bytes="1026">{{Exam-question|Exam Code=CT1 S2014|Number=4|Part=ii|Marks=3|Oracle=-8.1% per year|Oracle-source=CT1 S2014 Exam question}}
 
-Net running yield = net redemption yield, so price is at par.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;8.110895779355&lt;/value&gt;&lt;rate_per_year&gt;400&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;3244.358311742&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;10000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;6755.641688258&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-{{Exam-question|Exam Code=CT1 S2014|Number=6|Part=ii|Marks=3|Oracle=8.19 years|Oracle-source=CT1 S2014 Exam question}}
-
-885.53 / 108.11 = 8.191.
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;6755.641688258&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;5&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;22000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
-
-
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;6755.641688258&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;rate_per_year&gt;5&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;22000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>gw95rl7iswlw9vmfdpg32ng4ijmqinz</sha1>
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;2.0&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;2&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;2.5&lt;/rate_per_year&gt;&lt;effective_time&gt;0.3333333&lt;/effective_time&gt;&lt;cashflow_value&gt;2.5&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-4.2&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;-4.2&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>dbnu27owlzjlxolqdk5n04pjh61xx6t</sha1>
     </revision>
   </page>
   <page>
@@ -576,13 +274,15 @@ Net running yield = net redemption yield, so price is at par.
     <ns>0</ns>
     <id>34</id>
     <revision>
-      <id>259</id>
-      <parentid>226</parentid>
-      <timestamp>2015-11-04T17:20:02Z</timestamp>
+      <id>67</id>
+      <parentid>66</parentid>
+      <timestamp>2015-11-05T07:21:34Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1756">{{Exam-question|Exam Code=CT1 S2014|Number=5|Part=i|Marks=1|Oracle=4.4278|Oracle-source=CT1 S2014 Examiner's report}}
@@ -608,15 +308,17 @@ Net running yield = net redemption yield, so price is at par.
   <page>
     <title>CT1 S2014 Q10</title>
     <ns>0</ns>
-    <id>43</id>
+    <id>35</id>
     <revision>
-      <id>262</id>
-      <parentid>261</parentid>
-      <timestamp>2015-11-04T18:08:30Z</timestamp>
+      <id>69</id>
+      <parentid>68</parentid>
+      <timestamp>2015-11-05T07:21:35Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="3069">{{Exam-question|Exam Code=CT1 S2014|Number=10|Part=i|Marks=7|Oracle=£297,537.30|Oracle-source=CT1 S2014 Examiner's report}}
@@ -632,15 +334,17 @@ Net running yield = net redemption yield, so price is at par.
   <page>
     <title>CT1 A2014 Q1</title>
     <ns>0</ns>
-    <id>45</id>
+    <id>36</id>
     <revision>
-      <id>275</id>
-      <parentid>266</parentid>
-      <timestamp>2015-11-05T08:15:53Z</timestamp>
+      <id>89</id>
+      <parentid>88</parentid>
+      <timestamp>2015-11-05T09:53:14Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1547">{{Exam-question|Exam Code=CT1 A2014|Number=1|Marks=4|Oracle=1.2% per year|Oracle-source=CT1 A2014 Examiner's report}}
@@ -652,15 +356,17 @@ Net running yield = net redemption yield, so price is at par.
   <page>
     <title>CT1 A2014 Q3</title>
     <ns>0</ns>
-    <id>46</id>
+    <id>37</id>
     <revision>
-      <id>274</id>
-      <parentid>268</parentid>
-      <timestamp>2015-11-05T08:12:47Z</timestamp>
+      <id>91</id>
+      <parentid>90</parentid>
+      <timestamp>2015-11-05T09:53:15Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="773">{{Exam-question|Exam Code=CT1 A2014|Number=3|Part=i|Marks=2|Oracle=8.39%|Oracle-source=CT1 A2014 Examiner's report}}
@@ -680,37 +386,396 @@ Annual effective rate = (925/900)^(12/4) - 1 = 8.566958161%.
     </revision>
   </page>
   <page>
-    <title>CT1 S2014 Q4</title>
+    <title>CT1 S2015 Q9</title>
     <ns>0</ns>
-    <id>47</id>
+    <id>20</id>
     <revision>
-      <id>273</id>
-      <parentid>272</parentid>
-      <timestamp>2015-11-05T08:09:15Z</timestamp>
+      <id>39</id>
+      <parentid>38</parentid>
+      <timestamp>2015-11-05T07:20:58Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1026">{{Exam-question|Exam Code=CT1 S2014|Number=4|Part=ii|Marks=3|Oracle=-8.1% per year|Oracle-source=CT1 S2014 Exam question}}
+      <text xml:space="preserve" bytes="4319">{{Exam-question|Exam Code=CT1 S2015|Number=9|Part=ii|Marks=5}}
 
-&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;2.0&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;2&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;2.5&lt;/rate_per_year&gt;&lt;effective_time&gt;0.3333333&lt;/effective_time&gt;&lt;cashflow_value&gt;2.5&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-4.2&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;-4.2&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>dbnu27owlzjlxolqdk5n04pjh61xx6t</sha1>
+19 payments are required = 18 years??.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;19&lt;/term&gt;&lt;value&gt;17.398268580892&lt;/value&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1043896.1148535&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;18&lt;/term&gt;&lt;value&gt;17.398268580892&lt;/value&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1043896.1148535&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=9|Part=iii|Marks=3}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;20&lt;/term&gt;&lt;value&gt;17.398268580892&lt;/value&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1043896.1148535&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.0099503308531681&lt;/delta&gt;&lt;i_effective&gt;0.01&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;1000000&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=9|Part=iv|Marks=10}}
+
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.038854591226657&lt;/delta&gt;&lt;i_effective&gt;0.039619302891343&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;2000000&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;919482.15356511&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.038854591226657&lt;/delta&gt;&lt;i_effective&gt;0.039619302891343&lt;/i_effective&gt;&lt;term&gt;20&lt;/term&gt;&lt;value&gt;14.775807819006&lt;/value&gt;&lt;escalation_delta&gt;0.004987541511039&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.0049999999999999&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;-10000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-147758.07819006&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.038854591226657&lt;/delta&gt;&lt;i_effective&gt;0.039619302891343&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-1000000&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;item3&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;19&lt;/term&gt;&lt;value&gt;19.879716853081&lt;/value&gt;&lt;escalation_delta&gt;0.004987541511039&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.0049999999999999&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;60000&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;1192783.0111849&lt;/cashflow_value&gt;&lt;/item3&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>o17cptjh3fld02vi7zklxr68oqtu35f</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2015 Q3</title>
+    <ns>0</ns>
+    <id>17</id>
+    <revision>
+      <id>33</id>
+      <parentid>32</parentid>
+      <timestamp>2015-11-05T07:20:56Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1248">{{Exam-question|Exam Code=CT1 S2015|Number=3|Part=i|Marks=2}}
+
+Annuity duration = (Ia)/a = 56.63280290 / (9.76047671 / 1.04) = 6.0 years.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;12&lt;/term&gt;&lt;value/&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=3|Part=ii|Marks=3}}
+
+For bond, effective interest rate  = i(2)/2 = 0.03960781 / 2 = 0.0198039 per half year.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;2&lt;/m&gt;&lt;source_m/&gt;&lt;source_rate/&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+Bond duration in half years 
+\begin{align}
+&amp; = \frac{5/2\ (Ia)_\require{enclose}{\enclose{actuarial}{2 \times 8}} + 100 \times 2 \times 8  v^{(2 * 8)}}{5/2 \ a_\require{enclose}{\enclose{actuarial}{2 \times 8}} + 100  v^{(2 \times 8)}} \\
+&amp; = \frac{2.50 \times 109.93242001 + 100 \times 16 \times 1.04^8 }{2.50 \times 13.86813443 / 1.0198039 + 100 \times 1.04^8} \\
+&amp; = 14.42 \mbox{ half-years}.
+\end{align}
+
+Bond duration in years = 14.42/2 = 7.2 years.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.0198039&lt;/i_effective&gt;&lt;term&gt;16&lt;/term&gt;&lt;value/&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>dgm2q3vowxgyvg8h3f8zy8z6ymct2lv</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2015 Q5</title>
+    <ns>0</ns>
+    <id>21</id>
+    <revision>
+      <id>41</id>
+      <parentid>40</parentid>
+      <timestamp>2015-11-05T07:20:59Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1279">{{Exam-question|Exam Code=CT1 A2015|Number=5|Marks=7|Oracle=2128.77|Oracle-source=CT1 A2015 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.06&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+Present value = 1047.22.  Accumulated value = present value * 1.0609^12 = 1047.22 * 1.0609^12 = 2128.78.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;4&lt;/term&gt;&lt;value&gt;4&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;480&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;4&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;4&lt;/term&gt;&lt;value&gt;4&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;4&lt;/effective_time&gt;&lt;cashflow_value&gt;480&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;12&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;4&lt;/term&gt;&lt;value&gt;4&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;8&lt;/effective_time&gt;&lt;cashflow_value&gt;480&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.0609&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>6st493z8qqpm5zx018myhuj9hqbpm9v</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2015 Q7</title>
+    <ns>0</ns>
+    <id>23</id>
+    <revision>
+      <id>45</id>
+      <parentid>44</parentid>
+      <timestamp>2015-11-05T07:21:01Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="483">{{Exam-question|Exam Code=CT1 A2015|Number=7|Part=iii|Marks=2|Oracle=16.3%|Oracle-source=CT1 A2015 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;CT1_Spot_Rates&gt;&lt;item0&gt;&lt;delta&gt;0.067658648473815&lt;/delta&gt;&lt;effective_time&gt;3.5&lt;/effective_time&gt;&lt;/item0&gt;&lt;item1&gt;&lt;delta&gt;0.086177696241052&lt;/delta&gt;&lt;effective_time&gt;4.5&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Spot_Rates&gt;&lt;request&gt;explain_forward&lt;/request&gt;&lt;forward_start_time&gt;3.5&lt;/forward_start_time&gt;&lt;forward_end_time&gt;4.5&lt;/forward_end_time&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>pio0mrgtcpslrhf7nlrzcf3j31tqbmg</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2015 Q8</title>
+    <ns>0</ns>
+    <id>19</id>
+    <revision>
+      <id>37</id>
+      <parentid>36</parentid>
+      <timestamp>2015-11-05T07:20:57Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1830">{{Exam-question|Exam Code=CT1 S2015|Number=8|Part=iii|Marks=5}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1000&lt;/term&gt;&lt;value&gt;2095815.5637814&lt;/value&gt;&lt;escalation_delta&gt;0.0099503308531681&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.01&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;4.80&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;10059914.706151&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.06&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=8|Part=v|Marks=3}}
+
+Capital gains tax =  0.25*(120-96*126/123) = 5.4146.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;4.80&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;3.8597684473981&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;120&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;96.494211184953&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-5.4146&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;-4.3539796323504&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;item3&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-96&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-96&lt;/cashflow_value&gt;&lt;/item3&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>fbw9e4pbcy47c0xl0a96v5tmd9h1fhz</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2015 Q8</title>
+    <ns>0</ns>
+    <id>24</id>
+    <revision>
+      <id>47</id>
+      <parentid>46</parentid>
+      <timestamp>2015-11-05T07:21:02Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1606">{{Exam-question|Exam Code=CT1 A2015|Number=8|Part=i|Marks=2|Oracle=114.047|Oracle-source=CT1 A2015 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;9&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;90&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.07&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 A2015|Number=8|Part=i|Marks=2|Oracle=7.199|Oracle-source=CT1 A2015 Examiner's report}}
+
+Discounted mean term = 821 / 114.047 = 7.199 years.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;1000&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;55&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;9&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;495&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.07&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>3ygoisk3la7lm7k1xxvs1jgbjadjfb9</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2015 Q6</title>
+    <ns>0</ns>
+    <id>22</id>
+    <revision>
+      <id>43</id>
+      <parentid>42</parentid>
+      <timestamp>2015-11-05T07:21:01Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="796">{{Exam-question|Exam Code=CT1 A2015|Number=6|Marks=6|Oracle=5.4%|Oracle-source=CT1 A2015 Examiner's report}}
+
+Nominal return = 0.09589.  Inflation = 0.04, so real return = 1.09589/1.04-1 = 5.4% per year.
+ 
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1000&lt;/term&gt;&lt;value&gt;3.3706527598447E 26&lt;/value&gt;&lt;escalation_delta&gt;0.058268908123976&lt;/escalation_delta&gt;&lt;escalation_rate_effective&gt;0.06&lt;/escalation_rate_effective&gt;&lt;escalation_frequency&gt;1&lt;/escalation_frequency&gt;&lt;rate_per_year&gt;6&lt;/rate_per_year&gt;&lt;effective_time&gt;0.5&lt;/effective_time&gt;&lt;cashflow_value&gt;2.0223916559068E 27&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;175&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>bueskenah6endrtwd79okjty9ii5q02</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2015 Q6</title>
+    <ns>0</ns>
+    <id>16</id>
+    <revision>
+      <id>31</id>
+      <parentid>30</parentid>
+      <timestamp>2015-11-05T07:20:56Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1862">{{Exam-question|Exam Code=CT1 S2015|Number=6|Part=i|Marks=3}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;3&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;3&lt;/term&gt;&lt;value&gt;3&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;101&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=6|Part=ii|Marks=5}}
+
+{| class=wikitable 
+! Term
+! Spot rate
+|-
+| 1
+| 104/101-1 = 2.9703%
+|-
+|2 
+| 2.48131% (below)
+|-
+|3
+| 2.64885% (above in part i)
+|}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;2&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;2&lt;/term&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;101&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=6|Part=iii|Marks=2}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;CT1_Spot_Rates&gt;&lt;item0&gt;&lt;delta&gt;0.024510293532238&lt;/delta&gt;&lt;effective_time&gt;2&lt;/effective_time&gt;&lt;/item0&gt;&lt;item1&gt;&lt;delta&gt;0.026143793264507&lt;/delta&gt;&lt;effective_time&gt;3&lt;/effective_time&gt;&lt;/item1&gt;&lt;/CT1_Spot_Rates&gt;&lt;request&gt;explain_forward&lt;/request&gt;&lt;forward_start_time&gt;2&lt;/forward_start_time&gt;&lt;forward_end_time&gt;3&lt;/forward_end_time&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>0cer0mwfqw4v7r9f9db4eypzfjogpz6</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2015 Q4</title>
+    <ns>0</ns>
+    <id>15</id>
+    <revision>
+      <id>29</id>
+      <parentid>28</parentid>
+      <timestamp>2015-11-05T07:20:54Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1086">{{Exam-question|Exam Code=CT1 S2015|Number=4|Part=i|Marks=4}}
+
+Forward value is present value accumulated = $$9.0161 * 1.05^{(9/12)} = 9.352.$$
+
+Present value is 9.0161.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;10&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-50&lt;/rate_per_year&gt;&lt;effective_time&gt;0.08333&lt;/effective_time&gt;&lt;cashflow_value&gt;-50&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-50&lt;/rate_per_year&gt;&lt;effective_time&gt;0.58333&lt;/effective_time&gt;&lt;cashflow_value&gt;-50&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.05&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>21pn11f7veml3nmiyvpopotq6qdahgh</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2015 Q7</title>
+    <ns>0</ns>
+    <id>18</id>
+    <revision>
+      <id>35</id>
+      <parentid>34</parentid>
+      <timestamp>2015-11-05T07:20:57Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="3622">{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=i|Marks=5}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.029777224987501&lt;/delta&gt;&lt;i_effective&gt;0.030225&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;8.5843193925409&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;25.752958177623&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;5.25&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;52.5&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;130&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;130&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;100&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+
+{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=ii|Marks=2}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.03&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+cf
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.030227275620096&lt;/delta&gt;&lt;i_effective&gt;0.030688757762374&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;73.91364333471&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;30&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;100&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+
+{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=iii|Marks=2}}
+$$50\% \times 0.04833771 +  50\% \times 0.03022500 = 0.039.$$
+
+{{Exam-question|Exam Code=CT1 S2015|Number=7|Part=iv|Marks=5}}
+
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.047205778541372&lt;/delta&gt;&lt;i_effective&gt;0.048337712290649&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;7.8774110412512&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;23.632233123754&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.047205778541372&lt;/delta&gt;&lt;i_effective&gt;0.048337712290649&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;7.8774110412512&lt;/value&gt;&lt;rate_per_year&gt;5.25&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;25.794714149511&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.047205778541372&lt;/delta&gt;&lt;i_effective&gt;0.048337712290649&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;130&lt;/rate_per_year&gt;&lt;effective_time&gt;20&lt;/effective_time&gt;&lt;cashflow_value&gt;50.573052726735&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;item3&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;30&lt;/cashflow_value&gt;&lt;/item3&gt;&lt;item4&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;100&lt;/cashflow_value&gt;&lt;/item4&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective/&gt;&lt;value&gt;200&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>3yidfsj7gbqc1yv3lnmsps85fc03vx2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2015 Q2</title>
+    <ns>0</ns>
+    <id>14</id>
+    <revision>
+      <id>27</id>
+      <parentid>26</parentid>
+      <timestamp>2015-11-05T07:20:54Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="889">{{Exam-question|Exam Code=CT1 S2015|Number=2|Part=i|Marks=3}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1000&lt;/m&gt;&lt;source_m&gt;12&lt;/source_m&gt;&lt;source_advance&gt;1&lt;/source_advance&gt;&lt;source_rate&gt;0.055&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;12&lt;/source_m&gt;&lt;source_advance&gt;1&lt;/source_advance&gt;&lt;source_rate&gt;0.055&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;12&lt;/m&gt;&lt;source_m&gt;12&lt;/source_m&gt;&lt;source_advance&gt;1&lt;/source_advance&gt;&lt;source_rate&gt;0.055&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2015|Number=2|Part=iv|Marks=1}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;0.5&lt;/source_m&gt;&lt;source_advance&gt;0&lt;/source_advance&gt;&lt;source_rate&gt;0.06&lt;/source_rate&gt;&lt;i_effective/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>jl4snpsz32olvh0i58d9q75xu5vhwvq</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2014 Q6</title>
+    <ns>0</ns>
+    <id>41</id>
+    <revision>
+      <id>87</id>
+      <parentid>86</parentid>
+      <timestamp>2015-11-05T09:53:12Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="2418">{{Exam-question|Exam Code=CT1 S2014|Number=6|Part=i|Marks=2|Oracle=100|Oracle-source=CT1 S2014 Exam question}}
+
+Net running yield = net redemption yield, so price is at par.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;8.110895779355&lt;/value&gt;&lt;rate_per_year&gt;400&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;3244.358311742&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;10000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;6755.641688258&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2014|Number=6|Part=ii|Marks=3|Oracle=8.19 years|Oracle-source=CT1 S2014 Exam question}}
+
+885.53 / 108.11 = 8.191.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;6755.641688258&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;5&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;22000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0.039220713153281&lt;/delta&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;6755.641688258&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;rate_per_year&gt;5&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;22000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>gw95rl7iswlw9vmfdpg32ng4ijmqinz</sha1>
     </revision>
   </page>
   <page>
     <title>CT1 A2014 Q5</title>
     <ns>0</ns>
-    <id>48</id>
+    <id>42</id>
     <revision>
-      <id>277</id>
-      <parentid>276</parentid>
-      <timestamp>2015-11-05T08:34:12Z</timestamp>
+      <id>95</id>
+      <parentid>94</parentid>
+      <timestamp>2015-11-05T09:53:16Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1179">{{Exam-question|Exam Code=CT1 A2014|Number=5|Part=i|Marks=3|Oracle=172.319, 11,823.526|Oracle-source=CT1 A2014 Examiner's report}}
@@ -731,15 +796,17 @@ Nominal rate of return = 173.8/169.4 * 1.035 - 1 = 6.188311688%.
   <page>
     <title>CT1 A2014 Q6</title>
     <ns>0</ns>
-    <id>49</id>
+    <id>43</id>
     <revision>
-      <id>278</id>
-      <timestamp>2015-11-05T08:52:25Z</timestamp>
+      <id>97</id>
+      <parentid>96</parentid>
+      <timestamp>2015-11-05T09:53:18Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 A2014|Number=6|Part=i|Marks=6|Oracle=PV = $12.33m, DMT = 159.569/12.33 years|Oracle-source=CT1 A2014 Examiner's report}}  Discounted mean term =...&quot;</comment>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="4299">{{Exam-question|Exam Code=CT1 A2014|Number=6|Part=i|Marks=6|Oracle=PV = $12.33m, DMT = 159.569/12.33 years|Oracle-source=CT1 A2014 Examiner's report}}
@@ -768,15 +835,17 @@ Discounted mean term = 159.57/12.33 = 12.94 years.
   <page>
     <title>CT1 A2014 Q9</title>
     <ns>0</ns>
-    <id>50</id>
+    <id>44</id>
     <revision>
-      <id>281</id>
-      <parentid>280</parentid>
-      <timestamp>2015-11-05T09:28:27Z</timestamp>
+      <id>99</id>
+      <parentid>98</parentid>
+      <timestamp>2015-11-05T09:53:21Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1594">{{Exam-question|Exam Code=CT1 A2014|Number=9|Part=i|Marks=4|Oracle=3.800%, 4.000%|Oracle-source=CT1 A2014 Examiner's report}}
@@ -797,15 +866,17 @@ Discounted mean term = 159.57/12.33 = 12.94 years.
   <page>
     <title>CT1 A2014 Q10</title>
     <ns>0</ns>
-    <id>51</id>
+    <id>45</id>
     <revision>
-      <id>283</id>
-      <parentid>282</parentid>
-      <timestamp>2015-11-05T09:50:11Z</timestamp>
+      <id>101</id>
+      <parentid>100</parentid>
+      <timestamp>2015-11-05T09:53:23Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1507">{{Exam-question|Exam Code=CT1 A2014|Number=10|Part=i|Marks=3|Oracle=£1,462.31|Oracle-source=CT1 A2014 Examiner's report}}
@@ -841,15 +912,17 @@ Capital outstanding = (X + 3 * 50) * a22 + 50 * (Ia)22 = (1462.31-50+150)* 10.20
   <page>
     <title>CT1 S2013 Q1</title>
     <ns>0</ns>
-    <id>74</id>
+    <id>72</id>
     <revision>
-      <id>373</id>
-      <parentid>372</parentid>
-      <timestamp>2015-11-06T05:49:28Z</timestamp>
+      <id>162</id>
+      <parentid>161</parentid>
+      <timestamp>2015-11-06T09:43:03Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="871">{{Exam-question|Exam Code=CT1 S2013|Number=1|Part=i|Marks=4|Oracle=4.3062%, 4.3936%, 4.4260%, 24.618%|Oracle-source=CT1 S2013 Examiner's report}}
@@ -869,15 +942,17 @@ Effective rate over 5 years = 0.24618 = 1.045^5 - 1 = 5 * i(0.2)
   <page>
     <title>CT1 S2013 Q2</title>
     <ns>0</ns>
-    <id>75</id>
+    <id>73</id>
     <revision>
-      <id>374</id>
-      <timestamp>2015-11-06T05:56:17Z</timestamp>
+      <id>164</id>
+      <parentid>163</parentid>
+      <timestamp>2015-11-06T09:43:04Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 S2013|Number=2|Marks=3|Oracle=175.275p|Oracle-source=CT1 S2013 Examiner's report}}  1.04^(9/12) * Present value @ 4% = 1.04^(9/12)*170.19 = 175.2...&quot;</comment>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="833">{{Exam-question|Exam Code=CT1 S2013|Number=2|Marks=3|Oracle=175.275p|Oracle-source=CT1 S2013 Examiner's report}}
@@ -891,18 +966,20 @@ Effective rate over 5 years = 0.24618 = 1.045^5 - 1 = 5 * i(0.2)
   <page>
     <title>CT1 S2013 Q3</title>
     <ns>0</ns>
-    <id>76</id>
+    <id>74</id>
     <revision>
-      <id>375</id>
-      <timestamp>2015-11-06T06:05:03Z</timestamp>
+      <id>170</id>
+      <parentid>169</parentid>
+      <timestamp>2015-11-07T11:03:39Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
-      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 S2013|Number=3|Past=i|Marks=2|Oracle=£108.584|Oracle-source=CT1 S2013 Examiner's report}}  Working in half-years  &lt;fin-math&gt;&lt;parameters&gt;&lt;request...&quot;</comment>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="1569">{{Exam-question|Exam Code=CT1 S2013|Number=3|Past=i|Marks=2|Oracle=£108.584|Oracle-source=CT1 S2013 Examiner's report}}
+      <text xml:space="preserve" bytes="1569">{{Exam-question|Exam Code=CT1 S2013|Number=3|Part=i|Marks=2|Oracle=£108.584|Oracle-source=CT1 S2013 Examiner's report}}
 
 Working in half-years
 
@@ -913,21 +990,23 @@ Working in full-years
 &lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.03&lt;/source_rate&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
 
 &lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;2&lt;/m&gt;&lt;advance/&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;20&lt;/value&gt;&lt;rate_per_year&gt;4&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;40&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate/&gt;&lt;source_format/&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;rate_per_year&gt;100&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;2000&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.030225&lt;/i_effective&gt;&lt;value/&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
-      <sha1>s8k1lz1vrgv9d3fw99ien8pqs5wwoaf</sha1>
+      <sha1>ehnqbevpvmsh6l80z587zqnuca5kp38</sha1>
     </revision>
   </page>
   <page>
     <title>CT1 S2013 Q6</title>
     <ns>0</ns>
-    <id>77</id>
+    <id>75</id>
     <revision>
-      <id>377</id>
-      <parentid>376</parentid>
-      <timestamp>2015-11-06T07:59:31Z</timestamp>
+      <id>168</id>
+      <parentid>167</parentid>
+      <timestamp>2015-11-06T09:43:06Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="1543">{{Exam-question|Exam Code=CT1 S2013|Number=6|Marks=10|Oracle=£275,324|Oracle-source=CT1 S2013 Examiner's report}}
@@ -943,20 +1022,168 @@ Annual escalation of receipts = 1.01 (tolls) * 1.01 (cars) -1 = 0.0201.
     </revision>
   </page>
   <page>
-    <title>Template:Exam</title>
-    <ns>10</ns>
-    <id>8</id>
+    <title>CT1 S2013 Q8</title>
+    <ns>0</ns>
+    <id>93</id>
     <revision>
-      <id>219</id>
-      <parentid>193</parentid>
-      <timestamp>2015-11-03T18:18:13Z</timestamp>
+      <id>222</id>
+      <timestamp>2015-11-07T18:32:19Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 S2013|Number=8|Part=i|Marks=5|Oracle=£59,708|Oracle-source=CT1 S2013 Examiner's report}}  1.05^(-20) * £158,422.30 = £59,707.69.  &lt;fin-math&gt;&lt;p...&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="775">{{Exam-question|Exam Code=CT1 S2013|Number=8|Part=i|Marks=5|Oracle=£59,708|Oracle-source=CT1 S2013 Examiner's report}}
+
+1.05^(-20) * £158,422.30 = £59,707.69.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_interest&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;source_m&gt;2&lt;/source_m&gt;&lt;source_rate&gt;0.04&lt;/source_rate&gt;&lt;i_effective&gt;&lt;/i_effective&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;12&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;25&lt;/term&gt;&lt;value&gt;25&lt;/value&gt;&lt;rate_per_year&gt;10000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;250000&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.0404&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>86yusfgjlpe774f8glukk1728ema3vo</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2013 Q9</title>
+    <ns>0</ns>
+    <id>94</id>
+    <revision>
+      <id>230</id>
+      <parentid>229</parentid>
+      <timestamp>2015-11-07T19:34:35Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="595">&lt;noinclude&gt;
+      <text xml:space="preserve" bytes="3646">{{Exam-question|Exam Code=CT1 S2013|Number=9|Part=i|Marks=3|Oracle=£3,052.65.|Oracle-source=CT1 S2013 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;15&lt;/term&gt;&lt;value&gt;15&lt;/value&gt;&lt;rate_per_year&gt;420&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;6300&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;15&lt;/term&gt;&lt;value&gt;120&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;-20&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-2400&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+
+{{Exam-question|Exam Code=CT1 S2013|Number=9|Part=ii|Marks=2|Oracle=£122.106, £277.894|Oracle-source=CT1 S2013 Examiner's report}}
+
+Interest = 3052.65 * 0.04 = £122.106.
+
+Capital = 400 - interest = 400 - 122.106 = £277.894 (leaving 3052.65 - 277.894 = 2774.756).
+
+compare with outstanding value
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;14&lt;/term&gt;&lt;value&gt;15&lt;/value&gt;&lt;rate_per_year&gt;400&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;6300&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;14&lt;/term&gt;&lt;value&gt;120&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;-20&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-2400&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+
+{{Exam-question|Exam Code=CT1 S2013|Number=9|Part=iii|Marks=5|Oracle=£74.16|Oracle-source=CT1 S2013 Examiner's report}}
+
+Outstanding capital = £1,099.18.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;7&lt;/term&gt;&lt;value&gt;15&lt;/value&gt;&lt;rate_per_year&gt;260&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;6300&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;7&lt;/term&gt;&lt;value&gt;120&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;-20&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;-2400&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+50% * 1099.18 = 549.59.  First instalment is 72.16 + 2 (step) = £74.16.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;55&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;rate_per_year&gt;2&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;110&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;10&lt;/value&gt;&lt;rate_per_year&gt;72.16&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;721.6&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.08&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>ko3m5el2h8xw9nlsekjee5wu616ybst</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 S2013 Q11</title>
+    <ns>0</ns>
+    <id>95</id>
+    <revision>
+      <id>236</id>
+      <parentid>235</parentid>
+      <timestamp>2015-11-07T22:04:55Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="3425">{{Exam-question|Exam Code=CT1 S2013|Number=11|Part=i|Marks=1|Oracle= £197.928m|Oracle-source=CT1 S2013 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;40&lt;/term&gt;&lt;value&gt;40&lt;/value&gt;&lt;rate_per_year&gt;10000000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;400000000&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2013|Number=11|Part=ii|Marks=6|Oracle=91,539,674 nominal and £78,102,138 nominal|Oracle-source=CT1 S2013 Examiner's report}}
+
+0.5 *  197927738.83 / 1081108.96 = £91.539m nominal.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0.048790164169432&lt;/delta&gt;&lt;i_effective&gt;0.05&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;7.7217349291848&lt;/value&gt;&lt;rate_per_year&gt;50000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;386086.74645924&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0.048790164169432&lt;/delta&gt;&lt;i_effective&gt;0.05&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;10&lt;/effective_time&gt;&lt;cashflow_value&gt;613913.25354076&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+0.5 *  197927738.83 / 1267109.34 = £78.102m nominal.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0.095310179804325&lt;/delta&gt;&lt;i_effective&gt;0.1&lt;/i_effective&gt;&lt;term&gt;5&lt;/term&gt;&lt;value&gt;3.7907867694084&lt;/value&gt;&lt;rate_per_year&gt;100000&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;379078.67694084&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0.095310179804325&lt;/delta&gt;&lt;i_effective&gt;0.1&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1000000&lt;/rate_per_year&gt;&lt;effective_time&gt;5&lt;/effective_time&gt;&lt;cashflow_value&gt;620921.32305915&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;value&gt;&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2013|Number=11|Part=iii|Marks=3|Oracle=15.48 years|Oracle-source=CT1 S2013 Examiner's report}}
+
+306.32307631 /19.79277388 = 15.477 years.
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;40&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+{{Exam-question|Exam Code=CT1 S2013|Number=11|Part=iv|Marks=4|Oracle=6.23 years|Oracle-source=CT1 S2013 Examiner's report}}
+(91.539 * (50000 * 41.99224806 + 1000000 * 10 * 1.04^-10) + 78.102* (100000 *13.00649226 + 1000000 * 5 * 1.04^-5) )/197927738.83= 6.23 years
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;10&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;get_annuity_increasing&lt;/request&gt;&lt;m&gt;1&lt;/m&gt;&lt;i_effective&gt;0.04&lt;/i_effective&gt;&lt;term&gt;5&lt;/term&gt;&lt;value&gt;&lt;/value&gt;&lt;increasing&gt;1&lt;/increasing&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>ctjtfzadfdnxfx6i1mhb76w7tkv2vam</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2013 Q1</title>
+    <ns>0</ns>
+    <id>97</id>
+    <revision>
+      <id>240</id>
+      <timestamp>2015-11-07T22:43:28Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 A2013|Number=1|Part=ii|Marks=3|Oracle=36%|Oracle-source=CT1 S2013 Examiner's report}}  &lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;C...&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1115">{{Exam-question|Exam Code=CT1 A2013|Number=1|Part=ii|Marks=3|Oracle=36%|Oracle-source=CT1 S2013 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;1.3&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;1.3&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-0.9&lt;/rate_per_year&gt;&lt;effective_time&gt;0.75&lt;/effective_time&gt;&lt;cashflow_value&gt;-0.9&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;item2&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;-0.8&lt;/rate_per_year&gt;&lt;effective_time&gt;1&lt;/effective_time&gt;&lt;cashflow_value&gt;-0.8&lt;/cashflow_value&gt;&lt;/item2&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;&lt;/i_effective&gt;&lt;value&gt;0&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>5zokpmql5vd1vp5z3n2up9j5el9b8ms</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>CT1 A2013 Q3</title>
+    <ns>0</ns>
+    <id>98</id>
+    <revision>
+      <id>241</id>
+      <timestamp>2015-11-07T22:57:01Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;{{Exam-question|Exam Code=CT1 A2013|Number=3|Part=i|Marks=3|Oracle=8.089%|Oracle-source=CT1 S2013 Examiner's report}}  &lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;...&quot;</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="828">{{Exam-question|Exam Code=CT1 A2013|Number=3|Part=i|Marks=3|Oracle=8.089%|Oracle-source=CT1 S2013 Examiner's report}}
+
+&lt;fin-math&gt;&lt;parameters&gt;&lt;request&gt;value_cashflows&lt;/request&gt;&lt;CT1_Cashflows&gt;&lt;item0&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;3&lt;/term&gt;&lt;value&gt;3&lt;/value&gt;&lt;rate_per_year&gt;6&lt;/rate_per_year&gt;&lt;effective_time&gt;0&lt;/effective_time&gt;&lt;cashflow_value&gt;18&lt;/cashflow_value&gt;&lt;/item0&gt;&lt;item1&gt;&lt;m&gt;1&lt;/m&gt;&lt;advance&gt;1&lt;/advance&gt;&lt;source_rate&gt;&lt;/source_rate&gt;&lt;source_format&gt;&lt;/source_format&gt;&lt;delta&gt;0&lt;/delta&gt;&lt;i_effective&gt;0&lt;/i_effective&gt;&lt;term&gt;1&lt;/term&gt;&lt;value&gt;1&lt;/value&gt;&lt;rate_per_year&gt;103&lt;/rate_per_year&gt;&lt;effective_time&gt;3&lt;/effective_time&gt;&lt;cashflow_value&gt;103&lt;/cashflow_value&gt;&lt;/item1&gt;&lt;/CT1_Cashflows&gt;&lt;i_effective&gt;&lt;/i_effective&gt;&lt;value&gt;97&lt;/value&gt;&lt;/parameters&gt;&lt;/fin-math&gt;</text>
+      <sha1>ggulmcgh8x844xhbgtntpbhzm6mk42t</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Exam</title>
+    <ns>10</ns>
+    <id>27</id>
+    <revision>
+      <id>204</id>
+      <parentid>172</parentid>
+      <timestamp>2015-11-07T17:27:29Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="612">&lt;noinclude&gt;
 This is the &quot;Exam&quot; template.
 It should be called in the following format:
 &lt;pre&gt;
@@ -977,6 +1204,9 @@ Edit the page to see the template text.
 ! Examiner
 | [[Has examiner::{{{Examiner|}}}]] 
 |}
+{{Exam-papers
+|Exam={{PAGENAME}}
+}}
 {{Question-types
 |Exam={{PAGENAME}}
 }}
@@ -984,27 +1214,55 @@ Edit the page to see the template text.
 |?Has number
 |?Has part
 |?Has marks
-|sort=Has number,Has part
-|order=ascending,ascending
+|sort=Has number
+|order=ascending
 |mainlabel=Question}}
 
 [[Category:Exam]]
 &lt;/includeonly&gt;</text>
-      <sha1>q411df7wes9uuvq8fdtypzfdx64zkfb</sha1>
+      <sha1>5p3x10mox12fe7tq3qmf968rwtmcwbe</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Exam-papers</title>
+    <ns>10</ns>
+    <id>88</id>
+    <revision>
+      <id>211</id>
+      <parentid>210</parentid>
+      <timestamp>2015-11-07T17:45:35Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="237">{{#if:{{#ask:[[Contains exam for::{{PAGENAME}}]]}}|
+Exam paper
+{{#ask:[[Contains exam for::{{PAGENAME}}]]}}
+}}
+
+{{#if:{{#ask:[[Contains solutions for::{{PAGENAME}}]]}}|
+Solutions paper
+{{#ask:[[Contains solutions for::{{PAGENAME}}]]}}
+}}</text>
+      <sha1>i2ozp7bfy5tp6jxhhijiqwvd399k7mt</sha1>
     </revision>
   </page>
   <page>
     <title>Template:Question-types</title>
     <ns>10</ns>
-    <id>32</id>
+    <id>26</id>
     <revision>
-      <id>218</id>
-      <parentid>214</parentid>
-      <timestamp>2015-11-03T18:14:38Z</timestamp>
+      <id>51</id>
+      <parentid>50</parentid>
+      <timestamp>2015-11-05T07:21:03Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="2638">&lt;noinclude&gt;
@@ -1063,17 +1321,37 @@ Edit the page to see the template text.
     </revision>
   </page>
   <page>
-    <title>Template:Exam-question</title>
+    <title>Template:Display-solution</title>
     <ns>10</ns>
-    <id>17</id>
+    <id>30</id>
     <revision>
-      <id>269</id>
-      <parentid>242</parentid>
-      <timestamp>2015-11-05T07:52:21Z</timestamp>
+      <id>223</id>
+      <parentid>81</parentid>
+      <timestamp>2015-11-07T18:38:20Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="48">&lt;span class=&quot;solution&quot;&gt;Solution: {{{1|}}}&lt;/span&gt;</text>
+      <sha1>qjtwp06rqfrbxze7ipejlbbg43wm67w</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Exam-question</title>
+    <ns>10</ns>
+    <id>28</id>
+    <revision>
+      <id>103</id>
+      <parentid>102</parentid>
+      <timestamp>2015-11-05T09:53:26Z</timestamp>
+      <contributor>
+        <username>Owen</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="679">&lt;noinclude&gt;
@@ -1104,15 +1382,17 @@ Edit the page to see the template text.
   <page>
     <title>Template:Plural</title>
     <ns>10</ns>
-    <id>30</id>
+    <id>29</id>
     <revision>
-      <id>187</id>
-      <parentid>186</parentid>
-      <timestamp>2015-11-03T08:08:09Z</timestamp>
+      <id>57</id>
+      <parentid>56</parentid>
+      <timestamp>2015-11-05T07:21:03Z</timestamp>
       <contributor>
         <username>Owen</username>
         <id>1</id>
       </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
       <text xml:space="preserve" bytes="217">&lt;noinclude&gt;
@@ -1125,24 +1405,6 @@ It should be called in the following format:
 Edit the page to see the template text.
 &lt;/noinclude&gt;&lt;includeonly&gt;{{#ifexpr:{{{1|}}}&gt;1|s|}}&lt;/includeonly&gt;</text>
       <sha1>0821xs5r8ufllz906uzsa0tjfsjmwns</sha1>
-    </revision>
-  </page>
-  <page>
-    <title>Template:Display-solution</title>
-    <ns>10</ns>
-    <id>35</id>
-    <revision>
-      <id>245</id>
-      <parentid>244</parentid>
-      <timestamp>2015-11-03T22:38:06Z</timestamp>
-      <contributor>
-        <username>Owen</username>
-        <id>1</id>
-      </contributor>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-      <text xml:space="preserve" bytes="71">&lt;span class=&quot;solution&quot;&gt;Solution: {{{1|}}}&lt;/span&gt;{{#tag:ref| {{{2|}}} }}</text>
-      <sha1>3sj6t7af9vk4reame2u15ddjuwxva2n</sha1>
     </revision>
   </page>
 </mediawiki>
