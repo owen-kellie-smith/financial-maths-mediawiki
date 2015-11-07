@@ -215,8 +215,8 @@ class CT1_Cashflows extends CT1_Collection {
 			foreach ( $this->get_cashflows() as $c ){
 				if ( 0 != $c->get_rate_per_year() ){
 					$sub = ""; $sub_split="";
+					$sub = $this->get_sign( $c->get_rate_per_year() ) . " ";
 					if ( 0 != $i ){
-						$sub = $this->get_sign( $c->get_rate_per_year() ) . " ";
 						$sub_split = $sub;
 						$detail['right']['relation'] = ''; //default is '='
 					}
@@ -278,9 +278,7 @@ class CT1_Cashflows extends CT1_Collection {
 			$i = 0;
 			foreach ( $this->get_cashflows() as $c ){
 				if ( 0 != $c->get_rate_per_year() ){
-					if ( 0 != $i ){
-						$label .= " " . $this->get_sign( $c->get_rate_per_year() ) . " ";
-					}
+					$label .= " " . $this->get_sign( $c->get_rate_per_year() ) . " ";
 					$label .= $c->get_label( true );
 				}
 				$i++;
