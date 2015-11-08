@@ -116,5 +116,56 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 
   }  
 
+  public function test_forward_rate_notation()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+			'CT1_Spot_Rates'=> array(
+				array('delta'=>0.035367143837291, 'effective_time'=>1),
+				array('delta'=>0.03633192924739, 'effective_time'=>2),
+				array('delta'=>0.037295784743697, 'effective_time'=>3),
+			),
+			'request'=>'explain_forward',
+			'forward_start_time'=>2,
+			'forward_end_time'=>3,
+		));
+	  $original_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( $original_formulae[0]['left'], 'f_{2, 1}') ;
+  }
+
+  public function test_forward_rate_notation01()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+			'CT1_Spot_Rates'=> array(
+				array('delta'=>0.035367143837291, 'effective_time'=>1),
+				array('delta'=>0.03633192924739, 'effective_time'=>2),
+				array('delta'=>0.037295784743697, 'effective_time'=>3),
+			),
+			'request'=>'explain_forward',
+			'forward_start_time'=>0,
+			'forward_end_time'=>1,
+		));
+	  $original_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( $original_formulae[0]['left'], 'f_{0, 1}') ;
+  }
+
+  public function test_forward_rate_notation12()
+  {
+	  $x = new CT1_Concept_All();
+	$c = $x->get_controller( array(
+			'CT1_Spot_Rates'=> array(
+				array('delta'=>0.035367143837291, 'effective_time'=>1),
+				array('delta'=>0.03633192924739, 'effective_time'=>2),
+				array('delta'=>0.037295784743697, 'effective_time'=>3),
+			),
+			'request'=>'explain_forward',
+			'forward_start_time'=>1,
+			'forward_end_time'=>2,
+		));
+	  $original_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( $original_formulae[0]['left'], 'f_{1, 1}') ;
+  }  
+
 
 }
