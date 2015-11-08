@@ -111,12 +111,19 @@ class CT1_Forward_Rate extends CT1_Object {
         return $this->end_time;
     }
             
+   private function label_transition_term(){
+	$start = 0 + $this->get_start_time();
+	$end= 0 + $this->get_end_time();
+	$trans=$end - $start;
+	return (string)$trans;
+   }
+
     public function get_label(){
-        return "f" . "_{" . $this->get_start_time() . ", " . $this->get_end_time() . "}";
+        return "f" . "_{" . $this->get_start_time() . ", " . $this->label_transition_term(). "}";
     }
 
     public function get_label_delta(){
-        return "\\phi" . "_{" . $this->get_start_time() . ", " . $this->get_end_time() . "}";
+        return "\\phi" . "_{" . $this->get_start_time() . ", " . $this->label_transition_term() . "}";
     }
 
     public function get_labels(){
