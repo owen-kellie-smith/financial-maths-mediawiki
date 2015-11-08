@@ -216,9 +216,10 @@ class CT1_Cashflows extends CT1_Collection {
 				if ( 0 != $c->get_rate_per_year() ){
 					$sub = ""; $sub_split="";
 					$sub = $this->get_sign( $c->get_rate_per_year() ) . " ";
-					if ( 0 != $i ){
-						$sub_split = $sub;
-						$detail['right']['relation'] = ''; //default is '='
+					$sub_split = $sub;
+					$detail['right']['relation'] = ''; //default is '='
+					if ( 0 == $i ){
+						$detail['right']['relation'] = '='; 
 					}
 					$sub .= $this->cashflow_format(abs( $c->get_value() ) );
 					$sub_split .=  $c->get_abs_label_with_annuity_evaluated() ;
