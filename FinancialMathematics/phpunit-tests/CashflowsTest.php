@@ -218,5 +218,37 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 
   }  
 
+  public function test_single_cashflow()
+  {
+	  $x = new CT1_Concept_All();
+  	$c = $x->get_controller( array(
+    'request' => 'add_cashflow',
+		'single_payment'=>1,
+		'effective_time'=>0,
+		'rate_per_year'=>999,
+		'm'=>123,
+		'advance'=>1,
+		'term'=>11,
+		));
+	  $processed_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( ' + 999', $processed_formulae[0]['right']) ;
+
+	}
+
+  public function test_single_cashflow2()
+  {
+	  $x = new CT1_Concept_All();
+  	$c = $x->get_controller( array(
+    'request' => 'add_cashflow',
+		'single_payment'=>1,
+		'effective_time'=>0,
+		'rate_per_year'=>-123,
+		'm'=>123,
+		'term'=>11,
+		));
+	  $processed_formulae = $c['output']['unrendered']['formulae'];
+	  $this->assertEquals( ' - 123', $processed_formulae[0]['right']) ;
+
+	}
 
 }
