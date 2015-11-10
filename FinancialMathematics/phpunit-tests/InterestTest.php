@@ -263,7 +263,7 @@ $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</
 }
 
 
-  public function test_CT1_A2013_Q8()
+  public function test_CT1_S2013_Q8()
   {
 $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</source_m><source_rate>0.04</source_rate><i_effective></i_effective></parameters></fin-math>";
 	  $x = new CT1_Concept_All();
@@ -272,5 +272,45 @@ $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</
 	  $this->assertEquals( number_format(0.0404,4), number_format($c['output']['unrendered']['summary']['result']),4) ;
 }
 
+
+  public function test_CT1_A2014_Q3()
+  {
+$xml="<fin-math><parameters><request>get_interest</request><m>2</m><source_m/><source_rate/><i_effective>0.08566958161</i_effective></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.0839,4), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+  public function test_CT1_A2014_Q3ii()
+  {
+$xml="<fin-math><parameters><request>get_interest</request><m>4</m><advance>1</advance><source_m/><source_rate/><i_effective>0.08566958161</i_effective></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.0814,4), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+
+  public function test_CT1_S2013_Q1()
+  {
+//{{Exam-question|Exam Code=CT1 S2013|Number=1|Part=i|Marks=4|Oracle=4.3062%, 4.3936%, 4.4260%, 24.618%|Oracle-source=CT1 S2013 Examiner's report}}
+	  $x = new CT1_Concept_All();
+$xml="<fin-math><parameters><request>get_interest</request><m>1</m><advance>1</advance><source_m/><source_rate/><i_effective>0.045</i_effective></parameters></fin-math>";
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(0.043062,6), number_format($c['output']['unrendered']['summary']['result']),6) ;
+
+$xml="<fin-math><parameters><request>get_interest</request><m>12</m><advance>1</advance><source_m/><source_rate/><i_effective>0.045</i_effective></parameters></fin-math>";
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(0.043936,6), number_format($c['output']['unrendered']['summary']['result']),6) ;
+
+$xml="<fin-math><parameters><request>get_interest</request><m>4</m><advance>0</advance><source_m/><source_rate/><i_effective>0.045</i_effective></parameters></fin-math>";
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(0.044260,6), number_format($c['output']['unrendered']['summary']['result']),6) ;
+
+$xml="<fin-math><parameters><request>get_interest</request><m>0.2</m><advance>0</advance><source_m/><source_rate/><i_effective>0.045</i_effective></parameters></fin-math>";
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(0.24618,5), number_format($c['output']['unrendered']['summary']['result']),5) ;
+}
 
 }
