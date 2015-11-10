@@ -209,7 +209,9 @@ class CT1_Annuity extends CT1_Interest{
 					$this->set_term(	$_INPUT[$pre. 'term'] );
 				}
 				if (isset($_INPUT[$pre. 'value'])){
-					$this->set_value(	$_INPUT[$pre. 'value'] );
+					if (!empty($_INPUT[$pre. 'value'])){
+						$this->set_value(	$_INPUT[$pre. 'value'] );
+					}
 				}
 				return true;
 			}
