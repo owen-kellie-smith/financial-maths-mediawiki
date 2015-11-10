@@ -251,4 +251,70 @@ class CT1_Cashflows_Test extends PHPUnit_Framework_TestCase
 
 	}
 
+
+  public function test_CT1_S2014_Q6ii()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0.039220713153281</delta><i_effective>0.04</i_effective><term>1</term><value>1</value><rate_per_year>1000</rate_per_year><effective_time>10</effective_time><cashflow_value>6755.641688258</cashflow_value></item0><item1><m>1</m><advance/><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>10</term><value></value><increasing>1</increasing><rate_per_year>5</rate_per_year><effective_time>0</effective_time><cashflow_value>22000</cashflow_value></item1></CT1_Cashflows><i_effective>0.04</i_effective><value/></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( 885.53, number_format($c['output']['unrendered']['summary']['result']),2) ;
+  }  
+
+
+  public function test_CT1_A2015_Q6()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1000</term><value>3.3706527598447E 26</value><escalation_delta>0.058268908123976</escalation_delta><escalation_rate_effective>0.06</escalation_rate_effective><escalation_frequency>1</escalation_frequency><rate_per_year>6</rate_per_year><effective_time>0.5</effective_time><cashflow_value>2.0223916559068E 27</cashflow_value></item0></CT1_Cashflows><i_effective/><value>175</value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( 0.09589, number_format($c['output']['unrendered']['summary']['result']),5) ;
+}
+
+  public function test_CT1_A2015_Q8i()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>1000</rate_per_year><effective_time>10</effective_time><cashflow_value>1000</cashflow_value></item0><item1><m>1</m><advance/><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>10</term><value>55</value><increasing>1</increasing><rate_per_year>9</rate_per_year><effective_time>0</effective_time><cashflow_value>495</cashflow_value></item1></CT1_Cashflows><i_effective>0.07</i_effective><value/></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( 821, number_format($c['output']['unrendered']['summary']['result']),0) ;
+}
+
+  public function test_CT1_A2015_Q8iagain()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance/><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>10</term><value>10</value><rate_per_year>9</rate_per_year><effective_time>0</effective_time><cashflow_value>90</cashflow_value></item0><item1><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>100</rate_per_year><effective_time>10</effective_time><cashflow_value>100</cashflow_value></item1></CT1_Cashflows><i_effective>0.07</i_effective><value/></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(114.05,2), number_format($c['output']['unrendered']['summary']['result']),2) ;
+}
+
+
+
+
+
+  public function test_CT1_A2015_Q9()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0.113328685307</delta><i_effective>0.12</i_effective><term>1</term><value>1</value><rate_per_year>4000000</rate_per_year><effective_time>0</effective_time><cashflow_value>4000000</cashflow_value></item0><item1><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0.113328685307</delta><i_effective>0.12</i_effective><term>1</term><value>1</value><rate_per_year>900000</rate_per_year><effective_time>0.5</effective_time><cashflow_value>850420.06427076</cashflow_value></item1><item2><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0.113328685307</delta><i_effective>0.12</i_effective><term>1</term><value>1</value><rate_per_year>-6800000</rate_per_year><effective_time>6</effective_time><cashflow_value>-3445091.6240058</cashflow_value></item2><item3><m>4</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>5</term><value>5.75073901</value><escalation_delta>0.067658648473815</escalation_delta><escalation_rate_effective>0.0683544</escalation_rate_effective><escalation_frequency>1</escalation_frequency><rate_per_year>-360000</rate_per_year><effective_time>1</effective_time><cashflow_value>-2070266.0436</cashflow_value></item3></CT1_Cashflows><i_effective>0.12</i_effective><value/></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.0684,4), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+
+  public function test_CT1_A2015_Q11()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>30000</rate_per_year><effective_time>0</effective_time><cashflow_value>30000</cashflow_value></item0><item1><m>12</m><advance/><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>5</term><value>5</value><rate_per_year>-11499.84</rate_per_year><effective_time>3</effective_time><cashflow_value>4791.6</cashflow_value></item1></CT1_Cashflows><value>0</value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.128,3), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+
+
+
+
+
 }

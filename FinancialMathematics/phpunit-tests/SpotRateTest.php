@@ -167,5 +167,32 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 	  $this->assertEquals( $original_formulae[0]['left'], 'f_{1, 1}') ;
   }  
 
+  public function test_CT1_A2015_Q7iii()
+  {
+$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.067658648473815</delta><effective_time>3.5</effective_time></item0><item1><delta>0.086177696241052</delta><effective_time>4.5</effective_time></item1></CT1_Spot_Rates><request>explain_forward</request><forward_start_time>3.5</forward_start_time><forward_end_time>4.5</forward_end_time></parameters></fin-math>>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.163,3), number_format($c['output']['unrendered']['summary']['result']),3) ;
+}
+
+  public function test_CT1_A2014_Q9i()
+  {
+$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</delta><effective_time>1</effective_time></item0><item1><delta>0.03633192924739</delta><effective_time>2</effective_time></item1><item2><delta>0.037295784743697</delta><effective_time>3</effective_time></item2></CT1_Spot_Rates><request>explain_forward</request><forward_start_time>1</forward_start_time><forward_end_time>2</forward_end_time></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.038,3), number_format($c['output']['unrendered']['summary']['result']),3) ;
+}
+
+
+  public function test_CT1_A2014_Q9ii()
+  {
+$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</delta><effective_time>1</effective_time></item0><item1><delta>0.03633192924739</delta><effective_time>2</effective_time></item1><item2><delta>0.037295784743697</delta><effective_time>3</effective_time></item2></CT1_Spot_Rates><request>explain_par</request><par_term>2</par_term></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.036982,6), number_format($c['output']['unrendered']['summary']['result']),6) ;
+}
 
 }

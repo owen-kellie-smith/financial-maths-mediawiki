@@ -61,14 +61,14 @@ public function get_concept_label(){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_explanation_forward( $_INPUT );
 				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
-				  $return['output']['unrendered']['summary'] = array('sought'=>'forward');
+				  $return['output']['unrendered']['summary'] = array('sought'=>'forward','result'=>$this->get_unrendered_result_forward( $_INPUT ));
 					return $return;
 				}
 				if ( 'explain_par' == $_INPUT['request'] ){
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_explanation_par( $_INPUT );
 				  $return['output']['unrendered']['table'] = $this->get_unrendered_solution_no_detail();
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_delete_add();
-				  $return['output']['unrendered']['summary'] = array('sought'=>'par');
+				  $return['output']['unrendered']['summary'] = array('sought'=>'par', 'result'=>$this->get_unrendered_result_par( $_INPUT ) );
 					return $return;
 				}
 			} 
@@ -194,6 +194,20 @@ public function get_concept_label(){
 	}
 
 
+	private function get_unrendered_result_par( $_INPUT ){
+		if ( isset($_INPUT['par_term'])  ){
+			$pys = $this->obj->get_par_yields();
+			// find par yield
+			if ( $pys->get_count()  > 0 ) {
+				foreach ( $pys->get_objects() as $p ){
+					if ($p->get_term() == $_INPUT['par_term'] ){
+						return  $p->get_coupon();
+					}
+				}
+			}
+		}
+	}
+
 	private function get_unrendered_explanation_par( $_INPUT ){
 		if ( isset($_INPUT['par_term'])  ){
 			$pys = $this->obj->get_par_yields();
@@ -209,6 +223,20 @@ public function get_concept_label(){
 		return $this->get_unrendered_solution_no_detail(); // default result if no matching par yield found
 	}
 
+
+	private function get_unrendered_result_forward( $_INPUT ){
+		if ( isset($_INPUT['forward_start_time']) && isset( $_INPUT['forward_end_time'])  ){
+			$frs = $this->obj->get_forward_rates();
+			// find forward rate
+			if ( $frs->get_count()  > 0 ) {
+				foreach ( $frs->get_objects() as $f ){
+					if ($f->get_start_time() == $_INPUT['forward_start_time'] && $f->get_end_time() ==  $_INPUT['forward_end_time']){
+						return  $f->get_i_effective();
+					}
+				}
+			}
+		}
+	}
 
 	private function get_unrendered_explanation_forward( $_INPUT ){
 		if ( isset($_INPUT['forward_start_time']) && isset( $_INPUT['forward_end_time'])  ){

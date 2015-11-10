@@ -92,5 +92,15 @@ class CT1_Annuity_Increasing_Test extends PHPUnit_Framework_TestCase
   }  
 
 
+  public function test_CT1_A2015_Q11()
+  {
+$xml="<fin-math><parameters><request>get_annuity_increasing</request><m>1</m><i_effective>0.0125</i_effective><term>60</term><value/><increasing>1</increasing></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(1127,0), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+
 
 }

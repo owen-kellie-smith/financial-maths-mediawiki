@@ -26,8 +26,10 @@ private function get_unrendered_interest_rate(){
 		$ret=array();
 			if (empty( $_INPUT['value'] )  ){
 				$ret['sought']='value';
+				$ret['result']=$this->obj->get_value();
 		} else {
 				$ret['sought']='i_effective';
+				$ret['result']=exp($this->obj->get_delta_for_value()) - 1;
 		}
 		return $ret;
 	}

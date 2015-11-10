@@ -112,8 +112,10 @@ public function get_concept_label(){
 		if ( $this->ignore_value( $_INPUT ) ){
 			if (isset( $_INPUT['i_effective'] ) )
 				$ret['sought']='value';
+				$ret['result']=$this->obj->get_value();
 		} else {
 				$ret['sought']='i_effective';
+				$ret['result']=exp($this->obj->get_delta_for_value()) - 1;
 		}
 		return $ret;
 	}

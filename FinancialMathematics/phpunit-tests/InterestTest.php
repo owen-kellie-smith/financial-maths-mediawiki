@@ -253,4 +253,24 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 	  $this->assertEquals( urldecode($XML), $candidate_xml) ;
   }  
 
+  public function test_CT1_A2015_Q5()
+  {
+$xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</source_m><source_rate>0.06</source_rate><i_effective/></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.0609,4), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+
+  public function test_CT1_A2013_Q8()
+  {
+$xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</source_m><source_rate>0.04</source_rate><i_effective></i_effective></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  $this->assertEquals( array(), $c['output']['unrendered']) ;
+	  $this->assertEquals( number_format(0.0404,4), number_format($c['output']['unrendered']['summary']['result']),4) ;
+}
+
+
 }

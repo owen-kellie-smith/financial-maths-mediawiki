@@ -14,6 +14,9 @@ public function get_concept_label(){
  );
 } 
 
+private function get_rate_in_form(){
+	return  $this->obj->get_rate_in_form( $this->obj ) ;
+}
 
 public function get_unrendered_solution(){
 	return  $this->obj->explain_rate_in_form( $this->obj ) ;
@@ -30,7 +33,7 @@ public function get_controller($_INPUT ){
 		if ($this->get_request() == $_INPUT['request']){
 			if ($this->set_interest($_INPUT)){
 				$return['output']['unrendered']['formulae'] = $this->get_unrendered_solution();
-				$return['output']['unrendered']['summary'] = array('sought'=>'rate');
+				$return['output']['unrendered']['summary'] = array('sought'=>'rate', 'result'=>$this->get_rate_in_form());
 				return $return;
 			}
 			else{
