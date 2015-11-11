@@ -42,9 +42,11 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
                                        $u['table']['schedule']['header']
                                        );
                                }
+				if (isset($u['table']['rates']) && isset($u['table']['hidden'])){
 				 $r['table'] = $this->get_render_rate_table(
 					$u['table']['rates'],
 					$u['table']['hidden'], $pageTitle . "?" );    
+				}
 			}
 			if (isset($u['forms'])){
 				foreach ($u['forms'] AS $_f){
@@ -117,9 +119,11 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 */
 	private function get_link( $hidden ){
 		$out = "";
-		foreach(array_keys( $hidden) as $key ){
-			$value = $hidden[$key];
-			$out .= "&" . $key . "=" . $value;
+		if (count(array_keys( $hidden)) > 0 ){
+			foreach(array_keys( $hidden) as $key ){
+				$value = $hidden[$key];
+				$out .= "&" . $key . "=" . $value;
+			}
 		}
 		return $out;
 	}
