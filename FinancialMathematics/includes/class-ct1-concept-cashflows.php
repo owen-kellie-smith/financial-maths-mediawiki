@@ -92,7 +92,7 @@ public function get_concept_label(){
 	private function get_calculated_value( $_INPUT ){
 		if ( $this->ignore_value( $_INPUT ) ){
 			if (isset( $_INPUT['i_effective'] ) ){
-				if (!empty( $_INPUT['i_effective'] ) ){
+				if (!(array()== $_INPUT['i_effective'] ) ){
 					return $this->get_solution( (float)$_INPUT['i_effective'] ); 
 				}
 			}
@@ -104,7 +104,7 @@ public function get_concept_label(){
 	private function get_unrendered_calculated_value( $_INPUT ){
 		if ( $this->ignore_value( $_INPUT ) ){
 			if (isset( $_INPUT['i_effective'] ) ){
-				if (!empty( $_INPUT['i_effective'] ) ){
+				if (!(array()==$_INPUT['i_effective'] ) ){
 					return $this->get_unrendered_solution( (float)$_INPUT['i_effective'] ); 
 				}
 			}
@@ -118,7 +118,7 @@ public function get_concept_label(){
 		$ret=array();
 		if ( $this->ignore_value( $_INPUT ) ){
 			if (isset( $_INPUT['i_effective'] ) ){
-				if (!empty( $_INPUT['i_effective'] ) ){
+				if (!(array()== $_INPUT['i_effective'] ) ){
 					$ret['sought']='value';
 					$ret['result']=$this->obj->get_value();
 				}
