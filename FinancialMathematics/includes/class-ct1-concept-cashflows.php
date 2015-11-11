@@ -125,7 +125,7 @@ public function get_concept_label(){
 			}
 		} else {
 			$ret['sought']='i_effective';
-			$ret['result']=exp($this->obj->get_delta_for_value()) - 1;
+			$ret['result']=exp($this->obj->get_delta_for_value( $_INPUT['value'] )) - 1;
 		}
 		return $ret;
 	}
