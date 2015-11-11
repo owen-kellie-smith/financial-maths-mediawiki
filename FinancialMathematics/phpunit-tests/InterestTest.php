@@ -310,7 +310,7 @@ $xml="<fin-math><parameters><request>get_interest</request><m>4</m><advance>0</a
 
 $xml="<fin-math><parameters><request>get_interest</request><m>0.2</m><advance>0</advance><source_m/><source_rate/><i_effective>0.045</i_effective></parameters></fin-math>";
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
-	  $this->assertEquals( number_format(0.24618,5), number_format($c['output']['unrendered']['summary']['result'],5)) ;
+	  $this->assertEquals( number_format(0.24618,5), number_format(5*$c['output']['unrendered']['summary']['result'],5)) ;
 }
 
 }
