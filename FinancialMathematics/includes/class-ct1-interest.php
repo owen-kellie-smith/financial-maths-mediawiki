@@ -76,7 +76,6 @@ public function get_values(){
 
 public function __construct( $m = 1, $advance = false, $delta = 0){
 	parent::__construct( $m, $advance);
-	$this->set_source_format(1, false); // default
 	$this->set_delta($delta);
 }
 
@@ -207,17 +206,13 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 	try{
 		if (parent::set_from_input($_INPUT, $pre)){ // the last set rate trumps all the others
 			if (isset($_INPUT[$pre . 'source_m']) && isset($_INPUT[$pre . 'source_rate'])){
-				if (!empty($_INPUT[$pre . 'source_m']) && !empty($_INPUT[$pre . 'source_rate'])){
 					$this->set_source_rate($_INPUT[$pre . 'source_rate']);
 					if (isset($_INPUT[$pre . 'source_advance'])){
-						if (!empty($_INPUT[$pre . 'source_advance'])){
-						 	$this->set_source_format($_INPUT[$pre . 'source_m'], $_INPUT[$pre . 'source_advance']);
-						} else {
-						 	$this->set_source_format($_INPUT[$pre . 'source_m'], false);
-						}
+						 $this->set_source_format($_INPUT[$pre . 'source_m'], $_INPUT[$pre . 'source_advance']);
+					} else {
+						 $this->set_source_format($_INPUT[$pre . 'source_m'], false);
 					}
-					$this->delta_source = "source_rate";
-				}
+				$this->delta_source = "source_rate";
 			} 
 			if (isset($_INPUT[$pre . 'i_effective']) ){
 				if (!array()==$_INPUT[$pre . 'i_effective']){
