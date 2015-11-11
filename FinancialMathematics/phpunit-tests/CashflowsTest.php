@@ -338,4 +338,18 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $this->assertEquals( number_format(0.36,2), number_format($c['output']['unrendered']['summary']['result'],2)) ;
 }
 
+  public function test_perpetuity_20()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance></advance><source_rate></source_rate><source_format></source_format><delta>0</delta><i_effective>0</i_effective><term>1000</term><rate_per_year>1</rate_per_year><effective_time>0</effective_time></item0></CT1_Cashflows><value>20</value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(0.05,4), number_format($c['output']['unrendered']['summary']['result'],2)) ;
+}
+  public function test_perpetuity_5pc()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance></advance><source_rate></source_rate><source_format></source_format><delta>0</delta><i_effective>0</i_effective><term>1000</term><rate_per_year>1</rate_per_year><effective_time>0</effective_time></item0></CT1_Cashflows><i_effective>0.05</i_effective><value></value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(20,4), number_format($c['output']['unrendered']['summary']['result'],2)) ;
+}
 }
