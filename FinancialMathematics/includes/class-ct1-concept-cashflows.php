@@ -59,6 +59,7 @@ public function get_concept_label(){
 				  return $return;
 				}
 				if ($this->get_request() == $_INPUT['request']){
+//echo __FILE__ . "get_request" . $this->get_request() . "\r\n";
 				  $return['output']['unrendered']['formulae'] = $this->get_unrendered_calculated_value( $_INPUT );
 				  $return['output']['unrendered']['summary'] = $this->get_unrendered_summary( $_INPUT );
 					$return['output']['unrendered']['forms'] = $this->get_unrendered_val_delete_add();
@@ -90,8 +91,11 @@ public function get_concept_label(){
 	 */
 	private function get_calculated_value( $_INPUT ){
 		if ( $this->ignore_value( $_INPUT ) ){
-			if (isset( $_INPUT['i_effective'] ) )
-				return $this->get_solution( (float)$_INPUT['i_effective'] ); 
+			if (isset( $_INPUT['i_effective'] ) ){
+				if (!empty( $_INPUT['i_effective'] ) ){
+					return $this->get_solution( (float)$_INPUT['i_effective'] ); 
+				}
+			}
 		} else {
 			return $this->get_interest_rate_for_value( (float)$_INPUT['value'] );
 		}
@@ -99,8 +103,11 @@ public function get_concept_label(){
 
 	private function get_unrendered_calculated_value( $_INPUT ){
 		if ( $this->ignore_value( $_INPUT ) ){
-			if (isset( $_INPUT['i_effective'] ) )
-				return $this->get_unrendered_solution( (float)$_INPUT['i_effective'] ); 
+			if (isset( $_INPUT['i_effective'] ) ){
+				if (!empty( $_INPUT['i_effective'] ) ){
+					return $this->get_unrendered_solution( (float)$_INPUT['i_effective'] ); 
+				}
+			}
 		} else {
 			return $this->get_unrendered_interest_rate_for_value( (float)$_INPUT['value'] );
 		}
@@ -110,12 +117,15 @@ public function get_concept_label(){
 	private function get_unrendered_summary( $_INPUT ){
 		$ret=array();
 		if ( $this->ignore_value( $_INPUT ) ){
-			if (isset( $_INPUT['i_effective'] ) )
-				$ret['sought']='value';
-				$ret['result']=$this->obj->get_value();
+			if (isset( $_INPUT['i_effective'] ) ){
+				if (!empty( $_INPUT['i_effective'] ) ){
+					$ret['sought']='value';
+					$ret['result']=$this->obj->get_value();
+				}
+			}
 		} else {
-				$ret['sought']='i_effective';
-				$ret['result']=exp($this->obj->get_delta_for_value()) - 1;
+			$ret['sought']='i_effective';
+			$ret['result']=exp($this->obj->get_delta_for_value()) - 1;
 		}
 		return $ret;
 	}
