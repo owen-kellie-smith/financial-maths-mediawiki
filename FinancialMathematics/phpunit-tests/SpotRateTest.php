@@ -169,7 +169,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 
   public function test_CT1_A2015_Q7iii()
   {
-$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.067658648473815</delta><effective_time>3.5</effective_time></item0><item1><delta>0.086177696241052</delta><effective_time>4.5</effective_time></item1></CT1_Spot_Rates><request>explain_forward</request><forward_start_time>3.5</forward_start_time><forward_end_time>4.5</forward_end_time></parameters></fin-math>>";
+$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.067658648473815</delta><effective_time>3.5</effective_time></item0><item1><delta>0.086177696241052</delta><effective_time>4.5</effective_time></item1></CT1_Spot_Rates><request>explain_forward</request><forward_start_time>3.5</forward_start_time><forward_end_time>4.5</forward_end_time></parameters></fin-math>";
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
