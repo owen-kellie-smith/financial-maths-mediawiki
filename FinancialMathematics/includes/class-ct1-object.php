@@ -66,6 +66,11 @@ abstract class CT1_Object {
      * @access public
      */
 	public function get_validation($candidate){
+		foreach (array_keys($candidate) as $key){
+			if (array()==$candidate[$key]){
+				$candidate[$key]=null;
+			}
+		}
 		$v = new Validate();
 		$options =  $this->get_valid_options();
 		$ret = $v->multiple($candidate, $options);
