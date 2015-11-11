@@ -173,7 +173,7 @@ $xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.067658648473815</del
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(0.163,3), number_format($c['output']['unrendered']['summary']['result']),3) ;
+	  $this->assertEquals( number_format(0.163,3), number_format($c['output']['unrendered']['summary']['result'],3)) ;
 }
 
   public function test_CT1_A2014_Q9i()
@@ -182,7 +182,7 @@ $xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</del
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(0.038,3), number_format($c['output']['unrendered']['summary']['result']),3) ;
+	  $this->assertEquals( number_format(0.038,3), number_format($c['output']['unrendered']['summary']['result'],3)) ;
 }
 
 
@@ -192,7 +192,7 @@ $xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</del
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(0.036982,6), number_format($c['output']['unrendered']['summary']['result']),6) ;
+	  $this->assertEquals( number_format(0.036982,6), number_format($c['output']['unrendered']['summary']['result'],6)) ;
 }
 
 }

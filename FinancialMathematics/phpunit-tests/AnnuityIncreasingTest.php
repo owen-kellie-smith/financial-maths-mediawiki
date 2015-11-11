@@ -98,7 +98,7 @@ $xml="<fin-math><parameters><request>get_annuity_increasing</request><m>1</m><i_
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(1127,0), number_format($c['output']['unrendered']['summary']['result']),4) ;
+	  $this->assertEquals( number_format(1127,0), number_format($c['output']['unrendered']['summary']['result'],0)) ;
 }
 
 
@@ -108,7 +108,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(64.0592,6), number_format($c['output']['unrendered']['summary']['result']),6) ;
+	  $this->assertEquals( number_format(64.0592,4), number_format($c['output']['unrendered']['summary']['result'],4)) ;
 }
 
 
@@ -118,7 +118,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(0.081,3), number_format($c['output']['unrendered']['summary']['result']),3) ;
+	  $this->assertEquals( number_format(-0.081,3), number_format($c['output']['unrendered']['summary']['result'],3)) ;
 }
 
   public function test_CT1_S2014_Q10()
@@ -127,7 +127,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(297537.30,2), number_format($c['output']['unrendered']['summary']['result']),2) ;
+	  $this->assertEquals( number_format(297537.30,2), number_format($c['output']['unrendered']['summary']['result'],2)) ;
 }
 
 
@@ -137,7 +137,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(0.012,3), number_format($c['output']['unrendered']['summary']['result']),3) ;
+	  $this->assertEquals( number_format(0.012,3), number_format($c['output']['unrendered']['summary']['result'],3)) ;
 }
 
 
