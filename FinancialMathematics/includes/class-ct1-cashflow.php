@@ -34,6 +34,8 @@ class CT1_Cashflow extends CT1_Object {
 		}
 		if ( isset( $IN[$pre . 'single_payment'] ) ){
 			$a = new CT1_Annuity(1, true, 0, 1);
+			$IN[$pre . 'm']  = 1;
+			$IN[$pre . 'term']  = 1;
 		} else {
 			if ( isset( $IN['consider_increasing'] ) ){
 				$a = new CT1_Annuity_Increasing();
