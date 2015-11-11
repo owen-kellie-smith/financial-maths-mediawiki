@@ -1,6 +1,6 @@
 {
 	"name": "FinancialMathematics",
-	"version": "0.3.2",
+	"version": "0.3.6",
 	"author": [
 		"Owen Kellie-Smith"
 	],
@@ -41,6 +41,7 @@
 		"CT1_Par_Yield": "includes/class-ct1-par-yield.php",
 		"CT1_Par_Yields": "includes/class-ct1-par-yields.php",
 		"CT1_Render": "includes/class-ct1-render.php",
+		"CT1_Single_Cashflow": "includes/class-ct1-single-cashflow.php",
 		"CT1_Spot_Rate": "includes/class-ct1-spot-rate.php",
 		"CT1_Spot_Rates": "includes/class-ct1-spot-rates.php"
 	},
