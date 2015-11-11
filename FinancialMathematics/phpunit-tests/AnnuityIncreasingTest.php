@@ -127,7 +127,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(297,537.30,2), number_format($c['output']['unrendered']['summary']['result']),2) ;
+	  $this->assertEquals( number_format(297537.30,2), number_format($c['output']['unrendered']['summary']['result']),2) ;
 }
 
 
