@@ -299,7 +299,8 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
-	  $this->assertEquals( number_format(0.0684,4), number_format($c['output']['unrendered']['summary']['result'],4)) ;
+// test that value is near nil i.e. input rate gives 0 NPV
+	  $this->assertTrue( abs($c['output']['unrendered']['summary']['result']) < 1) ;
 }
 
 
