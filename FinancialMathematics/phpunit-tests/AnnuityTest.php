@@ -272,4 +272,20 @@ public function test_adjusted_int_advance()
     $this->assertFalse( isset($c['warning']));
   }
 
+  public function test_get_single_payment()
+  {
+  	$this->acalc->set_advance( true );
+  	$this->acalc->set_m(1);
+  	$this->acalc->set_term(1);
+    $this->assertTrue( $this->acalc->get_is_single_payment() );
+  	$this->acalc->set_term(2);
+    $this->assertFalse( $this->acalc->get_is_single_payment() );
+ 	  $this->acalc->set_term(1);
+  	$this->acalc->set_m(2);
+    $this->assertFalse( $this->acalc->get_is_single_payment() );
+  	$this->acalc->set_m(1);
+  	$this->acalc->set_advance( false );
+    $this->assertFalse( $this->acalc->get_is_single_payment() );
+   }
+
 }

@@ -20,6 +20,11 @@ class CT1_Annuity extends CT1_Interest{
 		return $r; 
 	}
 
+	public function get_is_single_payment(){
+		return $this->is_single_payment();
+	}
+
+
 	public function get_parameters(){ 
 		$r = parent::get_parameters();
 		$r['term'] = array(
@@ -175,7 +180,9 @@ class CT1_Annuity extends CT1_Interest{
 		$a_calc->set_delta( $this->get_delta_for_value() );
 		$return[0]['left'] = "i";
 //		$return[0]['right']['summary'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1);
-//		$return[0]['right']['detail'] = $a_calc->explain_annuity_certain();
+		if (!($this->is_single_payment())){
+			$return[0]['right']['detail'] = $a_calc->explain_annuity_certain();
+		}
 		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ "  . self::myMessage( 'fm-verification') . ":}";
 		return array_merge( $return, $a_calc->explain_annuity_certain() );
 	}
@@ -258,6 +265,28 @@ class CT1_Annuity extends CT1_Interest{
 		$labels = parent::get_labels();
 		$labels['CT1_Annuity'] = $this->label_annuity();
 		return $labels;
+	}
+
+	private function is_single_payment(){
+//echo __FILE__ . " get_values " . print_r( $this->get_values() ) . "\r\n";
+		if (!(1==$this->get_term())){
+//echo " not one year term   " . "\r\n";
+			$return=false;
+		} else if (!($this->get_advance())){
+			$return=false;
+//echo " not advance  " . "\r\n";
+		} else if (!(1==$this->get_m())){
+			$return=false;
+//echo " not 1 per year  " . "\r\n";
+		} else if (!(1==$this->get_annuity_certain())){
+			$return=false;
+//echo " not value 1  " . "\r\n";
+		} else {
+//echo " a single payment :)   " . "\r\n";
+			$return=true;
+		}
+//echo " conclusion ";
+		return $return;
 	}
 
 }
