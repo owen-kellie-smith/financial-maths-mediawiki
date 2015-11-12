@@ -41,7 +41,7 @@ class CT1_Cashflow extends CT1_Object {
 				$a = new CT1_Annuity_Increasing();
 				$a->set_increasing( $increasing );
 			} else {
-				if (0==$escalation_rate_effective){
+				if (empty($escalation_rate_effective) || 0==$escalation_rate_effective){
 					$a = new CT1_Annuity();
 				} else {
 					$a = new CT1_Annuity_Escalating();
@@ -73,6 +73,13 @@ class CT1_Cashflow extends CT1_Object {
                         'type'=>'number',
                         'decimal'=>'.',
                     );
+		$r['single_payment'] = array(
+							'type'=>'boolean',
+						);
+		$r['consider_increasing'] = array(
+							'type'=>'boolean',
+						);
+
         return $r; 
     }
 
@@ -86,6 +93,16 @@ class CT1_Cashflow extends CT1_Object {
             'name'=>'effective_time',
             'label'=>self::myMessage( 'fm-effective_time'),
             );
+		$r['single_payment'] = array(
+			'name'=> 'single_payment',
+			'label' => self::myMessage( 'fm-single_payment'),
+			);
+
+		$r['consider_increasing'] = array(
+			'name'=> 'consider_increasing',
+			'label' => self::myMessage( 'fm-consider_increasing'),
+			);
+
         $r = array_merge( $r, $this->annuity->get_parameters() );
         return $r; 
     }
