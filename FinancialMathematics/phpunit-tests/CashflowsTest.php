@@ -359,13 +359,15 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 	  $this->assertEquals( number_format(3.83,2), number_format($c['output']['unrendered']['summary']['result'],2)) ;
-print_r($c['output']['unrendered']['formulae']) ;
+//print_r($c['output']['unrendered']['formulae']) ;
 	  if ( isset($c['output']['unrendered']['formulae'][1]['right']['detail']) ){
 	$_content = $c['output']['unrendered']['formulae'][1]['right']['detail'];
-"content = " . print_r($content,1) ;
+	if (isset($_content)){
+ echo "content = " . print_r($content,1) ;
 	  	if ( !( empty($content) )){
 	  		$this->assertTrue( false );
 		}
+	}
 	}
 	 ;
 }
