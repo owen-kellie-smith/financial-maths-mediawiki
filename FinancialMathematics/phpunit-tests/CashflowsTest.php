@@ -352,4 +352,15 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 	  $this->assertEquals( number_format(20,4), number_format($c['output']['unrendered']['summary']['result'],2)) ;
 }
+
+  public function test_single_cashflows_short()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>99</rate_per_year><effective_time>99</effective_time><cashflow_value>99</cashflow_value></item0><item1><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>12</rate_per_year><effective_time>12</effective_time><cashflow_value>12</cashflow_value></item1></CT1_Cashflows><i_effective>0.1</i_effective><value/></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(3.83,2), number_format($c['output']['unrendered']['summary']['result'],2)) ;
+//print_r($c['output']['unrendered']['formulae']) ;
+	  $this->assertFalse( isset($c['output']['unrendered']['formulae'][1]['right']['detail']) ) ;
+}
+
 }
