@@ -364,6 +364,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	$_content = $c['output']['unrendered']['formulae'][1]['right']['detail'];
 	if (isset($_content)){
  echo "content = " . print_r($_content,1) ;
+ echo "formulae = " . print_r($c['output']['unrendered']['formulae'],1) ;
 	  	if ( !( empty($_content) )){
 	  		$this->assertTrue( false );
 		}
