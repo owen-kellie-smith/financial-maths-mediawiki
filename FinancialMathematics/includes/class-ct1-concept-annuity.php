@@ -77,8 +77,31 @@ public function get_controller($_INPUT ){
 
 public function set_annuity($_INPUT = array()){
 	$this->set_received_input($_INPUT);
+	$lobj = new CT1_Annuity();
+	if ($this->is_level_annuity($_INPUT)){
+		$this->set_obj($lobj);
+	}
 	$this->obj->set_from_input($_INPUT);
 	return ($this->obj->set_from_input($_INPUT));
+}
+
+private function is_level_annuity($_INPUT){
+	$consider_increasing=0;
+	$increasing=0;
+  $escalation_rate_effective=0;
+  if (isset($_INPUT['escalation_rate_effective'])){
+  	$escalation_rate_effective=$_INPUT['escalation_rate_effective'];
+	}
+  if (isset($_INPUT['consider_increasing'])){
+  	$consider_increasing=$_INPUT['consider_increasing'];
+	}
+  if (isset($_INPUT['increasing'])){
+  	$increasing=$_INPUT['increasing'];
+	}
+	if (empty($escalation_rate_effective) && empty($increasing) && empty($consider_increasing) ){
+				return true;
+	}
+	return false;
 }
 
 } // end of class
