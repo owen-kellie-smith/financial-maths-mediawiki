@@ -360,17 +360,17 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 	  $this->assertEquals( number_format(3.83,2), number_format($c['output']['unrendered']['summary']['result'],2)) ;
 //print_r($c['output']['unrendered']['formulae']) ;
-	  if ( isset($c['output']['unrendered']['formulae'][1]['right']['detail']) ){
-	$_content = $c['output']['unrendered']['formulae'][1]['right']['detail'];
-	if (isset($_content)){
- echo "content = " . print_r($_content,1) ;
- echo "formulae = " . print_r($c['output']['unrendered']['formulae'],1) ;
-	  	if ( !( empty($_content) )){
-	  		$this->assertTrue( false );
+//	  $c['output']['unrendered']['formulae'][1]['right'] = array('detail'=>array('xxx make test fail xxxx'));
+	  if ( isset($c['output']['unrendered']['formulae'][1]['right']) ){
+	  	if ( is_array($c['output']['unrendered']['formulae'][1]['right'])){
+			$_content = $c['output']['unrendered']['formulae'][1]['right']['detail'];
+			if (isset($_content)){
+	  			if ( !( empty($_content) )){
+	  				$this->assertTrue( false );
+				}
+			}
 		}
 	}
-	}
-	 ;
 }
 
 }
