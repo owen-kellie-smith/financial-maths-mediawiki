@@ -227,9 +227,9 @@ class CT1_Cashflows extends CT1_Collection {
 					if ( $with_detail ){
 						if ( !( $c->get_annuity()->get_is_single_payment() ) ){
 							$detail['right']['detail'] = $c->get_annuity()->explain_annuity_certain() ;
-							$det[] = $detail;
 						}
 					}
+					$det[] = $detail;
 					$top_line .= $sub;
 				}
 				$i++;

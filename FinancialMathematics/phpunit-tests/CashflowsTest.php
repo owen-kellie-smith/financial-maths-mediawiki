@@ -363,10 +363,12 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 //	  $c['output']['unrendered']['formulae'][1]['right'] = array('detail'=>array('xxx make test fail xxxx'));
 	  if ( isset($c['output']['unrendered']['formulae'][1]['right']) ){
 	  	if ( is_array($c['output']['unrendered']['formulae'][1]['right'])){
-			$_content = $c['output']['unrendered']['formulae'][1]['right']['detail'];
-			if (isset($_content)){
-	  			if ( !( empty($_content) )){
-	  				$this->assertTrue( false );
+	  		if ( isset($c['output']['unrendered']['formulae'][1]['right']['detail'])){
+				$_content = $c['output']['unrendered']['formulae'][1]['right']['detail'];
+				if (isset($_content)){
+	  				if ( !( empty($_content) )){
+	  					$this->assertTrue( false );
+					}
 				}
 			}
 		}
@@ -380,7 +382,7 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //print_r($c);
 //	  $this->assertEquals( number_format(0.02649,5), number_format($c['output']['unrendered']['summary']['result'],5)) ; // no ORacle as at 2015
-	  $this->assertEquals( 5, count($c['output']['unrendered']['formulae']) );
+	  $this->assertEquals( 6, count($c['output']['unrendered']['formulae']) );
 }
 
 
@@ -389,9 +391,10 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>870000</rate_per_year><effective_time>0</effective_time><cashflow_value>870000</cashflow_value></item0><item1><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>26000</rate_per_year><effective_time>0.5</effective_time><cashflow_value>26000</cashflow_value></item1><item2><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>27000</rate_per_year><effective_time>1.5</effective_time><cashflow_value>27000</cashflow_value></item2><item3><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>33000</rate_per_year><effective_time>2.5</effective_time><cashflow_value>33000</cashflow_value></item3><item4><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>-990000</rate_per_year><effective_time>3</effective_time><cashflow_value>-990000</cashflow_value></item4></CT1_Cashflows><i_effective/><value>0</value></parameters></fin-math>";
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//	  print_r($c['output']['unrendered']['formulae']) ;
 //print_r($c);
 	  $this->assertEquals( number_format(0.012,3), number_format($c['output']['unrendered']['summary']['result'],3)) ;
-	  $this->assertEquals( 5, count($c['output']['unrendered']['formulae']) );
+	  $this->assertEquals( 9, count($c['output']['unrendered']['formulae']) );
 }
 
 }
