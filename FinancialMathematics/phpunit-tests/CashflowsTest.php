@@ -373,4 +373,25 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	}
 }
 
+  public function test_single_cashflows_show_v()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>100</rate_per_year><effective_time>3</effective_time><cashflow_value>100</cashflow_value></item0><item1><m>1</m><advance/><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>3</term><value>3</value><rate_per_year>3</rate_per_year><effective_time>0</effective_time></item1></CT1_Cashflows><i_effective/><value>101</value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+//print_r($c);
+//	  $this->assertEquals( number_format(0.02649,5), number_format($c['output']['unrendered']['summary']['result'],5)) ; // no ORacle as at 2015
+	  $this->assertEquals( 5, count($c['output']['unrendered']['formulae']) );
+}
+
+
+  public function test_single_cashflows_show_v_four_rows()
+  {
+$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>870000</rate_per_year><effective_time>0</effective_time><cashflow_value>870000</cashflow_value></item0><item1><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>26000</rate_per_year><effective_time>0.5</effective_time><cashflow_value>26000</cashflow_value></item1><item2><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>27000</rate_per_year><effective_time>1.5</effective_time><cashflow_value>27000</cashflow_value></item2><item3><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>33000</rate_per_year><effective_time>2.5</effective_time><cashflow_value>33000</cashflow_value></item3><item4><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>-990000</rate_per_year><effective_time>3</effective_time><cashflow_value>-990000</cashflow_value></item4></CT1_Cashflows><i_effective/><value>0</value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+print_r($c);
+	  $this->assertEquals( number_format(0.012,3), number_format($c['output']['unrendered']['summary']['result'],3)) ;
+	  $this->assertEquals( 5, count($c['output']['unrendered']['formulae']) );
+}
+
 }
