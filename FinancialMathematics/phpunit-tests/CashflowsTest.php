@@ -397,4 +397,13 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $this->assertEquals( 9, count($c['output']['unrendered']['formulae']) );
 }
 
+
+  public function test_CT1_A2013_Q3()
+  {
+	$xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance></advance><source_rate></source_rate><source_format></source_format><delta>0</delta><i_effective>0</i_effective><term>3</term><value>3</value><rate_per_year>6</rate_per_year><effective_time>0</effective_time><cashflow_value>18</cashflow_value></item0><item1><m>1</m><advance>1</advance><source_rate></source_rate><source_format></source_format><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>103</rate_per_year><effective_time>3</effective_time><cashflow_value>103</cashflow_value></item1></CT1_Cashflows><i_effective></i_effective><value>97</value></parameters></fin-math>";
+	  $x = new CT1_Concept_All();
+		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
+	  $this->assertEquals( number_format(0.08089,5), number_format($c['output']['unrendered']['summary']['result'],5)) ;
+}
+
 }
