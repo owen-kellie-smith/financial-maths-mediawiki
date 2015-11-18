@@ -214,6 +214,7 @@ class CT1_Cashflows extends CT1_Collection {
 			$i = 0;
 			foreach ( $this->get_cashflows() as $c ){
 				if ( 0 != $c->get_rate_per_year() ){
+					$detail=array();
 					$sub = ""; $sub_split="";
 					$sub = $this->get_sign( $c->get_rate_per_year() ) . " ";
 					$sub_split = $sub;
