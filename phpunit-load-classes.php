@@ -39,7 +39,7 @@ CT1_autoloader(		"CT1_Annuity_Increasing", "includes/class-ct1-annuity-increasin
 CT1_autoloader(		"CT1_Cashflow", "includes/class-ct1-cashflow.php");
 CT1_autoloader(		"CT1_Collection", "includes/class-ct1-collection.php");
 CT1_autoloader(		"CT1_Cashflows", "includes/class-ct1-cashflows.php");
-CT1_autoloader(		"CT1_Concept_All", "includes/class-ct1-concept-all.php");
+CT1_autoloader(		"FinMathConceptAll", "includes/class-ct1-concept-all.php");
 CT1_autoloader(		"FinMathConceptAnnuity", "includes/class-ct1-concept-annuity.php");
 CT1_autoloader(		"FinMathConceptAnnuityIncreasing", "includes/class-ct1-concept-annuity-increasing.php");
 CT1_autoloader(		"FinMathConceptCashflows", "includes/class-ct1-concept-cashflows.php");

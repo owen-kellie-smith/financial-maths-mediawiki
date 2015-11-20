@@ -149,7 +149,7 @@ class CT1_Annuity_Test extends PHPUnit_Framework_TestCase
 
   public function test_concepts()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'concept'=>'concept_annuity' ) );
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
@@ -221,7 +221,7 @@ public function test_adjusted_int_advance()
   public function test_xml_GIVES_SAME_XML()
   {
 		$XML = '<fin-math><parameters><request>get_annuity_escalating</request><m>12</m><advance>1</advance><i_effective>0.1</i_effective><term>25</term><value/><escalation_rate_effective>0.03</escalation_rate_effective><escalation_frequency>6</escalation_frequency></parameters></fin-math>';
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
 		$c_forms = $c['output']['unrendered']['forms'];
 		$candidate_xml ='';
@@ -235,7 +235,7 @@ public function test_adjusted_int_advance()
 
   public function test_xml_GIVES_SAME_result()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 	$c = $x->get_controller( array(
 				'request'=>'get_annuity_escalating',
 				'm'=>12,
@@ -252,7 +252,7 @@ public function test_adjusted_int_advance()
 		}
 //    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$produced_xml) ;  
 		$XML = $produced_xml;
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
 	  $processed_formulae = $c['output']['unrendered']['formulae'];
 	  $this->assertEquals( $original_formulae, $processed_formulae) ;
@@ -261,7 +261,7 @@ public function test_adjusted_int_advance()
 
   public function test_get_interest_rate()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 	$c = $x->get_controller( array(
 				'request'=>'get_annuity_escalating',
 				'm'=>12,

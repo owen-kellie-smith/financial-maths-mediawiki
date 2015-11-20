@@ -87,18 +87,18 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_concepts()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'concept'=>'concept_interest' ) );
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
 
   public function test_input_returns_expected_get_interest()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	$x = new FinMathConceptInterest();
@@ -201,14 +201,14 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_full_input_form()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
 
   public function test_full_input_form_xml()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['xml-form']) ) ;
   }  
@@ -233,7 +233,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_full_xmlinput_formuae()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>'<fin-math><parameters><request>get_interest<%2Frequest><m>1<%2Fm><i_effective>0<%2Fi_effective><%2Fparameters><%2Ffin-math>%0D%0A' ));
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
   }  
@@ -241,7 +241,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
   public function test_xml_GIVES_SAME_XML()
   {
 		$XML = '<fin-math><parameters><request>get_interest</request><m>12</m><advance>1</advance><i_effective>0.1</i_effective></parameters></fin-math>';
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
 		$c_forms = $c['output']['unrendered']['forms'];
 		$candidate_xml ='';
@@ -256,7 +256,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
   public function test_CT1_A2015_Q5()
   {
 $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</source_m><source_rate>0.06</source_rate><i_effective/></parameters></fin-math>";
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
 	  $this->assertEquals( number_format(0.0609,4), number_format($c['output']['unrendered']['summary']['result'],4)) ;
@@ -266,7 +266,7 @@ $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</
   public function test_CT1_S2013_Q8()
   {
 $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</source_m><source_rate>0.04</source_rate><i_effective></i_effective></parameters></fin-math>";
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
 	  $this->assertEquals( number_format(0.0404,4), number_format($c['output']['unrendered']['summary']['result'],4)) ;
@@ -276,7 +276,7 @@ $xml="<fin-math><parameters><request>get_interest</request><m>1</m><source_m>2</
   public function test_CT1_A2014_Q3()
   {
 $xml="<fin-math><parameters><request>get_interest</request><m>2</m><source_m/><source_rate/><i_effective>0.08566958161</i_effective></parameters></fin-math>";
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
 	  $this->assertEquals( number_format(0.0839,4), number_format($c['output']['unrendered']['summary']['result'],4)) ;
@@ -285,7 +285,7 @@ $xml="<fin-math><parameters><request>get_interest</request><m>2</m><source_m/><s
   public function test_CT1_A2014_Q3ii()
   {
 $xml="<fin-math><parameters><request>get_interest</request><m>4</m><advance>1</advance><source_m/><source_rate/><i_effective>0.08566958161</i_effective></parameters></fin-math>";
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
 	  $this->assertEquals( number_format(0.0814,4), number_format($c['output']['unrendered']['summary']['result'],4)) ;
@@ -295,7 +295,7 @@ $xml="<fin-math><parameters><request>get_interest</request><m>4</m><advance>1</a
   public function test_CT1_S2013_Q1()
   {
 //{{Exam-question|Exam Code=CT1 S2013|Number=1|Part=i|Marks=4|Oracle=4.3062%, 4.3936%, 4.4260%, 24.618%|Oracle-source=CT1 S2013 Examiner's report}}
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 $xml="<fin-math><parameters><request>get_interest</request><m>1</m><advance>1</advance><source_m/><source_rate/><i_effective>0.045</i_effective></parameters></fin-math>";
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 	  $this->assertEquals( number_format(0.043062,6), number_format($c['output']['unrendered']['summary']['result'],6)) ;

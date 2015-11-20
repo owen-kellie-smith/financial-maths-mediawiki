@@ -1,12 +1,12 @@
 <?php
 
 /**
- * CT1_Concept_All class
+ * FinMathConceptAll class
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class CT1_Concept_All extends CT1_Form{
+class FinMathConceptAll extends CT1_Form{
 
 	private $concepts;
 

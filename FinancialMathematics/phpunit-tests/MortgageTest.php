@@ -84,7 +84,7 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
   
   public function test_concepts()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'concept'=>'concept_mortgage' ) );
 	  $this->assertTrue( isset($c['output']['unrendered']['forms']) ) ;
   }  
@@ -92,7 +92,7 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
   public function test_xml_GIVES_SAME_XML()
   {
 		$XML = '<fin-math><parameters><request>get_mortgage_instalment</request><m>12</m><advance>1</advance><i_effective>0.1</i_effective><term>25</term><principal>1000000</principal><instalment/></parameters></fin-math>';
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
 		$c_forms = $c['output']['unrendered']['forms'];
 		$candidate_xml ='';
@@ -108,7 +108,7 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
 
   public function test_xml_GIVES_SAME_result()
   {
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 	$c = $x->get_controller( array(
    	'request'=>'get_mortgage_instalment',
 		'm'=>12,
@@ -126,7 +126,7 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
 		}
 //    $this->assertEquals( 'some-stuff-just-to-show-whats-there',$produced_xml) ;  
 		$XML = $produced_xml;
-	  $x = new CT1_Concept_All();
+	  $x = new FinMathConceptAll();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$XML ));
 	  $processed_formulae = $c['output']['unrendered']['formulae'];
 	  $this->assertEquals( $original_formulae, $processed_formulae) ;

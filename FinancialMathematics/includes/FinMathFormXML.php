@@ -39,7 +39,7 @@ public function get_controller( $_INPUT ){
 	if (isset($_INPUT['request'])){
 		if ($this->get_request() == $_INPUT['request']){
 			$x = json_decode(json_encode((array) simplexml_load_string(urldecode($_INPUT['xml']))), 1);
-			$m = new CT1_Concept_All();
+			$m = new FinMathConceptAll();
 			$return = $m->get_controller($x['parameters']) ;
 		}
 	}
