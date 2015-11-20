@@ -22,10 +22,11 @@ class CT1_Cashflows extends CT1_Collection {
 	}
 
 	public function get_value(){
-		if ( isset( $this->value ) )
+		if ( isset( $this->value ) ){
 			return $this->value;
-		else
+		} else {
 			return $this->get_discounted_value();
+		}
 	}
 
 	public function get_delta_for_value( $v = 0 ){
@@ -90,8 +91,9 @@ class CT1_Cashflows extends CT1_Collection {
 			$diff_x = abs( $x0 - $x1 );
 			$loop_count++;
 		}
-		if ( $loop_count >= $max_loop ) 
+		if ( $loop_count >= $max_loop ){ 
 			throw new Exception (self::myMessage( 'fm-exception-max-iterations-exceeded')  . $this->get_value() . ". " .  self::myMessage( 'fm-exception-query-cashflows-possible')  );
+		}
 		return $x1;
 	}
 		
@@ -110,8 +112,9 @@ class CT1_Cashflows extends CT1_Collection {
 				$sum_cash += $c->get_value();
 				$sum_cash_delta += $c->get_value() * $c->get_annuity()->get_delta();
 			}
-			if ( 0 != $sum_cash )
+			if ( 0 != $sum_cash ){
 				$mean = $sum_cash_delta / $sum_cash;
+			}
 		}
 		return $mean;
 	}
@@ -138,10 +141,12 @@ class CT1_Cashflows extends CT1_Collection {
 		
 	private function annuity_type( $i = array() ){
 		if( is_array($i) ){
-			if ( in_array( 'escalation_frequency', array_keys($i) ) )
+			if ( in_array( 'escalation_frequency', array_keys($i) ) ){
 				return new CT1_Annuity_Escalating(); 
-			if ( in_array( 'increasing', array_keys($i) ) )
+			}
+			if ( in_array( 'increasing', array_keys($i) ) ){
 				return new CT1_Annuity_Increasing(); 
+			}
 		}
 		return new CT1_Annuity();
 	}
