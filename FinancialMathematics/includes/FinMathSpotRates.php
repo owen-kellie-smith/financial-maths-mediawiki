@@ -34,7 +34,7 @@ protected $explanation_par_yields;
 		}
 	}
 
-	public function explain_par_yield( CT1_Par_Yield $f ){
+	public function explain_par_yield( FinMathParYield $f ){
 		if ( !$this->get_par_yields()->is_in_collection( $f ) ){
 			throw new Exception( __FILE__ . self::myMessage( 'fm-error-explain-paryield', $f )  );
 		}
@@ -125,11 +125,11 @@ protected $explanation_par_yields;
 	public function get_par_yields(){
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
-		$ps = new CT1_Par_Yields();
+		$ps = new FinMathParYields();
 		for ($i = 0, $ii = $this->maximum_contiguous_term(); $i < $ii; $i++){
 			$end = $terms[ $i ]; 	
 			$c = (1 - $spot_rates[ $end ]->get_vn() ) / $this->annuity_value( $end );
-			$p = new CT1_Par_Yield( $c, $end );
+			$p = new FinMathParYield( $c, $end );
 			$ps->add_object( $p );
 			$exp[0]['left'] = $p->get_label();
 			$exp_ann = $this->explain_par_yield_annuity_value( $p->get_term() );

@@ -1,7 +1,7 @@
 <?php   
 
 
-class CT1_Par_Yield extends CT1_Object {
+class FinMathParYield extends CT1_Object {
 
     private $coupon;
     private $term;
@@ -84,7 +84,7 @@ class CT1_Par_Yield extends CT1_Object {
     }
 
     public function get_labels(){
-        $labels['CT1_Par_Yield'] = $this->get_label();
+        $labels['FinMathParYield'] = $this->get_label();
         $labels['Annuity'] = $this->get_annuity_label();
         return $labels;
     }

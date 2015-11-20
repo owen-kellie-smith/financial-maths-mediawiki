@@ -98,8 +98,8 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 		for ( $i = 0, $ii = count( $rates['data'] ); $i < $ii; $i++ ){
 			$f = $rates['objects'][$i]['CT1_Forward_Rate'];
 			$p = null;
-			if (isset($rates['objects'][$i]['CT1_Par_Yield'])){
-				$p = $rates['objects'][$i]['CT1_Par_Yield'];
+			if (isset($rates['objects'][$i]['FinMathParYield'])){
+				$p = $rates['objects'][$i]['FinMathParYield'];
 			}
 			if ( is_object( $f ) ){
 				$rates['data'][$i][3]  = $this->get_anchor_forward( $f, $link );
@@ -293,13 +293,13 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	/**
 	 * Get anchor to detailed par yield calculation
 	 *
-	 * @param CT1_Par_Yield $p
+	 * @param FinMathParYield $p
 	 * @param string $page_link
 	 * @return string
 	 *
 	 * @access private
 	 */
-	private function get_anchor_par( CT1_Par_Yield $p, $page_link ){
+	private function get_anchor_par( FinMathParYield $p, $page_link ){
 		return "<a href='" . $page_link . "&request=explain_par&par_term=" . $p->get_term() . "'>" . $p->get_coupon() . "</a>";
 	}
 

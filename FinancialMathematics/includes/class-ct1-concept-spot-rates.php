@@ -185,13 +185,13 @@ public function get_concept_label(){
 	/**
 	 * Get anchor to detailed par yield calculation
 	 *
-	 * @param CT1_Par_Yield $p
+	 * @param FinMathParYield $p
 	 * @param string $page_link
 	 * @return string
 	 *
 	 * @access public
 	 */
-	private function get_anchor_par( CT1_Par_Yield $p, $page_link ){
+	private function get_anchor_par( FinMathParYield $p, $page_link ){
 		return "<a href='" . $page_link . "&request=explain_par&par_term=" . $p->get_term() . "'>" . $p->get_coupon() . "</a>";
 	}
 
