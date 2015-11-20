@@ -52,7 +52,9 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	public function set_escalation_delta( $r ){
 		$candidate = array( 'escalation_delta'=>$r );
 		$valid = $this->get_validation( $candidate );
-		if ( $valid['escalation_delta'] ) $this->escalation_delta = $r;
+		if ( $valid['escalation_delta'] ){
+			 $this->escalation_delta = $r;
+		}
 	}
 
 	public function get_escalation_delta(){
@@ -62,8 +64,9 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	public function set_escalation_rate_effective( $r ){
 		$candidate = array( 'escalation_rate_effective'=>$r );
 		$valid = $this->get_validation( $candidate );
-		if ( $valid['escalation_rate_effective'] ) 
+		if ( $valid['escalation_rate_effective'] ){ 
 			$this->set_escalation_delta( log( 1 + $r) );
+		}
 	}
 
 	public function get_escalation_rate_effective(){
@@ -71,12 +74,15 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	}
 
 	public function set_escalation_frequency( $r ){
-		if ( NULL == $r ) $r=1;
+		if ( NULL == $r ){
+			$r=1;
+		}
 		$candidate = array( 'escalation_frequency'=>$r );
 		$valid = $this->get_validation( $candidate );
 		if ( $valid['escalation_frequency'] && $this->is_valid_escalation_frequency( $r ) ) { 
-			if ( $this->is_valid_escalation_frequency( $r ) ) 
+			if ( $this->is_valid_escalation_frequency( $r ) ){ 
 				$this->escalation_frequency = $r;
+			}
 		} else {
 			throw new Exception(self::myMessage('fm-exception-escalation-frequency')  . "  " . self::myMessage( 'fm-attempted-frequency')  . $this->get_m() . "." . self::myMessage( 'fm-attempted-escalation-frequency')  . $r . ".");
 		}
@@ -85,15 +91,18 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	private function is_valid_escalation_frequency( $f ){
 		// valid if continuous or $f/m integer or m/$f integer
 		$escalation_format = new CT1_Interest_Format( $f );
-		if ( $escalation_format->is_continuous() ) 
+		if ( $escalation_format->is_continuous() ){ 
 			return true;
+		}
 		$close_enough = 0.00001;
 		$trial = $f / $this->get_m();
-		if ( $close_enough > abs( intval( $trial ) - $trial ) ) 
+		if ( $close_enough > abs( intval( $trial ) - $trial ) ){ 
 			return true;
+		}
 		$trial = $this->get_m() / $f;
-		if ( $close_enough > abs( intval( $trial ) - $trial ) ) 
+		if ( $close_enough > abs( intval( $trial ) - $trial ) ){ 
 			return true;
+		}
 		return false;
 	}
 
@@ -202,12 +211,15 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
 			if (parent::set_from_input($_INPUT, $pre)){
-				if ( isset( $_INPUT[$pre. 'escalation_delta'] ) )
+				if ( isset( $_INPUT[$pre. 'escalation_delta'] ) ){
 					$this->set_escalation_delta(	$_INPUT[$pre. 'escalation_delta'] );
-				if ( isset( $_INPUT[$pre. 'escalation_rate_effective'] ) )
+				}
+				if ( isset( $_INPUT[$pre. 'escalation_rate_effective'] ) ){
 					$this->set_escalation_rate_effective(	$_INPUT[$pre. 'escalation_rate_effective'] );
-				if ( isset( $_INPUT[$pre. 'escalation_frequency']))
+				}
+				if ( isset( $_INPUT[$pre. 'escalation_frequency'])){
 					$this->set_escalation_frequency(	$_INPUT[$pre. 'escalation_frequency'] );
+				}
 				return true;
 			}
 			else{
