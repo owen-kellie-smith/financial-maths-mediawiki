@@ -4,7 +4,9 @@
 class CT1_Concept_Mortgage extends CT1_Form{
 
 public function __construct(CT1_Object $obj=null){
-	if (null === $obj) $obj = new CT1_Mortgage();
+	if (null === $obj){
+		$obj = new CT1_Mortgage();
+	}
 	parent::__construct($obj);
 	$this->set_request( 'get_mortgage_instalment' );
 }

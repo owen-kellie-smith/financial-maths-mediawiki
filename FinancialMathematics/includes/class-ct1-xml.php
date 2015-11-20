@@ -70,7 +70,9 @@ class CT1_XML extends CT1_Object{
 			if ($xml){
 		  	$candidate = array('xml'=>$m);
 		  	$valid = $this->get_validation($candidate);
-				if ($valid['xml']) $this->xml = $m;
+				if ($valid['xml']){
+					$this->xml = $m;
+				}
 			} // otherwise don't change $this->xml
 		} 
 		catch( Exception $e ){
@@ -79,8 +81,12 @@ class CT1_XML extends CT1_Object{
 	}
 
 	public function equals($f){
-		if(!($f instanceof CT1_XML))        return false;
-		if( $f->get_xml()       != $this->get_xml()       ) return false;
+		if(!($f instanceof CT1_XML)){
+		        return false;
+		}
+		if( $f->get_xml() != $this->get_xml() ){
+			return false;
+		}
 		return true;
 	}
 

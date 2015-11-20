@@ -21,7 +21,9 @@ public function setTagName( $s ){
 }
 
 public function __construct(CT1_Object $obj=null){
-	if (null === $obj) $obj = new CT1_XML();
+	if (null === $obj){
+		$obj = new CT1_XML();
+	}
 	parent::__construct($obj);
 	$this->set_request( 'process_xml' );
 }
@@ -39,7 +41,6 @@ public function get_controller( $_INPUT ){
 			$x = json_decode(json_encode((array) simplexml_load_string(urldecode($_INPUT['xml']))), 1);
 			$m = new CT1_Concept_All();
 			$return = $m->get_controller($x['parameters']) ;
-//			$return['formulae']='Something from the XML';
 		}
 	}
 	if ($this->set_text($_INPUT)){

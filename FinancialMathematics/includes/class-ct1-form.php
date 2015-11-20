@@ -112,7 +112,9 @@ protected function set_received_input(&$_INPUT = array()){
 $c = 0;
 $c++;
 	foreach (array_keys($this->obj->get_parameters()) as $p){
-		if (!isset($_INPUT[$p])) $_INPUT[$p] = NULL;
+		if (!isset($_INPUT[$p])){	
+			$_INPUT[$p] = NULL;
+		}
 	}
 
 }
@@ -120,7 +122,9 @@ $c++;
 protected function get_form_parameters(&$_parameters = array()){
 	$def = $this->get_form_parameters_default();
 	foreach (array_keys($def) as $p){
-		if (!array_key_exists($p, $_parameters)) $_parameters[ $p] = $def[$p];
+		if (!array_key_exists($p, $_parameters)){
+			$_parameters[ $p] = $def[$p];
+		}
 	}
 }
 

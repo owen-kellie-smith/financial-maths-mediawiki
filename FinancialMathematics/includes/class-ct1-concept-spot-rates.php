@@ -20,7 +20,9 @@ class CT1_Concept_Spot_Rates extends CT1_Form{
 	 * @access public
 	 */
 	public function __construct(CT1_Object $obj=null){
-		if (null === $obj) $obj = new CT1_Spot_Rates();
+		if (null === $obj){
+			$obj = new CT1_Spot_Rates();
+		}
 		parent::__construct($obj);
 		$this->set_request( 'get_spotrates' );
 	}
@@ -256,10 +258,12 @@ public function get_concept_label(){
 
 	private function add_spot_rate_from_input( $IN ){
 		$i_effective = 0; $effective_time = 0;
-		if ( isset( $IN['effective_time'] ) )
+		if ( isset( $IN['effective_time'] ) ){
 			$effective_time = (float)$IN['effective_time'];
-		if ( isset( $IN['i_effective'] ) )
+		}
+		if ( isset( $IN['i_effective'] ) ){
 			$i_effective = (float)$IN['i_effective'];
+		}
 		$sr = new CT1_Spot_Rate( $i_effective, $effective_time );
 		$this->obj->add_object( $sr, false, true );
 		return;
