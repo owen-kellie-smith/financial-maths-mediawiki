@@ -1,7 +1,7 @@
 <?php
 
 
-class CT1_Concept_Annuity_Increasing extends CT1_Concept_Annuity{
+class FinMathConceptAnnuityIncreasing extends FinMathConceptAnnuity{
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj){ 

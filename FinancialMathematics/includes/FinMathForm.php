@@ -20,9 +20,9 @@ protected static function myMessage( $messageKey){
 	protected function candidate_concepts(){
 		return array( 
 				new FinMathConceptInterest(),
-				new CT1_Concept_Annuity(), 
+				new FinMathConceptAnnuity(), 
 				new FinMathConceptMortgage(), 
-				new CT1_Concept_Annuity_Increasing(), 
+				new FinMathConceptAnnuityIncreasing(), 
 				new FinMathConceptCashflows(),
 				new FinMathConceptSpotRates(),
 				new CT1_Form_XML(),
