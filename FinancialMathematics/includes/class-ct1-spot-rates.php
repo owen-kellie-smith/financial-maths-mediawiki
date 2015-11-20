@@ -1,13 +1,13 @@
 <?php   
 
-class CT1_Spot_Rates extends CT1_Collection {
+class FinMathSpotRates extends CT1_Collection {
 
 protected $explanation_forward_rates;
 protected $explanation_par_yields;
 
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
-		$r['CT1_Spot_Rates'] = array();
+		$r['FinMathSpotRates'] = array();
 		$r['forward_start_time'] = array();
 		$r['forward_end_time'] = array();
 		$r['par_term'] = array();
@@ -16,14 +16,14 @@ protected $explanation_par_yields;
 
 
 	public function get_clone_this(){
-		$a_calc = new CT1_Spot_Rates();
+		$a_calc = new FinMathSpotRates();
 		$a_calc->set_objects( $this->get_objects() );
 		return $a_calc;
 	}
 
 
 	protected function is_acceptable_class( $c ){
-		return ( 'CT1_Spot_Rate' == get_class( $c ) );
+		return ( 'FinMathSpotRate' == get_class( $c ) );
 	}
 
 	private function get_sorted_terms(){
@@ -199,11 +199,11 @@ protected $explanation_par_yields;
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
-			$c_new = new CT1_Spot_Rates();
+			$c_new = new FinMathSpotRates();
 			if ( count($_INPUT) > 0 ){
 				foreach ($_INPUT as $i){
 					if( is_array($i) ){
-						$c = new CT1_Spot_Rate( exp( $i['delta'] ) - 1 , $i['effective_time'] );
+						$c = new FinMathSpotRate( exp( $i['delta'] ) - 1 , $i['effective_time'] );
 						$c_new->add_object( $c );
 					}
 				}

@@ -54,7 +54,7 @@ CT1_autoloader(		"CT1_Mortgage", "includes/class-ct1-mortgage.php");
 CT1_autoloader(		"CT1_Par_Yield", "includes/class-ct1-par-yield.php");
 CT1_autoloader(		"CT1_Par_Yields", "includes/class-ct1-par-yields.php");
 CT1_autoloader(		"CT1_Render", "includes/class-ct1-render.php");
-CT1_autoloader(		"CT1_Spot_Rate", "includes/class-ct1-spot-rate.php");
-CT1_autoloader(		"CT1_Spot_Rates", "includes/class-ct1-spot-rates.php");
+CT1_autoloader(		"FinMathSpotRate", "includes/class-ct1-spot-rate.php");
+CT1_autoloader(		"FinMathSpotRates", "includes/class-ct1-spot-rates.php");
 
 	

@@ -21,7 +21,7 @@ class FinMathConceptSpotRates extends CT1_Form{
 	 */
 	public function __construct(CT1_Object $obj=null){
 		if (null === $obj){
-			$obj = new CT1_Spot_Rates();
+			$obj = new FinMathSpotRates();
 		}
 		parent::__construct($obj);
 		$this->set_request( 'get_spotrates' );
@@ -96,7 +96,7 @@ public function get_concept_label(){
 	 * @access public
 	 */
 	public function get_add_spot_rate(){
-		$sr = new CT1_Spot_Rate();
+		$sr = new FinMathSpotRate();
 		$values = $sr->get_values();
 		$form = array();
 		$form['method'] = 'GET';
@@ -264,7 +264,7 @@ public function get_concept_label(){
 		if ( isset( $IN['i_effective'] ) ){
 			$i_effective = (float)$IN['i_effective'];
 		}
-		$sr = new CT1_Spot_Rate( $i_effective, $effective_time );
+		$sr = new FinMathSpotRate( $i_effective, $effective_time );
 		$this->obj->add_object( $sr, false, true );
 		return;
 	}

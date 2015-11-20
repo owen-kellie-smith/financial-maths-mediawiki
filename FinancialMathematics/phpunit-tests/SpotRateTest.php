@@ -1,6 +1,6 @@
 <?php
 
-class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
+class FinMathSpotRate_Test extends PHPUnit_Framework_TestCase
 {
   private $sr;
 
@@ -8,7 +8,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 	  $_INPUT =  Array ( 0 => Array ( 'delta' => 0.01, 'effective_time' => 1 ), 
 	  1 => Array ( 'delta' => 0.02, 'effective_time' => 2 ) 
 		);
-    $this->sr = new CT1_Spot_Rates();
+    $this->sr = new FinMathSpotRates();
     $this->sr->set_from_input($_INPUT, $pre = '');
   }
   public function tearDown(){
@@ -49,7 +49,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 		$c = $x->get_controller( array(
 			'request' => 'explain_par',
     	'par_term' => 1,
-			'CT1_Spot_Rates' => Array
+			'FinMathSpotRates' => Array
         (
             '0' => Array
                 (
@@ -68,7 +68,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array(
     'request' => 'view_spotrates',
-    'CT1_Spot_Rates' => Array
+    'FinMathSpotRates' => Array
         (
             '0' => Array
                 (
@@ -91,7 +91,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 	$c = $x->get_controller( array(
-			'CT1_Spot_Rates'=>array(array('delta'=>0.095310179804325,'effective_time'=>1)),
+			'FinMathSpotRates'=>array(array('delta'=>0.095310179804325,'effective_time'=>1)),
 			'request'=>'explain_forward',
 			'forward_start_time'=>0,
 			'forward_end_time'=>1,
@@ -120,7 +120,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 	$c = $x->get_controller( array(
-			'CT1_Spot_Rates'=> array(
+			'FinMathSpotRates'=> array(
 				array('delta'=>0.035367143837291, 'effective_time'=>1),
 				array('delta'=>0.03633192924739, 'effective_time'=>2),
 				array('delta'=>0.037295784743697, 'effective_time'=>3),
@@ -137,7 +137,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 	$c = $x->get_controller( array(
-			'CT1_Spot_Rates'=> array(
+			'FinMathSpotRates'=> array(
 				array('delta'=>0.035367143837291, 'effective_time'=>1),
 				array('delta'=>0.03633192924739, 'effective_time'=>2),
 				array('delta'=>0.037295784743697, 'effective_time'=>3),
@@ -154,7 +154,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
   {
 	  $x = new CT1_Concept_All();
 	$c = $x->get_controller( array(
-			'CT1_Spot_Rates'=> array(
+			'FinMathSpotRates'=> array(
 				array('delta'=>0.035367143837291, 'effective_time'=>1),
 				array('delta'=>0.03633192924739, 'effective_time'=>2),
 				array('delta'=>0.037295784743697, 'effective_time'=>3),
@@ -169,7 +169,7 @@ class CT1_Spot_Rate_Test extends PHPUnit_Framework_TestCase
 
   public function test_CT1_A2015_Q7iii()
   {
-$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.067658648473815</delta><effective_time>3.5</effective_time></item0><item1><delta>0.086177696241052</delta><effective_time>4.5</effective_time></item1></CT1_Spot_Rates><request>explain_forward</request><forward_start_time>3.5</forward_start_time><forward_end_time>4.5</forward_end_time></parameters></fin-math>";
+$xml="<fin-math><parameters><FinMathSpotRates><item0><delta>0.067658648473815</delta><effective_time>3.5</effective_time></item0><item1><delta>0.086177696241052</delta><effective_time>4.5</effective_time></item1></FinMathSpotRates><request>explain_forward</request><forward_start_time>3.5</forward_start_time><forward_end_time>4.5</forward_end_time></parameters></fin-math>";
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
@@ -178,7 +178,7 @@ $xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.067658648473815</del
 
   public function test_CT1_A2014_Q9i()
   {
-$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</delta><effective_time>1</effective_time></item0><item1><delta>0.03633192924739</delta><effective_time>2</effective_time></item1><item2><delta>0.037295784743697</delta><effective_time>3</effective_time></item2></CT1_Spot_Rates><request>explain_forward</request><forward_start_time>1</forward_start_time><forward_end_time>2</forward_end_time></parameters></fin-math>";
+$xml="<fin-math><parameters><FinMathSpotRates><item0><delta>0.035367143837291</delta><effective_time>1</effective_time></item0><item1><delta>0.03633192924739</delta><effective_time>2</effective_time></item1><item2><delta>0.037295784743697</delta><effective_time>3</effective_time></item2></FinMathSpotRates><request>explain_forward</request><forward_start_time>1</forward_start_time><forward_end_time>2</forward_end_time></parameters></fin-math>";
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
@@ -188,7 +188,7 @@ $xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</del
 
   public function test_CT1_A2014_Q9ii()
   {
-$xml="<fin-math><parameters><CT1_Spot_Rates><item0><delta>0.035367143837291</delta><effective_time>1</effective_time></item0><item1><delta>0.03633192924739</delta><effective_time>2</effective_time></item1><item2><delta>0.037295784743697</delta><effective_time>3</effective_time></item2></CT1_Spot_Rates><request>explain_par</request><par_term>2</par_term></parameters></fin-math>";
+$xml="<fin-math><parameters><FinMathSpotRates><item0><delta>0.035367143837291</delta><effective_time>1</effective_time></item0><item1><delta>0.03633192924739</delta><effective_time>2</effective_time></item1><item2><delta>0.037295784743697</delta><effective_time>3</effective_time></item2></FinMathSpotRates><request>explain_par</request><par_term>2</par_term></parameters></fin-math>";
 	  $x = new CT1_Concept_All();
 		$c = $x->get_controller( array( 'request'=>'process_xml', 'xml'=>$xml ));
 //	  $this->assertEquals( array(), $c['output']['unrendered']) ;
