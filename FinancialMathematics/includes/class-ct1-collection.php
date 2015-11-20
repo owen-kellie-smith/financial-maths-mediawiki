@@ -13,8 +13,9 @@ abstract class CT1_Collection extends CT1_Object {
 	public function is_in_collection( $candidate ){
 		if ( $this->get_count() > 0) {
 			foreach ( $this->get_objects() as $obj ){
-				if ( $obj == $candidate )
+				if ( $obj == $candidate ){
 					return true;
+				}
 			}
 		}
 		return false;
@@ -91,8 +92,9 @@ abstract class CT1_Collection extends CT1_Object {
 		} else {
 			$this->objects[] = $c;
 		}
-		if ( $re_sort )
+		if ( $re_sort ){
 			$this->sort_objects();
+		}
 	}
 
 	public function sort_objects(){
@@ -117,8 +119,9 @@ abstract class CT1_Collection extends CT1_Object {
 			foreach ( array_keys($this_objects) as $key ){
 				if ( $c == $this_objects[ $key ] ){
 					unset( $this->objects[ $key ] );
-					if ( !$remove_all )
+					if ( !$remove_all ){
 						return;
+					}
 				}
 			}
 		}
