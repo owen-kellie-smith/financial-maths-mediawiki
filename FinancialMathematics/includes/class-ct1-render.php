@@ -38,14 +38,15 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 			if (isset($u['table'])){
                                if (isset($u['table']['schedule'])){
                                        $r['schedule'] = $this->get_table(
-                                       $u['table']['schedule']['data'],
-                                       $u['table']['schedule']['header']
+                                       		$u['table']['schedule']['data'],
+                                       		$u['table']['schedule']['header']
                                        );
                                }
 				if (isset($u['table']['rates']) && isset($u['table']['hidden'])){
-				 $r['table'] = $this->get_render_rate_table(
-					$u['table']['rates'],
-					$u['table']['hidden'], $pageTitle . "?" );    
+				 	$r['table'] = $this->get_render_rate_table(
+						$u['table']['rates'],
+						$u['table']['hidden'], $pageTitle . "?" 
+					);    
 				}
 			}
 			if (isset($u['forms'])){
@@ -100,10 +101,12 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 			if (isset($rates['objects'][$i]['CT1_Par_Yield'])){
 				$p = $rates['objects'][$i]['CT1_Par_Yield'];
 			}
-			if ( is_object( $f ) )
+			if ( is_object( $f ) ){
 				$rates['data'][$i][3]  = $this->get_anchor_forward( $f, $link );
-			if ( is_object( $p ) )
+			}
+			if ( is_object( $p ) ){
 				$rates['data'][$i][5]  = $this->get_anchor_par( $p, $link );
+			}
 		}
 		return $this->get_table( $rates['data'], $rates['header'] );
 	}
@@ -141,8 +144,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 */
 	private function get_form_collection( CT1_Collection $cf, $submit = 'Submit', $intro = "" , $request = "", $pageid=""){
 		$out = "";
-		if ( !empty( $intro ) )
+		if ( !empty( $intro ) ){
 			$out.= "<p>" . $intro . "</p>" . "\r\n";
+		}
 		$form = new HTML_QuickForm2( 'name-for-collection','GET', '');
 		$form->addDataSource(new HTML_QuickForm2_DataSource_Array() );
 		$fieldset = $form->addElement('fieldset');
@@ -169,7 +173,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	// would be better if this were just recursive but I don't know how
 		$out = "";
 		$_nl="";
-		if ($newline) $_nl="\r\n ";
+		if ($newline){
+			$_nl="\r\n ";
+		}
 		if (count($equation_array) > 0 ) {
 			$out  = $this->get_mathjax_header() .  $_nl;
 			$out .= $_nl . "\\begin{align} " . $_nl;
@@ -237,8 +243,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 */
 	private function get_select_form( $return ){
 		$out="";
-		if ( !empty( $return['introduction'] ) )
+		if ( !empty( $return['introduction'] ) ){
 			$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
+		}
 		foreach (array('name','method','action','select-name','select-label','select-options','submit') as $key){
 			$temp[$key]='';
 			if ( isset( $return[$key] ) ){
@@ -308,7 +315,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 */
 	private function get_render_latex_sentence( $equation_array, &$label = '', $newline=false ){
 		$_nl="";
-		if ($newline) $_nl="\r\n ";
+		if ($newline){
+			$_nl="\r\n ";
+		}
 		$out = "";
 		$detail = array();
 		if ( !empty($label) ){
@@ -317,10 +326,12 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 		$d = 1;
 		foreach ($equation_array as $e) {
 			$out .= $this->get_render_latex_sentence_line( $e, $detail, $newline );
-			if ($d < count($equation_array)) 
+			if ($d < count($equation_array)){ 
 				$out.= " \\\\ " . $_nl;
-			if ($d ==count($equation_array)) 
+			}
+			if ($d ==count($equation_array)){ 
 				$out.= ". \\\\ " . $_nl . "\\nonumber " ;
+			}
 			$d++;
 			$this->eqref++;
 		}
@@ -409,30 +420,32 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	private function get_a_layer_of_equation_detail( $output, $newline=false ){
 	// $sub_count is redundant?
 	$_nl="";
-	if ($newline) $_nl="\r\n ";
-		$out = '';
-		$ret_out = array();
-		$ret_out['detail'] = array();
-		foreach ($output['detail'] as $e) {
-			if ( $this->is_sentence( $e['equation'] ) ) {
-				$sub_output = $this->get_render_latex_sentence( $e['equation'], $e['label'] , $newline);
-				$out .= " \\\\" . $_nl; // close off the last line
-				$out .= $sub_output['output'] . $_nl;
+	if ($newline){
+		$_nl="\r\n ";
+	}
+	$out = '';
+	$ret_out = array();
+	$ret_out['detail'] = array();
+	foreach ($output['detail'] as $e) {
+		if ( $this->is_sentence( $e['equation'] ) ) {
+			$sub_output = $this->get_render_latex_sentence( $e['equation'], $e['label'] , $newline);
+			$out .= " \\\\" . $_nl; // close off the last line
+			$out .= $sub_output['output'] . $_nl;
+			$ret_out['detail'] = array_merge( $ret_out['detail'], $sub_output['detail']);
+		} else {
+			$sub_count = 0;
+			foreach ($e['equation'] as $e_detail) {
+				$sub_count++;
+				$sub_output = $this->get_render_latex_sentence( $e_detail, $e['label'] . "." . $sub_count, $newline );
+				$out .= " \\\\" . "\r\n"; // close off the last line
+				$out .= $sub_output['output'] . "\r\n";
 				$ret_out['detail'] = array_merge( $ret_out['detail'], $sub_output['detail']);
-			} else {
-				$sub_count = 0;
-				foreach ($e['equation'] as $e_detail) {
-					$sub_count++;
-					$sub_output = $this->get_render_latex_sentence( $e_detail, $e['label'] . "." . $sub_count, $newline );
-					$out .= " \\\\" . "\r\n"; // close off the last line
-					$out .= $sub_output['output'] . "\r\n";
-					$ret_out['detail'] = array_merge( $ret_out['detail'], $sub_output['detail']);
-				}
 			}
 		}
-		$output['detail'] = $ret_out['detail'];
-		return array( 'detail'=> $output['detail'], 'out_new'=> $out );
 	}
+	$output['detail'] = $ret_out['detail'];
+	return array( 'detail'=> $output['detail'], 'out_new'=> $out );
+}
 
 
 
@@ -501,10 +514,16 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 		// returns html based on form parameters in $return
 		$fieldset=null;;
 		$out = "<p>" . $return['introduction'] . "</p>" . "\r\n";
-		if (!isset($return['name'])) $return['name']='';
-		if (!isset($return['action'])) $return['action']='';
+		if (!isset($return['name'])){
+			$return['name']='';
+		}
+		if (!isset($return['action'])){
+			$return['action']='';
+		}
 		$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
-		if (!isset($return['values'])) $return['values']=array();
+		if (!isset($return['values'])){
+			$return['values']=array();
+		}
 		$form->addDataSource(new HTML_QuickForm2_DataSource_Array( $return['values'] ) );
 		if (count($return['parameters']) > 0){
 			$fieldset = $form->addElement('fieldset');
@@ -515,12 +534,15 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 					$valid_option = array();
 					if (array_key_exists($key,$return['valid_options'])){
 						$valid_option = $return['valid_options'][$key];
-						if ('string'==$valid_option['type']) 
+						if ('string'==$valid_option['type']){ 
 							$input_type='textarea';
-						if ('number'==$valid_option['type']) 
+						}
+						if ('number'==$valid_option['type']){ 
 							$input_type='text';
-						if ('boolean'==$valid_option['type']) 
+						}
+						if ('boolean'==$valid_option['type']){ 
 							$input_type='checkbox';
+						}
 					}
 					$value = '';
 					$fieldset->addElement($input_type, $key)->setLabel($parameter['label']);
@@ -592,12 +614,15 @@ private function get_popup_head(){
         <!--
         function popup(mylink, windowname)
         {
-            if (! window.focus)return true;
+            if (! window.focus){
+		return true;
+	    }
             var href;
-            if (typeof(mylink) == "string")
+            if (typeof(mylink) == "string"){
                 href=mylink;
-            else
+	    } else {
                 href=mylink.href;
+	    }
             window.open(href, windowname, "width=400,height=200,scrollbars=yes");
             return false;
         }

@@ -23,9 +23,7 @@ protected $explanation_par_yields;
 
 
 	protected function is_acceptable_class( $c ){
-		if ( 'CT1_Spot_Rate' == get_class( $c ) )
-			return true;
-		return false;
+		return ( 'CT1_Spot_Rate' == get_class( $c ) );
 	}
 
 	private function get_sorted_terms(){
@@ -190,8 +188,9 @@ protected $explanation_par_yields;
 	private function term_is_set( $i ){
 		if ( 0 < $this->get_count() ){
 			foreach ($this->get_objects() as $c ) {
-				if ( $i == $c->get_effective_time() )
+				if ( $i == $c->get_effective_time() ){
 					return true;
+				}
 			}
 		}
 		return false;
