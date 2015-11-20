@@ -2,20 +2,20 @@
 
 
 /**
- * CT1_Concept_Cashflows class
+ * FinMathConceptCashflows class
  *
  * Provides input/output for multiple cashflows
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class CT1_Concept_Cashflows extends CT1_Form{
+class FinMathConceptCashflows extends CT1_Form{
 
 	/**
 	 * Constructor
 	 *
 	 * @param CT1_Object $obj 
-	 * @return CT1_Concept_Cashflows
+	 * @return FinMathConceptCashflows
 	 *
 	 * @access public
 	 */

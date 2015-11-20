@@ -19,11 +19,11 @@ protected static function myMessage( $messageKey){
 
 	protected function candidate_concepts(){
 		return array( 
-				new CT1_Concept_Interest(),
+				new FinMathConceptInterest(),
 				new CT1_Concept_Annuity(), 
 				new FinMathConceptMortgage(), 
 				new CT1_Concept_Annuity_Increasing(), 
-				new CT1_Concept_Cashflows(),
+				new FinMathConceptCashflows(),
 				new FinMathConceptSpotRates(),
 				new CT1_Form_XML(),
 				 );

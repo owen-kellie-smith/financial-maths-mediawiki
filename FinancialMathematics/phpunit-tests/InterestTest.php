@@ -101,7 +101,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 	  $x = new CT1_Concept_All();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>6,'advance'=>1, 'i_effective'=>0.1) );
     $temp =  $x->get_obj()->get_values();
     $this->assertEquals( $temp['delta'], log(1.1));
@@ -109,7 +109,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_i12_delta()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','source_m'=>12, 'source_advance'=>1, 'source_rate'=>0.1) );
 	  $this->assertTrue( isset($c['output']['unrendered']['formulae']) ) ;
 	  $this->assertFalse( isset($c['warning']) ) ;
@@ -120,7 +120,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_delta()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>false,'source_m'=>2, 'source_rate'=>0.1) );
 	$delta=2*log(1.05);
     $o = $x->get_obj();
@@ -130,7 +130,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_i2_i()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'advance'=>false,'source_m'=>2, 'source_rate'=>0.1) );
 	$delta=2*log(1.05);
     $o = $x->get_obj();
@@ -140,7 +140,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_d12_i6()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>6,'advance'=>false,'source_m'=>12, 'source_advance'=>1, 'source_rate'=>0.1) );
 	$delta=12*-log(1-0.1/12);
     $o = $x->get_obj();
@@ -150,7 +150,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_d12_d12()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>12,'advance'=>1,'source_m'=>12, 'source_advance'=>1, 'source_rate'=>0.1) );
 
     $o = $x->get_obj();
@@ -160,7 +160,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_i12_i12()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>12,'source_m'=>12, 'source_rate'=>0.1) );
 
     $o = $x->get_obj();
@@ -170,7 +170,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_i1_i12()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>12,'source_m'=>1, 'source_rate'=>0.1) );
 
     $o = $x->get_obj();
@@ -180,7 +180,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_i2_i1()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>1,'source_m'=>2, 'source_rate'=>0.12) );
 
     $o = $x->get_obj();
@@ -191,7 +191,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_not_annual_effective_d2_i4()
   {
-	$x = new CT1_Concept_Interest();
+	$x = new FinMathConceptInterest();
 	$c = $x->get_controller( array( 'request'=>'get_interest','m'=>4,'source_m'=>2,'source_advance'=>true, 'source_rate'=>0.12) );
 
     $o = $x->get_obj();

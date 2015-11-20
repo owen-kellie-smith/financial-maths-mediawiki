@@ -1,6 +1,6 @@
 <?php
 
-class CT1_Concept_Interest extends CT1_Form{
+class FinMathConceptInterest extends CT1_Form{
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj){
