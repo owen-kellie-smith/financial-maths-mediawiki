@@ -168,10 +168,11 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
 			if (parent::set_from_input($_INPUT, $pre)){
-				if ( isset( $_INPUT[$pre. 'increasing'] ) )
+				if ( isset( $_INPUT[$pre. 'increasing'] ) ){
 					$this->set_increasing(	$_INPUT[$pre. 'increasing'] );
-				else
+				} else {
 					$this->set_increasing(	false  );
+				}
 				return true;
 			}
 			else{
@@ -188,17 +189,24 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 	}
 
 	protected function label_annuity_increasing(){
-		if ( $this->is_continuous() ) $return = "\\bar{a}";
-		else{
-			if ($this->advance) $out="\\ddot{a}";
-			else $out="a";
-			if (1!=$this->m) $out.="^{(" . $this->m . ")}";
+		if ( $this->is_continuous() ){
+			$return = "\\bar{a}";
+		} else{
+			if ($this->advance){
+				$out="\\ddot{a}";
+			} else { 
+				$out="a";
+			}
+			if (1!=$this->m){ 
+				$out.="^{(" . $this->m . ")}";
+			}
 			$return = $out;
 		}
-		if ( $this->get_increasing()  ) 
+		if ( $this->get_increasing()  ){ 
 			$head = "I";
-		else
+		} else {
 			$head = "D";
+		}
 		$label = "(" . $head . $return . ")" . $this->sub_n();
 		return $label;
 	}
