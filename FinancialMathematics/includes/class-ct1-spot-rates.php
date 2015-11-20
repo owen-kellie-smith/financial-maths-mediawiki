@@ -169,7 +169,6 @@ protected $explanation_par_yields;
 			throw new Exception ( __FILE__ . self::myMessage( 'fm-error-annuity-value-term', $term,  $this->maximum_contiguous_term()  )  );
 		}
 		$spot_rates = $this->get_objects();
-//echo "<pre>" . __FILE__ . print_r($spot_rates, 1) . "</pre>";
 		$terms = $this->get_sorted_terms();
 		$value = 0;
 		for ($i = 1, $ii = $term; $i <= $ii; $i++){

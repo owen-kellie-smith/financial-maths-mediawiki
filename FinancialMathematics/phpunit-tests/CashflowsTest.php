@@ -261,7 +261,9 @@ $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><it
 	  $this->assertEquals( 885.53, number_format($c['output']['unrendered']['summary']['result'],2)) ;
   }  
 
-
+/**
+ * @medium
+ */
   public function test_CT1_A2015_Q6()
   {
 $xml="<fin-math><parameters><request>value_cashflows</request><CT1_Cashflows><item0><m>1</m><advance>1</advance><source_rate/><source_format/><delta>0</delta><i_effective>0</i_effective><term>1000</term><value>3.3706527598447E 26</value><escalation_delta>0.058268908123976</escalation_delta><escalation_rate_effective>0.06</escalation_rate_effective><escalation_frequency>1</escalation_frequency><rate_per_year>6</rate_per_year><effective_time>0.5</effective_time><cashflow_value>2.0223916559068E 27</cashflow_value></item0></CT1_Cashflows><i_effective/><value>175</value></parameters></fin-math>";

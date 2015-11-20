@@ -41,10 +41,6 @@ abstract class CT1_Object {
 	}
 
 	public function get_valid_inputs($_INPUT){
-//echo __FILE__ . "\r\n";
-//echo " get_valid_inputs \r\n";
-//echo " raw input " . print_r($_INPUT,1) . "\r\n";
-//echo " valid_options " . print_r($this->get_valid_options(),1 ) . "\r\n";
 
 		$r = $_INPUT;
 		foreach (array_keys($r) as $key){
@@ -52,7 +48,6 @@ abstract class CT1_Object {
 				unset( $r[$key] );
 			}
 		}
-//echo " validated input " . print_r($r,1 ) . "\r\n";
 		return $r;
   }
 

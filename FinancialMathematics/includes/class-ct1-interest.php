@@ -201,8 +201,6 @@ public function explain_rate_in_form($f){
 }
 
 public function set_from_input($_INPUT = array(), $pre = ''){
-//echo __FILE__ ." set_from_Input \r\n";
-//echo "<pre> " . print_r($_INPUT,1) . "</pre>";
 	try{
 		if (parent::set_from_input($_INPUT, $pre)){ // the last set rate trumps all the others
 			if (isset($_INPUT[$pre . 'source_m']) && isset($_INPUT[$pre . 'source_rate'])){

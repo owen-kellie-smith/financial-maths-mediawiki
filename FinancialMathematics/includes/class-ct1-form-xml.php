@@ -32,13 +32,11 @@ public function get_calculator($parameters){
 }
 
 public function get_controller( $_INPUT ){
-//echo __FILE__ . "\r\n";
   $return=array();
 	$unused=array();
 	if (isset($_INPUT['request'])){
 		if ($this->get_request() == $_INPUT['request']){
 			$x = json_decode(json_encode((array) simplexml_load_string(urldecode($_INPUT['xml']))), 1);
-//echo "x " . print_r($x,1) . "\r\n";
 			$m = new CT1_Concept_All();
 			$return = $m->get_controller($x['parameters']) ;
 //			$return['formulae']='Something from the XML';
@@ -61,10 +59,7 @@ public function set_text($_INPUT = array()){
 			}
 		}
 		if (empty($xml)){
-//echo __FILE__ . "\r\n";
-//echo "getTagName" . print_r($this->getTagName(),1) . "\r\n";
 			$xml_data = new SimpleXMLElement('<?xml version="1.0"?><' . $this->getTagName() . '></'. $this->getTagName() . '>');
-// fin-math hard coded.  Should be from hooks.
 			$this->array_to_xml( array('parameters'=>$this->get_filtered_input($_INPUT)),$xml_data);
 			$xml=  (string)$xml_data->asXML();
 			// http://php.net/manual/en/function.preg-replace.php
@@ -74,28 +69,22 @@ public function set_text($_INPUT = array()){
 			$xml = preg_replace($pattern, $replacement, $string);
 	  }
 		$a = array();
-//echo __FILE__ . "\r\n";
-//echo "xml" . print_r($xml,1) . "\r\n";
 
 		$a['xml'] = html_entity_decode(urldecode($xml));
-//echo "html_decod" . print_r($a,1) . "\r\n";
 		$this->set_received_input($a);
 		$this->obj->set_from_input($a);
 		return ($this->obj->set_from_input($a));
 }
 
 private function get_filtered_input($_INPUT){
-//echo __FILE__ . "get_filtered_input \r\n";
 		$this->set_referred_obj($_INPUT);
 		if ($this->referred_obj instanceof CT1_Object){
-//echo __FILE__ . "getting valid input \r\n";
 			return $this->referred_obj->get_valid_inputs($_INPUT);
 		}
 		return $_INPUT;
 }
 
 private function set_referred_obj($_INPUT = array()){
-//echo __FILE__ . "set_referred_obj \r\n";
 		$this->referred_obj=null;
 		foreach( $this->candidate_concepts() AS $c ){
 				if (isset($_INPUT['request'])){
