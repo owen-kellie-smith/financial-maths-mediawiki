@@ -20,7 +20,9 @@ class CT1_Concept_Cashflows extends CT1_Form{
 	 * @access public
 	 */
 	public function __construct(CT1_Object $obj=null){
-		if (null === $obj) $obj = new CT1_Cashflows();
+		if (null === $obj){
+			$obj = new CT1_Cashflows();
+		}
 		parent::__construct($obj);
 		$this->set_request( 'get_cashflows' );
 	}
@@ -166,8 +168,9 @@ public function get_concept_label(){
 	 */
 	private function add_cashflow_from_input( $IN ){
 		$cf = new CT1_Cashflow();
-		if ($cf->set_from_input( $IN ) )
+		if ($cf->set_from_input( $IN ) ){
 			$this->obj->add_cashflow( $cf );
+		}
 		return;
 	}
 
@@ -320,10 +323,12 @@ public function get_concept_label(){
 	 * @access private
 	 */
 	private function ignore_value( $_INPUT ){
-		if (!isset( $_INPUT['value'] ) )
+		if (!isset( $_INPUT['value'] ) ){
 			return true;
-		if (!is_numeric( $_INPUT['value'] ) )
+		}
+		if (!is_numeric( $_INPUT['value'] ) ){
 			return true;
+		}
 		return false;
 	}
 

@@ -3,7 +3,9 @@
 class CT1_Concept_Annuity extends CT1_Form{
 
 public function __construct(CT1_Object $obj=null){
-	if (null === $obj) $obj = new CT1_Annuity_Escalating();
+	if (null === $obj){
+		$obj = new CT1_Annuity_Escalating();
+	}
 	parent::__construct($obj);
 	$this->set_request( 'get_annuity_escalating' );
 }
