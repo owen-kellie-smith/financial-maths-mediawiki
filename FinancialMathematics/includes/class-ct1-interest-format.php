@@ -91,7 +91,9 @@ class CT1_Interest_Format extends CT1_Object{
 	public function set_m($m){
 	  $candidate = array('m'=>$m);
 	  $valid = $this->get_validation($candidate);
-		if ($valid['m']) $this->m = $m;
+		if ($valid['m']){
+			$this->m = $m;
+		}
 	}
 
 	public function get_advance(){
@@ -99,34 +101,43 @@ class CT1_Interest_Format extends CT1_Object{
 	}
  
 	protected function my_bool($b){
-		if ('on' == $b) 
-			return true;
-		if ('1' == $b) 
-			return true;
-		if (1 == $b) 
-			return true;
-		return false;
+		return ('on' == $b || '1' == $b || 1 == $b); 
 	}
 
 	public function set_advance($b){
-		if ('on' == $b) $b = true;
-		if ('1' == $b) $b = true;
-		if (1 == $b) $b = true;
-		if (is_bool($b)) $this->advance = $b;
+		if ('on' == $b || '1' == $b || 1 == $b){
+			$b = true;
+		}
+		if (is_bool($b)){
+			$this->advance = $b;
+		}
 	}
 
 	public function equals($f){
-		if(!($f instanceof CT1_Interest_Format))        return false;
-		if( $f->get_m()       != $this->get_m()       ) return false;
-		if( $f->get_advance() != $this->get_advance() ) return false;
+		if(!($f instanceof CT1_Interest_Format)){
+		        return false;
+		}
+		if( $f->get_m()       != $this->get_m()       ){
+			return false;
+		}
+		if( $f->get_advance() != $this->get_advance() ){
+			return false;
+		}
 		return true;
 	}
 
 	public function get_description(){
-		if ($this->is_continuous()) return self::myMessage( 'fm-interest-continuous');
-		if ($this->advance) $out =  self::myMessage( 'fm-discount-rate');
-		else $out = self::myMessage( 'fm-interest-rate');
-		if (1!=$this->m) $out.=" " . self::myMessage( 'fm-convertible'). " " . $this->m . self::myMessage( 'fm-times-per-year');
+		if ($this->is_continuous()){
+			return self::myMessage( 'fm-interest-continuous');
+		}
+		if ($this->advance){
+			$out =  self::myMessage( 'fm-discount-rate');
+		} else {
+			$out = self::myMessage( 'fm-interest-rate');
+		}
+		if (1!=$this->m){
+			$out.=" " . self::myMessage( 'fm-convertible'). " " . $this->m . self::myMessage( 'fm-times-per-year');
+		}
 		return $out;
 	}
 
@@ -135,11 +146,17 @@ class CT1_Interest_Format extends CT1_Object{
 	}
 
 	protected function label_interest_format(){
-		if ($this->is_continuous()) $return = "\\delta";
-		else{
-			if ($this->advance) $out="d";
-			else $out="i";
-			if (1!=$this->m) $out.="^{(" . $this->m . ")}";
+		if ($this->is_continuous()){
+			$return = "\\delta";
+		} else {
+			if ($this->advance){
+				$out="d";
+			} else {
+				$out="i";
+			}
+			if (1!=$this->m){
+				 $out.="^{(" . $this->m . ")}";
+			}
 			$return = $out;
 		}
 		return $return;
@@ -153,8 +170,7 @@ class CT1_Interest_Format extends CT1_Object{
 
 	protected function is_continuous(){
 		$m_continuous = 366;
-		if ($this->m > $m_continuous) return true;
-		return false;
+		return ($this->m > $m_continuous);
 	}
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
@@ -176,9 +192,3 @@ class CT1_Interest_Format extends CT1_Object{
 } // end of class
 
 
-//$ir = new CT1_Interest_Format();
-//$ir->set_advance(true);
-//$ir->set_advance(false);
-//	print_r( $ir->get_values() );
-//if(	$ir->get_advance() ) print_r( "true");
-//else print_r("false");

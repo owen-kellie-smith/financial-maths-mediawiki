@@ -58,19 +58,25 @@ public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1, $p
 public function set_principal($p){
   $candidate = array('principal'=>$p);
   $valid = $this->get_validation($candidate);
-	if ($valid['principal']) $this->principal = $p;
+	if ($valid['principal']){
+		$this->principal = $p;
+	}
 }
 
 public function set_instalment($i){
   $candidate = array('instalment'=>$i);
   $valid = $this->get_validation($candidate);
-	if ($valid['instalment']) $this->instalment = $i;
+	if ($valid['instalment']){ 
+		$this->instalment = $i;
+	}
 }
 
 public function set_schedule($i){
   $candidate = array('schedule'=>$i);
   $valid = $this->get_validation($candidate);
-	if ($valid['schedule']) $this->schedule = $i;
+	if ($valid['schedule']){
+		$this->schedule = $i;
+	}
 }
 
 public function get_schedule(){
@@ -112,20 +118,25 @@ public function get_instalment($rounding = 2){
 	}
 
 	public function get_value(){
-		if ( isset( $this->value ) )
+		if ( isset( $this->value ) ){
 			return $this->value;
-		else
+		} else {
 			return round( $this->get_annuity_certain() * $this->instalment_per_year(), 2 );
+		}
 	}
 
 
 private function instalment_per_year(){
-	if (0==$this->get_annuity_certain()) return NULL;
+	if (0==$this->get_annuity_certain()){
+		return NULL;
+	}
 	return $this->get_principal() / $this->get_annuity_certain();
 }
 
 private function instalment($rounding = 2){
-	if ($this->is_continuous()) throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-instalments'));
+	if ($this->is_continuous()){
+		throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-instalments'));
+	}
 	return round($this->instalment_per_year() / $this->get_m(), $rounding);
 }
 
@@ -177,15 +188,21 @@ private function format_number( $n, $rounding=2, $format=true){
 
 
 public function get_mortgage_schedule(){
-	if ($this->is_continuous()) throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-schedule'));
+	if ($this->is_continuous()){
+		throw new Exception(self::myMessage( 'fm-exception-continous-mortgage-schedule'));
+	}
 	$rounding = 2;
  	$_principal = $this->get_principal();
 	$_inst = $this->instalment($rounding);
 	for ($i = 1, $ii = $this->get_m() * $this->get_term(); $i <= $ii; $i++){
 		$oldPrincipal = $_principal;
-		if ($this->get_advance()) $_principal = $_principal - $_inst;
+		if ($this->get_advance()){
+			 $_principal = $_principal - $_inst;
+		}
 		$int = $this->interest_per_period() * $_principal;
-		if (!$this->get_advance()) $_principal = $_principal - $_inst;
+		if (!$this->get_advance()){
+			 $_principal = $_principal - $_inst;
+		}
 		$_principal = $_principal + $int;
 		$capRepay = $oldPrincipal - $_principal;
 		$schedule[$i] = array(	'count' =>$i, 
@@ -229,7 +246,3 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 }
 
 
-// example
-//$m = new CT1_Mortgage(4, true, 0.1, 10, 1000000);
-//print_r($m->get_labels());
-//print_r($m->explain_instalment());

@@ -109,7 +109,9 @@ public function get_source_rate(){
 public function set_source_rate($i){
   $candidate = array('source_rate'=>$i);
   $valid = $this->get_validation($candidate);
-	if ($valid['source_rate']) $this->source_rate=$i;
+	if ($valid['source_rate']){
+		$this->source_rate=$i;
+	}
 	if (is_object($this->get_source_format())){
 		if ($this->get_source_format() instanceof CT1_Interest_Format){
 			if ($this->get_source_format()->is_continuous()){
@@ -133,7 +135,9 @@ public function get_delta(){
 public function set_delta($d){
   $candidate = array('delta'=>$d);
   $valid = $this->get_validation($candidate);
-	if ($valid['delta']) $this->delta = $d;
+	if ($valid['delta']){
+		$this->delta = $d;
+	}
 }
 
 public function get_i_effective(){
@@ -143,17 +147,23 @@ public function get_i_effective(){
 public function set_i_effective($i){
   $candidate = array('i_effective'=>$i);
   $valid = $this->get_validation($candidate);
-	if ($valid['i_effective']) $this->set_delta(log(1+$i));
+	if ($valid['i_effective']){
+		$this->set_delta(log(1+$i));
+	}
 }
 
 public function get_rate_in_form($f){
-	if ($f->is_continuous()) return $this->delta; 
-	else{
+	if ($f->is_continuous()){
+		return $this->delta; 
+	} else {
 		$i_m = $f->get_m() * (      exp($this->get_delta() /  $f->get_m()) - 1 );
 		$d_m = $f->get_m() * ( 1 -  exp($this->get_delta() / -$f->get_m())     );
 	}
-	if ($f->get_advance())	return $d_m;
-	else	return $i_m;
+	if ($f->get_advance()){
+		return $d_m;
+	} else {
+		return $i_m;
+	}
 }
 
 public function explain_rate_in_form($f){
