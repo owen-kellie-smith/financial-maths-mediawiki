@@ -82,12 +82,14 @@ class CT1_Annuity extends CT1_Interest{
 
 	private function is_valid_term_vs_frequency( $n ){
 		// valid if continuous or $n * m integer
-		if ( $this->is_continuous() ) 
+		if ( $this->is_continuous() ){ 
 			return true;
+		}
 		$close_enough = 0.00001;
 		$trial = $n * $this->get_m();
-		if ( $close_enough > abs( intval( $trial ) - $trial ) ) 
+		if ( $close_enough > abs( intval( $trial ) - $trial ) ){ 
 			return true;
+		}
 		return false;
 	}
 
@@ -96,10 +98,11 @@ class CT1_Annuity extends CT1_Interest{
 	}
 
 	public function get_value(){
-		if ( isset( $this->value ) )
+		if ( isset( $this->value ) ){
 			return $this->value;
-		else
+		} else {
 			return $this->get_annuity_certain();
+		}
 	}
 
 	public function get_annuity_certain_approx(){
@@ -169,7 +172,9 @@ class CT1_Annuity extends CT1_Interest{
 	}
  
 	public function get_annuity_certain(){
-		if (0==$this->get_delta()) return $this->get_term();
+		if (0==$this->get_delta()){
+			return $this->get_term();
+		}
 		$vn = exp($this->delta * -$this->term);
 		return (1 - $vn) / $this->get_rate_in_form($this);
 	}
@@ -249,11 +254,17 @@ class CT1_Annuity extends CT1_Interest{
 	}
 
 	protected function label_annuity(){
-		if ($this->is_continuous()) $return = "\\bar{a}";
-		else{
-			if ($this->advance) $out="\\ddot{a}";
-			else $out="a";
-			if (1!=$this->m) $out.="^{(" . $this->m . ")}";
+		if ($this->is_continuous()){
+			$return = "\\bar{a}";
+		} else {
+			if ($this->advance){
+				$out="\\ddot{a}";
+			} else {
+				$out="a";
+			}
+			if (1!=$this->m){
+				$out.="^{(" . $this->m . ")}";
+			}
 			$return = $out;
 		}
 		$return .= $this->sub_n();
