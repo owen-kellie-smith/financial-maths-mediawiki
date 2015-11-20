@@ -2,20 +2,20 @@
 
 
 /**
- * CT1_Concept_Spot_Rates class
+ * FinMathConceptSpotRates class
  *
  * Provides input/output for spot rates
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class CT1_Concept_Spot_Rates extends CT1_Form{
+class FinMathConceptSpotRates extends CT1_Form{
 
 	/**
 	 * Constructor
 	 *
 	 * @param CT1_Object $obj 
-	 * @return CT1_Concept_Spot_Rates
+	 * @return FinMathConceptSpotRates
 	 *
 	 * @access public
 	 */

@@ -1,7 +1,7 @@
 <?php
 
 
-class CT1_Concept_Mortgage extends CT1_Form{
+class FinMathConceptMortgage extends CT1_Form{
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj){

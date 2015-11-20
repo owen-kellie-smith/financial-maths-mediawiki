@@ -21,10 +21,10 @@ protected static function myMessage( $messageKey){
 		return array( 
 				new CT1_Concept_Interest(),
 				new CT1_Concept_Annuity(), 
-				new CT1_Concept_Mortgage(), 
+				new FinMathConceptMortgage(), 
 				new CT1_Concept_Annuity_Increasing(), 
 				new CT1_Concept_Cashflows(),
-				new CT1_Concept_Spot_Rates(),
+				new FinMathConceptSpotRates(),
 				new CT1_Form_XML(),
 				 );
 	}
