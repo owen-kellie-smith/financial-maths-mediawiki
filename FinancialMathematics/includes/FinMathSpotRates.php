@@ -85,6 +85,8 @@ protected $explanation_par_yields;
 			$key_par = array_keys( $pars );
 		}
 		for ($i = 0, $ii = $this->get_count(); $i < $ii; $i++) {
+			$f = null;
+			$p = null;
 			$row = array(); $objects = array();
 			$s = $spots[ $key_spot[ $i ] ];
 			$row[0] = $s->get_label();
@@ -110,6 +112,7 @@ protected $explanation_par_yields;
 
 
 	public function get_forward_rates(){
+		$f = null;
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
 		$fs = new FinMathForwardRates();
@@ -228,6 +231,7 @@ protected $explanation_par_yields;
 					if( is_array($i) ){
 						$c = new FinMathSpotRate( exp( $i['delta'] ) - 1 , $i['effective_time'] );
 						$c_new->add_object( $c );
+						$c = null;
 					}
 				}
 				$this->set_objects( $c_new->get_objects() );

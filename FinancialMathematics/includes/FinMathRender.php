@@ -211,6 +211,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 					$new_detail = $this->get_a_layer_of_equation_detail( $output, $newline );
 					$output['detail'] = $new_detail['detail'];
 					$out .= $new_detail['out_new'];
+					$new_detail = null;
 				}
 			}
 			$out .= $_nl . "\\end{align} " . $_nl . $_nl;
@@ -275,7 +276,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 				$temp[$key] = $return[$key];
 			}
 		}
-		$return = $temp;
+		$return = $temp; $temp=null;
 			$form = new HTML_QuickForm2($return['name'],$return['method'], $return['action']);
 			$fieldset = $form->addElement('fieldset');
 			$calculator = $fieldset->addSelect( $return['select-name'] )
@@ -286,8 +287,11 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 				$temp_page_id = $return['page_id'];
 			}
 			$fieldset->addElement('hidden', 'page_id')->setValue($temp_page_id);
+			$temp_page_id= null;
 			$fieldset->addElement('submit', null, array('value' => $return['submit']));
 			$out.= $form;
+			$form = null;
+			$fieldset = null;
 		return $out;
 	}
 
@@ -450,6 +454,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	$ret_out = array();
 	$ret_out['detail'] = array();
 	foreach ($output['detail'] as $e) {
+		$sub_output = null;
 		if ( $this->is_sentence( $e['equation'] ) ) {
 			$sub_output = $this->get_render_latex_sentence( $e['equation'], $e['label'] , $newline);
 			$out .= " \\\\" . $_nl; // close off the last line
@@ -551,6 +556,9 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 		if (count($return['parameters']) > 0){
 			$fieldset = $form->addElement('fieldset');
 			foreach(array_keys($return['parameters']) as $key){
+				$parameter = null;
+				$valid_option=null;
+				$input_type=null;
 				if (isset($return['exclude'])){
 				  if (!in_array($key, $return['exclude'])){
 					$parameter = $return['parameters'][$key];
@@ -610,72 +618,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 		}
 	}
 
-/*
-private function add_hidden_fields( &$fieldset, FinMathCollection $cf ){
-	$collection_name = get_class( $cf );
-	$hidden = $cf->get_values_as_array(  $collection_name );
-	$this->add_hidden_fields_to_fieldset( $fieldset, $hidden );
-	
-}
-*/
 
-/*
-private function get_form_cashflow( FinMathCashflows $cf, $submit = 'Submit', $intro = "" ){
-	$render = new FinMathRender();
-	return $render->get_form_collection( $cf, $submit, $intro, 'view_cashflows');
-}
-*/
-
-/*
-private function test_popup(){
-    return $this->get_popup_head() . '<A HREF="' . $this->get_popup_latex("a fraction $$ <a href=''>\\frac{1}{2}</a>$$ and Some text linking to <a href='http://www.bbc.co.uk'>bbc</a> and a fraction <a href='http://cnn.com'>$$ \\frac{1}{2}$$</a> that links to cnn") . '" onClick="return popup(this, ' . "'stevie'" .')">my popup</A>';
-}
-
-private function get_popup_head(){
-    // source: http://www.htmlcodetutorial.com/linking/popup_test_a.html
-    return '<SCRIPT TYPE="text/javascript">
-        <!--
-        function popup(mylink, windowname)
-        {
-            if (! window.focus){
-		return true;
-	    }
-            var href;
-            if (typeof(mylink) == "string"){
-                href=mylink;
-	    } else {
-                href=mylink.href;
-	    }
-            window.open(href, windowname, "width=400,height=200,scrollbars=yes");
-            return false;
-        }
-        //-->
-        </SCRIPT>
-';
-}
-*/
-/*
-private function get_popup($string){
-    return $this->get_data_uri($string);
-}
-
-private function get_data_uri($string){
-// source: http://davidwalsh.name/data-uri-php
-    return 'data: text/html;base64,'.base64_encode($string);
-}
-
-private function get_popup_latex($string){
-    $page = "<html>" . "\r\n";
-    $page.= "<head>" . "\r\n";
-    $page.= $this->get_mathjax_header();
-    $page.= "</head>" . "\r\n";
-    $page.= "<body>" . "\r\n";
-    $page.= $string . "\r\n";
-    $page.= "</body>" . "\r\n";
-    $page.= "</html>" . "\r\n";    
-    return $this->get_data_uri($page);
-}
-*/
 
 
 } // end of class

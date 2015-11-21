@@ -141,6 +141,7 @@ private function set_referred_obj($_INPUT = array()){
             }
             $subnode = $xml_data->addChild($key);
             $this->array_to_xml($value, $subnode);
+	    $subnode = null;
         } else {
             $xml_data->addChild("$key",htmlspecialchars("$value"));
         }

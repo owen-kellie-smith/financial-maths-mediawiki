@@ -75,6 +75,8 @@ public function get_unrendered_delete_buttons( $request = ""){
 					),
 				);
 				$out[] = $button;
+				$clone = null;
+				$button = null;
 			}
 		}
 	}
