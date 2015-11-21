@@ -266,9 +266,3 @@ class FinMathAnnuityEscalating extends FinMathAnnuity{
 
 }
 
-// example 
-//$a = new FinMathAnnuityEscalating(998, true, 0.1, 13, 1, 0.1);
-//print_r($a->get_values());
-//print_r($a->get_annuity_certain());
-//print_r($a->explain_annuity_certain());
-

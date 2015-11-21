@@ -270,9 +270,3 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 
 } // end of class FinMathInterest
 
-// example
-//$s = new FinMathInterest(1,false,0.06);
-//$f = new FinMathInterestFormat(1,true);
-//$f = new FinMathInterestFormat(12,true);
-//$f = new FinMathInterestFormat(4,false);
-//print_r($s->explain_rate_in_form($f));

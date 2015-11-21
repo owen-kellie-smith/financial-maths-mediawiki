@@ -242,10 +242,3 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 
 }
 
-// example 
-/*
-$a = new FinMathAnnuityIncreasing(1999, false, 0.1, 13, false);
-print_r($a->get_labels());
-print_r($a->get_annuity_certain());
-print_r($a->explain_annuity_certain());
-*/

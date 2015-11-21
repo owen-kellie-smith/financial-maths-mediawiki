@@ -68,11 +68,4 @@ class FinMathSingleCashflow extends FinMathAnnuity{
 
 }
 
-// example 
-//$a = new FinMathAnnuity(12, true, 0.1, 12);
-//$a->set_value(11.234567890123456789);
-//print_r($a->get_values());
-//print_r($a->get_delta_for_value());
-//$a->set_delta( $a->get_delta_for_value() );
-//print_r($a->explain_interest_rate_for_value());
 
