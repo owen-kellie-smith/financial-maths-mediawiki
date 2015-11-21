@@ -1,6 +1,6 @@
 <?php   
 
-abstract class CT1_Collection extends CT1_Object {
+abstract class FinMathCollection extends CT1_Object {
 
 	protected $objects;
 	protected $class; // read-only, set by first object;

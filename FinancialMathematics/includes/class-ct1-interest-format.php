@@ -1,13 +1,13 @@
 <?php   
 /**
- * CT1_Interest_Format class
+ * FinMathInterestFormat class
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
 
 
-class CT1_Interest_Format extends CT1_Object{
+class FinMathInterestFormat extends CT1_Object{
 
     /**
      * Frequency (instalments per year)
@@ -114,7 +114,7 @@ class CT1_Interest_Format extends CT1_Object{
 	}
 
 	public function equals($f){
-		if(!($f instanceof CT1_Interest_Format)){
+		if(!($f instanceof FinMathInterestFormat)){
 		        return false;
 		}
 		if( $f->get_m()       != $this->get_m()       ){
@@ -164,7 +164,7 @@ class CT1_Interest_Format extends CT1_Object{
 
 	public function get_labels(){
 		$labels = parent::get_labels();
-		$labels['CT1_Interest_Format'] = $this->label_interest_format();
+		$labels['FinMathInterestFormat'] = $this->label_interest_format();
 		return $labels;
 	}
 

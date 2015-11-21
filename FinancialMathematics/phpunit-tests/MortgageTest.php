@@ -1,6 +1,6 @@
 <?php
 
-class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
+class FinMathMortgage_Test extends PHPUnit_Framework_TestCase
 {
   private $debug = false;
   private $schedule;
@@ -8,7 +8,7 @@ class CT1_Mortgage_Test extends PHPUnit_Framework_TestCase
   private $neg = 0.00001;
   
   public function setup(){
-    $this->mcalc = new CT1_Mortgage(12, true, log(1.06), 10, 1000000);
+    $this->mcalc = new FinMathMortgage(12, true, log(1.06), 10, 1000000);
     $this->schedule = $this->scal();
   }
   public function tearDown(){}

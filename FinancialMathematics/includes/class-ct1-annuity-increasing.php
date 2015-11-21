@@ -120,11 +120,11 @@ class FinMathAnnuityIncreasing extends CT1_Annuity{
 	}
 
 	private function i_flat(){
-		return  new CT1_Interest( $this->get_m(), $this->get_advance(), $this->get_delta() );
+		return  new FinMathInterest( $this->get_m(), $this->get_advance(), $this->get_delta() );
 	}
 
 	private function i_arr(){
-		return  new CT1_Interest( 1, false, $this->get_delta() );
+		return  new FinMathInterest( 1, false, $this->get_delta() );
 	}
 
 	private function a_n_due(){

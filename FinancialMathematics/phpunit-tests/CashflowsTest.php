@@ -127,10 +127,10 @@ class FinMathCashflows_Test extends PHPUnit_Framework_TestCase
 
   public function test_input_XML_cashflows()
   {
-	  $x = new CT1_Form_XML();
+	  $x = new FinMathFormXML();
 		$x->set_text( array( 'request'=>'value_cashflows',  'FinMathCashflows'=>array('item0'=>array('m'=>1, 'advance'=>1, 'delta'=>0, 'i_effective'=>0, 'term'=>1,'value'=>1, 'rate_per_year'=>999,'effective_time'=>1) ) ) );
 		$c = $x->get_calculator( array());
-		$expected="\n<dummy_tag_set_in_CT1_Form_XML><parameters><request>value_cashflows</request><FinMathCashflows><item0><m>1</m><advance>1</advance><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>999</rate_per_year><effective_time>1</effective_time></item0></FinMathCashflows></parameters></dummy_tag_set_in_CT1_Form_XML>\n";
+		$expected="\n<dummy_tag_set_in_FinMathFormXML><parameters><request>value_cashflows</request><FinMathCashflows><item0><m>1</m><advance>1</advance><delta>0</delta><i_effective>0</i_effective><term>1</term><value>1</value><rate_per_year>999</rate_per_year><effective_time>1</effective_time></item0></FinMathCashflows></parameters></dummy_tag_set_in_FinMathFormXML>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 

@@ -6,7 +6,7 @@
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class FinMathConceptAll extends CT1_Form{
+class FinMathConceptAll extends FinMathForm{
 
 	private $concepts;
 
@@ -50,7 +50,7 @@ class FinMathConceptAll extends CT1_Form{
 	public function get_controller($_INPUT ){
     $return = $this->get_controller_no_xml($_INPUT );
 		if (isset($return['output']['unrendered']['summary'])){
-			$c = new CT1_Form_XML();
+			$c = new FinMathFormXML();
 			$c->setTagName( $this->getTagName() );
 			$temp = $c->get_controller( $_INPUT ); // recursive but only once 
 		  if (isset($temp['output']['unrendered'])){

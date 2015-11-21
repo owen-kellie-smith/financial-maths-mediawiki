@@ -9,7 +9,7 @@
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class FinMathConceptCashflows extends CT1_Form{
+class FinMathConceptCashflows extends FinMathForm{
 
 	/**
 	 * Constructor

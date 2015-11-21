@@ -1,9 +1,9 @@
 <?php   
 
-class FinMathForwardRates extends CT1_Collection {
+class FinMathForwardRates extends FinMathCollection {
 
 	protected function is_acceptable_class( $c ){
-		return ( 'CT1_Forward_Rate' == get_class( $c ) );
+		return ( 'FinMathForwardRate' == get_class( $c ) );
 	}
 
 }

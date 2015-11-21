@@ -1,7 +1,7 @@
 <?php   
 
 
-class CT1_Interest extends CT1_Interest_Format  {
+class FinMathInterest extends FinMathInterestFormat  {
 
 protected $delta_source;
 protected $source_format;
@@ -88,7 +88,7 @@ public function get_source_format(){
 }
 
 public function set_source_format($m, $advance){
-  $this->source_format = new CT1_Interest_Format( $m, $advance );	
+  $this->source_format = new FinMathInterestFormat( $m, $advance );	
 	$i = $this->get_source_rate();
 			if ($this->get_source_format()->is_continuous()){
 				$delta = $i;
@@ -113,7 +113,7 @@ public function set_source_rate($i){
 		$this->source_rate=$i;
 	}
 	if (is_object($this->get_source_format())){
-		if ($this->get_source_format() instanceof CT1_Interest_Format){
+		if ($this->get_source_format() instanceof FinMathInterestFormat){
 			if ($this->get_source_format()->is_continuous()){
 				$delta = $i;
 			} else {
@@ -245,11 +245,11 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 }
 
 
-} // end of class CT1_Interest
+} // end of class FinMathInterest
 
 // example
-//$s = new CT1_Interest(1,false,0.06);
-//$f = new CT1_Interest_Format(1,true);
-//$f = new CT1_Interest_Format(12,true);
-//$f = new CT1_Interest_Format(4,false);
+//$s = new FinMathInterest(1,false,0.06);
+//$f = new FinMathInterestFormat(1,true);
+//$f = new FinMathInterestFormat(12,true);
+//$f = new FinMathInterestFormat(4,false);
 //print_r($s->explain_rate_in_form($f));

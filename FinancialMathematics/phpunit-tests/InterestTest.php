@@ -1,6 +1,6 @@
 <?php
 
-class CT1_Interest_Test extends PHPUnit_Framework_TestCase
+class FinMathInterest_Test extends PHPUnit_Framework_TestCase
 {
   private $debug=false;
   private $icalc;
@@ -10,8 +10,8 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   
   public function setup(){
-    $this->icalc = new CT1_Interest(1, false, log(1.06));
-    $this->f = new CT1_Interest_Format();
+    $this->icalc = new FinMathInterest(1, false, log(1.06));
+    $this->f = new FinMathInterestFormat();
     $this->f->set_m(2);
     $this->f->set_advance(true);
   }
@@ -42,7 +42,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_equals()
   {
-    $t = new CT1_Interest_Format(2, true);
+    $t = new FinMathInterestFormat(2, true);
     $this->assertTrue( $this->f->equals($t) );
     $t->set_m(4);
     $this->assertFalse( $this->f->equals($t) );
@@ -52,7 +52,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_iconverti()
   {
-    $f = new CT1_Interest_Format();
+    $f = new FinMathInterestFormat();
     $f->set_m(12);
     $f->set_advance(false);
     $this->assertTrue( abs($this->icalc->get_rate_in_form($f)-  0.058411) < 0.000001);
@@ -61,7 +61,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_iconvertd()
   {
-    $t = new CT1_Interest_Format();
+    $t = new FinMathInterestFormat();
     $t->set_m(12);
     $t->set_advance(true);
     if ($this->debug) $this->assertEquals( $this->icalc->get_rate_in_form($t), 0.06 / 1.032211);
@@ -72,7 +72,7 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_iconvertdel()
   {
-    $t = new CT1_Interest_Format();
+    $t = new FinMathInterestFormat();
     $t->set_m(367); // anything greater than 366 is treated as continuous
     $t->set_advance(true);
     $this->assertTrue( abs($this->icalc->get_rate_in_form($t)-  0.058269) < 0.000001);
@@ -215,19 +215,19 @@ class CT1_Interest_Test extends PHPUnit_Framework_TestCase
 
   public function test_full_input_XML()
   {
-	  $x = new CT1_Form_XML();
+	  $x = new FinMathFormXML();
 		$x->set_text( array( 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="\n<dummy_tag_set_in_CT1_Form_XML><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag_set_in_CT1_Form_XML>\n";
+		$expected="\n<dummy_tag_set_in_FinMathFormXML><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag_set_in_FinMathFormXML>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 
   public function test_XS_input_XML()
   {
-	  $x = new CT1_Form_XML();
+	  $x = new FinMathFormXML();
 		$x->set_text( array( 'title'=>'a page title', 'request'=>'get_interest','m'=>1,'advance'=>1,'i_effective'=>0.1) );
 		$c = $x->get_calculator( array());
-		$expected="\n<dummy_tag_set_in_CT1_Form_XML><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag_set_in_CT1_Form_XML>\n";
+		$expected="\n<dummy_tag_set_in_FinMathFormXML><parameters><request>get_interest</request><m>1</m><advance>1</advance><i_effective>0.1</i_effective></parameters></dummy_tag_set_in_FinMathFormXML>\n";
 		$this->assertEquals( $expected, $c['values']['xml'] ) ;
   }  
 

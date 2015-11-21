@@ -90,7 +90,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 
 	private function is_valid_escalation_frequency( $f ){
 		// valid if continuous or $f/m integer or m/$f integer
-		$escalation_format = new CT1_Interest_Format( $f );
+		$escalation_format = new FinMathInterestFormat( $f );
 		if ( $escalation_format->is_continuous() ){ 
 			return true;
 		}
@@ -111,7 +111,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 	}
 
 	public function get_annuity_certain(){
-		$escalation_format = new CT1_Interest_Format( $this->get_escalation_frequency() );
+		$escalation_format = new FinMathInterestFormat( $this->get_escalation_frequency() );
 		if ( $escalation_format->is_continuous() || $this->get_escalation_frequency() >= $this->get_m() ){ 
 			return $this->get_annuity_certain_escalation_continual();
 		} else {
@@ -199,7 +199,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 
 
 	public function explain_annuity_certain(){
-		$escalation_format = new CT1_Interest_Format( $this->get_escalation_frequency() );
+		$escalation_format = new FinMathInterestFormat( $this->get_escalation_frequency() );
 		if ( $escalation_format->is_continuous() || $this->get_escalation_frequency() >= $this->get_m() ){ 
 			return $this->explain_annuity_certain_escalation_continual();
 		} else {

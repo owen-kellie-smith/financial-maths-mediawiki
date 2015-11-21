@@ -96,7 +96,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	private function get_render_rate_table( $rates, $hidden, $link='' ){
 		$link .=  $this->get_link($hidden);
 		for ( $i = 0, $ii = count( $rates['data'] ); $i < $ii; $i++ ){
-			$f = $rates['objects'][$i]['CT1_Forward_Rate'];
+			$f = $rates['objects'][$i]['FinMathForwardRate'];
 			$p = null;
 			if (isset($rates['objects'][$i]['FinMathParYield'])){
 				$p = $rates['objects'][$i]['FinMathParYield'];
@@ -134,7 +134,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	/**
 	 * Get rendering of form as string.  Form includes as hidden fields all the features of a collection
 	 *
-	 * @param CT1_Collection $cf collection of objects
+	 * @param FinMathCollection $cf collection of objects
 	 * @param string $submit text of submit button
 	 * @param string $intro text of sentence (if any) to put at top of form.
 	 * @param string $request value to include as hidden field of form (which passes form's main commend)
@@ -142,7 +142,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	 *
 	 * @access private
 	 */
-	private function get_form_collection( CT1_Collection $cf, $submit = 'Submit', $intro = "" , $request = "", $pageid=""){
+	private function get_form_collection( FinMathCollection $cf, $submit = 'Submit', $intro = "" , $request = "", $pageid=""){
 		$out = "";
 		if ( !empty( $intro ) ){
 			$out.= "<p>" . $intro . "</p>" . "\r\n";
@@ -280,13 +280,13 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	/**
 	 * Get anchor to detailed forward rate calculation
 	 *
-	 * @param CT1_Forward_Rate $f
+	 * @param FinMathForwardRate $f
 	 * @param string $page_link
 	 * @return string
 	 *
 	 * @access private
 	 */
-	private function get_anchor_forward( CT1_Forward_Rate $f, $page_link ){
+	private function get_anchor_forward( FinMathForwardRate $f, $page_link ){
 		return "<a href='" . $page_link . "&request=explain_forward&forward_start_time=" . $f->get_start_time() . "&forward_end_time=" . $f->get_end_time() . "'>" . $f->get_i_effective() . "</a>";
 	}
 
@@ -588,7 +588,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 	}
 
 /*
-private function add_hidden_fields( &$fieldset, CT1_Collection $cf ){
+private function add_hidden_fields( &$fieldset, FinMathCollection $cf ){
 	$collection_name = get_class( $cf );
 	$hidden = $cf->get_values_as_array(  $collection_name );
 	$this->add_hidden_fields_to_fieldset( $fieldset, $hidden );

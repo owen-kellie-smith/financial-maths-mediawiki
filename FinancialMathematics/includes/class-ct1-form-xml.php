@@ -1,10 +1,10 @@
 <?php
 
 
-class CT1_Form_XML extends CT1_Form{
+class FinMathFormXML extends FinMathForm{
 
 private $referred_obj;
-private $tag_name="dummy_tag_set_in_CT1_Form_XML";
+private $tag_name="dummy_tag_set_in_FinMathFormXML";
 
 public function getTagName(){
 		return $this->tag_name;

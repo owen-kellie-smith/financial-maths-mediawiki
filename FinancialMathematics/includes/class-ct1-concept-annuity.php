@@ -1,6 +1,6 @@
 <?php
 
-class FinMathConceptAnnuity extends CT1_Form{
+class FinMathConceptAnnuity extends FinMathForm{
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj){

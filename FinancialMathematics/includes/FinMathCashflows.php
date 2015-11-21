@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathCashflows extends CT1_Collection {
+class FinMathCashflows extends FinMathCollection {
 
 	private $value;
 	protected $max_dp = 2;
@@ -39,7 +39,7 @@ class FinMathCashflows extends CT1_Collection {
 	}
 
 	public function explain_interest_rate_for_value( $v = 0, $with_detail = true ){
-		$i = new CT1_Interest();
+		$i = new FinMathInterest();
 		$return = array();
 		$a_calc = $this->get_clone_this();
 		$delta = $this->get_delta_for_value( $v );

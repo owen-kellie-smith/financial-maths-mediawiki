@@ -1,6 +1,6 @@
 <?php   
 
-class CT1_Annuity extends CT1_Interest{
+class CT1_Annuity extends FinMathInterest{
 
 	protected $term;
 	protected $value;

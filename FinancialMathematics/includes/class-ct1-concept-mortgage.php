@@ -1,11 +1,11 @@
 <?php
 
 
-class FinMathConceptMortgage extends CT1_Form{
+class FinMathConceptMortgage extends FinMathForm{
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj){
-		$obj = new CT1_Mortgage();
+		$obj = new FinMathMortgage();
 	}
 	parent::__construct($obj);
 	$this->set_request( 'get_mortgage_instalment' );

@@ -1,7 +1,7 @@
 <?php   
 
 
-class CT1_Mortgage extends CT1_Annuity{
+class FinMathMortgage extends CT1_Annuity{
 
 protected $principal;
 protected $instalment;
@@ -51,7 +51,7 @@ public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1, $p
 }
 
 	protected function get_clone_this(){
-		$a_calc = new CT1_Mortgage( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term(), $this->get_principal() );
+		$a_calc = new FinMathMortgage( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term(), $this->get_principal() );
 		return $a_calc;
 	}
 
@@ -240,7 +240,7 @@ public function set_from_input($_INPUT = array(), $pre = ''){
 
 	public function get_labels(){
 		$labels = parent::get_labels();
-		$labels['CT1_Mortgage'] = $this->label_mortgage();
+		$labels['FinMathMortgage'] = $this->label_mortgage();
 		return $labels;
 	}
 }

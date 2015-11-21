@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathSpotRates extends CT1_Collection {
+class FinMathSpotRates extends FinMathCollection {
 
 protected $explanation_forward_rates;
 protected $explanation_par_yields;
@@ -41,7 +41,7 @@ protected $explanation_par_yields;
 		return $this->explanation_par_yields[ $f->get_term() ];
 	}
 
-	public function explain_forward_rate( CT1_Forward_Rate $f ){
+	public function explain_forward_rate( FinMathForwardRate $f ){
 		if ( !$this->get_forward_rates()->is_in_collection( $f ) ){
 			throw new Exception( __FILE__ .  self::myMessage( 'fm-error-explain-forward', $f )  );
 		}
@@ -94,7 +94,7 @@ protected $explanation_par_yields;
 			$end = $terms[ $i ]; 	
 			if ( 0 == $i ){
 				$start = 0; $i = $spot_rates[ $end ]->get_i_effective();	
-				$f = new CT1_Forward_Rate( $i, $start, $end );
+				$f = new FinMathForwardRate( $i, $start, $end );
 				$explanation_algebra = $spot_rates[ $end ]->get_label();
 				$exp[0]['right'] = $explanation_algebra;
 				$exp[1]['right'] = $f->get_i_effective();
@@ -102,7 +102,7 @@ protected $explanation_par_yields;
 				$start = $terms[ $i - 1 ]; 
 				$phi = $spot_rates[ $end ]->get_delta() * $end - $spot_rates[ $start ]->get_delta() * $start;	
 				$phi = $phi / ( $end - $start );
-				$f = new CT1_Forward_Rate( exp( $phi ) - 1, $start, $end );
+				$f = new FinMathForwardRate( exp( $phi ) - 1, $start, $end );
 				$explanation_top = "\\left( 1 + " . $spot_rates[ $end ]->get_label() .  " \\right)^{" . $end . "}";
 				$explanation_top_n = (1 + $spot_rates[ $end ]->get_i_effective() ) . "^{" . $end . "}";
 				$explanation_bot = "\\left( 1 + " . $spot_rates[ $start ]->get_label() . " \\right)^{" . $start . "}";

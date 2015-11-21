@@ -1,6 +1,6 @@
 <?php   
 
-abstract class CT1_Form implements CT1_Concept {
+abstract class FinMathForm implements CT1_Concept {
 
 protected $obj;
 protected $request;
@@ -25,14 +25,14 @@ protected static function myMessage( $messageKey){
 				new FinMathConceptAnnuityIncreasing(), 
 				new FinMathConceptCashflows(),
 				new FinMathConceptSpotRates(),
-				new CT1_Form_XML(),
+				new FinMathFormXML(),
 				 );
 	}
 
 
 public function get_unrendered_delete_buttons( $request = ""){
 	$out = array();
-	if ( $this->obj instanceof CT1_Collection ){
+	if ( $this->obj instanceof FinMathCollection ){
 		if ( $this->obj->get_count() > 0 ){
 			$cfs = $this->obj->get_objects();
 			foreach ( $this->obj->get_objects() as $o ) {

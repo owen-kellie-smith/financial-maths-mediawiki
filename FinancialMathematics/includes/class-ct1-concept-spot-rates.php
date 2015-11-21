@@ -9,7 +9,7 @@
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class FinMathConceptSpotRates extends CT1_Form{
+class FinMathConceptSpotRates extends FinMathForm{
 
 	/**
 	 * Constructor
@@ -172,13 +172,13 @@ public function get_concept_label(){
 	/**
 	 * Get anchor to detailed forward rate calculation
 	 *
-	 * @param CT1_Forward_Rate $f
+	 * @param FinMathForwardRate $f
 	 * @param string $page_link
 	 * @return string
 	 *
 	 * @access public
 	 */
-	private function get_anchor_forward( CT1_Forward_Rate $f, $page_link ){
+	private function get_anchor_forward( FinMathForwardRate $f, $page_link ){
 		return "<a href='" . $page_link . "&request=explain_forward&forward_start_time=" . $f->get_start_time() . "&forward_end_time=" . $f->get_end_time() . "'>" . $f->get_i_effective() . "</a>";
 	}
 

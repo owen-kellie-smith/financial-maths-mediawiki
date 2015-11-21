@@ -1,10 +1,10 @@
 <?php
 
-class FinMathConceptInterest extends CT1_Form{
+class FinMathConceptInterest extends FinMathForm{
 
 public function __construct(CT1_Object $obj=null){
 	if (null === $obj){
-		$obj = new CT1_Interest();
+		$obj = new FinMathInterest();
 	}
 	parent::__construct($obj);
 	$this->set_request( 'get_interest' );
