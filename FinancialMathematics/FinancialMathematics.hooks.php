@@ -44,6 +44,14 @@ class FinancialMathematicsHooks {
 		return true;
 	}
 
+	/**
+	 * The function called when a fin-math tag occurs
+	 *
+	 *
+	 * @param  input Text in between <fin-math> and </fin-math>
+	 * @param  parser (effectively the page)
+	 * @return string
+	 */
 	public static function fmRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 		$parser->getOutput()->addModules( 'ext.FinancialMathematics' );
 		// from http://webmasters.stackexchange.com/questions/86365/how-to-add-a-page-to-a-category-in-mediawiki-from-a-tag-extension
@@ -98,14 +106,6 @@ class FinancialMathematicsHooks {
 			}
 			if (isset($res['schedule'])){
             $_out .=  $res['schedule'] ;
-			}
-			if (isset($res['table'])){
-//            $out->addHTML( $res['table'] );
-			}
-			if (isset($res['forms'])){
-				foreach ($res['forms'] AS $_f){
-//						$out->addHTML( $_f ); 
-				}
 			}
 
 		} // if (isset($result['warning']))
