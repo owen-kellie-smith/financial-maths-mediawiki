@@ -25,7 +25,8 @@
 
 class FinMathAnnuityIncreasing extends FinMathAnnuity{
 // returns value of (Ia)n or (Da)n
-// i.e. annuity paying 1, 2, 3...n-2, n-1, n   or n, n-1, n-2, ... 1 @ times 1, 2, 3, .. n (if in arrears)
+// i.e. annuity paying 1, 2, 3...n-2, n-1, n   
+// or n, n-1, n-2, ... 1 @ times 1, 2, 3, .. n (if in arrears)
 
 	protected $increasing;
 
@@ -39,10 +40,9 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 	public function get_parameters(){ 
 		$r = parent::get_parameters();
 		$r['term']['label'] = self::myMessage( 'fm-label-term-whole') ;
-		$r['increasing'] = array(
-			'name'=>'increasing',
+		$r['increasing'] = array( 'name'=>'increasing',
 			'label'=>self::myMessage( 'fm-label-increasing'),
-			);
+		);
 		return $r; 
 	}
 
@@ -52,7 +52,12 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 		return $r; 
 	}
 
-	public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1, $increasing = true ){
+	public function __construct( $m = 1, 
+		$advance = false, 
+		$delta = 0, 
+		$term = 1, 
+		$increasing = true 
+	){
 		parent::__construct( $m, $advance, $delta, $term );
 		$this->set_increasing( $increasing );
 	}
@@ -62,7 +67,8 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 			$this->get_advance(),
 			$this->get_delta(),
 			$this->get_term(),
-			$this->get_increasing() );
+			$this->get_increasing() 
+		);
 		return $a;
 	}
 
@@ -91,17 +97,20 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 	}
 
 	private function get_a_flat(){
-		return $this->get_rate_in_form( $this->i_arr() ) / $this->get_rate_in_form( $this->i_flat() );
+		return $this->get_rate_in_form( $this->i_arr() ) / 
+			$this->get_rate_in_form( $this->i_flat() );
 	}
 
 	private function explain_a_flat(){
-		return "\\frac{ " . $this->i_arr()->label_interest_format()  . "}{" . $this->i_flat()->label_interest_format()  . "}";
+		return "\\frac{ " . $this->i_arr()->label_interest_format()  . 
+			"}{" . $this->i_flat()->label_interest_format()  . "}";
 	}
 	
 	private function explain_a_flat_numbers(){
-		return "\\frac{ " . $this->explain_format( $this->get_rate_in_form( $this->i_arr() ) ) . "}{" . $this->explain_format( $this->get_rate_in_form( $this->i_flat() ) )  . "}";
+		return "\\frac{ " . 
+			$this->explain_format( $this->get_rate_in_form( $this->i_arr() ) ) . "}{" . 
+			$this->explain_format( $this->get_rate_in_form( $this->i_flat() ) )  . "}";
 	}
-
 
 	private function explain_annuity_certain_increasing(){
 		$a_flat = $this->explain_a_flat();
@@ -111,7 +120,13 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 		$vn = "v^n";
 		$sub[0]['left'] = $this->label_annuity_increasing();
 		$sub[0]['right'] = "$a_flat  \\times \\frac{ $a_n_due  -  $n $vn }{ $i}";
-		$sub[1]['right']['summary'] = $this->explain_a_flat_numbers() . "  \\times \\frac{ " . $this->explain_format( $this->a_n_due()->get_annuity_certain() ) . " - " . $this->get_term() . " \\times " . $this->explain_format( 1+$this->get_i_effective() ) . "^{-" . $this->get_term() . "}}{" . $this->explain_format( $this->get_i_effective()) . "}";
+		$sub[1]['right']['summary'] = $this->explain_a_flat_numbers() . 
+			"  \\times \\frac{ " . 
+			$this->explain_format( $this->a_n_due()->get_annuity_certain() ) . 
+			" - " . $this->get_term() . " \\times " . 
+			$this->explain_format( 1+$this->get_i_effective() ) . 
+			"^{-" . $this->get_term() . "}}{" . 
+			$this->explain_format( $this->get_i_effective()) . "}";
 		$sub[1]['right']['detail'][] = $this->explain_rate_in_form( $this->i_flat() );
 		$sub[1]['right']['detail'][] = $this->a_n_due()->explain_annuity_certain();
 		$sub[2]['right'] = $this->explain_format( $this->get_annuity_certain() );
@@ -125,7 +140,10 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 		$n = "n";
 		$sub[0]['left'] = $this->label_annuity_increasing();
 		$sub[0]['right'] = "$a_flat  \\times \\frac{ $n - $a_n }{ $i}";
-		$sub[1]['right']['summary'] = $this->explain_a_flat_numbers() . "  \\times \\frac{ " . $this->get_term() . " - " . $this->explain_format( $this->a_n()->get_annuity_certain() ) . "}{" . $this->explain_format( $this->get_i_effective()) . "}";
+		$sub[1]['right']['summary'] = $this->explain_a_flat_numbers() . 
+			"  \\times \\frac{ " . $this->get_term() . " - " . 
+			$this->explain_format( $this->a_n()->get_annuity_certain() ) . "}{" . 
+			$this->explain_format( $this->get_i_effective()) . "}";
 		$sub[1]['right']['detail'][] = $this->explain_rate_in_form( $this->i_flat() );
 		$sub[1]['right']['detail'][] = $this->a_n()->explain_annuity_certain();
 		$sub[2]['right'] = $this->explain_format( $this->get_annuity_certain() );
@@ -143,7 +161,9 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 	}
 
 	private function i_flat(){
-		return  new FinMathInterest( $this->get_m(), $this->get_advance(), $this->get_delta() );
+		return  new FinMathInterest( $this->get_m(), 
+			$this->get_advance(), $this->get_delta() 
+		);
 	}
 
 	private function i_arr(){
@@ -203,7 +223,9 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( self::myMessage( 'fm-exception-in')  . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in')  . 
+				__FILE__ . ": " . $e->getMessage() 
+			);
 		}
 	}
 
@@ -214,7 +236,7 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 	protected function label_annuity_increasing(){
 		if ( $this->is_continuous() ){
 			$return = "\\bar{a}";
-		} else{
+		} else {
 			if ($this->advance){
 				$out="\\ddot{a}";
 			} else { 
