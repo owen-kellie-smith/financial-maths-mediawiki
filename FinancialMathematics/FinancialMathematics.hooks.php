@@ -55,7 +55,7 @@ class FinancialMathematicsHooks {
 		//http://stackoverflow.com/questions/834875/recursive-cast-from-simplexmlobject-to-array
 		$_out = "";
 		$xarray = json_decode(json_encode((array) $xml), 1);
-		$m = new CT1_Concept_All();
+		$m = new FinMathConceptAll();
 		return $m->get_controller($xarray) ;
 	}
 

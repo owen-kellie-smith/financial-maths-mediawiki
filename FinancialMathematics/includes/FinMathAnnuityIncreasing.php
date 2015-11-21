@@ -1,6 +1,6 @@
 <?php   
 
-class CT1_Annuity_Increasing extends CT1_Annuity{
+class FinMathAnnuityIncreasing extends CT1_Annuity{
 // returns value of (Ia)n or (Da)n
 // i.e. annuity paying 1, 2, 3...n-2, n-1, n   or n, n-1, n-2, ... 1 @ times 1, 2, 3, .. n (if in arrears)
 
@@ -35,7 +35,7 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 	}
 
 	protected function get_clone_this(){
-		$a = new CT1_Annuity_Increasing( $this->get_m(),
+		$a = new FinMathAnnuityIncreasing( $this->get_m(),
 			$this->get_advance(),
 			$this->get_delta(),
 			$this->get_term(),
@@ -213,7 +213,7 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 
 	public function get_labels(){
 		$labels = parent::get_labels();
-		$labels['CT1_Annuity_Increasing'] = $this->label_annuity_increasing();
+		$labels['FinMathAnnuityIncreasing'] = $this->label_annuity_increasing();
 		return $labels;
 	}
 
@@ -221,7 +221,7 @@ class CT1_Annuity_Increasing extends CT1_Annuity{
 
 // example 
 /*
-$a = new CT1_Annuity_Increasing(1999, false, 0.1, 13, false);
+$a = new FinMathAnnuityIncreasing(1999, false, 0.1, 13, false);
 print_r($a->get_labels());
 print_r($a->get_annuity_certain());
 print_r($a->explain_annuity_certain());

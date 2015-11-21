@@ -203,7 +203,7 @@ public function get_concept_label(){
 	 */
 	private function get_add_cashflow(){
 		$a_e = new CT1_Annuity_Escalating();
-		$a_i = new CT1_Annuity_Increasing();
+		$a_i = new FinMathAnnuityIncreasing();
 		$c_e = new CT1_Cashflow( 0, 0,  $a_e );
 		$c_i = new CT1_Cashflow( 0, 0, $a_i );
 		$parameters = array();

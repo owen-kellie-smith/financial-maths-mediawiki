@@ -145,7 +145,7 @@ class CT1_Cashflows extends CT1_Collection {
 				return new CT1_Annuity_Escalating(); 
 			}
 			if ( in_array( 'increasing', array_keys($i) ) ){
-				return new CT1_Annuity_Increasing(); 
+				return new FinMathAnnuityIncreasing(); 
 			}
 		}
 		return new CT1_Annuity();

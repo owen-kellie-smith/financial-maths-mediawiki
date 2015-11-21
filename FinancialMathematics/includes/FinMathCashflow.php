@@ -38,7 +38,7 @@ class CT1_Cashflow extends CT1_Object {
 			$IN[$pre . 'term']  = 1;
 		} else {
 			if ( isset( $IN['consider_increasing'] ) ){
-				$a = new CT1_Annuity_Increasing();
+				$a = new FinMathAnnuityIncreasing();
 				$a->set_increasing( $increasing );
 			} else {
 				if (empty($escalation_rate_effective) || 0==$escalation_rate_effective){

@@ -1,6 +1,6 @@
 <?php
 
-class CT1_Annuity_Increasing_Test extends PHPUnit_Framework_TestCase
+class FinMathAnnuityIncreasing_Test extends PHPUnit_Framework_TestCase
 {
   private $debug = false;
   private $acalc;
@@ -12,7 +12,7 @@ class CT1_Annuity_Increasing_Test extends PHPUnit_Framework_TestCase
   private $neg = 0.00001;
   
   public function setup(){
-    $this->acalc = new CT1_Annuity_Increasing();
+    $this->acalc = new FinMathAnnuityIncreasing();
     $this->reset();
   }
   public function tearDown(){}

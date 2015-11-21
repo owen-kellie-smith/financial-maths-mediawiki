@@ -26,7 +26,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 	}
 
 	private function getResult(){
-		$m = new CT1_Concept_All();
+		$m = new FinMathConceptAll();
 		$m->setTagName( FinancialMathematicsHooks::getTagName() );
 		return $m->get_controller($this->getRequest()->getQueryValues()) ; 
 	}
