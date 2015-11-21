@@ -1,7 +1,7 @@
 <?php   
 
 
-class FinMathSpotRate extends CT1_Object {
+class FinMathSpotRate extends FinMathObject {
 
     private $delta;
     private $effective_time;

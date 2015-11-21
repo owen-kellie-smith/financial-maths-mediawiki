@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathAnnuityEscalating extends CT1_Annuity{
+class FinMathAnnuityEscalating extends FinMathAnnuity{
 
 	protected $escalation_delta;
 	protected $escalation_frequency;
@@ -140,7 +140,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 	}
 
 	private function explain_annuity_certain_escalation_continual(){
-		$a = new CT1_Annuity($this->get_m(), $this->get_advance(), $this->get_delta_net(), $this->get_term());
+		$a = new FinMathAnnuity($this->get_m(), $this->get_advance(), $this->get_delta_net(), $this->get_term());
 		if ( $a->is_continuous() || $a->get_advance() ){
 			return array_merge( $this->explain_net_interest_rate(), $a->explain_annuity_certain() );
 		} else {
@@ -160,7 +160,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 	}
 
 	private function get_annuity_certain_escalation_continual(){
-		$a = new CT1_Annuity($this->get_m(), $this->get_advance(), $this->get_delta_net(), $this->get_term());
+		$a = new FinMathAnnuity($this->get_m(), $this->get_advance(), $this->get_delta_net(), $this->get_term());
 		$raw = $a->get_annuity_certain();
 		if ( $a->is_continuous() || $a->get_advance() ){
 			return $raw;
@@ -171,7 +171,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 	}
 
 	private function a_flat(){
-		return  new CT1_annuity($this->get_m(), 
+		return  new FinMathAnnuity($this->get_m(), 
 				$this->get_advance(), 
 				$this->get_delta(), 
 				1.0 / $this->get_escalation_frequency()
@@ -179,7 +179,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 	}
 
 	private function a_inc(){
-		return  new CT1_annuity($this->get_escalation_frequency(), 
+		return  new FinMathAnnuity($this->get_escalation_frequency(), 
 				true, 
 				$this->get_delta_net(), 
 				$this->get_term()
@@ -237,7 +237,7 @@ class FinMathAnnuityEscalating extends CT1_Annuity{
 
 	public function get_labels(){
 		$labels = parent::get_labels();
-		$labels['CT1_Annuity'] = $this->label_annuity();
+		$labels['FinMathAnnuity'] = $this->label_annuity();
 		return $labels;
 	}
 

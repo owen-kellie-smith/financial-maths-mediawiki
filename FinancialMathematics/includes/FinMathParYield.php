@@ -1,7 +1,7 @@
 <?php   
 
 
-class FinMathParYield extends CT1_Object {
+class FinMathParYield extends FinMathObject {
 
     private $coupon;
     private $term;
@@ -78,7 +78,7 @@ class FinMathParYield extends CT1_Object {
 
             
     public function get_annuity_label(){
-	$a = new CT1_Annuity();
+	$a = new FinMathAnnuity();
 	$a->set_term( $this->get_term() );
         return $this->get_coupon() . $a->get_label() . " + v^{ " . $this->get_term() . "}";
     }

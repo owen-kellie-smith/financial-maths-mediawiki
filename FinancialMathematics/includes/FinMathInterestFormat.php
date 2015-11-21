@@ -7,7 +7,7 @@
  */
 
 
-class FinMathInterestFormat extends CT1_Object{
+class FinMathInterestFormat extends FinMathObject{
 
     /**
      * Frequency (instalments per year)

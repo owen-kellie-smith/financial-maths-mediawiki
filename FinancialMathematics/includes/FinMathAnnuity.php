@@ -1,6 +1,6 @@
 <?php   
 
-class CT1_Annuity extends FinMathInterest{
+class FinMathAnnuity extends FinMathInterest{
 
 	protected $term;
 	protected $value;
@@ -131,7 +131,7 @@ class CT1_Annuity extends FinMathInterest{
 	}
  
 	protected function get_clone_this(){
-		$a_calc = new CT1_Annuity( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term() );
+		$a_calc = new FinMathAnnuity( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term() );
 		return $a_calc;
 	}
 
@@ -274,7 +274,7 @@ class CT1_Annuity extends FinMathInterest{
 
 	public function get_labels(){
 		$labels = parent::get_labels();
-		$labels['CT1_Annuity'] = $this->label_annuity();
+		$labels['FinMathAnnuity'] = $this->label_annuity();
 		return $labels;
 	}
 
@@ -296,7 +296,7 @@ class CT1_Annuity extends FinMathInterest{
 }
 
 // example 
-//$a = new CT1_Annuity(12, true, 0.1, 12);
+//$a = new FinMathAnnuity(12, true, 0.1, 12);
 //$a->set_value(11.234567890123456789);
 //print_r($a->get_values());
 //print_r($a->get_delta_for_value());

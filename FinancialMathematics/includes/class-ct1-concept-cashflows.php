@@ -14,12 +14,12 @@ class FinMathConceptCashflows extends FinMathForm{
 	/**
 	 * Constructor
 	 *
-	 * @param CT1_Object $obj 
+	 * @param FinMathObject $obj 
 	 * @return FinMathConceptCashflows
 	 *
 	 * @access public
 	 */
-	public function __construct(CT1_Object $obj=null){
+	public function __construct(FinMathObject $obj=null){
 		if (null === $obj){
 			$obj = new FinMathCashflows();
 		}

@@ -23,7 +23,7 @@ class FinMathConceptAll extends FinMathForm{
   }
 
 
-	public function __construct(CT1_Object $obj=null){
+	public function __construct(FinMathObject $obj=null){
 		return;
 	}
 

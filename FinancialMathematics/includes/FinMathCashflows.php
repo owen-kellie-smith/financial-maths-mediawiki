@@ -148,7 +148,7 @@ class FinMathCashflows extends FinMathCollection {
 				return new FinMathAnnuityIncreasing(); 
 			}
 		}
-		return new CT1_Annuity();
+		return new FinMathAnnuity();
 	}
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
@@ -305,7 +305,7 @@ class FinMathCashflows extends FinMathCollection {
 }
 
 // example 
-//$a = new CT1_Annuity(12, true, 0.1, 12);
+//$a = new FinMathAnnuity(12, true, 0.1, 12);
 //$a->set_value(11.234567890123456789);
 //print_r($a->get_values());
 //print_r($a->get_delta_for_value());

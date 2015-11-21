@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathForwardRate extends CT1_Object {
+class FinMathForwardRate extends FinMathObject {
 
     private $delta;
     private $end_time;

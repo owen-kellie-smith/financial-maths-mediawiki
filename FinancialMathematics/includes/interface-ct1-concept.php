@@ -1,8 +1,8 @@
 <?php
 
-interface CT1_Concept{
+interface FinMathConcept{
 	public function get_calculator( $parameters );
 	public function get_solution();
 	public function get_controller( $_INPUT);
-	public function set_obj( CT1_Object $parameters );
+	public function set_obj( FinMathObject $parameters );
 }

@@ -1,6 +1,6 @@
 <?php   
 
-abstract class FinMathCollection extends CT1_Object {
+abstract class FinMathCollection extends FinMathObject {
 
 	protected $objects;
 	protected $class; // read-only, set by first object;
@@ -74,7 +74,7 @@ abstract class FinMathCollection extends CT1_Object {
 		$this->objects = $array;
 	}
 
-	public function add_object( CT1_Object $c, $duplicates_allowed = false, $re_sort = false ){
+	public function add_object( FinMathObject $c, $duplicates_allowed = false, $re_sort = false ){
 		if( !$this->is_acceptable_class( $c ) ){
 			throw new Exception( __FILE__ . self::myMessage( 'fm-error-invalid-object', get_class( $c ), get_class( $this )));
 		}
@@ -113,7 +113,7 @@ abstract class FinMathCollection extends CT1_Object {
 	}
 
 
-	public function remove_object( CT1_Object $c, $remove_all = false ){
+	public function remove_object( FinMathObject $c, $remove_all = false ){
 		if ( 0 < $this->get_count() ){
 			$this_objects = $this->get_objects();
 			foreach ( array_keys($this_objects) as $key ){

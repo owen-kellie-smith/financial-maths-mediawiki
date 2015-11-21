@@ -1,6 +1,6 @@
 <?php   
 /**
- * CT1_Object class
+ * FinMathObject class
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
@@ -12,7 +12,7 @@
  *
  * @package    CT1
  */
-abstract class CT1_Object {
+abstract class FinMathObject {
 
     /**
      * List validation constraints suitable for use with PEAR::Validate

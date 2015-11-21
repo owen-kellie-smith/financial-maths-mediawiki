@@ -20,9 +20,9 @@ public function setTagName( $s ){
 		$this->tag_name = $s;
 }
 
-public function __construct(CT1_Object $obj=null){
+public function __construct(FinMathObject $obj=null){
 	if (null === $obj){
-		$obj = new CT1_XML();
+		$obj = new FinMathXML();
 	}
 	parent::__construct($obj);
 	$this->set_request( 'process_xml' );
@@ -79,7 +79,7 @@ public function set_text($_INPUT = array()){
 
 private function get_filtered_input($_INPUT){
 		$this->set_referred_obj($_INPUT);
-		if ($this->referred_obj instanceof CT1_Object){
+		if ($this->referred_obj instanceof FinMathObject){
 			return $this->referred_obj->get_valid_inputs($_INPUT);
 		}
 		return $_INPUT;

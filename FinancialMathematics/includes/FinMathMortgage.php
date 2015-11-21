@@ -1,7 +1,7 @@
 <?php   
 
 
-class FinMathMortgage extends CT1_Annuity{
+class FinMathMortgage extends FinMathAnnuity{
 
 protected $principal;
 protected $instalment;

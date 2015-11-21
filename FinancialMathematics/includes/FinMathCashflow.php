@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathCashflow extends CT1_Object {
+class FinMathCashflow extends FinMathObject {
 
     private $annuity;
     private $rate_per_year;
@@ -33,7 +33,7 @@ class FinMathCashflow extends CT1_Object {
 			}
 		}
 		if ( isset( $IN[$pre . 'single_payment'] ) ){
-			$a = new CT1_Annuity(1, true, 0, 1);
+			$a = new FinMathAnnuity(1, true, 0, 1);
 			$IN[$pre . 'm']  = 1;
 			$IN[$pre . 'term']  = 1;
 		} else {
@@ -42,7 +42,7 @@ class FinMathCashflow extends CT1_Object {
 				$a->set_increasing( $increasing );
 			} else {
 				if (empty($escalation_rate_effective) || 0==$escalation_rate_effective){
-					$a = new CT1_Annuity();
+					$a = new FinMathAnnuity();
 				} else {
 					$a = new FinMathAnnuityEscalating();
 					$a->set_escalation_rate_effective( $escalation_rate_effective );
@@ -120,16 +120,16 @@ class FinMathCashflow extends CT1_Object {
     }
 
 
-    public function __construct( $rate_per_year = 0, $effective_time = 0, CT1_Annuity $annuity = null ) {
+    public function __construct( $rate_per_year = 0, $effective_time = 0, FinMathAnnuity $annuity = null ) {
         if ( null === $annuity ){
-            $annuity = new CT1_Annuity();
+            $annuity = new FinMathAnnuity();
 	}
         $this->set_annuity( $annuity );
         $this->set_rate_per_year( $rate_per_year );
         $this->set_effective_time( $effective_time );
     }
 
-    public function set_annuity( CT1_Annuity $a ){
+    public function set_annuity( FinMathAnnuity $a ){
         $this->annuity = $a;
     }
 

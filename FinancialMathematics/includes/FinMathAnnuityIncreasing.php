@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathAnnuityIncreasing extends CT1_Annuity{
+class FinMathAnnuityIncreasing extends FinMathAnnuity{
 // returns value of (Ia)n or (Da)n
 // i.e. annuity paying 1, 2, 3...n-2, n-1, n   or n, n-1, n-2, ... 1 @ times 1, 2, 3, .. n (if in arrears)
 
@@ -128,11 +128,11 @@ class FinMathAnnuityIncreasing extends CT1_Annuity{
 	}
 
 	private function a_n_due(){
-		return  new CT1_annuity(1, true, $this->get_delta(), $this->get_term());
+		return  new FinMathAnnuity(1, true, $this->get_delta(), $this->get_term());
 	}
 
 	private function a_n(){
-		return  new CT1_annuity(1, false, $this->get_delta(), $this->get_term());
+		return  new FinMathAnnuity(1, false, $this->get_delta(), $this->get_term());
 	}
 
 	private function get_annuity_certain_increasing(){

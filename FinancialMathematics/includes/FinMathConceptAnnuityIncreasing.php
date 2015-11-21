@@ -3,7 +3,7 @@
 
 class FinMathConceptAnnuityIncreasing extends FinMathConceptAnnuity{
 
-public function __construct(CT1_Object $obj=null){
+public function __construct(FinMathObject $obj=null){
 	if (null === $obj){ 
 		$obj = new FinMathAnnuityIncreasing();
 	}

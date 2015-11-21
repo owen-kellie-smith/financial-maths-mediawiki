@@ -2,7 +2,7 @@
 
 class FinMathConceptAnnuity extends FinMathForm{
 
-public function __construct(CT1_Object $obj=null){
+public function __construct(FinMathObject $obj=null){
 	if (null === $obj){
 		$obj = new FinMathAnnuityEscalating();
 	}
@@ -79,7 +79,7 @@ public function get_controller($_INPUT ){
 
 public function set_annuity($_INPUT = array()){
 	$this->set_received_input($_INPUT);
-	$lobj = new CT1_Annuity();
+	$lobj = new FinMathAnnuity();
 	if ($this->is_level_annuity($_INPUT)){
 		$this->set_obj($lobj);
 	}

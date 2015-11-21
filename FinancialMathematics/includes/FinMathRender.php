@@ -18,7 +18,7 @@ class FinMathRender  {
 	 */
 	private $eqref = 0;
 
-public function __construct(CT1_Object $obj=null){
+public function __construct(FinMathObject $obj=null){
 	$this->eqref=(int)mt_rand();
 }
 

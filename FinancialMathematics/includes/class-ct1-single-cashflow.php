@@ -1,6 +1,6 @@
 <?php   
 
-class FinMathSingleCashflow extends CT1_Annuity{
+class FinMathSingleCashflow extends FinMathAnnuity{
 
 	public function get_valid_options(){ 
 		return array();
@@ -46,7 +46,7 @@ class FinMathSingleCashflow extends CT1_Annuity{
 }
 
 // example 
-//$a = new CT1_Annuity(12, true, 0.1, 12);
+//$a = new FinMathAnnuity(12, true, 0.1, 12);
 //$a->set_value(11.234567890123456789);
 //print_r($a->get_values());
 //print_r($a->get_delta_for_value());

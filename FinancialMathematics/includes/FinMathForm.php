@@ -1,6 +1,6 @@
 <?php   
 
-abstract class FinMathForm implements CT1_Concept {
+abstract class FinMathForm implements FinMathConcept {
 
 protected $obj;
 protected $request;
@@ -60,11 +60,11 @@ public function get_unrendered_delete_buttons( $request = ""){
 
 
 
-public function __construct(CT1_Object $obj){
+public function __construct(FinMathObject $obj){
 	$this->set_obj($obj);
 }
 
-public function set_obj(CT1_Object $obj){	$this->obj = $obj;
+public function set_obj(FinMathObject $obj){	$this->obj = $obj;
 }
 
 public function get_obj(){

@@ -1,13 +1,13 @@
 <?php   
 /**
- * CT1_XML class
+ * FinMathXML class
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
 
 
-class CT1_XML extends CT1_Object{
+class FinMathXML extends FinMathObject{
 
 	private $xml;
 
@@ -81,7 +81,7 @@ class CT1_XML extends CT1_Object{
 	}
 
 	public function equals($f){
-		if(!($f instanceof CT1_XML)){
+		if(!($f instanceof FinMathXML)){
 		        return false;
 		}
 		if( $f->get_xml() != $this->get_xml() ){
