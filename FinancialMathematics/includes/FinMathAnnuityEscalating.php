@@ -1,6 +1,6 @@
 <?php   
 
-class CT1_Annuity_Escalating extends CT1_Annuity{
+class FinMathAnnuityEscalating extends CT1_Annuity{
 
 	protected $escalation_delta;
 	protected $escalation_frequency;
@@ -45,7 +45,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 	}
 
 	protected function get_clone_this(){
-		$a_calc = new CT1_Annuity_Escalating( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term(), $this->get_escalation_frequency(), $this->get_escalation_delta() );
+		$a_calc = new FinMathAnnuityEscalating( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term(), $this->get_escalation_frequency(), $this->get_escalation_delta() );
 		return $a_calc;
 	}
 
@@ -244,7 +244,7 @@ class CT1_Annuity_Escalating extends CT1_Annuity{
 }
 
 // example 
-//$a = new CT1_Annuity_Escalating(998, true, 0.1, 13, 1, 0.1);
+//$a = new FinMathAnnuityEscalating(998, true, 0.1, 13, 1, 0.1);
 //print_r($a->get_values());
 //print_r($a->get_annuity_certain());
 //print_r($a->explain_annuity_certain());

@@ -21,7 +21,7 @@ class FinMathConceptCashflows extends CT1_Form{
 	 */
 	public function __construct(CT1_Object $obj=null){
 		if (null === $obj){
-			$obj = new CT1_Cashflows();
+			$obj = new FinMathCashflows();
 		}
 		parent::__construct($obj);
 		$this->set_request( 'get_cashflows' );
@@ -167,7 +167,7 @@ public function get_concept_label(){
 	 * @access private
 	 */
 	private function add_cashflow_from_input( $IN ){
-		$cf = new CT1_Cashflow();
+		$cf = new FinMathCashflow();
 		if ($cf->set_from_input( $IN ) ){
 			$this->obj->add_cashflow( $cf );
 		}
@@ -202,10 +202,10 @@ public function get_concept_label(){
 	 * @access private
 	 */
 	private function get_add_cashflow(){
-		$a_e = new CT1_Annuity_Escalating();
+		$a_e = new FinMathAnnuityEscalating();
 		$a_i = new FinMathAnnuityIncreasing();
-		$c_e = new CT1_Cashflow( 0, 0,  $a_e );
-		$c_i = new CT1_Cashflow( 0, 0, $a_i );
+		$c_e = new FinMathCashflow( 0, 0,  $a_e );
+		$c_i = new FinMathCashflow( 0, 0, $a_i );
 		$parameters = array();
 		$parameters['single_payment'] = array(
 			'name'=> 'single_payment',

@@ -19,7 +19,7 @@ class CT1_Annuity_Test extends PHPUnit_Framework_TestCase
   public function setup(){
     $this->acalc = new CT1_Annuity(10, true, log(1.06), 12);
     $this->i = 0.06;
-    $this->acalce = new CT1_Annuity_Escalating();
+    $this->acalce = new FinMathAnnuityEscalating();
     $this->reseta();
     $this->resete();
   }

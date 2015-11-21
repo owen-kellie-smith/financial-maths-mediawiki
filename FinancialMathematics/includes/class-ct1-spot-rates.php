@@ -89,7 +89,7 @@ protected $explanation_par_yields;
 	public function get_forward_rates(){
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
-		$fs = new CT1_Forward_Rates();
+		$fs = new FinMathForwardRates();
 		for ($i = 0, $ii = $this->get_count(); $i < $ii; $i++){
 			$end = $terms[ $i ]; 	
 			if ( 0 == $i ){

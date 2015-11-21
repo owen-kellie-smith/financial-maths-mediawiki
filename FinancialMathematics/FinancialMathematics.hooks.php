@@ -61,7 +61,7 @@ class FinancialMathematicsHooks {
 
 	private static function outputResult( $result ){
 		$_out = "";
-		$render = new CT1_Render();
+		$render = new FinMathRender();
 		if (isset($result['warning'])){
 			$_out .=  self::warning( $result['warning'] );
 		} else {

@@ -4,12 +4,12 @@
 define("CT1_MAXIMUM_LEVELS_DETAIL", 10);
 
 /**
- * CT1_Render class
+ * FinMathRender class
  *
  * @package    CT1
  * @author     Owen Kellie-Smith
  */
-class CT1_Render  {
+class FinMathRender  {
 
 	/**
 	 * @param integer $eqref   Equation counter
@@ -597,8 +597,8 @@ private function add_hidden_fields( &$fieldset, CT1_Collection $cf ){
 */
 
 /*
-private function get_form_cashflow( CT1_Cashflows $cf, $submit = 'Submit', $intro = "" ){
-	$render = new CT1_Render();
+private function get_form_cashflow( FinMathCashflows $cf, $submit = 'Submit', $intro = "" ){
+	$render = new FinMathRender();
 	return $render->get_form_collection( $cf, $submit, $intro, 'view_cashflows');
 }
 */

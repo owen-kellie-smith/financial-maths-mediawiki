@@ -1,6 +1,6 @@
 <?php   
 
-class CT1_Cashflow extends CT1_Object {
+class FinMathCashflow extends CT1_Object {
 
     private $annuity;
     private $rate_per_year;
@@ -44,7 +44,7 @@ class CT1_Cashflow extends CT1_Object {
 				if (empty($escalation_rate_effective) || 0==$escalation_rate_effective){
 					$a = new CT1_Annuity();
 				} else {
-					$a = new CT1_Annuity_Escalating();
+					$a = new FinMathAnnuityEscalating();
 					$a->set_escalation_rate_effective( $escalation_rate_effective );
 					$a->set_escalation_frequency( $escalation_frequency );
 				}
@@ -217,7 +217,7 @@ class CT1_Cashflow extends CT1_Object {
 
     public function get_labels(){
         $labels = $this->annuity->get_labels();
-        $labels['CT1_Cashflow'] = $this->get_label();
+        $labels['FinMathCashflow'] = $this->get_label();
         return $labels;
     }
 

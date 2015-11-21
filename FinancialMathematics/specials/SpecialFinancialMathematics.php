@@ -47,7 +47,7 @@ class SpecialFinancialMathematics extends SpecialPage {
 	}
 
 	private function outputResult( &$out, $result ){
-		$render = new CT1_Render();
+		$render = new FinMathRender();
 		if (isset($result['warning'])){
 			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
 		} else {

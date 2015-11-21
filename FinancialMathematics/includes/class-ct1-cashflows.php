@@ -1,13 +1,13 @@
 <?php   
 
-class CT1_Cashflows extends CT1_Collection {
+class FinMathCashflows extends CT1_Collection {
 
 	private $value;
 	protected $max_dp = 2;
 
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
-		$r['CT1_Cashflows'] = array();
+		$r['FinMathCashflows'] = array();
 		$r['i_effective'] = array();
 		$r['value'] = array();
 		return $r; 
@@ -63,7 +63,7 @@ class CT1_Cashflows extends CT1_Collection {
 	}
  
 	public function get_clone_this(){
-		$a_calc = new CT1_Cashflows();
+		$a_calc = new FinMathCashflows();
 		$a_calc->set_cashflows( $this->get_cashflows() );
 		return $a_calc;
 	}
@@ -142,7 +142,7 @@ class CT1_Cashflows extends CT1_Collection {
 	private function annuity_type( $i = array() ){
 		if( is_array($i) ){
 			if ( in_array( 'escalation_frequency', array_keys($i) ) ){
-				return new CT1_Annuity_Escalating(); 
+				return new FinMathAnnuityEscalating(); 
 			}
 			if ( in_array( 'increasing', array_keys($i) ) ){
 				return new FinMathAnnuityIncreasing(); 
@@ -153,11 +153,11 @@ class CT1_Cashflows extends CT1_Collection {
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
-			$c_new = new CT1_Cashflows();
+			$c_new = new FinMathCashflows();
 			if ( count($_INPUT) > 0 ){
 				foreach ($_INPUT as $i){
 					if( is_array($i) ){
-						$c = new CT1_Cashflow();
+						$c = new FinMathCashflow();
 						$a = $this->annuity_type( $i );
 						$a->set_from_input( $i );
 						$c->set_annuity( $a );
@@ -265,11 +265,11 @@ class CT1_Cashflows extends CT1_Collection {
 		$this->set_objects( $cashflow_array );
 	}
 
-	public function add_cashflow( CT1_Cashflow $c ){
+	public function add_cashflow( FinMathCashflow $c ){
 		$this->add_object( $c );
 	}
 
-	public function remove_cashflow( CT1_Cashflow $c ){
+	public function remove_cashflow( FinMathCashflow $c ){
 		$this->remove_object( $c );
 	}
 	
@@ -298,7 +298,7 @@ class CT1_Cashflows extends CT1_Collection {
 
 	public function get_labels(){
 		$labels = array();
-		$labels['CT1_Cashflows'] = $this->get_label();
+		$labels['FinMathCashflows'] = $this->get_label();
 		return $labels;
 	}
 

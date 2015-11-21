@@ -1,6 +1,6 @@
 <?php   
 
-class CT1_Single_Cashflow extends CT1_Annuity{
+class FinMathSingleCashflow extends CT1_Annuity{
 
 	public function get_valid_options(){ 
 		return array();
@@ -39,7 +39,7 @@ class CT1_Single_Cashflow extends CT1_Annuity{
 
 	public function get_labels(){
 		$labels = array();
-		$labels['CT1_Single_Cashflow'] = $this->label_annuity();
+		$labels['FinMathSingleCashflow'] = $this->label_annuity();
 		return $labels;
 	}
 
