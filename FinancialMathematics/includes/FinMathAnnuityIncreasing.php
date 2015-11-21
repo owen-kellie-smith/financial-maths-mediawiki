@@ -195,7 +195,6 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 		return $a_flat * ( $n - $a_n ) / $i;
 	}
 
-
 	public function explain_annuity_certain(){
 		if ( 0 == $this->get_delta() ){
 			return $this->explain_annuity_certain_nil_interest();
@@ -206,7 +205,6 @@ class FinMathAnnuityIncreasing extends FinMathAnnuity{
 			return $this->explain_annuity_certain_decreasing();
 		}
 	}
-
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{

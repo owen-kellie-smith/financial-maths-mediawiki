@@ -30,16 +30,8 @@ class FinMathAnnuity extends FinMathInterest{
 
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
-		$r['term'] = array(
-						'type'=>'number',
-						'decimal'=>'.',
-						'min'=>0,
-					);
-		$r['value'] = array(
-						'type'=>'number',
-						'decimal'=>'.',
-						'min'=>0.000001,
-					);
+		$r['term'] = array( 'type'=>'number', 'decimal'=>'.', 'min'=>0, );
+		$r['value'] = array( 'type'=>'number', 'decimal'=>'.', 'min'=>0.000001, );
 		return $r; 
 	}
 
@@ -50,14 +42,12 @@ class FinMathAnnuity extends FinMathInterest{
 
 	public function get_parameters(){ 
 		$r = parent::get_parameters();
-		$r['term'] = array(
-			'name'=>'term',
+		$r['term'] = array( 'name'=>'term',
 			'label'=>self::myMessage( 'fm-label_term'),
-			);
-		$r['value'] = array(
-			'name'=>'value',
+		);
+		$r['value'] = array( 'name'=>'value',
 			'label'=>self::myMessage( 'fm-label_value'),
-			);
+		);
 		return $r; 
 	}
 
@@ -68,7 +58,8 @@ class FinMathAnnuity extends FinMathInterest{
 		return $r; 
 	}
 
-	public function __construct( $m = 1, $advance = false, $delta = 0, $term = 1, $debug=false ){
+	public function __construct( $m = 1, $advance = false, 
+		$delta = 0, $term = 1, $debug=false ){
 		if ($debug){
 			echo __FILE__ . " construct \r\n";
 			foreach (array ('m', 'advance','delta','term') as $i){
@@ -86,7 +77,9 @@ class FinMathAnnuity extends FinMathInterest{
 			if ( $this->is_valid_term_vs_frequency( $n ) ){ 
 				$this->term = $n;
 			} else {
-				throw new Exception(self::myMessage( 'fm-exception-term-frequency')  . self::myMessage( 'fm-attempted-frequency') . $this->get_m() . "." . self::myMessage( 'fm-attempted-term') . $n . ".");
+				throw new Exception(self::myMessage( 'fm-exception-term-frequency')  .
+					self::myMessage( 'fm-attempted-frequency') . $this->get_m() . "." . 
+					self::myMessage( 'fm-attempted-term') . $n . ".");
 			}
 		}
 	}
@@ -154,7 +147,9 @@ class FinMathAnnuity extends FinMathInterest{
 	}
  
 	protected function get_clone_this(){
-		$a_calc = new FinMathAnnuity( $this->get_m(), $this->get_advance(), $this->get_delta(), $this->get_term() );
+		$a_calc = new FinMathAnnuity( $this->get_m(), $this->get_advance(), 
+			$this->get_delta(), $this->get_term() 
+		);
 		return $a_calc;
 	}
 
@@ -210,14 +205,14 @@ class FinMathAnnuity extends FinMathInterest{
 		$a_calc = $this->get_clone_this();
 		$a_calc->set_delta( $this->get_delta_for_value() );
 		$return[0]['left'] = "i";
-//		$return[0]['right']['summary'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1);
 		if (!($this->is_single_payment())){
 			$return[0]['right']['detail'] = $a_calc->explain_annuity_certain();
 		}
-		$return[0]['right'] = $this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . "\\ \\mbox{ "  . self::myMessage( 'fm-verification') . ":}";
+		$return[0]['right'] = 
+			$this->explain_format( exp( $this->get_delta_for_value() ) - 1) . "." . 
+			"\\ \\mbox{ "  . self::myMessage( 'fm-verification') . ":}";
 		return array_merge( $return, $a_calc->explain_annuity_certain() );
 	}
-
 
 	public function explain_annuity_certain(){
 		$return = array();
@@ -225,20 +220,22 @@ class FinMathAnnuity extends FinMathInterest{
 		if (1==$this->get_annuity_certain() ){
 			$return[0]['right'] =  "1";
 		} else {
-
 			if (0==$this->get_delta()){
 				$return[0]['right'] =  "n";
 				$return[1]['right'] =  $this->get_term();
 			} else {
-				$return[0]['right'] =  "\\frac{ 1 - \\exp{( -\\delta n) } }{ " . $this->label_interest_format() . " } ";
-				$return[1]['right']['summary'] =  "\\frac{ 1 - \\exp{ (" . $this->explain_format( -$this->get_delta() ) . " \\times " . $this->get_term() . ") } }{ " . $this->explain_format( $this->get_rate_in_form( $this ) ) . " } ";
+				$return[0]['right'] =  "\\frac{ 1 - \\exp{( -\\delta n) } }{ " . 
+					$this->label_interest_format() . " } ";
+				$return[1]['right']['summary'] =  "\\frac{ 1 - \\exp{ (" . 
+					$this->explain_format( -$this->get_delta() ) . " \\times " . 
+					$this->get_term() . ") } }{ " . 
+					$this->explain_format( $this->get_rate_in_form( $this ) ) . " } ";
 				$return[1]['right']['detail'] = $this->explain_rate_in_form( $this );
 				$return[2]['right'] = $this->explain_format( $this->get_annuity_certain() ) ;
 			}
 		}
 		return $return;
 	}
-
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
@@ -252,13 +249,13 @@ class FinMathAnnuity extends FinMathInterest{
 					}
 				}
 				return true;
-			}
-			else{
+			} else {
 				return false;
 			}
 		}
 		catch( Exception $e ){ 
-			throw new Exception( self::myMessage( 'fm-exception-in') .  __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in') .  
+				__FILE__ . ": " . $e->getMessage() );
 		}
 	}
 
