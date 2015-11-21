@@ -101,6 +101,7 @@ class FinMathCashflows extends FinMathCollection {
 		$x0 = $this->get_approx_yield();
 		$x1 = $x0 + $start_diff;
 		while ( $loop_count < $max_loop && $diff_x > $min_diff_x ) {
+			$g = array();
 			$g[0]['x'] = $x0;
 			$g[1]['x'] = $x1;
 			$a_calc->set_delta( $x0 );
@@ -113,6 +114,8 @@ class FinMathCashflows extends FinMathCollection {
 			$x1 = $x2;
 			$diff_x = abs( $x0 - $x1 );
 			$loop_count++;
+			$g = null;
+			$x2 = null;
 		}
 		if ( $loop_count >= $max_loop ){ 
 			throw new Exception (self::myMessage( 'fm-exception-max-iterations-exceeded')  . $this->get_value() . ". " .  self::myMessage( 'fm-exception-query-cashflows-possible')  );
@@ -156,6 +159,7 @@ class FinMathCashflows extends FinMathCollection {
 				$a->unset_value();
 				$c->set_annuity( $a );
 				$c_new[] = $c;
+				$a = null;
 			}
 			$this->set_cashflows( $c_new );
 		}
@@ -187,6 +191,8 @@ class FinMathCashflows extends FinMathCollection {
 						$c->set_rate_per_year( $i['rate_per_year'] );
 						$c->set_effective_time( $i['effective_time'] );
 						$c_new->add_object( $c );
+						$a = null;
+						$c = null;
 					}
 				}
 				$this->set_objects( $c_new->get_objects() );
@@ -260,6 +266,7 @@ class FinMathCashflows extends FinMathCollection {
 					}
 					$det[] = $detail;
 					$top_line .= $sub;
+					$detail = null;
 				}
 				$i++;
 			}

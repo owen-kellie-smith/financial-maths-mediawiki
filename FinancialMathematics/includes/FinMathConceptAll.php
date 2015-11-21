@@ -126,6 +126,7 @@ class FinMathConceptAll extends FinMathForm{
 						$return['concept']=$c->get_concept_label();
 						return $return;
 					}
+					$temp = null;
 				}
 			} //foreach( $this->candidate_concepts() AS $c )
 		$return['output']['unrendered']['forms'][] = array(

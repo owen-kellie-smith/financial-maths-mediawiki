@@ -66,6 +66,8 @@ abstract class FinMathCollection extends FinMathObject {
 						$name =  $name_label . "[" . $i . "][" . $key . "]";
 						$value = $v[ $key ];
 						$hidden[ $name ] = $value;
+						$name = null;
+						$value = null;
 					}
 					$i++;
 				}

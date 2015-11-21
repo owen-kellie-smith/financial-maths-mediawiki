@@ -168,6 +168,7 @@ class FinMathAnnuity extends FinMathInterest{
 		$x0 = $this->get_approx_yield();
 		$x1 = $x0 + $start_diff;
 		while ( $loop_count < $max_loop && $diff_x > $min_diff_x ) {
+			$g = array();
 			$g[0]['x'] = $x0;
 			$g[1]['x'] = $x1;
 			$a_calc->set_delta( $x0 );
@@ -179,6 +180,8 @@ class FinMathAnnuity extends FinMathInterest{
 			$x1 = $x2;
 			$loop_count++;
 			$diff_x = abs( $x0 - $x1 );
+			$g = null;
+			$x2 = null;
 		}
 		return $x1;
 	}
