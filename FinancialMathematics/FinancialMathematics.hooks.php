@@ -57,7 +57,9 @@ class FinancialMathematicsHooks {
 		// from http://webmasters.stackexchange.com/questions/86365/how-to-add-a-page-to-a-category-in-mediawiki-from-a-tag-extension
 		$xml=simplexml_load_string($input);
 		if (!$xml){
-			$_out =  self::warning( wfMessage( 'fm-error-xml')->text() . print_r($input,1) );
+			$_out =  self::warning( wfMessage( 'fm-error-xml')->text() . 
+				print_r($input,1) 
+			);
 		} else {
 			$result = self::getResult( $xml );
 			$_out = self::outputResult( $result );
@@ -69,14 +71,18 @@ class FinancialMathematicsHooks {
 	}
 
   private static function addCategories( &$parser, $result ){
-			$generalCategory =  str_replace(' ', '_', wfMessage( 'fm-category-general', self::getTagName() )->text() );
+			$generalCategory =  str_replace(' ', '_', 
+				wfMessage( 'fm-category-general', self::getTagName() )->text() 
+			);
 		  global $wgOut;
 		  $title = $wgOut->getPageTitle();
 			$parser->getOutput()->addCategory( $generalCategory , $title /* sort key */ );
 			if (isset($result['concept'])){
 				$temp = array_values( $result['concept']);
 				if (isset($temp[0])){
-					$tagCategory =  str_replace(' ', '_', wfMessage( 'fm-category-specific', $temp[0] )->text() );
+					$tagCategory =  str_replace(' ', '_', 
+						wfMessage( 'fm-category-specific', $temp[0] )->text() 
+					);
 					$parser->getOutput()->addCategory( $tagCategory , $title /* sort key */ );
 				}
 			}
@@ -107,7 +113,6 @@ class FinancialMathematicsHooks {
 			if (isset($res['schedule'])){
             $_out .=  $res['schedule'] ;
 			}
-
 		} // if (isset($result['warning']))
 		if (empty($_out)){
 				$_out .=  self::warning( wfMessage( 'fm-error-no-output')->text());

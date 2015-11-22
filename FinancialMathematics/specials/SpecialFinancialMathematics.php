@@ -62,9 +62,13 @@ class SpecialFinancialMathematics extends SpecialPage {
 
 	private function outputDebugMessagesIfRequired( &$out, $result ){
 		if ($this->showUglyDebugMessagesOnRenderedPage){
-			$out->addHTML( "getQueryVaues is <pre> " . print_r($this->getRequest()->getQueryValues(), 1) . "</pre>" );
+			$out->addHTML( "getQueryVaues is <pre> " . 
+				print_r($this->getRequest()->getQueryValues(), 1) . "</pre>" 
+			);
 			if (isset($result['output']['unrendered']['table'])){
-				$out->addHTML( "result output unrendered table is <pre> " . print_r($result['output']['unrendered']['table'], 1) . "</pre>" );
+				$out->addHTML( "result output unrendered table is <pre> " . 
+					print_r($result['output']['unrendered']['table'], 1) . "</pre>" 
+				);
 			}
 		}
 	}
@@ -72,13 +76,17 @@ class SpecialFinancialMathematics extends SpecialPage {
 	private function outputResult( &$out, $result ){
 		$render = new FinMathRender();
 		if (isset($result['warning'])){
-			$out->addHTML( "<span class='fin-math-warning'>" . $result['warning'] . "</span>");
+			$out->addHTML( "<span class='fin-math-warning'>" . 
+				$result['warning'] . "</span>"
+			);
 		} else {
 			$u = array();
 			if (isset($result['output']['unrendered'])){
 				$u = $result['output']['unrendered'];
 			}
-			$res = $render->get_rendered_result( $u, $this->getSkin()->getTitle()->getLinkUrl() );
+			$res = $render->get_rendered_result( 
+				$u, $this->getSkin()->getTitle()->getLinkUrl() 
+			);
 			if (isset($res['formulae'])){
 				$out->addHTML( $res['formulae'] );
 			}
@@ -99,7 +107,8 @@ class SpecialFinancialMathematics extends SpecialPage {
 
 	private function restartForm(){
 		$_restart_label = wfMessage( 'fm-restart')->text();
-		return '<form action="" method=GET><input type="submit" value="' . $_restart_label . '"></form>' ;
+		return '<form action="" method=GET><input type="submit" value="' . 
+			$_restart_label . '"></form>' ;
 	}
 
 }
