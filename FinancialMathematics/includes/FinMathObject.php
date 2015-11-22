@@ -21,19 +21,13 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ * @file
+ * @author     Owen Kellie-Smith
  */
 /**
  * FinMathObject class
  *
- * @package    CT1
- * @author     Owen Kellie-Smith
- */
-
-
-/**
- * CT1 Object class
- *
- * @package    CT1
  */
 abstract class FinMathObject {
 
@@ -43,10 +37,8 @@ abstract class FinMathObject {
      *
      * @return array
      *
-     * @access public
      */
 	public function get_valid_options(){ 
-
 		$r = array( 'request'=>'' );
 		return $r; 
 	}
@@ -56,15 +48,20 @@ abstract class FinMathObject {
      *
      * @return array
      *
-     * @access public
      */
 	public function get_parameters(){ 
 		$r = array();
 		return $r; 
 	}
 
+    /**
+     * Filter input array to valid elements for object
+     *
+     * @param array $_INPUT
+		 * @return array
+     *
+     */
 	public function get_valid_inputs($_INPUT){
-
 		$r = $_INPUT;
 		foreach (array_keys($r) as $key){
 			if (!in_array( $key, array_keys($this->get_valid_options()) ) ){
@@ -78,10 +75,9 @@ abstract class FinMathObject {
     /**
      * Get validation result (list of parameter keys with boolean values)
      *
-     * @param object $candidate  Object to test
+     * @param array $candidate 
      * @return array
      *
-     * @access public
      */
 	public function get_validation($candidate){
 		foreach (array_keys($candidate) as $key){
@@ -100,19 +96,27 @@ abstract class FinMathObject {
      *
      * @return array
      *
-     * @access public
      */
-	public function get_values(){ return array(); }
+	public function get_values(){ 
+		return array(); 
+	}
 		
     /**
      * List displayable labels of object
      *
      * @return array
      *
-     * @access public
      */
-	public function get_labels(){ return array(); }
+	public function get_labels(){ 
+		return array(); 
+	}
 
+    /**
+     * List displayable labels of object
+     * @param string $messageKey
+     * @return string
+     *
+     */
 	protected static function myMessage( $messageKey){
 			$m = $messageKey;
 			if ( function_exists('wfMessage') ){
