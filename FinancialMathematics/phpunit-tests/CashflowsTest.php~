@@ -47,7 +47,7 @@ class FinMathCashflows_Test extends PHPUnit_Framework_TestCase{
 		$this->ccalc->add_cashflow( $c );
     $this->ccalc->set_value( -1 );
 		try{
-			$expl = $this->ccalc->get_delta_for_value( -123 );
+			$expl = $this->ccalc->get_delta_for_value( 100 );
 		} catch ( Exception $e ) { 
     	$error = $e->getMessage(); 
 		}

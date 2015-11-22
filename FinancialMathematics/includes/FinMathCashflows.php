@@ -21,8 +21,16 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ * @file
  */
 
+/**
+ * Cashflows collection - contains casflows plus their total value (an arbitrary, independent value).
+ * The value may imply a single annual effective rate.  I.e. for any valid value v there may be 
+ * a rate r such that if all cashflows are discounted at r, their total discounted value is v.
+ *
+ */
 class FinMathCashflows extends FinMathCollection {
 
 	private $value;
@@ -55,7 +63,8 @@ class FinMathCashflows extends FinMathCollection {
 	public function get_delta_for_value( $v = 0 ){
 		$this->set_value( $v );
 		if ( !isset( $this->value ) ){
-			throw new Exception( self::myMessage( 'fm-exception-get_delta_for_value')  . __FILE . self::myMessage( 'fm-exception-no-value-set')  );
+			throw new Exception( self::myMessage( 'fm-exception-get_delta_for_value')  .
+				 __FILE . self::myMessage( 'fm-exception-no-value-set')  );
 		} else {
 			return $this->get_interpolated_delta_for_value();
 		}
@@ -68,7 +77,8 @@ class FinMathCashflows extends FinMathCollection {
 		$delta = $this->get_delta_for_value( $v );
 		$a_calc->set_delta( $delta );
 		$return[0]['left'] = "i";
-		$return[0]['right'] = $i->explain_format( exp( $delta ) - 1) . "." . "\\ \\mbox{ ".self::myMessage( 'fm-verification').":}";
+		$return[0]['right'] = $i->explain_format( exp( $delta ) - 1) . 
+			"." . "\\ \\mbox{ ".self::myMessage( 'fm-verification').":}";
 		return array_merge( $return, $a_calc->explain_discounted_value( $with_detail ) );
 	}
 
@@ -118,7 +128,9 @@ class FinMathCashflows extends FinMathCollection {
 			$x2 = null;
 		}
 		if ( $loop_count >= $max_loop ){ 
-			throw new Exception (self::myMessage( 'fm-exception-max-iterations-exceeded')  . $this->get_value() . ". " .  self::myMessage( 'fm-exception-query-cashflows-possible')  );
+			throw new Exception (self::myMessage( 'fm-exception-max-iterations-exceeded')  .
+				$this->get_value() . ". " .  
+				self::myMessage( 'fm-exception-query-cashflows-possible')  );
 		}
 		return $x1;
 	}
@@ -165,7 +177,6 @@ class FinMathCashflows extends FinMathCollection {
 		}
 	}
 
-		
 	private function annuity_type( $i = array() ){
 		if( is_array($i) ){
 			if ( in_array( 'escalation_frequency', array_keys($i) ) ){
@@ -201,9 +212,9 @@ class FinMathCashflows extends FinMathCollection {
 			} else {
 				return false;
 			}
-		}
-		catch( Exception $e ){ 
-			throw new Exception( self::myMessage( 'fm-exception-in') . __FILE__ . ": " . $e->getMessage() );
+		} catch( Exception $e ) { 
+			throw new Exception( self::myMessage( 'fm-exception-in') . __FILE__ . 
+				": " . $e->getMessage() );
 		}
 	}
 
@@ -231,7 +242,6 @@ class FinMathCashflows extends FinMathCollection {
 		}
 		return $val;
 	}
-
 
 	protected function cashflow_format($d){
 		return number_format($d, $this->max_dp);
@@ -280,8 +290,6 @@ class FinMathCashflows extends FinMathCollection {
 		}
 		return $return;
 	}
-
-
 
 	public function __construct() {
 		;
