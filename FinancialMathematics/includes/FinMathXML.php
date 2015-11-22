@@ -43,9 +43,7 @@ class FinMathXML extends FinMathObject{
      */
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
-		$r['xml'] = array(
-							'type'=>'string',
-						);
+		$r['xml'] = array( 'type'=>'string' );
 		return $r; 
 	}
 
@@ -87,7 +85,7 @@ class FinMathXML extends FinMathObject{
 	}
 
 	public function set_xml($m){
-	$m = urldecode($m);
+		$m = urldecode($m);
 		try{ 
 			$xml=simplexml_load_string($m); 
 			if ($xml){
@@ -97,8 +95,7 @@ class FinMathXML extends FinMathObject{
 					$this->xml = $m;
 				}
 			} // otherwise don't change $this->xml
-		} 
-		catch( Exception $e ){
+		} catch( Exception $e ){
 			return ;
 		}
 	}
@@ -114,15 +111,14 @@ class FinMathXML extends FinMathObject{
 	}
 
 	public function set_from_input($_INPUT = array(), $pre = ''){
-	try{
+		try{
 			$this->set_xml(	$_INPUT[$pre. 'xml'] );
 			return true;
-		}
-		catch( Exception $e ){ 
-			throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
+		} catch( Exception $e ) { 
+			throw new Exception( self::myMessage( 'fm-exception-in') . " " . 
+				__FILE__ . ": " . $e->getMessage() );
 		}
 	}
-
   
 } // end of class
 

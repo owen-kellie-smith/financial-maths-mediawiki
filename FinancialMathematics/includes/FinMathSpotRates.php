@@ -37,13 +37,11 @@ protected $explanation_par_yields;
 		return $r; 
 	}
 
-
 	public function get_clone_this(){
 		$a_calc = new FinMathSpotRates();
 		$a_calc->set_objects( $this->get_objects() );
 		return $a_calc;
 	}
-
 
 	protected function is_acceptable_class( $c ){
 		return ( 'FinMathSpotRate' == get_class( $c ) );
@@ -59,14 +57,16 @@ protected $explanation_par_yields;
 
 	public function explain_par_yield( FinMathParYield $f ){
 		if ( !$this->get_par_yields()->is_in_collection( $f ) ){
-			throw new Exception( __FILE__ . self::myMessage( 'fm-error-explain-paryield', $f )  );
+			throw new Exception( __FILE__ . 
+				self::myMessage( 'fm-error-explain-paryield', $f )  );
 		}
 		return $this->explanation_par_yields[ $f->get_term() ];
 	}
 
 	public function explain_forward_rate( FinMathForwardRate $f ){
 		if ( !$this->get_forward_rates()->is_in_collection( $f ) ){
-			throw new Exception( __FILE__ .  self::myMessage( 'fm-error-explain-forward', $f )  );
+			throw new Exception( __FILE__ .  
+				self::myMessage( 'fm-error-explain-forward', $f )  );
 		}
 		return $this->explanation_forward_rates[ $f->get_end_time() ];
 	}
@@ -74,7 +74,11 @@ protected $explanation_par_yields;
 	public function get_all_rates(){
 	// returns array of rates that could be rendered in table
 		$out = array();
-		$out[ 'header' ] = array('spot term','spot rate','forward period','forward rate','par term','par yield');
+		$out[ 'header' ] = array(
+			'spot term','spot rate',
+			'forward period','forward rate',
+			'par term','par yield',
+		);
 		$spots = $this->get_objects();
 		$forwards = $this->get_forward_rates()->get_objects();
 		$pars = $this->get_par_yields()->get_objects();
@@ -110,13 +114,12 @@ protected $explanation_par_yields;
 		return $out;
 	}
 
-
 	public function get_forward_rates(){
-		$f = null;
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
 		$fs = new FinMathForwardRates();
 		for ($i = 0, $ii = $this->get_count(); $i < $ii; $i++){
+			$f = null;
 			$end = $terms[ $i ]; 	
 			if ( 0 == $i ){
 				$start = 0; $i = $spot_rates[ $end ]->get_i_effective();	
@@ -126,17 +129,25 @@ protected $explanation_par_yields;
 				$exp[1]['right'] = $f->get_i_effective();
 			} else {
 				$start = $terms[ $i - 1 ]; 
-				$phi = $spot_rates[ $end ]->get_delta() * $end - $spot_rates[ $start ]->get_delta() * $start;	
+				$phi = $spot_rates[ $end ]->get_delta() * $end 
+					- $spot_rates[ $start ]->get_delta() * $start;	
 				$phi = $phi / ( $end - $start );
 				$f = new FinMathForwardRate( exp( $phi ) - 1, $start, $end );
-				$explanation_top = "\\left( 1 + " . $spot_rates[ $end ]->get_label() .  " \\right)^{" . $end . "}";
-				$explanation_top_n = (1 + $spot_rates[ $end ]->get_i_effective() ) . "^{" . $end . "}";
-				$explanation_bot = "\\left( 1 + " . $spot_rates[ $start ]->get_label() . " \\right)^{" . $start . "}";
-				$explanation_bot_n = (1 + $spot_rates[ $start ]->get_i_effective()) . "^{" . $start . "}";
+				$explanation_top = "\\left( 1 + " . $spot_rates[ $end ]->get_label() .
+				  " \\right)^{" . $end . "}";
+				$explanation_top_n = (1 + $spot_rates[ $end ]->get_i_effective() ) .
+				 "^{" . $end . "}";
+				$explanation_bot = "\\left( 1 + " . $spot_rates[ $start ]->get_label() .
+				 " \\right)^{" . $start . "}";
+				$explanation_bot_n = (1 + $spot_rates[ $start ]->get_i_effective()) . 
+				"^{" . $start . "}";
 				$explanation = "\\frac{ " . $explanation_top . "}{" . $explanation_bot . "}";
-				$explanation_n = "\\frac{ " . $explanation_top_n . "}{" . $explanation_bot_n . "}";
-				$explanation_algebra = "\\left[ " . $explanation . "\\right]^{\\frac{1}{" . $end . "-" . $start . "}} - 1";
-				$explanation_numbers = "\\left[ " . $explanation_n . "\\right]^{\\frac{1}{" . $end . "-" . $start . "}} - 1";
+				$explanation_n = "\\frac{ " . $explanation_top_n . "}{" . 
+					$explanation_bot_n . "}";
+				$explanation_algebra = "\\left[ " . $explanation . 
+					"\\right]^{\\frac{1}{" . $end . "-" . $start . "}} - 1";
+				$explanation_numbers = "\\left[ " . $explanation_n . 
+					"\\right]^{\\frac{1}{" . $end . "-" . $start . "}} - 1";
 				$exp[0]['right'] = $explanation_algebra;
 				$exp[1]['right'] = $explanation_numbers;
 				$exp[2]['right'] = $f->get_i_effective();
@@ -159,9 +170,11 @@ protected $explanation_par_yields;
 			$ps->add_object( $p );
 			$exp[0]['left'] = $p->get_label();
 			$exp_ann = $this->explain_par_yield_annuity_value( $p->get_term() );
-			$exp[0]['right'] = "\\frac{1 - (1 + i_{" . $p->get_term() . "})^{-" . $p->get_term() . "}}{" . $exp_ann['algebra'] . "}";
-			$exp[1]['right'] = "\\frac{1 - " . (1 + $spot_rates[ $end ]->get_i_effective()) . "^{-" . $p->get_term() . "}}{" . $exp_ann['numbers'] . "}";
-
+			$exp[0]['right'] = "\\frac{1 - (1 + i_{" . $p->get_term() . 
+				"})^{-" . $p->get_term() . "}}{" . $exp_ann['algebra'] . "}";
+			$exp[1]['right'] = "\\frac{1 - " . 
+				(1 + $spot_rates[ $end ]->get_i_effective()) . 
+				"^{-" . $p->get_term() . "}}{" . $exp_ann['numbers'] . "}";
 			$exp[2]['right'] = $p->get_coupon();
 			$this->explanation_par_yields[ $p->get_term() ] = $exp;
 		}
@@ -172,7 +185,11 @@ protected $explanation_par_yields;
 		// returns sum for discounted value of 1 payable at terms 1, 2, .. $term
 		// provided spot rates exist for terms 1, 2, ... $term
 		if ( $term > $this->maximum_contiguous_term() ){
-			throw new Exception ( __FILE__ . self::myMessage( 'fm-error-explain-annuity-value-term', $term,  $this->maximum_contiguous_term()  )   );
+			throw new Exception ( __FILE__ . 
+				self::myMessage( 'fm-error-explain-annuity-value-term', 
+					$term,  $this->maximum_contiguous_term()  
+				)   
+			);
 		}
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
@@ -181,7 +198,8 @@ protected $explanation_par_yields;
 		$numbers = (1 + $spot_rates[ $terms[0] ]->get_i_effective()) . "^{-1}";
 		for ($i = 2, $ii = $term; $i <= $ii; $i++){
 			$algebra .= " + (1 + i_" . $i . ")^{-" . $i . "}";
-			$numbers .= " + " . (1 + $spot_rates[ $terms[$i - 1] ]->get_i_effective()) . "^{-" . $terms[ $i - 1] . "}";
+			$numbers .= " + " . (1 + $spot_rates[ $terms[$i - 1] ]->get_i_effective()) . 
+				"^{-" . $terms[ $i - 1] . "}";
 		}
 		return array( 'algebra' => $algebra, 'numbers' => $numbers );
 	}
@@ -190,7 +208,11 @@ protected $explanation_par_yields;
 		// returns discounted value of 1 payable at terms 1, 2, .. $term
 		// provided spot rates exist for terms 1, 2, ... $term
 		if ( $term > $this->maximum_contiguous_term() ){
-			throw new Exception ( __FILE__ . self::myMessage( 'fm-error-annuity-value-term', $term,  $this->maximum_contiguous_term()  )  );
+			throw new Exception ( __FILE__ . 
+				self::myMessage( 'fm-error-annuity-value-term', 
+					$term,  $this->maximum_contiguous_term()  
+				)  
+			);
 		}
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
@@ -222,7 +244,6 @@ protected $explanation_par_yields;
 		return false;
 	}
 			
-
 	public function set_from_input($_INPUT = array(), $pre = ''){
 		try{
 			$c_new = new FinMathSpotRates();
@@ -240,9 +261,10 @@ protected $explanation_par_yields;
 			} else {
 				return false;
 			}
-		}
-		catch( Exception $e ){ 
-			throw new Exception( self::myMessage( 'fm-exception-in' )  . __FILE__ . ": " . $e->getMessage() );
+		} catch( Exception $e ) { 
+			throw new Exception( self::myMessage( 'fm-exception-in' )  . 
+				__FILE__ . ": " . $e->getMessage() 
+			);
 		}
 	}
 }
