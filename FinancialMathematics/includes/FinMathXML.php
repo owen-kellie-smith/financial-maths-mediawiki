@@ -25,7 +25,6 @@
 /**
  * FinMathXML class
  *
- * @package    CT1
  * @author     Owen Kellie-Smith
  */
 

@@ -119,7 +119,7 @@ class FinMathSpotRate extends FinMathObject {
 	}
 
 	public function get_labels(){
-		$labels['CT1_Spot_Delta'] = $this->get_label();
+		$labels['Spot_Delta'] = $this->get_label();
 		return $labels;
 	}
 

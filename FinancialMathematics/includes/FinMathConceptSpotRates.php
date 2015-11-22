@@ -29,7 +29,6 @@
  *
  * Provides input/output for spot rates
  *
- * @package    CT1
  * @author     Owen Kellie-Smith
  */
 class FinMathConceptSpotRates extends FinMathForm{

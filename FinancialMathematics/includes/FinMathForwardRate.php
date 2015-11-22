@@ -21,8 +21,16 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ * @file
  */
 
+/**
+ * Forward-rate: a rate effective from a particular time for a particular term
+ *
+ * The rate can be expressed as an annual effective rate or as a continuously compounded annual rate.
+ * 
+ */
 class FinMathForwardRate extends FinMathObject {
 
     private $delta;
@@ -150,7 +158,7 @@ class FinMathForwardRate extends FinMathObject {
     }
 
     public function get_labels(){
-        $labels['CT1_Spot_Delta'] = $this->get_label();
+        $labels['Forward_Delta'] = $this->get_label();
         return $labels;
     }
 

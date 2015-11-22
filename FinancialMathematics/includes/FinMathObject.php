@@ -25,8 +25,15 @@
  * @file
  * @author     Owen Kellie-Smith
  */
+
 /**
- * FinMathObject class
+ * Abstract class for financial objects.
+ * The inheriting objects are mostly types of cashflow.
+ * Each object has constraints on what properties are valid, and has labels for its properties.
+ * The constrannts and labels enable the object to be used in a standard form.
+ * The values of the object's properties enables the object to be used (e.g. in equations of value).
+ * 
+ * @class FinMathObject 
  *
  */
 abstract class FinMathObject {

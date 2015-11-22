@@ -25,6 +25,19 @@
  * @file
  */
 
+/**
+ * Cashflow object representing a single cashflow, or an annuity.
+ * The properties of the cashflow are what kind of annuity it is, the rate of payment, and 
+ * the effective time the cashflows start.
+ * 
+ * E.g. amounts paid out of 100 at time 3, 110 at time 4, 121 at time 5
+ * could be represented as an escalating 3 year annuity payable in advance, starting at time 3,
+ * escalating at 10% per year, at (initial) rate of -100 per year.
+ *
+ * Each single cashflow is used within the FinMathCashflows collection to calculate general
+ * equations of value.
+ *
+ */
 class FinMathCashflow extends FinMathObject {
 
     private $annuity;

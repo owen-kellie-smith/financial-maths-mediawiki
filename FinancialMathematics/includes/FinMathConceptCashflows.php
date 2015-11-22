@@ -29,7 +29,6 @@
  *
  * Provides input/output for multiple cashflows
  *
- * @package    CT1
  * @author     Owen Kellie-Smith
  */
 class FinMathConceptCashflows extends FinMathForm{

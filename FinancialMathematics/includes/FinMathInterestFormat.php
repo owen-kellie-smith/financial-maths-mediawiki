@@ -21,21 +21,22 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */
-/**
- * FinMathInterestFormat class
  *
- * @package    CT1
+ * @file
  * @author     Owen Kellie-Smith
  */
 
-
+/**
+ * A format (with no rate specified) for specifying an interest rate.
+ * All that is specified is whether the interest is payable in advance (i.e. a discount)
+ * or arrears, and with what frequency.
+ *
+ */
 class FinMathInterestFormat extends FinMathObject{
 
     /**
      * Frequency (instalments per year)
      *
-     * @access protected
      * @var    number
      */
 	protected $m = 1;
@@ -43,7 +44,6 @@ class FinMathInterestFormat extends FinMathObject{
     /**
      * Timing flag (true means in advance)
      *
-     * @access protected
      * @var    boolean 
      */
 	protected $advance = false;
@@ -53,7 +53,6 @@ class FinMathInterestFormat extends FinMathObject{
      *
      * @return array
      *
-     * @access public
      */
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
@@ -73,7 +72,6 @@ class FinMathInterestFormat extends FinMathObject{
      *
      * @return array
      *
-     * @access public
      */
 	public function get_parameters(){ 
 		$r = parent::get_parameters();
@@ -93,7 +91,6 @@ class FinMathInterestFormat extends FinMathObject{
      *
      * @return array
      *
-     * @access public
      */
 	public function get_values(){ 
 		$r = parent::get_values();
@@ -159,7 +156,8 @@ class FinMathInterestFormat extends FinMathObject{
 			$out = self::myMessage( 'fm-interest-rate');
 		}
 		if (1!=$this->m){
-			$out.=" " . self::myMessage( 'fm-convertible'). " " . $this->m . self::myMessage( 'fm-times-per-year');
+			$out.=" " . self::myMessage( 'fm-convertible'). 
+				" " . $this->m . self::myMessage( 'fm-times-per-year');
 		}
 		return $out;
 	}
@@ -207,7 +205,9 @@ class FinMathInterestFormat extends FinMathObject{
 			return true;
 		}
 		catch( Exception $e ){ 
-			throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ . ": " . $e->getMessage() );
+			throw new Exception( self::myMessage( 'fm-exception-in') . " " . __FILE__ .
+				 ": " . $e->getMessage() 
+			);
 		}
 	}
 

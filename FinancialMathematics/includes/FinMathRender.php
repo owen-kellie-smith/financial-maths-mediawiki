@@ -24,12 +24,11 @@
  */
 
 
-define("CT1_MAXIMUM_LEVELS_DETAIL", 10);
+define("FINMATH_MAXIMUM_LEVELS_DETAIL", 10);
 
 /**
  * FinMathRender class
  *
- * @package    CT1
  * @author     Owen Kellie-Smith
  */
 class FinMathRender  {
@@ -205,7 +204,7 @@ public function get_rendered_result( $u=array(), $pageTitle='' ){
 			$output = $this->get_render_latex_sentence( $equation_array );
 			$out .= $output['output'] . $_nl;
 			$count_levels = 1;
-			while ( $count_levels < CT1_MAXIMUM_LEVELS_DETAIL && isset( $output['detail'] ) ) {
+			while ( $count_levels < FINMATH_MAXIMUM_LEVELS_DETAIL && isset( $output['detail'] ) ) {
 				$count_levels++;
 				if ( 0 < count( $output['detail'] ) ){
 					$new_detail = $this->get_a_layer_of_equation_detail( $output, $newline );

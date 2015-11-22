@@ -21,8 +21,13 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ * @file
  */
 
+/**
+ * Abstract Collection object that holds groups of objects of the same class
+ */
 abstract class FinMathCollection extends FinMathObject {
 
 	protected $objects;
@@ -56,7 +61,7 @@ abstract class FinMathCollection extends FinMathObject {
 		return print_r( $return, 1);
 	}
 
-	public function get_values_as_array( $name_label = "CT1_collection" ){
+	public function get_values_as_array( $name_label = "FinMathCollection" ){
 		$hidden = array();
 		if ( count( $this->get_values() ) > 0 ) {
 			$i = 0;
@@ -101,13 +106,23 @@ abstract class FinMathCollection extends FinMathObject {
 
 	public function add_object( FinMathObject $c, $duplicates_allowed = false, $re_sort = false ){
 		if( !$this->is_acceptable_class( $c ) ){
-			throw new Exception( __FILE__ . self::myMessage( 'fm-error-invalid-object', get_class( $c ), get_class( $this )));
+			throw new Exception( __FILE__ . 
+				self::myMessage( 'fm-error-invalid-object', 
+					get_class( $c ), 
+					get_class( $this )		
+				)
+			);
 		}
 		if( 0 == $this->get_count() ){
 			$this->class = get_class( $c );
 		}
 		if( get_class( $c ) != $this->class ){
-			throw new Exception( __FILE__ . self::myMessage( 'fm-error-invalid-object', get_class( $c ), $this->class )  );
+			throw new Exception( __FILE__ . 
+				self::myMessage( 'fm-error-invalid-object', 
+					get_class( $c ), 
+					$this->class 
+				)  
+			);
 		}
 		if ( !$duplicates_allowed ) {
 			$this->remove_object( $c );
@@ -137,7 +152,6 @@ abstract class FinMathCollection extends FinMathObject {
 		}
 	}
 
-
 	public function remove_object( FinMathObject $c, $remove_all = false ){
 		if ( 0 < $this->get_count() ){
 			$this_objects = $this->get_objects();
@@ -154,5 +168,4 @@ abstract class FinMathCollection extends FinMathObject {
 	
 
 }
-
 
