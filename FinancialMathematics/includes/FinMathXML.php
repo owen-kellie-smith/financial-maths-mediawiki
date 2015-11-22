@@ -21,38 +21,25 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */
-/**
- * FinMathXML class
  *
+ * @file
  * @author     Owen Kellie-Smith
  */
 
-
+/**
+ * The FinMathXML class provides objects that simply store valid XML.
+ *
+ */
 class FinMathXML extends FinMathObject{
 
 	private $xml;
 
-    /**
-     * List defining parameter keys, descriptions, labels of object
-     *
-     * @return array
-     *
-     * @access public
-     */
 	public function get_valid_options(){ 
 		$r = parent::get_valid_options();
 		$r['xml'] = array( 'type'=>'string' );
 		return $r; 
 	}
 
-    /**
-     * List defining parameter keys, descriptions, labels of object
-     *
-     * @return array
-     *
-     * @access public
-     */
 	public function get_parameters(){ 
 		$r = parent::get_parameters();
 		$r['xml'] = array(
@@ -62,13 +49,6 @@ class FinMathXML extends FinMathObject{
 		return $r; 
 	}
 
-    /**
-     * List values of defining parameter keys
-     *
-     * @return array
-     *
-     * @access public
-     */
 	public function get_values(){ 
 		$r = parent::get_values();
 		$r['xml'] = $this->get_xml();

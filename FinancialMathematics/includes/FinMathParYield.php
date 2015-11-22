@@ -21,9 +21,19 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ * @file
  */
 
 
+/**
+ * Par yield object.
+ *
+ * Defining parameters are term and coupon.  The object represents a loan with annual
+ * interest payments in arrears of the coupon amount, with a capital redemption of 1 at the term.
+ * I.e. the cashflows are coupon @ t=1, 2, ..., term-1, and (1 + coupon) @ term. 
+ * 
+ */
 class FinMathParYield extends FinMathObject {
 
     private $coupon;

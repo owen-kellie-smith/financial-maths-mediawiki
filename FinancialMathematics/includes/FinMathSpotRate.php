@@ -21,8 +21,18 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
+ *
  */
 
+
+/**
+ * Spot rate object.
+ * The defining parameters are the annual effetive rate, and the term.
+ * I.e. the spot rate represents the available interest rate which applies over the next term years.
+ 
+ * The rate is stored as a continuously compounded rate.
+ */
 
 class FinMathSpotRate extends FinMathObject {
 
