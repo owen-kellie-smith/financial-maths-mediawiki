@@ -25,6 +25,11 @@
  * @file
  */
 
+/**
+ * The FinMathForwardRates class is just used as a storage collection.
+ * It doesn't provide any calculations.
+ * 
+ */
 class FinMathForwardRates extends FinMathCollection {
 
 	protected function is_acceptable_class( $c ){

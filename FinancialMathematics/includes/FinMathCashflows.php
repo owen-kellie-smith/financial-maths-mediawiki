@@ -26,10 +26,26 @@
  */
 
 /**
- * Cashflows collection - contains casflows plus their total value (an arbitrary, independent value).
- * The value may imply a single annual effective rate.  I.e. for any valid value v there may be 
+ * Cashflows collection - contains cashflows (i.e. objects of the FinMathCashflow class)
+ * plus their total discounted value (an arbitrary, independent value).
+ * The total discounted value may imply a single annual effective rate.  I.e. for any valid value v there may be 
  * a rate r such that if all cashflows are discounted at r, their total discounted value is v.
+ * 
+ * E.g. if the collection contained one cashflow of amount 5 at time 0, and another single cashflow 
+ * of amount -22 at time 1, 
+ * then a total discounted value of -15 would imply an annual effective rate of 10\% per year, because
+ * +5 - 22 / 1.1 = + 5 - 20 = -15.
+ * 
+ * The total discounted value may be impossible.  
+ * E.g. if the collection contained just one cashflow of amount 5 at time 0, 
+ * then there is no interest rate which would make the total discounted value anything other than 5.
  *
+ * Exceptionally, the total discounted value may imply more than one interest rate, 
+ * but only one rate will ever be calculated.
+ * E.g. single cashflows of
+ * +10 at time 2, -9 at time 1 have a total discounted value of -2 (as at time 0), if the 
+ * effective interest rate is +100\% or +150\% per time period.
+ * Check: +10 / 2^2 - 9/2 = +10 / 2.5^2 - 9/2.5 = -2.
  */
 class FinMathCashflows extends FinMathCollection {
 
@@ -52,6 +68,15 @@ class FinMathCashflows extends FinMathCollection {
 		$this->value = $v;
 	}
 
+/**
+ * The get_value() function returns the (arbitrarily input) value if there is one,
+ * or the calculated discounted value if there is no input value.
+ * The discounted value is the sum of the discounted values of each FinMathCashflow object
+ * in the collection.  The interest rates used to discount the cashflows are stored separately in
+ * each FinMathCashflow object, but the set_i_effective() function in the FinMathCashflows class 
+ * stores a single interest rate in every FinMathCashflow that it contains.
+ * @return number
+ */
 	public function get_value(){
 		if ( isset( $this->value ) ){
 			return $this->value;
@@ -60,6 +85,18 @@ class FinMathCashflows extends FinMathCollection {
 		}
 	}
 
+/**
+ * The get_delta_for_value() function returns an interest rate 
+ * (expressed as a continuously compounded rate) which makes the total
+ * discounted value of all the cashflows in the collection equal to an arbitrarily input value.
+ * 
+ * The rate is sought by interpolation. If no rate is found after 100 interpolations an error is thrown.
+ *
+ * Exceptionally, more than one rate could satisfy the input total discounted value,
+ * but at most one rate will ever be calculated.
+ * @param number $v total discounted value (total present value as at time 0)
+ * @return number
+ */
 	public function get_delta_for_value( $v = 0 ){
 		$this->set_value( $v );
 		if ( !isset( $this->value ) ){
@@ -70,6 +107,14 @@ class FinMathCashflows extends FinMathCollection {
 		}
 	}
 
+/**
+ * The explain_interest_rate_for_value() function is the companion to the 
+ * get_delta_for_value() function. The explain_interest_rate_for_value() function 
+ * returns an array of LaTex - formatted calculations which justify the interest
+ * rate, by showing that it makes the total discounted value equal whatever was required.
+ * 
+ * @return array
+ */
 	public function explain_interest_rate_for_value( $v = 0, $with_detail = true ){
 		$i = new FinMathInterest();
 		$return = array();
@@ -161,6 +206,12 @@ class FinMathCashflows extends FinMathCollection {
 		$this->set_i_effective( exp( $d ) - 1 );
 	}
 
+/**
+ * The set_i_effective() function 
+ * stores a single interest rate in every FinMathCashflow contained by the collection.
+ * @param number $i annual effective interest rate
+ * @return void
+ */
 	public function set_i_effective( $i ){
 		$c_new = array();
 		$c_old = $this->get_cashflows();
