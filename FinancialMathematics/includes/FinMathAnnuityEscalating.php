@@ -25,6 +25,22 @@
  * @file
  */
 
+/**
+ *
+ * FinMathAnnuityEscalating calculates present values of 
+ * annuities certain, i.e. discrete regular payments (or continuous streams
+ * of payments).
+ *
+ * The payment rate is always 1 per year initially.  The payment rate may
+ * escalate at any rate, provided that the escalation points coincide
+ * meaningfully with the payment points.
+ *
+ * An example of a meaningless escalation frequency (which would throw an error)
+ * would be if escalations of say 10% per escalation occured every 11 months, 
+ * but payments were made every 12 months.
+ * If the first payment were 1, how much should the second payment be for?
+ * 1.1? Some combination of 1.1 and 1.21 (to reflect the next escalation)?
+ */
 class FinMathAnnuityEscalating extends FinMathAnnuity{
 
 	protected $escalation_delta;

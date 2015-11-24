@@ -21,9 +21,19 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * 
+ * @file 
  */
 
 
+/**
+ *
+ * FinMathInterest enables reformatting of equivalent interest rates.
+ * E.g. 10\% per year effective rate is equivalent to a 
+ * 1 - 1.1 = 9\% (ish) per year discount rate, and is equivalent to a 
+ * ln(1.1) = 9.5% (ish) per year continuously compounded rate.
+ * 
+ */
 class FinMathInterest extends FinMathInterestFormat  {
 
 protected $delta_source;

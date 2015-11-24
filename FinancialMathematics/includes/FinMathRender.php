@@ -21,19 +21,16 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
+ * @author     Owen Kellie-Smith
  */
 
 
 define("FINMATH_MAXIMUM_LEVELS_DETAIL", 10);
 
-/**
- * FinMathRender class
- *
- * @author     Owen Kellie-Smith
- */
 class FinMathRender  {
 
-	/**
+		/**
 	 * @param integer $eqref   Equation counter
 	 *
 	 * @access private
@@ -45,7 +42,8 @@ public function __construct(FinMathObject $obj=null){
 }
 
 	/**
-	 * Get rendering of whole unrenderde result as array of strings that can be echoed to screen
+	 * Get rendering of whole unrendered result as array of strings 
+   * that can be echoed to screen
 	 *
 	 * @param array $u result parameters
 	 * @return array

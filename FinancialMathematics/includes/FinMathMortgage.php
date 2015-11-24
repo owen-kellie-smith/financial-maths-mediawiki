@@ -21,9 +21,18 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
  */
 
-
+/**
+ *
+ * FinMathMortgage calculates the instalment amount and payment schedule
+ * for a level repayment mortgage.
+ *
+ * Equivalently, if the instalment amount is given, it calculates the effective
+ * interest rate. 
+ *
+ */
 class FinMathMortgage extends FinMathAnnuity{
 
 protected $principal;

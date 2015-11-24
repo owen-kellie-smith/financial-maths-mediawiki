@@ -21,8 +21,18 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * 
+ * @file 
  */
 
+/**
+ *
+ * FinMathAnnuity calculates and explains the calculation of present values of 
+ * annuities certain, i.e. discrete regular payments (or continuous streams
+ * of payments).
+ *
+ * The payment rate is always 1 per year.
+ */
 class FinMathAnnuity extends FinMathInterest{
 
 	protected $term;
@@ -192,6 +202,12 @@ class FinMathAnnuity extends FinMathInterest{
 		return false;
 	}
  
+/**
+ *
+ * get_annuity_certain() calculates the discounted value of the annuity payments
+ *
+ * @return number
+ */
 	public function get_annuity_certain(){
 		if (0==$this->get_delta()){
 			return $this->get_term();

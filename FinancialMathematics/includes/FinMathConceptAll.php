@@ -59,7 +59,7 @@ class FinMathConceptAll extends FinMathForm{
 		return $return;
 	}
 
-	public function get_calculator( $unused ){
+	protected function get_calculator( $unused ){
 		$p = array('method'=> 'GET', 'submit'=>self::myMessage(  'fm-get-calculator') , self::myMessage(  'fm-select-calculator'));
 		$p['select-options'] = $this->get_concept_labels() ;
 		$p['select-name'] = 'concept';
@@ -104,7 +104,7 @@ class FinMathConceptAll extends FinMathForm{
 		return $return;
 	}
 	
-	public function get_controller_no_xml($_INPUT ){
+	private function get_controller_no_xml($_INPUT ){
 	$return['arrayInput']=$_INPUT;
 	try{
 		foreach( $this->candidate_concepts() AS $c ){

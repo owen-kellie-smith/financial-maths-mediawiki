@@ -61,7 +61,7 @@ private function get_unrendered_interest_rate(){
 
 
 	
-public function get_calculator($parameters){
+protected function get_calculator($parameters){
 	$p = array('exclude'=>$parameters,'request'=> $this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-annuity-certain') );
 	$c = parent::get_calculator($p);
 	$c['values']['value'] = NULL;

@@ -21,8 +21,16 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
  */
 
+/**
+ *
+ * FinMathSingleCashflow represents an immediate payment of 1 (with value 1).
+ * The representation is via the convoluted means of describing the cashflow as
+ * an annual one year annuity certain (payable in one instalment, in advance).
+ *
+ */
 class FinMathSingleCashflow extends FinMathAnnuity{
 
 	public function get_valid_options(){ 

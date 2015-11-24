@@ -21,12 +21,24 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
  */
 
+/**
+ *
+ * FinMathAnnuityIncreasing calculates present values of 
+ * increasing or decreasing annuities certain, i.e. discrete regular payments
+ * which step up or down by 1 each year.
+ *
+ * The payment rate is always 1 per year initially, and does not escalate 
+ * exponentially.
+ *
+ * In other words, this class returns value of (Ia)n or (Da)n
+ * i.e. annuities certain paying 1, 2, 3...n-2, n-1, n   
+ * or n, n-1, n-2, ... 1 @ times 1, 2, 3, .. n (if in arrears)
+ *
+ */
 class FinMathAnnuityIncreasing extends FinMathAnnuity{
-// returns value of (Ia)n or (Da)n
-// i.e. annuity paying 1, 2, 3...n-2, n-1, n   
-// or n, n-1, n-2, ... 1 @ times 1, 2, 3, .. n (if in arrears)
 
 	protected $increasing;
 

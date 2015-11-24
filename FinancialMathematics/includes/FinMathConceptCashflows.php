@@ -21,6 +21,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
  */
 
 
@@ -172,7 +173,7 @@ public function get_concept_label(){
 	}
 
 	
-	public function get_unrendered_delete_buttons($unused=''){
+	protected function get_unrendered_delete_buttons($unused=''){
 		return parent::get_unrendered_delete_buttons('view_cashflows');
 	}
 
@@ -271,13 +272,12 @@ public function get_concept_label(){
 	}
 
 	/**
-	 * Get array of parameters for form to value cashflows (get value or ineterst rate satisfying value)
+	 * Get array of parameters for form to value cashflows (get value or ineterest rate satisfying value)
 	 *
 	 * @return array
 	 *
-	 * @access public
 	 */
-	public function get_calculator($parameters){
+	protected function get_calculator($parameters){
 		$parameters['i_effective'] = array(
 			'name'=> 'i_effective',
 			'label' => self::myMessage( 'fm-label_i_effective'),
@@ -316,9 +316,8 @@ public function get_concept_label(){
 	 *
 	 * @return string
 	 *
-	 * @access public
 	 */
-	public function get_request(){
+	protected function get_request(){
 		return "value_cashflows";
 	}
 
@@ -327,9 +326,8 @@ public function get_concept_label(){
 	 *
 	 * @return array
 	 *
-	 * @access public
 	 */
-	public function get_possible_requests(){
+	protected function get_possible_requests(){
 		return array( 
 			'view_cashflows',
 			'add_cashflow',

@@ -21,8 +21,19 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * @file
  */
 
+/**
+ *
+ * FinMathForm is an abstract class for the "forms" used to input and process
+ * requests about FinMath objects.
+ *
+ * It might turn out that the forms and their related classes should be merged 
+ * into one class, but for now they are separate.
+ * Questions (inputs) go into a FinMathForm.  The inputs are used to populate a
+ * relevant FinMathObject.  Answers (results) come out of the FinMathForm.
+ */
 abstract class FinMathForm implements FinMathConcept {
 
 	protected $obj;
@@ -52,7 +63,7 @@ abstract class FinMathForm implements FinMathConcept {
 	 );
 	}
 
-	public function get_unrendered_delete_buttons( $request = ""){
+	protected function get_unrendered_delete_buttons( $request = ""){
 		$out = array();
 		if ( $this->obj instanceof FinMathCollection ){
 			if ( $this->obj->get_count() > 0 ){
@@ -89,7 +100,7 @@ abstract class FinMathForm implements FinMathConcept {
 		$this->set_obj($obj);
 	}
 
-	public function set_obj(FinMathObject $obj){	
+	protected function set_obj(FinMathObject $obj){	
 		$this->obj = $obj;
 	}
 
@@ -97,15 +108,15 @@ abstract class FinMathForm implements FinMathConcept {
 		return $this->obj;
 	}
 
-	public function get_solution(){
+	protected function get_solution(){
 		return;
 	}
 
-	public function get_request(){
+	protected function get_request(){
 		return $this->request;
 	}
 
-	public function get_possible_requests(){
+	protected function get_possible_requests(){
 		return array( $this->request );
 	}
 
@@ -113,7 +124,7 @@ abstract class FinMathForm implements FinMathConcept {
 		$this->request = $s;
 	}
 
-	public function get_calculator( $parameters) {
+	protected function get_calculator( $parameters) {
 		// returns associative array which can be passed to a form renderer e.g. QuickForm2
 		$p = $parameters;
 		$this->get_form_parameters($p);
