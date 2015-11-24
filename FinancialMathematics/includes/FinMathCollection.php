@@ -38,10 +38,17 @@ abstract class FinMathCollection extends FinMathObject {
 		// this test is over-written by the child classes
 	}
 
+/**
+ * A candidate is in the collection if it has the same value as one of the objects in the collection
+ * 
+ * @param $candidate
+ * @return bool
+ *
+ */
 	public function is_in_collection( $candidate ){
 		if ( $this->get_count() > 0) {
 			foreach ( $this->get_objects() as $obj ){
-				if ( $obj == $candidate ){
+				if ( $this->is_acceptable_class( $candidate ) && $obj == $candidate ){
 					return true;
 				}
 			}
