@@ -21,8 +21,22 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ * 
+ * @file
  */
 
+/**
+ * This class provides a FinMathCollection for FinMathSpotRate objects. 
+ * 
+ * The class stores spot rates (equivalent to the current price of zero coupon bonds over various terms)
+ * and calculates (where possible) forward rates and par yields.
+ * To calculate a par yield (which is stored in a FinMathParYield object), it is necessary
+ * to know the spot rates at each integer term up to the term of the notional bond.
+ * I.e. to calculate the n-year par-yield, you need the 1, 2, 3, .., n-1, n-year spot rates.
+ *
+ * To calculate the forward rate which applies from time t to time T, all you need is the 
+ * spot rate for term t, and the spot rate for term T.
+ */
 class FinMathSpotRates extends FinMathCollection {
 
 protected $explanation_forward_rates;
@@ -55,6 +69,14 @@ protected $explanation_par_yields;
 		}
 	}
 
+/**
+ * The explain_par_yield() function returns the explanation of the calculation of
+ * a FinMathParYield calculated by the get_par_yields() function.
+ * 
+ * @param FinMathParYield $f  (must match one of the par yields already calculated)
+ * @return array of Latex
+ *
+ */
 	public function explain_par_yield( FinMathParYield $f ){
 		if ( !$this->get_par_yields()->is_in_collection( $f ) ){
 			throw new Exception( __FILE__ . 
@@ -63,6 +85,14 @@ protected $explanation_par_yields;
 		return $this->explanation_par_yields[ $f->get_term() ];
 	}
 
+/**
+ * The explain_forward_rate() function returns the explanation of the calculation of
+ * a FinMathForwardRate calculated by the get_forward_rates() function.
+ * 
+ * @param FinMathForwardRate $f  (must match a calculated forward rate)
+ * @return array of Latex
+ *
+ */
 	public function explain_forward_rate( FinMathForwardRate $f ){
 		if ( !$this->get_forward_rates()->is_in_collection( $f ) ){
 			throw new Exception( __FILE__ .  
@@ -71,8 +101,13 @@ protected $explanation_par_yields;
 		return $this->explanation_forward_rates[ $f->get_end_time() ];
 	}
 
+/**
+ * The get_all_rates() function returns an array of terms, spot rates, forward rates, and par yields
+ * 
+ * @return array 
+ *
+ */
 	public function get_all_rates(){
-	// returns array of rates that could be rendered in table
 		$out = array();
 		$out[ 'header' ] = array(
 			'spot term','spot rate',
@@ -114,6 +149,29 @@ protected $explanation_par_yields;
 		return $out;
 	}
 
+/**
+ * The get_forward_rates() function returns the forward rates implied by the spot rates,
+ * and stores the explanation of how the forward rates are derived.
+ * 
+ * The forward rates are objects of the FinMathForwardRate class.
+ * If P is the current price (i.e. discounting factor) of a future payment of 1 at time t 
+ * (so that Q is the current price of Q/P at t),
+ * and Q is the current price of a future payment of 1 at time u,
+ * then (assuming no arbitrage and no expenses) 
+ * Q/P is the implied forward price at time t for a future payment of 1 at time u.
+ * 
+ * 
+ * Forward rates are forward prices expressed as annual effective rates,
+ * and spot rates are current prices expressed as annual effective rates.
+ *
+ * If we express spot rate as continuously compounded rates s(), and 
+ * if P = exp( t s(t) ), Q = exp( u s(u) ), then Q/P = exp( u s(u) - t s(t) )
+ * 
+ * \f$ = \exp \left( (u - t) \frac{ u s(u) - t s(t) }{ u - t } \right). \f$
+ * 
+ * @return FinMathForwardRates forward rates implied by spot rates
+ *
+ */
 	public function get_forward_rates(){
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
@@ -159,6 +217,29 @@ protected $explanation_par_yields;
 		return $fs;
 	}
 
+/**
+ * The get_par_yields() function returns the par yields implied by the spot rates,
+ * and stores the explanation of how the par yields are derived.
+ * 
+ * The par yields are objects of the FinMathParYield class.
+ * Par yields are only available for terms up to the maximum integer N
+ * for which there are spot rates at terms 1, 2, .., N-1, N.
+ *
+ * The par yield for term n is the coupon rate for an annual bond of term n priced at par.
+ * I.e. it is the coupon C such that
+ * 
+ * CP(1) + CP(2) + ... + CP(n-1) + (1+C)P(n) = 1,
+ * 
+ * where P(t) is the current price of a payment of 1 at time t.
+ *
+ * I.e. C = [ 1 - P(n) ] / [ P(1) + P(2) + ... + P(n-1) + P(n) ].
+ * 
+ * Thus to find C you need to know P(1), P(2), .., P(n-1), P(n)
+ * or equivalently, to know the spot rates for terms 1, 2, ..., n.
+ * 
+ * @return FinMathParYields par yields implied by spot rates
+ *
+ */
 	public function get_par_yields(){
 		$spot_rates = $this->get_objects();
 		$terms = $this->get_sorted_terms();
