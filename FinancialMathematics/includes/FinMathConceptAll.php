@@ -27,7 +27,9 @@
  */
 
 /**
- * FinMathConceptAll class
+ * FinMathConceptAll is the class accessed by the user. 
+ * The get_controller() function accepts user input and returns either
+ * a calculation or a form (depending on the input). 
  *
  */
 class FinMathConceptAll extends FinMathForm{
