@@ -131,6 +131,17 @@ abstract class FinMathObject {
 			}
 			return $m;
 	}
+
+    /**
+     * Return whether a candidate equals the object
+     * @param FinMathObjec $f candidate object
+     * @return bool
+     *
+     */
+	public function equals($f){
+		return ( $f->get_values()  == $this->get_values()       );
+	}
+
 					
 } // end of class
 

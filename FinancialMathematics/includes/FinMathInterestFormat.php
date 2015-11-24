@@ -134,16 +134,7 @@ class FinMathInterestFormat extends FinMathObject{
 	}
 
 	public function equals($f){
-		if(!($f instanceof FinMathInterestFormat)){
-		        return false;
-		}
-		if( $f->get_m()       != $this->get_m()       ){
-			return false;
-		}
-		if( $f->get_advance() != $this->get_advance() ){
-			return false;
-		}
-		return true;
+		return ( parent::equals($f)  && $f instanceof FinMathInterestFormat );
 	}
 
 	public function get_description(){

@@ -88,6 +88,10 @@ class FinMathForwardRate extends FinMathObject {
         return $r; 
     } 
 
+	public function equals($f){
+		return ( parent::equals($f)  && $f instanceof FinMathForwardRate );
+	}
+
     public function __construct( $i_effective = 0, $start_time = 0, $end_time = 0 ) {
         $this->set_i_effective( $i_effective );
         $this->set_start_time( $start_time );

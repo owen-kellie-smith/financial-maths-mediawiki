@@ -48,7 +48,7 @@ abstract class FinMathCollection extends FinMathObject {
 	public function is_in_collection( $candidate ){
 		if ( $this->get_count() > 0) {
 			foreach ( $this->get_objects() as $obj ){
-				if ( $this->is_acceptable_class( $candidate ) && $obj == $candidate ){
+				if ( $obj->equals( $candidate ) ){
 					return true;
 				}
 			}

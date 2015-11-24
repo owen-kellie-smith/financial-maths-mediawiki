@@ -80,13 +80,7 @@ class FinMathXML extends FinMathObject{
 	}
 
 	public function equals($f){
-		if(!($f instanceof FinMathXML)){
-		        return false;
-		}
-		if( $f->get_xml() != $this->get_xml() ){
-			return false;
-		}
-		return true;
+		return ( parent::equals($f)  && $f instanceof FinMathXML );
 	}
 
 	public function set_from_input($_INPUT = array(), $pre = ''){

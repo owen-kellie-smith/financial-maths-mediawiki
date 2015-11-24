@@ -51,6 +51,10 @@ class FinMathSpotRate extends FinMathObject {
 		return $r; 
   }
 
+	public function equals($f){
+		return ( parent::equals($f)  && $f instanceof FinMathSpotRate );
+	}
+
 	public function get_parameters(){ 
 		$r = array();
 		$r['i_effective'] = array(
