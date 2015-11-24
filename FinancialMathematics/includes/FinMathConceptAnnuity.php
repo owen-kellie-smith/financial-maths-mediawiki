@@ -100,7 +100,7 @@ public function get_controller($_INPUT ){
   return $return;
 }
 
-public function set_annuity($_INPUT = array()){
+private function set_annuity($_INPUT = array()){
 	$this->set_received_input($_INPUT);
 	$lobj = new FinMathAnnuity();
 	if ($this->is_level_annuity($_INPUT)){

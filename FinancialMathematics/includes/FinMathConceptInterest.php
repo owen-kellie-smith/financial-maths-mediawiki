@@ -43,11 +43,11 @@ private function get_rate_in_form(){
 	return  $this->obj->get_rate_in_form( $this->obj ) ;
 }
 
-public function get_unrendered_solution(){
+protected function get_unrendered_solution(){
 	return  $this->obj->explain_rate_in_form( $this->obj ) ;
 }
 	
-public function get_calculator($parameters){
+protected function get_calculator($parameters){
 	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-interest'));
 	return parent::get_calculator($p);
 }
@@ -76,7 +76,7 @@ public function get_controller($_INPUT ){
 	}
 }
 
-public function set_interest($_INPUT = array()){
+private function set_interest($_INPUT = array()){
 	$this->set_received_input($_INPUT);
 	return ($this->obj->set_from_input($_INPUT));
 }

@@ -64,7 +64,7 @@ private function get_unrendered_interest_rate(){
 	}
 
 	
-public function get_calculator($parameters){
+protected function get_calculator($parameters){
 	$p = array('exclude'=>$parameters,'request'=>$this->get_request(), 'submit'=>self::myMessage( 'fm-calculate'), 'introduction' => self::myMessage( 'fm-intro-mortgage') );
 	$c = parent::get_calculator($p);
 	$c['values']['instalment'] = NULL;
@@ -104,7 +104,7 @@ public function get_controller($_INPUT ){
 	}
 }
 
-public function set_mortgage($_INPUT = array()){
+private function set_mortgage($_INPUT = array()){
 	$this->set_received_input($_INPUT);
 	return ($this->obj->set_from_input($_INPUT));
 }
