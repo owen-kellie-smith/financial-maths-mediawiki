@@ -1,6 +1,6 @@
 {
 	"name": "FinancialMathematics",
-	"version": "0.3.11",
+	"version": "0.3.12",
 	"author": [
 		"Owen Kellie-Smith"
 	],
@@ -38,11 +38,11 @@
 		"FinMathInterest": "includes/FinMathInterest.php",
 		"FinMathMortgage": "includes/FinMathMortgage.php",
 		"FinMathObject": "includes/FinMathObject.php",
-		"CT1_Par_Yield": "includes/FinMathParYield.php",
+		"FinMathParYield": "includes/FinMathParYield.php",
 		"FinMathParYields": "includes/FinMathParYields.php",
 		"FinMathRender": "includes/FinMathRender.php",
 		"FinMathSingleCashflow": "includes/FinMathSingleCashflow.php",
-		"CT1_Spot_Rate": "includes/FinMathSpotRate.php",
+		"FinMathSpotRate": "includes/FinMathSpotRate.php",
 		"FinMathSpotRates": "includes/FinMathSpotRates.php"
 	},
 	"config": {
